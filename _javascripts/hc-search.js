@@ -25,7 +25,7 @@ function hcSearchCategory(label, version) {
         si: 0,
         q: query.val(),
         label: label,
-        urlFilter: (typeof version === "undefined" || version == "Branch Build") ? "" : (" url:*\\/" + version.toLowerCase() + "\\/*")
+        urlFilter: (typeof version === "undefined" || version == "Branch Build") ? "" : (" url:*\\/" + version + "\\/*")
       };
       // work around the current OKD-specific version=4 and URL discrepancy
       if (window.location.href.includes("docs.okd.io/latest/") && version == 4) searchParams.urlFilter = " url:*\\/latest\\/*"
@@ -67,7 +67,7 @@ function hcsearch(searchParams) {
       $("#hc-search-result").append("<p><strong>An error occurred while retrieving search results. Please try again later.</strong></p>");
       hcSearchIndicator.hide();
     }
-    if (!$.isEmptyObject(hcsearchresults.response.result)) { 
+    if (hcsearchresults.response.result) {
       // if there are any results
       $(hcsearchresults.response.result).each(function () {
         var row = '<div class="search-result-item"><a href="' + this.url +
