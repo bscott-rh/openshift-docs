@@ -31319,7 +31319,10 @@
 <div class="sect3">
 <h4 id="ocp-4-11-capabilities"><a class="anchor" href="#ocp-4-11-capabilities"></a>Additional customization when installing OpenShift Container Platform</h4>
 <div class="paragraph">
-<p>OpenShift Container Platform 4.11 allows you to disable the installation of the <code>metal3</code> API, the optional <code>redhat-marketplace</code> Operators, and the <code>samples</code> content that is stored in the <code>openshift</code> namespace.</p>
+<p>OpenShift Container Platform 4.11 allows you to disable the installation of the <code>metal3</code> API, the optional <code>redhat-marketplace</code> Operators, and the <code>samples</code> content that is stored in the <code>openshift</code> namespace. You can disable these features by setting the <code>baselineCapabilitySet</code> and <code>additionalEnabledCapabilities</code> parameters in the <code>install-config.yaml</code> configuration file prior to installation.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the "Installation configuration parameters" section of the installation documentation for your platform.</p>
 </div>
 </div>
 </div>
