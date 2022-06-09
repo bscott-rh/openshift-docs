@@ -31249,11 +31249,9 @@
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nv">KEYVAULT_ID</span><span class="o">=</span><span class="si">$(</span>az keyvault show <span class="nt">--name</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">--query</span> <span class="s2">"[id]"</span> <span class="nt">-o</span> tsv<span class="si">)</span>
-<span class="go">
-</span><span class="gp">$</span><span class="w"> </span><span class="nv">KEYVAULT_KEY_URL</span><span class="o">=</span><span class="si">$(</span>az keyvault key show <span class="nt">--vault-name</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">--name</span> <span class="se">\</span>
+<span class="gp">$</span><span class="w"> </span><span class="nv">KEYVAULT_KEY_URL</span><span class="o">=</span><span class="si">$(</span>az keyvault key show <span class="nt">--vault-name</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">--name</span> <span class="se">\</span>
         <span class="nv">$KEYVAULT_KEY_NAME</span> <span class="nt">--query</span> <span class="s2">"[key.kid]"</span> <span class="nt">-o</span> tsv<span class="si">)</span>
-<span class="go">
-</span><span class="gp">$</span><span class="w"> </span>az disk-encryption-set create <span class="nt">-n</span> <span class="nv">$DISK_ENCRYPTION_SET_NAME</span> <span class="nt">-l</span> <span class="nv">$LOCATION</span> <span class="nt">-g</span> <span class="se">\</span>
+<span class="gp">$</span><span class="w"> </span>az disk-encryption-set create <span class="nt">-n</span> <span class="nv">$DISK_ENCRYPTION_SET_NAME</span> <span class="nt">-l</span> <span class="nv">$LOCATION</span> <span class="nt">-g</span> <span class="se">\</span>
         <span class="nv">$RESOURCEGROUP</span> <span class="nt">--source-vault</span> <span class="nv">$KEYVAULT_ID</span> <span class="nt">--key-url</span> <span class="nv">$KEYVAULT_KEY_URL</span></code></pre>
 </div>
 </div>
@@ -31264,8 +31262,7 @@
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nv">DES_IDENTITY</span><span class="o">=</span><span class="si">$(</span>az disk-encryption-set show <span class="nt">-n</span> <span class="nv">$DISK_ENCRYPTION_SET_NAME</span> <span class="nt">-g</span> <span class="se">\</span>
         <span class="nv">$RESOURCEGROUP</span> <span class="nt">--query</span> <span class="s2">"[identity.principalId]"</span> <span class="nt">-o</span> tsv<span class="si">)</span>
-<span class="go">
-</span><span class="gp">$</span><span class="w"> </span>az keyvault set-policy <span class="nt">-n</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">-g</span> <span class="nv">$RESOURCEGROUP</span> <span class="nt">--object-id</span> <span class="se">\</span>
+<span class="gp">$</span><span class="w"> </span>az keyvault set-policy <span class="nt">-n</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">-g</span> <span class="nv">$RESOURCEGROUP</span> <span class="nt">--object-id</span> <span class="se">\</span>
         <span class="nv">$DES_IDENTITY</span> <span class="nt">--key-permissions</span> wrapkey unwrapkey get</code></pre>
 </div>
 </div>
@@ -31276,8 +31273,7 @@
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nv">DES_RESOURCE_ID</span><span class="o">=</span><span class="si">$(</span>az disk-encryption-set show <span class="nt">-n</span> <span class="nv">$DISK_ENCRYPTION_SET_NAME</span> <span class="nt">-g</span> <span class="se">\</span>
         <span class="nv">$RESOURCEGROUP</span> <span class="nt">--query</span> <span class="s2">"[id]"</span> <span class="nt">-o</span> tsv<span class="si">)</span>
-<span class="go">
-</span><span class="gp">$</span><span class="w"> </span>az role assignment create <span class="nt">--assignee</span> <span class="nv">$CLUSTER_SP_ID</span> <span class="nt">--role</span> Owner <span class="nt">--scope</span> <span class="se">\</span>
+<span class="gp">$</span><span class="w"> </span>az role assignment create <span class="nt">--assignee</span> <span class="nv">$CLUSTER_SP_ID</span> <span class="nt">--role</span> Owner <span class="nt">--scope</span> <span class="se">\</span>
         <span class="nv">$DES_RESOURCE_ID</span> <span class="nt">-o</span> jsonc</code></pre>
 </div>
 </div>
