@@ -10220,8 +10220,8 @@
 
 
                   <li>
-                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30445,56 +30445,8 @@
 
 
                   <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -31181,7 +31133,17 @@
         
         <div id="preamble">
 <div class="sectionbody">
-<!-- toc disabled -->
+<div id="toc" class="toc">
+<div id="toctitle" class="title"></div>
+<ul class="sectlevel1">
+<li><a href="#installing-the-kubernetes-nmstate-operator-cli">Installing the Kubernetes NMState Operator</a>
+<ul class="sectlevel2">
+<li><a href="#installing-the-kubernetes-nmstate-operator-web-console_k8s-nmstate-operator">Installing the Kubernetes NMState Operator using the web console</a></li>
+<li><a href="#installing-the-kubernetes-nmstate-operator-CLI_k8s-nmstate-operator">Installing the Kubernetes NMState Operator using the CLI</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>The Kubernetes NMState Operator provides a Kubernetes API for performing state-driven network configuration across the OpenShift Container Platform cluster&#8217;s nodes with NMState. The Kubernetes NMState Operator provides users with functionality to configure various network interface types, DNS, and routing on cluster nodes. Additionally, the daemons on the cluster nodes periodically report on the state of each node&#8217;s network interfaces to the API server.</p>
 </div>
@@ -31204,15 +31166,24 @@
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="k8s-nmstate-operator_installation_and_deployment"><a class="anchor" href="#k8s-nmstate-operator_installation_and_deployment"></a>Installing the nmstate operator</h3>
-
-</div>
 <div class="sect1">
-<h2 id="installing-the-kubernetes-nmstate-operator_k8s-nmstate-operator"><a class="anchor" href="#installing-the-kubernetes-nmstate-operator_k8s-nmstate-operator"></a>Installing the Kubernetes NMState Operator</h2>
+<h2 id="installing-the-kubernetes-nmstate-operator-cli"><a class="anchor" href="#installing-the-kubernetes-nmstate-operator-cli"></a>Installing the Kubernetes NMState Operator</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You must install the Kubernetes NMState Operator from the web console while logged in with administrator privileges. After it is installed, the Operator can deploy the NMState State Controller as a daemon set across all of the cluster nodes.</p>
+<p>You can install the Kubernetes NMState Operator by using the web console or the CLI.</p>
+</div>
+<div class="sect2">
+<h3 id="installing-the-kubernetes-nmstate-operator-web-console_k8s-nmstate-operator"><a class="anchor" href="#installing-the-kubernetes-nmstate-operator-web-console_k8s-nmstate-operator"></a>Installing the Kubernetes NMState Operator using the web console</h3>
+<div class="paragraph">
+<p>You can install the Kubernetes NMState Operator by using the web console. After it is installed, the Operator can deploy the NMState State Controller as a daemon set across all of the cluster nodes.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You are logged in as a user with <code>cluster-admin</code> privileges.</p>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -31264,10 +31235,11 @@
 <div class="title">Summary</div>
 <p>Once complete, the Operator has deployed the NMState State Controller as a daemon set across all of the cluster nodes.</p>
 </div>
+</div>
 <div class="sect2">
 <h3 id="installing-the-kubernetes-nmstate-operator-CLI_k8s-nmstate-operator"><a class="anchor" href="#installing-the-kubernetes-nmstate-operator-CLI_k8s-nmstate-operator"></a>Installing the Kubernetes NMState Operator using the CLI</h3>
 <div class="paragraph">
-<p>You can also install the Kubernetes NMState Operator by using the OpenShift Container Platform CLI (oc).</p>
+<p>You can install the Kubernetes NMState Operator by using the OpenShift CLI (<code>oc)</code>. After it is installed, the Operator can deploy the NMState State Controller as a daemon set across all of the cluster nodes.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -31287,7 +31259,7 @@
 <p>Create the <code>nmstate</code> Operator namespace:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> | oc apply -f -
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> | oc apply -f -
 </span><span class="go">apiVersion: v1
 kind: Namespace
 metadata:
@@ -31306,7 +31278,7 @@ EOF</span></code></pre>
 <p>Create the <code>OperatorGroup</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> | oc apply -f -
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> | oc apply -f -
 </span><span class="go">apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
@@ -31326,7 +31298,7 @@ EOF</span></code></pre>
 <p>Subscribe to the <code>nmstate</code> Operator:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">| oc apply -f -
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">| oc apply -f -
 </span><span class="go">apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
@@ -31348,7 +31320,7 @@ EOF</span></code></pre>
 <p>Create instance of the <code>nmstate</code> operator:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> | oc apply -f -
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> | oc apply -f -
 </span><span class="go">apiVersion: nmstate.io/v1
 kind: NMState
 metadata:
@@ -31359,22 +31331,26 @@ EOF</span></code></pre>
 </li>
 </ol>
 </div>
-<div class="paragraph">
+<div class="ulist">
 <div class="title">Verification</div>
+<ul>
+<li>
 <p>Confirm that the deployment for the <code>nmstate</code> operator is running:</p>
-</div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="terminal"><span class="go">oc get clusterserviceversion -n openshift-nmstate \
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">oc get clusterserviceversion -n openshift-nmstate \
  -o custom-columns=Name:.metadata.name,Phase:.status.phase</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Example output</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="terminal"><span class="go">Name                                             Phase
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">Name                                             Phase
 kubernetes-nmstate-operator.4.10.0-202203120157   Succeeded</span></code></pre>
 </div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>

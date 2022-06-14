@@ -10220,8 +10220,8 @@
 
 
                   <li>
-                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30445,56 +30445,8 @@
 
 
                   <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -31194,16 +31146,11 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>High availability (HA) is a standard feature of Kubernetes APIs that helps to ensure that APIs stay operational if a disruption occurs.
-In an HA deployment, if an active controller crashes or is deleted, another controller is available to take over processing of the APIs that were being serviced by the controller that is now unavailable.</p>
+<p>High availability (HA) is a standard feature of Kubernetes APIs that helps to ensure that APIs stay operational if a disruption occurs. In an HA deployment, if an active controller crashes or is deleted, another controller is readily available. This controller takes over processing of the APIs that were being serviced by the controller that is now unavailable.</p>
 </div>
 <div class="paragraph">
-<p>HA in OpenShift Serverless is available through leader election, which is enabled by default after the Knative Serving or Eventing control plane is installed.</p>
-</div>
-<div class="paragraph">
-<p>When using a leader election HA pattern, instances of controllers are already scheduled and running inside the cluster before they are required.
-These controller instances compete to use a shared resource, known as the leader election lock.
-The instance of the controller that has access to the leader election lock resource at any given time is referred to as the leader.</p>
+<p>HA in OpenShift Serverless is available through leader election, which is enabled by default after the Knative Serving or Eventing control plane is installed. When using a leader election HA pattern, instances of controllers are already scheduled and running inside the cluster before they are required.
+These controller instances compete to use a shared resource, known as the leader election lock. The instance of the controller that has access to the leader election lock resource at any given time is called the leader.</p>
 </div>
 </div>
 </div>

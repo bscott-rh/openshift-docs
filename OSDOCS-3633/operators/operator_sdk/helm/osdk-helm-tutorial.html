@@ -10220,8 +10220,8 @@
 
 
                   <li>
-                    <a class="" href="../../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30445,56 +30445,8 @@
 
 
                   <li>
-                    <a class="" href="../../../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../../../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -31853,22 +31805,10 @@ to initialize the project:</p>
 </div>
 </li>
 <li>
-<p>Update your <code>Makefile</code> by setting the <code>IMG</code> URL to your Operator image name and tag that you pushed:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="c"># Image URL to use all building/pushing image targets</span>
-<span class="gp">IMG ?= &lt;registry&gt;</span>/&lt;user&gt;/&lt;operator_image_name&gt;:&lt;tag&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This value is used for subsequent operations.</p>
-</div>
-</li>
-<li>
 <p>Create your Operator bundle manifest by running the <code>make bundle</code> command, which invokes several commands, including the Operator SDK <code>generate bundle</code> and <code>bundle validate</code> subcommands:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>make bundle</code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>make bundle <span class="nv">IMG</span><span class="o">=</span>&lt;registry&gt;/&lt;user&gt;/&lt;operator_image_name&gt;:&lt;tag&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">

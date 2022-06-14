@@ -10220,8 +10220,8 @@
 
 
                   <li>
-                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30445,56 +30445,8 @@
 
 
                   <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -32908,9 +32860,13 @@ with an Azure cluster.</p>
   <span class="na">name</span><span class="pi">:</span> <span class="s">master</span>
   <span class="na">platform</span><span class="pi">:</span>
     <span class="na">azure</span><span class="pi">:</span>
+      <span class="na">encryptionAtHost</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">osDisk</span><span class="pi">:</span>
         <span class="na">diskSizeGB</span><span class="pi">:</span> <span class="s">1024</span> <i class="conum" data-value="5"></i><b>(5)</b>
         <span class="na">diskType</span><span class="pi">:</span> <span class="s">Premium_LRS</span>
+        <span class="na">diskEncryptionSet</span><span class="pi">:</span>
+          <span class="na">resourceGroup</span><span class="pi">:</span> <span class="s">disk_encryption_set_resource_group</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">disk_encryption_set_name</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">Standard_D8s_v3</span>
   <span class="na">replicas</span><span class="pi">:</span> <span class="m">3</span>
 <span class="na">compute</span><span class="pi">:</span> <i class="conum" data-value="2"></i><b>(2)</b>
@@ -32919,9 +32875,13 @@ with an Azure cluster.</p>
   <span class="na">platform</span><span class="pi">:</span>
     <span class="na">azure</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">Standard_D2s_v3</span>
+      <span class="na">encryptionAtHost</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">osDisk</span><span class="pi">:</span>
         <span class="na">diskSizeGB</span><span class="pi">:</span> <span class="s">512</span> <i class="conum" data-value="5"></i><b>(5)</b>
         <span class="na">diskType</span><span class="pi">:</span> <span class="s">Standard_LRS</span>
+        <span class="na">diskEncryptionSet</span><span class="pi">:</span>
+          <span class="na">resourceGroup</span><span class="pi">:</span> <span class="s">disk_encryption_set_resource_group</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">disk_encryption_set_name</span>
       <span class="na">zones</span><span class="pi">:</span> <i class="conum" data-value="6"></i><b>(6)</b>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">1"</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">2"</span>

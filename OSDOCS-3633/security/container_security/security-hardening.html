@@ -10220,8 +10220,8 @@
 
 
                   <li>
-                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30445,56 +30445,8 @@
 
 
                   <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -31242,69 +31194,58 @@ decide how to harden them in RHCOS.</p>
 <h2 id="security-hardening-how_security-hardening"><a class="anchor" href="#security-hardening-how_security-hardening"></a>Choosing how to harden RHCOS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Direct modification of RHCOS systems in OpenShift Container Platform is discouraged.
-Instead, you should think of modifying systems in pools of nodes, such
-as worker nodes and control plane nodes. When a new node is needed, in
-non-bare metal installs, you can request a new node of the type
-you want and it will be created from an RHCOS image plus the
-modifications you created earlier.</p>
+<p>Direct modification of RHCOS systems in OpenShift Container Platform is discouraged. Instead, you should think of modifying systems in pools of nodes, such as worker nodes and control plane nodes. When a new node is needed, in non-bare metal installs, you can request a new node of the type you want and it will be created from an RHCOS image plus the modifications you created earlier.</p>
 </div>
 <div class="paragraph">
-<p>There are opportunities for modifying RHCOS before installation,
-during installation, and after the cluster is up and running.</p>
+<p>There are opportunities for modifying RHCOS before installation, during installation, and after the cluster is up and running.</p>
 </div>
 <div class="sect2">
 <h3 id="security-harden-before-installation_security-hardening"><a class="anchor" href="#security-harden-before-installation_security-hardening"></a>Hardening before installation</h3>
 <div class="paragraph">
-<p>For bare metal installations, you can add hardening features to
-RHCOS before beginning the OpenShift Container Platform installation. For example,
-you can add kernel options when you boot the RHCOS installer
-to turn security features on or off, such as SELinux or various
-low-level settings, such as symmetric multithreading.</p>
+<p>For bare metal installations, you can add hardening features to RHCOS before beginning the OpenShift Container Platform installation. For example, you can add kernel options when you boot the RHCOS installer to turn security features on or off, such as various SELinux booleans or low-level settings, such as symmetric multithreading.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Disabling SELinux on RHCOS nodes is not supported.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Although bare metal RHCOS installations are more difficult,
-they offer the opportunity of getting operating system
-changes in place before starting the OpenShift Container Platform installation. This can be important when you need to ensure that certain
-features, such as disk encryption or special networking settings, be
-set up at the earliest possible moment.</p>
+<p>Although bare metal RHCOS installations are more difficult, they offer the opportunity of getting operating system changes in place before starting the OpenShift Container Platform installation. This can be important when you need to ensure that certain features, such as disk encryption or special networking settings, be set up at the earliest possible moment.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="security-harden-during-installation_security-hardening"><a class="anchor" href="#security-harden-during-installation_security-hardening"></a>Hardening during installation</h3>
 <div class="paragraph">
-<p>You can interrupt the OpenShift Container Platform installation process and change
-Ignition configs. Through Ignition configs, you can add your own files
-and systemd services to the RHCOS nodes.
-You can also make some basic security-related changes to the <code>install-config.yaml</code> file
-used for installation.
-Contents added in this way are available at each node&#8217;s first boot.</p>
+<p>You can interrupt the OpenShift Container Platform installation process and change Ignition configs. Through Ignition configs, you can add your own files and systemd services to the RHCOS nodes. You can also make some basic security-related changes to the <code>install-config.yaml</code> file used for installation. Contents added in this way are available at each node&#8217;s first boot.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="security-harden-after-installation_security-hardening"><a class="anchor" href="#security-harden-after-installation_security-hardening"></a>Hardening after the cluster is running</h3>
 <div class="paragraph">
-<p>After the OpenShift Container Platform cluster is up and running, there are
-several ways to apply hardening features to RHCOS:</p>
+<p>After the OpenShift Container Platform cluster is up and running, there are several ways to apply hardening features to RHCOS:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>Daemon set: If you need a service to run on every node, you can add
-that service with a
-<a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">Kubernetes <code>DaemonSet</code> object</a>.</p>
+that service with a <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">Kubernetes <code>DaemonSet</code> object</a>.</p>
 </li>
 <li>
-<p>Machine config: <code>MachineConfig</code> objects contain a subset of Ignition configs in the same format.
-By applying machine configs to all worker or control plane nodes,
-you can ensure that the next node of the same type that is added
-to the cluster has the same changes applied.</p>
+<p>Machine config: <code>MachineConfig</code> objects contain a subset of Ignition configs in the same format. By applying machine configs to all worker or control plane nodes, you can ensure that the next node of the same type that is added to the cluster has the same changes applied.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>All of the features noted here are described in the OpenShift Container Platform
-product documentation.</p>
+<p>All of the features noted here are described in the OpenShift Container Platform product documentation.</p>
 </div>
 <div class="ulist _additional-resources">
 <div class="title">Additional resources</div>

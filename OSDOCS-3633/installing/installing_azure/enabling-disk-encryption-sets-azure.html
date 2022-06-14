@@ -10220,8 +10220,8 @@
 
 
                   <li>
-                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30445,56 +30445,8 @@
 
 
                   <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -31197,36 +31149,88 @@
 <h2 id="preparing-disk-encryption-sets"><a class="anchor" href="#preparing-disk-encryption-sets"></a>Preparing an Azure Disk Encryption Set</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The OpenShift Container Platform installer can use an existing Disk Encryption Set with a user-managed key. You should create the Disk Encryption Set in a different resource group than the resource group where you install the cluster to avoid losing access to your keys after the cluster is destroyed.</p>
+<p>The OpenShift Container Platform installer can use an existing Disk Encryption Set with a user-managed key. To enable this feature, you will create an Disk Encryption Set in Azure and provide the key to the installer.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Set environment variables before creating the Azure objects.</p>
+<p>Set the following environment variables for the Azure resource group:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">RESOURCEGROUP</span><span class="o">=</span><span class="s2">"&lt;Resource Group&gt;"</span>
-<span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">LOCATION</span><span class="o">=</span><span class="s2">"&lt;Location&gt;"</span>
-<span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">KEYVAULT_NAME</span><span class="o">=</span><span class="s2">"&lt;Keyvault Name&gt;"</span>
-<span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">KEYVAULT_KEY_NAME</span><span class="o">=</span><span class="s2">"&lt;Keyvault Key Name&gt;"</span>
-<span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">DISK_ENCRYPTION_SET_NAME</span><span class="o">=</span><span class="s2">"&lt;Disk Encryption Set Name&gt;"</span>
-<span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">CLUSTER_SP_ID</span><span class="o">=</span><span class="s2">"&lt;Service Principal ID&gt;"</span></code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">RESOURCEGROUP</span><span class="o">=</span><span class="s2">"&lt;resource_group&gt;"</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">LOCATION</span><span class="o">=</span><span class="s2">"&lt;location&gt;"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;resource_group&gt;</code></dt>
+<dd>
+<p>Specifies the name of the Azure resource group where you will create the Disk Encryption Set and encryption key. You should create the Disk Encryption Set in a different resource group than the resource group where you install the cluster to avoid losing access to your keys after the cluster is destroyed.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;location&gt;</code></dt>
+<dd>
+<p>Specifies the Azure location where you will create the resource group.</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>Set the following environment variables for the Azure Key Vault and Disk Encryption Set:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">KEYVAULT_NAME</span><span class="o">=</span><span class="s2">"&lt;keyvault_name&gt;"</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">KEYVAULT_KEY_NAME</span><span class="o">=</span><span class="s2">"&lt;keyvault_key_name&gt;"</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">DISK_ENCRYPTION_SET_NAME</span><span class="o">=</span><span class="s2">"&lt;disk_encryption_set_name&gt;"</span></code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Enable host-level encryption by registering the feature in Azure.</p>
+<p>Set the environment variable for the ID of your Azure Service Principal:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az feature register <span class="nt">--namespace</span> <span class="s2">"Microsoft.Compute"</span> <span class="nt">--name</span> <span class="s2">"EncryptionAtHost"</span>
-<span class="gp">$</span><span class="w"> </span>az feature show <span class="nt">--namespace</span> Microsoft.Compute <span class="nt">--name</span> EncryptionAtHost
-<span class="gp">$</span><span class="w"> </span>az provider register <span class="nt">-n</span> Microsoft.Compute</code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">CLUSTER_SP_ID</span><span class="o">=</span><span class="s2">"&lt;service_principal_id&gt;"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>&lt;service_principal_id&gt;</code> is the ID of the service principal you will use for this installation.</p>
+</div>
+</li>
+<li>
+<p>Enable host-level encryption by registering the feature in Azure:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az feature register <span class="nt">--namespace</span> <span class="s2">"Microsoft.Compute"</span> <span class="nt">--name</span> <span class="s2">"EncryptionAtHost"</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az feature show <span class="nt">--namespace</span> Microsoft.Compute <span class="nt">--name</span> EncryptionAtHost</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az provider register <span class="nt">-n</span> Microsoft.Compute</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Create an Azure Resource Group to hold the disk encryption set and associated resources.</p>
+<p>Create an Azure Resource Group to hold the disk encryption set and associated resources:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az group create <span class="nt">--name</span> <span class="nv">$RESOURCEGROUP</span> <span class="nt">--location</span> <span class="nv">$LOCATION</span></code></pre>
@@ -31234,46 +31238,66 @@
 </div>
 </li>
 <li>
-<p>Create an Azure key vault and encryption key.</p>
+<p>Create an Azure key vault and encryption key:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az keyvault create <span class="nt">-n</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">-g</span> <span class="nv">$RESOURCEGROUP</span> <span class="nt">-l</span> <span class="nv">$LOCATION</span> <span class="se">\</span>
-        <span class="nt">--enable-purge-protection</span> <span class="nb">true</span> <span class="nt">--enable-soft-delete</span> <span class="nb">true</span>
-<span class="gp">$</span><span class="w"> </span>az keyvault key create <span class="nt">--vault-name</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">-n</span> <span class="nv">$KEYVAULT_KEY_NAME</span> <span class="se">\</span>
+        <span class="nt">--enable-purge-protection</span> <span class="nb">true</span> <span class="nt">--enable-soft-delete</span> <span class="nb">true</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az keyvault key create <span class="nt">--vault-name</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">-n</span> <span class="nv">$KEYVAULT_KEY_NAME</span> <span class="se">\</span>
         <span class="nt">--protection</span> software</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Create a disk encryption set using the key vault and encryption key.</p>
+<p>Create a disk encryption set using the key vault and encryption key:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nv">KEYVAULT_ID</span><span class="o">=</span><span class="si">$(</span>az keyvault show <span class="nt">--name</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">--query</span> <span class="s2">"[id]"</span> <span class="nt">-o</span> tsv<span class="si">)</span>
-<span class="gp">$</span><span class="w"> </span><span class="nv">KEYVAULT_KEY_URL</span><span class="o">=</span><span class="si">$(</span>az keyvault key show <span class="nt">--vault-name</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">--name</span> <span class="se">\</span>
-        <span class="nv">$KEYVAULT_KEY_NAME</span> <span class="nt">--query</span> <span class="s2">"[key.kid]"</span> <span class="nt">-o</span> tsv<span class="si">)</span>
-<span class="gp">$</span><span class="w"> </span>az disk-encryption-set create <span class="nt">-n</span> <span class="nv">$DISK_ENCRYPTION_SET_NAME</span> <span class="nt">-l</span> <span class="nv">$LOCATION</span> <span class="nt">-g</span> <span class="se">\</span>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nv">KEYVAULT_ID</span><span class="o">=</span><span class="si">$(</span>az keyvault show <span class="nt">--name</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">--query</span> <span class="s2">"[id]"</span> <span class="nt">-o</span> tsv<span class="si">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nv">KEYVAULT_KEY_URL</span><span class="o">=</span><span class="si">$(</span>az keyvault key show <span class="nt">--vault-name</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">--name</span> <span class="se">\</span>
+        <span class="nv">$KEYVAULT_KEY_NAME</span> <span class="nt">--query</span> <span class="s2">"[key.kid]"</span> <span class="nt">-o</span> tsv<span class="si">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az disk-encryption-set create <span class="nt">-n</span> <span class="nv">$DISK_ENCRYPTION_SET_NAME</span> <span class="nt">-l</span> <span class="nv">$LOCATION</span> <span class="nt">-g</span> <span class="se">\</span>
         <span class="nv">$RESOURCEGROUP</span> <span class="nt">--source-vault</span> <span class="nv">$KEYVAULT_ID</span> <span class="nt">--key-url</span> <span class="nv">$KEYVAULT_KEY_URL</span></code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Grant the DiskEncryptionSet resource access to the key vault.</p>
+<p>Grant the DiskEncryptionSet resource access to the key vault:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nv">DES_IDENTITY</span><span class="o">=</span><span class="si">$(</span>az disk-encryption-set show <span class="nt">-n</span> <span class="nv">$DISK_ENCRYPTION_SET_NAME</span> <span class="nt">-g</span> <span class="se">\</span>
-        <span class="nv">$RESOURCEGROUP</span> <span class="nt">--query</span> <span class="s2">"[identity.principalId]"</span> <span class="nt">-o</span> tsv<span class="si">)</span>
-<span class="gp">$</span><span class="w"> </span>az keyvault set-policy <span class="nt">-n</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">-g</span> <span class="nv">$RESOURCEGROUP</span> <span class="nt">--object-id</span> <span class="se">\</span>
+        <span class="nv">$RESOURCEGROUP</span> <span class="nt">--query</span> <span class="s2">"[identity.principalId]"</span> <span class="nt">-o</span> tsv<span class="si">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az keyvault set-policy <span class="nt">-n</span> <span class="nv">$KEYVAULT_NAME</span> <span class="nt">-g</span> <span class="nv">$RESOURCEGROUP</span> <span class="nt">--object-id</span> <span class="se">\</span>
         <span class="nv">$DES_IDENTITY</span> <span class="nt">--key-permissions</span> wrapkey unwrapkey get</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Grant the Azure Service Principal permission to read the DiskEncryptionSet.</p>
+<p>Grant the Azure Service Principal permission to read the DiskEncryptionSet:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nv">DES_RESOURCE_ID</span><span class="o">=</span><span class="si">$(</span>az disk-encryption-set show <span class="nt">-n</span> <span class="nv">$DISK_ENCRYPTION_SET_NAME</span> <span class="nt">-g</span> <span class="se">\</span>
-        <span class="nv">$RESOURCEGROUP</span> <span class="nt">--query</span> <span class="s2">"[id]"</span> <span class="nt">-o</span> tsv<span class="si">)</span>
-<span class="gp">$</span><span class="w"> </span>az role assignment create <span class="nt">--assignee</span> <span class="nv">$CLUSTER_SP_ID</span> <span class="nt">--role</span> Owner <span class="nt">--scope</span> <span class="se">\</span>
+        <span class="nv">$RESOURCEGROUP</span> <span class="nt">--query</span> <span class="s2">"[id]"</span> <span class="nt">-o</span> tsv<span class="si">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az role assignment create <span class="nt">--assignee</span> <span class="nv">$CLUSTER_SP_ID</span> <span class="nt">--role</span> Owner <span class="nt">--scope</span> <span class="se">\</span>
         <span class="nv">$DES_RESOURCE_ID</span> <span class="nt">-o</span> jsonc</code></pre>
 </div>
 </div>

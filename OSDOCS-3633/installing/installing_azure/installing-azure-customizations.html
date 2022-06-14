@@ -10220,8 +10220,8 @@
 
 
                   <li>
-                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30445,56 +30445,8 @@
 
 
                   <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -31198,6 +31150,7 @@
 </li>
 <li><a href="#machineset-azure-enabling-accelerated-networking-new-install_installing-azure-customizations">Enabling Accelerated Networking during installation</a></li>
 <li><a href="#installation-launching-installer_installing-azure-customizations">Deploying the cluster</a></li>
+<li><a href="#finalizing-encryption">Finalizing Disk Encryption after Installation</a></li>
 <li><a href="#cli-installing-cli_installing-azure-customizations">Installing the OpenShift CLI by downloading the binary</a></li>
 <li><a href="#cli-logging-in-kubeadmin_installing-azure-customizations">Logging in to the cluster by using the CLI</a></li>
 <li><a href="#cluster-telemetry_installing-azure-customizations">Telemetry access for OpenShift Container Platform</a></li>
@@ -32592,9 +32545,13 @@ with an Azure cluster.</p>
   <span class="na">name</span><span class="pi">:</span> <span class="s">master</span>
   <span class="na">platform</span><span class="pi">:</span>
     <span class="na">azure</span><span class="pi">:</span>
+      <span class="na">encryptionAtHost</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">osDisk</span><span class="pi">:</span>
         <span class="na">diskSizeGB</span><span class="pi">:</span> <span class="s">1024</span> <i class="conum" data-value="5"></i><b>(5)</b>
         <span class="na">diskType</span><span class="pi">:</span> <span class="s">Premium_LRS</span>
+        <span class="na">diskEncryptionSet</span><span class="pi">:</span>
+          <span class="na">resourceGroup</span><span class="pi">:</span> <span class="s">disk_encryption_set_resource_group</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">disk_encryption_set_name</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">Standard_D8s_v3</span>
   <span class="na">replicas</span><span class="pi">:</span> <span class="m">3</span>
 <span class="na">compute</span><span class="pi">:</span> <i class="conum" data-value="2"></i><b>(2)</b>
@@ -32603,9 +32560,13 @@ with an Azure cluster.</p>
   <span class="na">platform</span><span class="pi">:</span>
     <span class="na">azure</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">Standard_D2s_v3</span>
+      <span class="na">encryptionAtHost</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">osDisk</span><span class="pi">:</span>
         <span class="na">diskSizeGB</span><span class="pi">:</span> <span class="s">512</span> <i class="conum" data-value="5"></i><b>(5)</b>
         <span class="na">diskType</span><span class="pi">:</span> <span class="s">Standard_LRS</span>
+        <span class="na">diskEncryptionSet</span><span class="pi">:</span>
+          <span class="na">resourceGroup</span><span class="pi">:</span> <span class="s">disk_encryption_set_resource_group</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">disk_encryption_set_name</span>
       <span class="na">zones</span><span class="pi">:</span> <i class="conum" data-value="6"></i><b>(6)</b>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">1"</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">2"</span>
@@ -33075,6 +33036,63 @@ INFO Time elapsed: 36m22s</span></code></pre>
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="finalizing-encryption"><a class="anchor" href="#finalizing-encryption"></a>Finalizing Disk Encryption after Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you installed OpenShift Container Platform using a user-managed encryption key, you can complete the installation by updating the default storage class and granting <code>Owner</code> permissions to the Azure resource group used by the installer.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Update the annotations on the default storage class to set <code>is-default-class</code> to <code>false</code>. The storageClass that uses the encrypted storage will be the default storageClass instead.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc patch storageclass managed-premium <span class="nt">-p</span> <span class="s1">'{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Obtain the identity of the cluster resource group used by the installer:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If you specified an resource group in <code>install-config.yaml</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az identity list <span class="nt">--resource-group</span> <span class="s2">"&lt;existing_resource_group&gt;"</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>If you did not specify a resource group in <code>install-config.yaml</code>, locate the resource group that the installer created, then locate its identity:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az group list</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az identity list <span class="nt">--resource-group</span> <span class="s2">"&lt;installer_created_resource_group&gt;"</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Grant the <code>Owner</code> role assignment to the cluster resource group so that it can write to the Disk Encryption Set:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">az role assignment create --role Owner --assignee "&lt;resource_group_identity&gt;</span><span class="s2">"</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>

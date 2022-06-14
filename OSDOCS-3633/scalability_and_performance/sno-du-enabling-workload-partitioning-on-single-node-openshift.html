@@ -10220,8 +10220,8 @@
 
 
                   <li>
-                    <a class="" href="../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30445,56 +30445,8 @@
 
 
                   <li>
-                    <a class="" href="../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -31279,7 +31231,59 @@ the number of cores on the cluster.</p>
 </div>
 </div>
 </li>
+<li>
+<p>The contents of <code>/etc/crio/crio.conf.d/01-workload-partitioning</code> should look like this:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="text">[crio.runtime.workloads.management]
+activation_annotation = "target.workload.openshift.io/management"
+annotation_prefix = "resources.workload.openshift.io"
+resources = { "cpushares" = 0, "cpuset" = "0-1,52-53" } <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>cpuset</code> value will vary based on the installation.</td>
+</tr>
+</table>
+</div>
+</li>
 </ul>
+</div>
+<div class="paragraph">
+<p>If Hyper-Threading is enabled, specify both threads of each core. The <code>cpuset</code> must match the reserved CPU set specified in the performance profile.</p>
+</div>
+<div class="paragraph">
+<p>This content should be base64 encoded and provided in the <code>01-workload-partitioning-content</code> in the manifest above.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The contents of <code>/etc/kubernetes/openshift-workload-pinning</code> should look like this:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="javascript"><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">management</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">cpuset</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0-1,52-53</span><span class="dl">"</span> <i class="conum" data-value="1"></i><b>(1)</b>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>cpuset</code> must match the value in <code>/etc/crio/crio.conf.d/01-workload-partitioning</code>.</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This content should be base64 encoded and provided in the <code>openshift-workload-pinning-content</code> in the preceding manifest.</p>
 </div>
 </div>
 </div>
