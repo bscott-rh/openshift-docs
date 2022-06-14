@@ -10188,8 +10188,8 @@
 
 
                   <li>
-                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30400,56 +30400,8 @@
 
 
                   <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -31842,8 +31794,8 @@ output. You need these values during OpenShift Container Platform installation.<
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az role assignment create <span class="nt">--role</span> <span class="s2">"User Access Administrator"</span> <span class="se">\</span>
-    <span class="nt">--assignee-object-id</span> <span class="si">$(</span>az ad sp list <span class="nt">--filter</span> <span class="s2">"appId eq '&lt;appId&gt;'"</span> <span class="se">\ </span><i class="conum" data-value="1"></i><b>(1)</b>
-<span class="go">       | jq '.[0].objectId' -r)</span></code></pre>
+    <span class="nt">--assignee-object-id</span> <span class="si">$(</span>az ad sp list <span class="nt">--filter</span> <span class="s2">"appId eq '&lt;appId&gt;'"</span> <span class="se">\</span>
+       | jq <span class="s1">'.[0].id'</span> <span class="nt">-r</span><span class="si">)</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">

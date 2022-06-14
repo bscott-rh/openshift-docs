@@ -10188,8 +10188,8 @@
 
 
                   <li>
-                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30400,56 +30400,8 @@
 
 
                   <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -31149,6 +31101,7 @@
 <li><a href="#configuring-eventlisteners-to-serve-multiple-namespaces_creating-applications-with-cicd-pipelines">Configuring event listeners to serve multiple namespaces</a></li>
 <li><a href="#creating-webhooks_creating-applications-with-cicd-pipelines">Creating webhooks</a></li>
 <li><a href="#triggering-a-pipeline_creating-applications-with-cicd-pipelines">Triggering a pipeline run</a></li>
+<li><a href="#enabling-monitoring-of-event-listeners-for-triggers-for-user-defined-projects_creating-applications-with-cicd-pipelines">Enabling monitoring of event listeners for Triggers for user-defined projects</a></li>
 <li><a href="#pipeline-addtl-resources">Additional resources</a></li>
 </ul>
 </div>
@@ -32471,6 +32424,87 @@ latest
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="enabling-monitoring-of-event-listeners-for-triggers-for-user-defined-projects_creating-applications-with-cicd-pipelines"><a class="anchor" href="#enabling-monitoring-of-event-listeners-for-triggers-for-user-defined-projects_creating-applications-with-cicd-pipelines"></a>Enabling monitoring of event listeners for Triggers for user-defined projects</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As a cluster administrator, to gather event listener metrics for the <code>Triggers</code> service in a user-defined project and display them in the OpenShift Container Platform web console, you can create a service monitor for each event listener. On receiving a HTTP request, event listeners for the <code>Triggers</code> service return three metrics&#8201;&#8212;&#8201;<code>eventlistener_http_duration_seconds</code>, <code>eventlistener_event_count</code>, and <code>eventlistener_triggered_resources</code>.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have logged in to the OpenShift Container Platform web console.</p>
+</li>
+<li>
+<p>You have installed the Red Hat OpenShift Pipelines Operator.</p>
+</li>
+<li>
+<p>You have enabled monitoring for user-defined projects.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>For each event listener, create a service monitor. For example, to view the metrics for the <code>github-listener</code> event listener in the <code>test</code> namespace, create the following service monitor:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">monitoring.coreos.com/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">ServiceMonitor</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="s">app.kubernetes.io/managed-by</span><span class="pi">:</span> <span class="s">EventListener</span>
+    <span class="s">app.kubernetes.io/part-of</span><span class="pi">:</span> <span class="s">Triggers</span>
+    <span class="na">eventlistener</span><span class="pi">:</span> <span class="s">github-listener</span>
+  <span class="na">annotations</span><span class="pi">:</span>
+    <span class="s">networkoperator.openshift.io/ignore-errors</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">el-monitor</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">test</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">endpoints</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">interval</span><span class="pi">:</span> <span class="s">10s</span>
+      <span class="na">port</span><span class="pi">:</span> <span class="s">http-metrics</span>
+  <span class="na">jobLabel</span><span class="pi">:</span> <span class="s">name</span>
+  <span class="na">namespaceSelector</span><span class="pi">:</span>
+    <span class="na">matchNames</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">test</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="s">app.kubernetes.io/managed-by</span><span class="pi">:</span> <span class="s">EventListener</span>
+      <span class="s">app.kubernetes.io/part-of</span><span class="pi">:</span> <span class="s">Triggers</span>
+      <span class="na">eventlistener</span><span class="pi">:</span> <span class="s">github-listener</span>
+<span class="nn">...</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Test the service monitor by sending a request to the event listener. For example, push an empty commit:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>git commit <span class="nt">-m</span> <span class="s2">"empty-commit"</span> <span class="nt">--allow-empty</span> <span class="o">&amp;&amp;</span> git push origin main</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>On the OpenShift Container Platform web console, navigate to <strong>Administrator</strong> &#8594; <strong>Observe</strong> &#8594; <strong>Metrics</strong>.</p>
+</li>
+<li>
+<p>To view a metric, search by its name. For example, to view the details of the <code>eventlistener_http_resources</code> metric for the <code>github-listener</code> event listener, search using the <code>eventlistener_http_resources</code> keyword.</p>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="../../monitoring/enabling-monitoring-for-user-defined-projects.html#enabling-monitoring-for-user-defined-projects">Enabling monitoring for user-defined projects</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="sect1 _additional-resources">
 <h2 id="pipeline-addtl-resources"><a class="anchor" href="#pipeline-addtl-resources"></a>Additional resources</h2>
 <div class="sectionbody">
@@ -32486,7 +32520,7 @@ latest
 <p>For more examples of reusable tasks, see the <a href="https://github.com/openshift/pipelines-catalog">OpenShift Catalog</a> repository. Additionally, you can also see the Tekton Catalog in the Tekton project.</p>
 </li>
 <li>
-<p>To install and deploy a custom instance of Tekton Hub for resuable tasks and pipelines, see <a href="../../cicd/pipelines/using-tekton-hub-with-openshift-pipelines.html#using-tekton-hub-with-openshift-pipelines">Using Tekton Hub with Red Hat OpenShift Pipelines</a>.</p>
+<p>To install and deploy a custom instance of Tekton Hub for reusable tasks and pipelines, see <a href="../../cicd/pipelines/using-tekton-hub-with-openshift-pipelines.html#using-tekton-hub-with-openshift-pipelines">Using Tekton Hub with Red Hat OpenShift Pipelines</a>.</p>
 </li>
 <li>
 <p>For more details on re-encrypt TLS termination, see <a href="https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#re-encryption-termination">Re-encryption Termination</a>.</p>

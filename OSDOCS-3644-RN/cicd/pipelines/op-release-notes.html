@@ -10188,8 +10188,8 @@
 
 
                   <li>
-                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30400,56 +30400,8 @@
 
 
                   <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -31147,6 +31099,7 @@
 <li><a href="#deprecated-features-1-7_op-release-notes">Deprecated features</a></li>
 <li><a href="#known-issues-1-7_op-release-notes">Known issues</a></li>
 <li><a href="#fixed-issues-1-7_op-release-notes">Fixed issues</a></li>
+<li><a href="#release-notes-1-7-1_op-release-notes">Release notes for Red Hat OpenShift Pipelines General Availability 1.7.1</a></li>
 </ul>
 </li>
 <li><a href="#op-release-notes-1-6_op-release-notes">Release notes for Red Hat OpenShift Pipelines General Availability 1.6</a>
@@ -31373,7 +31326,7 @@ GA
 <h2 id="op-release-notes-1-7_op-release-notes"><a class="anchor" href="#op-release-notes-1-7_op-release-notes"></a>Release notes for Red Hat OpenShift Pipelines General Availability 1.7</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>With this update, Red Hat OpenShift Pipelines General Availability (GA) 1.7 is available on OpenShift Container Platform 4.10.</p>
+<p>With this update, Red Hat OpenShift Pipelines General Availability (GA) 1.7 is available on OpenShift Container Platform 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="new-features-1-7_op-release-notes"><a class="anchor" href="#new-features-1-7_op-release-notes"></a>New features</h3>
@@ -31886,6 +31839,34 @@ time="2021-11-04T13:05:26Z" level=error msg="exit status 127"</span></code></pre
 <p>With this update, cluster tasks with specified versions are not deleted during upgrade.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="release-notes-1-7-1_op-release-notes"><a class="anchor" href="#release-notes-1-7-1_op-release-notes"></a>Release notes for Red Hat OpenShift Pipelines General Availability 1.7.1</h3>
+<div class="paragraph">
+<p>With this update, Red Hat OpenShift Pipelines General Availability (GA) 1.7.1 is available on OpenShift Container Platform 4.9, 4.10, and 4.11.</p>
+</div>
+<div class="sect3">
+<h4 id="fixed-issues-1-7-1_op-release-notes"><a class="anchor" href="#fixed-issues-1-7-1_op-release-notes"></a>Fixed issues</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Before this update, upgrading the Red Hat OpenShift Pipelines Operator deleted the data in the database associated with Tekton Hub and installed a new database. With this update, an Operator upgrade preserves the data.</p>
+</li>
+<li>
+<p>Before this update, only cluster administrators could access pipeline metrics in the OpenShift Container Platform console. With this update, users with other cluster roles also can access the pipeline metrics.</p>
+</li>
+<li>
+<p>Before this update, pipeline runs failed for pipelines containing tasks that emit large termination messages. The pipeline runs failed because the total size of termination messages of all containers in a pod cannot exceed 12 KB. With this update, the <code>place-tools</code> and <code>step-init</code> initialization containers that uses the same image are merged to reduce the number of containers running in each tasks&#8217;s pod. The solution reduces the chance of failed pipeline runs by minimizing the number of containers running in a task&#8217;s pod. However, it does not remove the limitation of the maximum allowed size of a termination message.</p>
+</li>
+<li>
+<p>Before this update, attempts to access resource URLs directly from the Tekton Hub web console resulted in an Nginx <code>404</code> error. With this update, the Tekton Hub web console image is fixed to allow accessing resource URLs directly from the Tekton Hub web console.</p>
+</li>
+<li>
+<p>Before this update, for each namespace the resource pruner job created a separate container to prune resources. With this update, the resource pruner job runs commands for all namespaces as a loop in one container.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>

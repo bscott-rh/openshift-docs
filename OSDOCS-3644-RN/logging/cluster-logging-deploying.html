@@ -10188,8 +10188,8 @@
 
 
                   <li>
-                    <a class="" href="../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws-network-load-balancer.html">
-                      Configuring ingress cluster traffic on AWS using a Network Load Balancer
+                    <a class="" href="../networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-aws.html">
+                      Configuring ingress cluster traffic on AWS
                     </a>
                   </li>
 
@@ -30400,56 +30400,8 @@
 
 
                   <li>
-                    <a class="" href="../serverless/admin_guide/serverless-cluster-admin-eventing.html">
-                      Creating Knative Eventing components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../serverless/admin_guide/serverless-cluster-admin-serving.html">
-                      Creating Knative Serving components in the Administrator perspective
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../serverless/admin_guide/serverless-admin-autoscaling.html">
-                      Autoscaling
+                    <a class="" href="../serverless/admin_guide/serverless-admin-perspective.html">
+                      Serverless components in the Administrator perspective
                     </a>
                   </li>
 
@@ -31769,8 +31721,8 @@ subscribe a namespace to the OpenShift Elasticsearch Operator.</p>
   <span class="na">namespace</span><span class="pi">:</span> <span class="s2">"</span><span class="s">openshift-operators-redhat"</span> <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="na">spec</span><span class="pi">:</span>
   <span class="na">channel</span><span class="pi">:</span> <span class="s2">"</span><span class="s">stable-5.1"</span> <i class="conum" data-value="2"></i><b>(2)</b>
-  <span class="na">installPlanApproval</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Automatic"</span>
-  <span class="na">source</span><span class="pi">:</span> <span class="s2">"</span><span class="s">redhat-operators"</span> <i class="conum" data-value="3"></i><b>(3)</b>
+  <span class="na">installPlanApproval</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Automatic"</span> <i class="conum" data-value="3"></i><b>(3)</b>
+  <span class="na">source</span><span class="pi">:</span> <span class="s2">"</span><span class="s">redhat-operators"</span> <i class="conum" data-value="4"></i><b>(4)</b>
   <span class="na">sourceNamespace</span><span class="pi">:</span> <span class="s2">"</span><span class="s">openshift-marketplace"</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">elasticsearch-operator"</span></code></pre>
 </div>
@@ -31787,6 +31739,10 @@ subscribe a namespace to the OpenShift Elasticsearch Operator.</p>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>Automatic</code> allows the Operator Lifecycle Manager (OLM) to automatically update the Operator when a new version is available. <code>Manual</code> requires a user with appropriate credentials to approve the Operator update.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
 <td>Specify <code>redhat-operators</code>. If your OpenShift Container Platform cluster is installed on a restricted network, also known as a disconnected cluster,
 specify the name of the CatalogSource object created when you configured the Operator Lifecycle Manager (OLM).</td>
 </tr>
