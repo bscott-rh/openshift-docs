@@ -1397,8 +1397,8 @@
 
 
                   <li>
-                    <a class="" href="../../installing/installing_azure/enabling-disk-encryption-sets-azure.html">
-                      Enabling DiskEncryptionSets on Azure
+                    <a class="" href="../../installing/installing_azure/enabling-user-managed-encryption-azure.html">
+                      Enabling user-managed encryption on Azure
                     </a>
                   </li>
 
@@ -31163,7 +31163,7 @@
 </li>
 <li><a href="#machineset-azure-enabling-accelerated-networking-new-install_installing-azure-private">Enabling Accelerated Networking during installation</a></li>
 <li><a href="#installation-launching-installer_installing-azure-private">Deploying the cluster</a></li>
-<li><a href="#finalizing-encryption_installing-azure-private">Finalizing Disk Encryption after installation</a></li>
+<li><a href="#finalizing-encryption_installing-azure-private">Finalizing user-managed encryption after installation</a></li>
 <li><a href="#cli-installing-cli_installing-azure-private">Installing the OpenShift CLI by downloading the binary</a></li>
 <li><a href="#cli-logging-in-kubeadmin_installing-azure-private">Logging in to the cluster by using the CLI</a></li>
 <li><a href="#cluster-telemetry_installing-azure-private">Telemetry access for OpenShift Container Platform</a></li>
@@ -31196,7 +31196,7 @@
 <p>If the cloud identity and access management (IAM) APIs are not accessible in your environment, or if you do not want to store an administrator-level credential secret in the <code>kube-system</code> namespace, you can <a href="../../installing/installing_azure/manually-creating-iam-azure.html#manually-creating-iam-azure">manually create and maintain IAM credentials</a>.</p>
 </li>
 <li>
-<p>If you use customer-managed encryption keys, you <a href="../../installing/installing_azure/enabling-disk-encryption-sets-azure.html#enabling-disk-encryption-sets-azure">prepared your Azure environment for encryption</a>.</p>
+<p>If you use customer-managed encryption keys, you <a href="../../installing/installing_azure/enabling-user-managed-encryption-azure.html#enabling-user-managed-encryption-azure">prepared your Azure environment for encryption</a>.</p>
 </li>
 </ul>
 </div>
@@ -33380,7 +33380,7 @@ INFO Time elapsed: 36m22s</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="finalizing-encryption_installing-azure-private"><a class="anchor" href="#finalizing-encryption_installing-azure-private"></a>Finalizing Disk Encryption after installation</h2>
+<h2 id="finalizing-encryption_installing-azure-private"><a class="anchor" href="#finalizing-encryption_installing-azure-private"></a>Finalizing user-managed encryption after installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you installed OpenShift Container Platform using a user-managed encryption key, you can complete the installation by updating the default storage class and granting <code>Owner</code> permissions to the Azure cluster resource group.</p>
