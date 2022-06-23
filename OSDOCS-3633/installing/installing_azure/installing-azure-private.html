@@ -33466,7 +33466,7 @@ INFO Time elapsed: 36m22s</span></code></pre>
 <h2 id="finalizing-encryption_installing-azure-private"><a class="anchor" href="#finalizing-encryption_installing-azure-private"></a>Finalizing user-managed encryption after installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you installed OpenShift Container Platform using a user-managed encryption key, you can complete the installation by updating the default storage class and granting <code>Owner</code> permissions to the Azure cluster resource group.</p>
+<p>If you installed OpenShift Container Platform using a user-managed encryption key, you can complete the installation by updating the default storage class and granting write permissions to the Azure cluster resource group.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -33508,11 +33508,26 @@ INFO Time elapsed: 36m22s</span></code></pre>
 </div>
 </li>
 <li>
-<p>Grant the <code>Owner</code> role assignment to the cluster resource group so that it can write to the Disk Encryption Set:</p>
+<p>Grant a role assignment to the cluster resource group so that it can write to the Disk Encryption Set:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az role assignment create <span class="nt">--role</span> Owner <span class="nt">--assignee</span> <span class="s2">"&lt;resource_group_identity&gt;"</span></code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az role assignment create <span class="nt">--role</span> <span class="s2">"&lt;privileged_role&gt;"</span> <span class="nt">--assignee</span> <span class="s2">"&lt;resource_group_identity&gt;"</span></code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;privileged_role&gt;</code></dt>
+<dd>
+<p>Specifies an Azure role that has read/write permissions to the disk encryption set. You can use the <code>Owner</code> role or a custom role with the necessary permissions.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;resource_group_identity&gt;</code></dt>
+<dd>
+<p>Specifies the identity of the cluster resource group.</p>
+</dd>
+</dl>
 </div>
 </li>
 </ol>

@@ -31381,7 +31381,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az role assignment create <span class="nt">--assignee</span> <span class="nv">$CLUSTER_SP_ID</span> <span class="nt">--role</span> <span class="s2">"&lt;privileged_role&gt;"</span> <span class="nt">--scope</span> <span class="se">\</span>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az role assignment create <span class="nt">--assignee</span> <span class="nv">$CLUSTER_SP_ID</span> <span class="nt">--role</span> <span class="s2">"&lt;reader_role&gt;"</span> <span class="nt">--scope</span> <span class="se">\</span>
         <span class="nv">$DES_RESOURCE_ID</span> <span class="nt">-o</span> jsonc</code></pre>
 </div>
 </div>
@@ -31390,9 +31390,9 @@
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><code>&lt;privileged_role&gt;</code></dt>
+<dt class="hdlist1"><code>&lt;reader_role&gt;</code></dt>
 <dd>
-<p>Specifies an Azure role that has read/write permissions to the disk encryption set. You may use the <code>Owner</code> role or a custom role with the necessary permissions.</p>
+<p>Specifies an Azure role with read permissions to the disk encryption set. You can use the <code>Owner</code> role or a custom role with the necessary permissions.</p>
 </dd>
 </dl>
 </div>
