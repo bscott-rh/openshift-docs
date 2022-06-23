@@ -684,7 +684,7 @@
 
                   <li>
                     <a class="" href="../../installing/disconnected_install/installing-mirroring-creating-registry.html">
-                      Creating a mirror registry
+                      Creating a mirror registry with mirror registry for Red Hat OpenShift
                     </a>
                   </li>
 
@@ -8338,7 +8338,31 @@
 
 
                   <li>
-                    <a class="" href="../../networking/external_dns_operator/nw-installing-external-dns-operator.html">
+                    <a class="" href="../../networking/external_dns_operator/understanding-external-dns-operator.html">
+                      Understanding the External DNS Operator
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../networking/external_dns_operator/nw-installing-external-dns-operator-on-cloud-providers.html">
                       Installing the External DNS Operator
                     </a>
                   </li>
@@ -8362,7 +8386,7 @@
 
 
                   <li>
-                    <a class="" href="../../networking/external_dns_operator/nw-external-dns-operator-configuration-parameters.html">
+                    <a class="" href="../../networking/external_dns_operator/nw-configuration-parameters.html">
                       External DNS Operator configuration parameters
                     </a>
                   </li>
@@ -8386,7 +8410,7 @@
 
 
                   <li>
-                    <a class="" href="../../networking/external_dns_operator/nw-control-dns-records-public-hosted-zone-aws.html">
+                    <a class="" href="../../networking/external_dns_operator/nw-creating-dns-records-on-aws.html">
                       Creating DNS records on an public hosted zone for AWS
                     </a>
                   </li>
@@ -8410,7 +8434,7 @@
 
 
                   <li>
-                    <a class="" href="../../networking/external_dns_operator/nw-control-dns-records-public-hosted-zone-azure.html">
+                    <a class="" href="../../networking/external_dns_operator/nw-creating-dns-records-on-azure.html">
                       Creating DNS records on an public zone for Azure
                     </a>
                   </li>
@@ -8434,7 +8458,7 @@
 
 
                   <li>
-                    <a class="" href="../../networking/external_dns_operator/nw-control-dns-records-public-managed-zone-gcp.html">
+                    <a class="" href="../../networking/external_dns_operator/nw-creating-dns-records-on-gcp.html">
                       Creating DNS records on an public managed zone for GCP
                     </a>
                   </li>
@@ -12796,6 +12820,66 @@
                     <li>
                       <a class="" href="../../operators/operator_sdk/helm/osdk-hybrid-helm.html" style="padding-left: 70px;">
                         Hybrid Helm Operator
+                      </a>
+                    </li>
+
+                  </ul>
+                  </li>
+
+
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+
+
+                <!-- Welcome 3 -->
+
+
+                
+                
+                
+
+                <li class="nav-header">
+                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-15-4-6">
+                    <span id="ssgSpan-15-4-6" class="fa fa-caret-right"></span>
+                    &nbsp;Java-based Operators
+                  </a>
+                  <ul id="topicSubSubGroup-15-4-6" class="nav-tertiary list-unstyled collapse">
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../../operators/operator_sdk/java/osdk-java-quickstart.html" style="padding-left: 70px;">
+                        Getting started
+                      </a>
+                    </li>
+
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../../operators/operator_sdk/java/osdk-java-tutorial.html" style="padding-left: 70px;">
+                        Tutorial
+                      </a>
+                    </li>
+
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../../operators/operator_sdk/java/osdk-java-project-layout.html" style="padding-left: 70px;">
+                        Project layout
                       </a>
                     </li>
 
@@ -31732,16 +31816,16 @@ Most of the information teaches the installation program and the resulting clust
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Configure <code>install-config.yaml</code>. Change the appropriate variables to match the environment, including <code>pullSecret</code> and <code>sshKey</code>.</p>
+<p>Configure <code>install-config.yaml</code>. Change the appropriate variables to match the environment, including <code>pullSecret</code> and <code>sshKey</code>:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
 <span class="na">baseDomain</span><span class="pi">:</span> <span class="s">&lt;domain&gt;</span>
 <span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;cluster-name&gt;</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;cluster_name&gt;</span>
 <span class="na">networking</span><span class="pi">:</span>
   <span class="na">machineNetwork</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">cidr</span><span class="pi">:</span> <span class="s">&lt;public-cidr&gt;</span>
+  <span class="pi">-</span> <span class="na">cidr</span><span class="pi">:</span> <span class="s">&lt;public_cidr&gt;</span>
   <span class="na">networkType</span><span class="pi">:</span> <span class="s">OVNKubernetes</span>
 <span class="na">compute</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">worker</span>
@@ -31753,51 +31837,53 @@ Most of the information teaches the installation program and the resulting clust
     <span class="na">baremetal</span><span class="pi">:</span> <span class="pi">{}</span>
 <span class="na">platform</span><span class="pi">:</span>
   <span class="na">baremetal</span><span class="pi">:</span>
-    <span class="na">apiVIP</span><span class="pi">:</span> <span class="s">&lt;api-ip&gt;</span>
-    <span class="na">ingressVIP</span><span class="pi">:</span> <span class="s">&lt;wildcard-ip&gt;</span>
+    <span class="na">apiVIP</span><span class="pi">:</span> <span class="s">&lt;api_ip&gt;</span>
+    <span class="na">ingressVIP</span><span class="pi">:</span> <span class="s">&lt;wildcard_ip&gt;</span>
     <span class="na">provisioningNetworkCIDR</span><span class="pi">:</span> <span class="s">&lt;CIDR&gt;</span>
+    <span class="na">bootstrapExternalStaticIP</span><span class="pi">:</span> <span class="s">&lt;bootstrap_static_ip_address&gt;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+    <span class="na">bootstrapExternalStaticGateway</span><span class="pi">:</span> <span class="s">&lt;bootstrap_static_gateway&gt;</span> <i class="conum" data-value="3"></i><b>(3)</b>
     <span class="na">hosts</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">openshift-master-0</span>
         <span class="na">role</span><span class="pi">:</span> <span class="s">master</span>
         <span class="na">bmc</span><span class="pi">:</span>
-          <span class="na">address</span><span class="pi">:</span> <span class="s">ipmi://&lt;out-of-band-ip&gt;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+          <span class="na">address</span><span class="pi">:</span> <span class="s">ipmi://&lt;out_of_band_ip&gt;</span> <i class="conum" data-value="4"></i><b>(4)</b>
           <span class="na">username</span><span class="pi">:</span> <span class="s">&lt;user&gt;</span>
           <span class="na">password</span><span class="pi">:</span> <span class="s">&lt;password&gt;</span>
-        <span class="na">bootMACAddress</span><span class="pi">:</span> <span class="s">&lt;NIC1-mac-address&gt;</span>
+        <span class="na">bootMACAddress</span><span class="pi">:</span> <span class="s">&lt;NIC1_mac_address&gt;</span>
         <span class="na">rootDeviceHints</span><span class="pi">:</span>
          <span class="na">deviceName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/dev/sda"</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;openshift-master-1&gt;</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;openshift_master_1&gt;</span>
         <span class="na">role</span><span class="pi">:</span> <span class="s">master</span>
         <span class="na">bmc</span><span class="pi">:</span>
-          <span class="na">address</span><span class="pi">:</span> <span class="s">ipmi://&lt;out-of-band-ip&gt;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+          <span class="na">address</span><span class="pi">:</span> <span class="s">ipmi://&lt;out_of_band_ip&gt;</span> <i class="conum" data-value="4"></i><b>(4)</b>
           <span class="na">username</span><span class="pi">:</span> <span class="s">&lt;user&gt;</span>
           <span class="na">password</span><span class="pi">:</span> <span class="s">&lt;password&gt;</span>
-        <span class="na">bootMACAddress</span><span class="pi">:</span> <span class="s">&lt;NIC1-mac-address&gt;</span>
+        <span class="na">bootMACAddress</span><span class="pi">:</span> <span class="s">&lt;NIC1_mac_address&gt;</span>
         <span class="na">rootDeviceHints</span><span class="pi">:</span>
          <span class="na">deviceName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/dev/sda"</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;openshift-master-2&gt;</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;openshift_master_2&gt;</span>
         <span class="na">role</span><span class="pi">:</span> <span class="s">master</span>
         <span class="na">bmc</span><span class="pi">:</span>
-          <span class="na">address</span><span class="pi">:</span> <span class="s">ipmi://&lt;out-of-band-ip&gt;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+          <span class="na">address</span><span class="pi">:</span> <span class="s">ipmi://&lt;out_of_band_ip&gt;</span> <i class="conum" data-value="4"></i><b>(4)</b>
           <span class="na">username</span><span class="pi">:</span> <span class="s">&lt;user&gt;</span>
           <span class="na">password</span><span class="pi">:</span> <span class="s">&lt;password&gt;</span>
-        <span class="na">bootMACAddress</span><span class="pi">:</span> <span class="s">&lt;NIC1-mac-address&gt;</span>
+        <span class="na">bootMACAddress</span><span class="pi">:</span> <span class="s">&lt;NIC1_mac_address&gt;</span>
         <span class="na">rootDeviceHints</span><span class="pi">:</span>
          <span class="na">deviceName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/dev/sda"</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;openshift-worker-0&gt;</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;openshift_worker_0&gt;</span>
         <span class="na">role</span><span class="pi">:</span> <span class="s">worker</span>
         <span class="na">bmc</span><span class="pi">:</span>
-          <span class="na">address</span><span class="pi">:</span> <span class="s">ipmi://&lt;out-of-band-ip&gt;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+          <span class="na">address</span><span class="pi">:</span> <span class="s">ipmi://&lt;out_of_band_ip&gt;</span> <i class="conum" data-value="4"></i><b>(4)</b>
           <span class="na">username</span><span class="pi">:</span> <span class="s">&lt;user&gt;</span>
           <span class="na">password</span><span class="pi">:</span> <span class="s">&lt;password&gt;</span>
-        <span class="na">bootMACAddress</span><span class="pi">:</span> <span class="s">&lt;NIC1-mac-address&gt;</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;openshift-worker-1&gt;</span>
+        <span class="na">bootMACAddress</span><span class="pi">:</span> <span class="s">&lt;NIC1_mac_address&gt;</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;openshift_worker_1&gt;</span>
         <span class="na">role</span><span class="pi">:</span> <span class="s">worker</span>
         <span class="na">bmc</span><span class="pi">:</span>
-          <span class="na">address</span><span class="pi">:</span> <span class="s">ipmi://&lt;out-of-band-ip&gt;</span>
+          <span class="na">address</span><span class="pi">:</span> <span class="s">ipmi://&lt;out_of_band_ip&gt;</span>
           <span class="na">username</span><span class="pi">:</span> <span class="s">&lt;user&gt;</span>
           <span class="na">password</span><span class="pi">:</span> <span class="s">&lt;password&gt;</span>
-        <span class="na">bootMACAddress</span><span class="pi">:</span> <span class="s">&lt;NIC1-mac-address&gt;</span>
+        <span class="na">bootMACAddress</span><span class="pi">:</span> <span class="s">&lt;NIC1_mac_address&gt;</span>
         <span class="na">rootDeviceHints</span><span class="pi">:</span>
          <span class="na">deviceName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/dev/sda"</span>
 <span class="na">pullSecret</span><span class="pi">:</span> <span class="s1">'</span><span class="s">&lt;pull_secret&gt;'</span>
@@ -31812,13 +31898,21 @@ Most of the information teaches the installation program and the resulting clust
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>When deploying a cluster with static IP addresses, you must set the <code>bootstrapExternalStaticIP</code> configuration setting to specify the static IP address of the bootstrap VM when there is no DHCP server on the <code>baremetal</code> network.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>When deploying a cluster with static IP addresses, you must set the <code>bootstrapExternalStaticGateway</code> configuration setting to specify the gateway IP address for the bootstrap VM when there is no DHCP server on the <code>baremetal</code> network.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
 <td>See the BMC addressing sections for more options.</td>
 </tr>
 </table>
 </div>
 </li>
 <li>
-<p>Create a directory to store cluster configs:</p>
+<p>Create a directory to store the cluster configuration:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">mkdir</span> ~/clusterconfigs</code></pre>
@@ -31890,6 +31984,16 @@ and the <code>bmc</code> parameter for the <code>install-config.yaml</code> file
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bootMode</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>UEFI</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The boot mode for a node. Options are <code>legacy</code>, <code>UEFI</code>, and <code>UEFISecureBoot</code>. If <code>bootMode</code> is not set, Ironic sets it while inspecting the node.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bootstrapExternalStaticIP</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The static IP address for the bootstrap VM. You must set this value when deploying a cluster with static IP addresses when there is no DHCP server on the <code>baremetal</code> network.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bootstrapExternalStaticGateway</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The static IP address of the gateway for the bootstrap VM. You must set this value when deploying a cluster with static IP addresses when there is no DHCP server on the <code>baremetal</code> network.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sshKey</code></p></td>

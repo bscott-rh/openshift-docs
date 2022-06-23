@@ -684,7 +684,7 @@
 
                   <li>
                     <a class="" href="../installing/disconnected_install/installing-mirroring-creating-registry.html">
-                      Creating a mirror registry
+                      Creating a mirror registry with mirror registry for Red Hat OpenShift
                     </a>
                   </li>
 
@@ -8338,7 +8338,31 @@
 
 
                   <li>
-                    <a class="" href="../networking/external_dns_operator/nw-installing-external-dns-operator.html">
+                    <a class="" href="../networking/external_dns_operator/understanding-external-dns-operator.html">
+                      Understanding the External DNS Operator
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../networking/external_dns_operator/nw-installing-external-dns-operator-on-cloud-providers.html">
                       Installing the External DNS Operator
                     </a>
                   </li>
@@ -8362,7 +8386,7 @@
 
 
                   <li>
-                    <a class="" href="../networking/external_dns_operator/nw-external-dns-operator-configuration-parameters.html">
+                    <a class="" href="../networking/external_dns_operator/nw-configuration-parameters.html">
                       External DNS Operator configuration parameters
                     </a>
                   </li>
@@ -8386,7 +8410,7 @@
 
 
                   <li>
-                    <a class="" href="../networking/external_dns_operator/nw-control-dns-records-public-hosted-zone-aws.html">
+                    <a class="" href="../networking/external_dns_operator/nw-creating-dns-records-on-aws.html">
                       Creating DNS records on an public hosted zone for AWS
                     </a>
                   </li>
@@ -8410,7 +8434,7 @@
 
 
                   <li>
-                    <a class="" href="../networking/external_dns_operator/nw-control-dns-records-public-hosted-zone-azure.html">
+                    <a class="" href="../networking/external_dns_operator/nw-creating-dns-records-on-azure.html">
                       Creating DNS records on an public zone for Azure
                     </a>
                   </li>
@@ -8434,7 +8458,7 @@
 
 
                   <li>
-                    <a class="" href="../networking/external_dns_operator/nw-control-dns-records-public-managed-zone-gcp.html">
+                    <a class="" href="../networking/external_dns_operator/nw-creating-dns-records-on-gcp.html">
                       Creating DNS records on an public managed zone for GCP
                     </a>
                   </li>
@@ -12796,6 +12820,66 @@
                     <li>
                       <a class="" href="../operators/operator_sdk/helm/osdk-hybrid-helm.html" style="padding-left: 70px;">
                         Hybrid Helm Operator
+                      </a>
+                    </li>
+
+                  </ul>
+                  </li>
+
+
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+
+
+                <!-- Welcome 3 -->
+
+
+                
+                
+                
+
+                <li class="nav-header">
+                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-15-4-6">
+                    <span id="ssgSpan-15-4-6" class="fa fa-caret-right"></span>
+                    &nbsp;Java-based Operators
+                  </a>
+                  <ul id="topicSubSubGroup-15-4-6" class="nav-tertiary list-unstyled collapse">
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../operators/operator_sdk/java/osdk-java-quickstart.html" style="padding-left: 70px;">
+                        Getting started
+                      </a>
+                    </li>
+
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../operators/operator_sdk/java/osdk-java-tutorial.html" style="padding-left: 70px;">
+                        Tutorial
+                      </a>
+                    </li>
+
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../operators/operator_sdk/java/osdk-java-project-layout.html" style="padding-left: 70px;">
+                        Project layout
                       </a>
                     </li>
 
@@ -31910,16 +31994,16 @@ See <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_li
 </div>
 </div>
 <div class="paragraph">
-<p>Note the worker with the role <code>worker-rt</code> that contains the string <code>4.18.0-305.30.1.rt7.102.el8_4.x86_64   cri-o://1.23.0-99.rhaos4.10.gitc3131de.el8</code>:</p>
+<p>Note the worker with the role <code>worker-rt</code> that contains the string <code>4.18.0-305.30.1.rt7.102.el8_4.x86_64   cri-o://1.24.0-99.rhaos4.10.gitc3131de.el8</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">NAME                               	STATUS   ROLES           	AGE 	VERSION                  	INTERNAL-IP
 EXTERNAL-IP   OS-IMAGE                                       	KERNEL-VERSION
 CONTAINER-RUNTIME
-rt-worker-0.example.com	          Ready	 worker,worker-rt   5d17h   v1.23.0
+rt-worker-0.example.com	          Ready	 worker,worker-rt   5d17h   v1.24.0
 </span><span class="gp">128.66.135.107   &lt;none&gt;</span><span class="w">    	        </span>Red Hat Enterprise Linux CoreOS 46.82.202008252340-0 <span class="o">(</span>Ootpa<span class="o">)</span>
-<span class="go">4.18.0-305.30.1.rt7.102.el8_4.x86_64   cri-o://1.23.0-99.rhaos4.10.gitc3131de.el8
+<span class="go">4.18.0-305.30.1.rt7.102.el8_4.x86_64   cri-o://1.24.0-99.rhaos4.10.gitc3131de.el8
 [...]</span></code></pre>
 </div>
 </div>
@@ -32873,7 +32957,7 @@ HugePages_Surp:        0
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Burstable and best-effort pods</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Burstable</code> and <code>BestEffort</code> pods</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Runs on any CPU except where low latency workload is running</p></td>
 </tr>
 <tr>
@@ -32898,6 +32982,17 @@ HugePages_Surp:        0
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>The allocatable capacity of cores on a node for pods of all QoS process types, <code>Burstable</code>,  <code>BestEffort</code>, or <code>Guaranteed</code>, is equal to the capacity of the isolated pool. The capacity of the reserved pool is removed from the node&#8217;s total core capacity for use by the cluster and operating system housekeeping duties.</p>
+</div>
+<div class="paragraph">
+<div class="title">Example 1</div>
+<p>A node features a capacity of 100 cores. Using a performance profile, the cluster administrator allocates 50 cores to the isolated pool and 50 cores to the reserved pool. The cluster administrator assigns 25 cores to QoS <code>Guaranteed</code> pods and 25 cores for <code>BestEffort</code> or <code>Burstable</code> pods. This matches the capacity of the isolated pool.</p>
+</div>
+<div class="paragraph">
+<div class="title">Example 2</div>
+<p>A node features a capacity of 100 cores. Using a performance profile, the cluster administrator allocates 50 cores to the isolated pool and 50 cores to the reserved pool. The cluster administrator assigns 50 cores to QoS <code>Guaranteed</code> pods and one core for <code>BestEffort</code> or <code>Burstable</code> pods. This exceeds the capacity of the isolated pool by one core. Pod scheduling fails because of insufficient CPU capacity.</p>
+</div>
 <div class="paragraph">
 <p>The exact partitioning pattern to use depends on many factors like hardware, workload characteristics and the expected system load. Some sample use cases are as follows:</p>
 </div>

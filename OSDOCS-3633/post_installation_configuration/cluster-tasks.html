@@ -684,7 +684,7 @@
 
                   <li>
                     <a class="" href="../installing/disconnected_install/installing-mirroring-creating-registry.html">
-                      Creating a mirror registry
+                      Creating a mirror registry with mirror registry for Red Hat OpenShift
                     </a>
                   </li>
 
@@ -8338,7 +8338,31 @@
 
 
                   <li>
-                    <a class="" href="../networking/external_dns_operator/nw-installing-external-dns-operator.html">
+                    <a class="" href="../networking/external_dns_operator/understanding-external-dns-operator.html">
+                      Understanding the External DNS Operator
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../networking/external_dns_operator/nw-installing-external-dns-operator-on-cloud-providers.html">
                       Installing the External DNS Operator
                     </a>
                   </li>
@@ -8362,7 +8386,7 @@
 
 
                   <li>
-                    <a class="" href="../networking/external_dns_operator/nw-external-dns-operator-configuration-parameters.html">
+                    <a class="" href="../networking/external_dns_operator/nw-configuration-parameters.html">
                       External DNS Operator configuration parameters
                     </a>
                   </li>
@@ -8386,7 +8410,7 @@
 
 
                   <li>
-                    <a class="" href="../networking/external_dns_operator/nw-control-dns-records-public-hosted-zone-aws.html">
+                    <a class="" href="../networking/external_dns_operator/nw-creating-dns-records-on-aws.html">
                       Creating DNS records on an public hosted zone for AWS
                     </a>
                   </li>
@@ -8410,7 +8434,7 @@
 
 
                   <li>
-                    <a class="" href="../networking/external_dns_operator/nw-control-dns-records-public-hosted-zone-azure.html">
+                    <a class="" href="../networking/external_dns_operator/nw-creating-dns-records-on-azure.html">
                       Creating DNS records on an public zone for Azure
                     </a>
                   </li>
@@ -8434,7 +8458,7 @@
 
 
                   <li>
-                    <a class="" href="../networking/external_dns_operator/nw-control-dns-records-public-managed-zone-gcp.html">
+                    <a class="" href="../networking/external_dns_operator/nw-creating-dns-records-on-gcp.html">
                       Creating DNS records on an public managed zone for GCP
                     </a>
                   </li>
@@ -12796,6 +12820,66 @@
                     <li>
                       <a class="" href="../operators/operator_sdk/helm/osdk-hybrid-helm.html" style="padding-left: 70px;">
                         Hybrid Helm Operator
+                      </a>
+                    </li>
+
+                  </ul>
+                  </li>
+
+
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+
+
+                <!-- Welcome 3 -->
+
+
+                
+                
+                
+
+                <li class="nav-header">
+                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-15-4-6">
+                    <span id="ssgSpan-15-4-6" class="fa fa-caret-right"></span>
+                    &nbsp;Java-based Operators
+                  </a>
+                  <ul id="topicSubSubGroup-15-4-6" class="nav-tertiary list-unstyled collapse">
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../operators/operator_sdk/java/osdk-java-quickstart.html" style="padding-left: 70px;">
+                        Getting started
+                      </a>
+                    </li>
+
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../operators/operator_sdk/java/osdk-java-tutorial.html" style="padding-left: 70px;">
+                        Tutorial
+                      </a>
+                    </li>
+
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../operators/operator_sdk/java/osdk-java-project-layout.html" style="padding-left: 70px;">
+                        Project layout
                       </a>
                     </li>
 
@@ -32066,7 +32150,7 @@ the pod on nodes with matching labels.</p>
 <div class="title">Example output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">NAME                                       STATUS   ROLES    AGE   VERSION
-ci-ln-l8nry52-f76d1-hl7m7-worker-c-vmqzp   Ready    worker   61s   v1.23.0</span></code></pre>
+ci-ln-l8nry52-f76d1-hl7m7-worker-c-vmqzp   Ready    worker   61s   v1.24.0</span></code></pre>
 </div>
 </div>
 </li>
@@ -32137,7 +32221,7 @@ ci-ln-l8nry52-f76d1-hl7m7-worker-c-vmqzp   Ready    worker   61s   v1.23.0</span
 <div class="title">Example output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">NAME                                       STATUS   ROLES    AGE   VERSION
-ci-ln-l8nry52-f76d1-hl7m7-worker-b-tgq49   Ready    worker   17m   v1.23.0</span></code></pre>
+ci-ln-l8nry52-f76d1-hl7m7-worker-b-tgq49   Ready    worker   17m   v1.24.0</span></code></pre>
 </div>
 </div>
 </li>
@@ -32939,7 +33023,7 @@ Taints:             node-role.kubernetes.io/infra:NoSchedule
 <div class="title">Example output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">NAME                          STATUS  ROLES         AGE   VERSION
-ip-10-0-217-226.ec2.internal  Ready   infra,worker  17h   v1.23.0</span></code></pre>
+ip-10-0-217-226.ec2.internal  Ready   infra,worker  17h   v1.24.0</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -33260,13 +33344,13 @@ ip-10-0-217-226.ec2.internal  Ready   infra,worker  17h   v1.23.0</span></code><
 <div class="title">Example output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">NAME                                         STATUS   ROLES          AGE   VERSION
-ip-10-0-133-216.us-east-2.compute.internal   Ready    master         60m   v1.23.0
-ip-10-0-139-146.us-east-2.compute.internal   Ready    master         60m   v1.23.0
-ip-10-0-139-192.us-east-2.compute.internal   Ready    worker         51m   v1.23.0
-ip-10-0-139-241.us-east-2.compute.internal   Ready    worker         51m   v1.23.0
-ip-10-0-147-79.us-east-2.compute.internal    Ready    worker         51m   v1.23.0
-ip-10-0-152-241.us-east-2.compute.internal   Ready    master         60m   v1.23.0
-ip-10-0-139-48.us-east-2.compute.internal    Ready    infra          51m   v1.23.0</span></code></pre>
+ip-10-0-133-216.us-east-2.compute.internal   Ready    master         60m   v1.24.0
+ip-10-0-139-146.us-east-2.compute.internal   Ready    master         60m   v1.24.0
+ip-10-0-139-192.us-east-2.compute.internal   Ready    worker         51m   v1.24.0
+ip-10-0-139-241.us-east-2.compute.internal   Ready    worker         51m   v1.24.0
+ip-10-0-147-79.us-east-2.compute.internal    Ready    worker         51m   v1.24.0
+ip-10-0-152-241.us-east-2.compute.internal   Ready    master         60m   v1.24.0
+ip-10-0-139-48.us-east-2.compute.internal    Ready    infra          51m   v1.24.0</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -34952,14 +35036,14 @@ static-pod-resources/kube-scheduler-pod-8/kube-scheduler-pod.yaml</span></code><
 <div class="title">Sample output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">NAME                STATUS  ROLES          AGE     VERSION
-host-172-25-75-28   Ready   master         3d20h   v1.23.3+e419edf
-host-172-25-75-38   Ready   infra,worker   3d20h   v1.23.3+e419edf
-host-172-25-75-40   Ready   master         3d20h   v1.23.3+e419edf
-host-172-25-75-65   Ready   master         3d20h   v1.23.3+e419edf
-host-172-25-75-74   Ready   infra,worker   3d20h   v1.23.3+e419edf
-host-172-25-75-79   Ready   worker         3d20h   v1.23.3+e419edf
-host-172-25-75-86   Ready   worker         3d20h   v1.23.3+e419edf
-host-172-25-75-98   Ready   infra,worker   3d20h   v1.23.3+e419edf</span></code></pre>
+host-172-25-75-28   Ready   master         3d20h   v1.24.0
+host-172-25-75-38   Ready   infra,worker   3d20h   v1.24.0
+host-172-25-75-40   Ready   master         3d20h   v1.24.0
+host-172-25-75-65   Ready   master         3d20h   v1.24.0
+host-172-25-75-74   Ready   infra,worker   3d20h   v1.24.0
+host-172-25-75-79   Ready   worker         3d20h   v1.24.0
+host-172-25-75-86   Ready   worker         3d20h   v1.24.0
+host-172-25-75-98   Ready   infra,worker   3d20h   v1.24.0</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -35766,7 +35850,7 @@ percentage of replicas that must be up at a time.</p>
 <p>Create a YAML file with the an object definition similar to the following:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">policy/v1beta1</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">policy/v1</span> <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">PodDisruptionBudget</span>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s">my-pdb</span>
@@ -35781,7 +35865,7 @@ percentage of replicas that must be up at a time.</p>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><code>PodDisruptionBudget</code> is part of the <code>policy/v1beta1</code> API group.</td>
+<td><code>PodDisruptionBudget</code> is part of the <code>policy/v1</code> API group.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -35791,7 +35875,7 @@ be either an integer or a string specifying a percentage, for example, <code>20%
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
 <td>A label query over a set of resources. The result of <code>matchLabels</code> and
-<code>matchExpressions</code> are logically conjoined.</td>
+<code>matchExpressions</code> are logically conjoined. Leave this paramter blank, for example <code>selector {}</code>, to select all pods in the project.</td>
 </tr>
 </table>
 </div>
@@ -35800,7 +35884,7 @@ be either an integer or a string specifying a percentage, for example, <code>20%
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">policy/v1beta1</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">policy/v1</span> <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">PodDisruptionBudget</span>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s">my-pdb</span>
@@ -35815,7 +35899,7 @@ be either an integer or a string specifying a percentage, for example, <code>20%
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><code>PodDisruptionBudget</code> is part of the <code>policy/v1beta1</code> API group.</td>
+<td><code>PodDisruptionBudget</code> is part of the <code>policy/v1</code> API group.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -35825,7 +35909,7 @@ be either an integer or a string specifying a percentage, for example, <code>20%
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
 <td>A label query over a set of resources. The result of <code>matchLabels</code> and
-<code>matchExpressions</code> are logically conjoined.</td>
+<code>matchExpressions</code> are logically conjoined. Leave this paramter blank, for example <code>selector {}</code>, to select all pods in the project.</td>
 </tr>
 </table>
 </div>

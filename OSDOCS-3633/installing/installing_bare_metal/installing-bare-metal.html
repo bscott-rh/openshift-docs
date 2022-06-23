@@ -684,7 +684,7 @@
 
                   <li>
                     <a class="" href="../../installing/disconnected_install/installing-mirroring-creating-registry.html">
-                      Creating a mirror registry
+                      Creating a mirror registry with mirror registry for Red Hat OpenShift
                     </a>
                   </li>
 
@@ -8338,7 +8338,31 @@
 
 
                   <li>
-                    <a class="" href="../../networking/external_dns_operator/nw-installing-external-dns-operator.html">
+                    <a class="" href="../../networking/external_dns_operator/understanding-external-dns-operator.html">
+                      Understanding the External DNS Operator
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../networking/external_dns_operator/nw-installing-external-dns-operator-on-cloud-providers.html">
                       Installing the External DNS Operator
                     </a>
                   </li>
@@ -8362,7 +8386,7 @@
 
 
                   <li>
-                    <a class="" href="../../networking/external_dns_operator/nw-external-dns-operator-configuration-parameters.html">
+                    <a class="" href="../../networking/external_dns_operator/nw-configuration-parameters.html">
                       External DNS Operator configuration parameters
                     </a>
                   </li>
@@ -8386,7 +8410,7 @@
 
 
                   <li>
-                    <a class="" href="../../networking/external_dns_operator/nw-control-dns-records-public-hosted-zone-aws.html">
+                    <a class="" href="../../networking/external_dns_operator/nw-creating-dns-records-on-aws.html">
                       Creating DNS records on an public hosted zone for AWS
                     </a>
                   </li>
@@ -8410,7 +8434,7 @@
 
 
                   <li>
-                    <a class="" href="../../networking/external_dns_operator/nw-control-dns-records-public-hosted-zone-azure.html">
+                    <a class="" href="../../networking/external_dns_operator/nw-creating-dns-records-on-azure.html">
                       Creating DNS records on an public zone for Azure
                     </a>
                   </li>
@@ -8434,7 +8458,7 @@
 
 
                   <li>
-                    <a class="" href="../../networking/external_dns_operator/nw-control-dns-records-public-managed-zone-gcp.html">
+                    <a class="" href="../../networking/external_dns_operator/nw-creating-dns-records-on-gcp.html">
                       Creating DNS records on an public managed zone for GCP
                     </a>
                   </li>
@@ -12796,6 +12820,66 @@
                     <li>
                       <a class="" href="../../operators/operator_sdk/helm/osdk-hybrid-helm.html" style="padding-left: 70px;">
                         Hybrid Helm Operator
+                      </a>
+                    </li>
+
+                  </ul>
+                  </li>
+
+
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+
+
+                <!-- Welcome 3 -->
+
+
+                
+                
+                
+
+                <li class="nav-header">
+                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-15-4-6">
+                    <span id="ssgSpan-15-4-6" class="fa fa-caret-right"></span>
+                    &nbsp;Java-based Operators
+                  </a>
+                  <ul id="topicSubSubGroup-15-4-6" class="nav-tertiary list-unstyled collapse">
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../../operators/operator_sdk/java/osdk-java-quickstart.html" style="padding-left: 70px;">
+                        Getting started
+                      </a>
+                    </li>
+
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../../operators/operator_sdk/java/osdk-java-tutorial.html" style="padding-left: 70px;">
+                        Tutorial
+                      </a>
+                    </li>
+
+
+                    <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
+
+
+                    <li>
+                      <a class="" href="../../operators/operator_sdk/java/osdk-java-project-layout.html" style="padding-left: 70px;">
+                        Project layout
                       </a>
                     </li>
 
@@ -37293,7 +37377,7 @@ To use host binaries, run `chroot /host`
 <div class="title">Example output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">INFO Waiting up to 30m0s for the Kubernetes API at https://api.test.example.com:6443...
-INFO API v1.23.0 up
+INFO API v1.24.0 up
 INFO Waiting up to 30m0s for bootstrapping to complete...
 INFO It is now safe to remove the bootstrap resources</span></code></pre>
 </div>
@@ -37419,9 +37503,9 @@ the installation files in.</td>
 <div class="title">Example output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">NAME      STATUS    ROLES   AGE  VERSION
-master-0  Ready     master  63m  v1.23.0
-master-1  Ready     master  63m  v1.23.0
-master-2  Ready     master  64m  v1.23.0</span></code></pre>
+master-0  Ready     master  63m  v1.24.0
+master-1  Ready     master  63m  v1.24.0
+master-2  Ready     master  64m  v1.24.0</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -37594,11 +37678,11 @@ csr-c57lv   5m26s   system:node:ip-10-0-95-157.us-east-2.compute.internal       
 <div class="title">Example output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">NAME      STATUS    ROLES   AGE  VERSION
-master-0  Ready     master  73m  v1.23.0
-master-1  Ready     master  73m  v1.23.0
-master-2  Ready     master  74m  v1.23.0
-worker-0  Ready     worker  11m  v1.23.0
-worker-1  Ready     worker  11m  v1.23.0</span></code></pre>
+master-0  Ready     master  73m  v1.24.0
+master-1  Ready     master  73m  v1.24.0
+master-2  Ready     master  74m  v1.24.0
+worker-0  Ready     worker  11m  v1.24.0
+worker-1  Ready     worker  11m  v1.24.0</span></code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
