@@ -13109,7 +13109,7 @@
 
                   <li>
                     <a class="" href="../operators/operator_sdk/osdk-ha-sno.html">
-                      High-availability or single node cluster detection and support
+                      High-availability or single-node cluster detection and support
                     </a>
                   </li>
 
@@ -14169,6 +14169,30 @@
                   <li>
                     <a class="" href="../cicd/gitops/uninstalling-openshift-gitops.html">
                       Uninstalling OpenShift GitOps
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../cicd/gitops/setting-up-argocd-instance.html">
+                      Setting up a new Argo CD instance
                     </a>
                   </li>
 
@@ -18835,7 +18859,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../monitoring/accessing-third-party-monitoring-uis-and-apis.html">Accessing third-party monitoring UIs and APIs</a></li>
+            <li><a class="" href="../monitoring/accessing-third-party-monitoring-apis.html">Accessing third-party monitoring APIs</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19100,7 +19124,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single node OpenShift</a></li>
+            <li><a class="" href="../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19113,7 +19137,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single node OpenShift</a></li>
+            <li><a class="" href="../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27476,7 +27500,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../virt/virt-learn-more-about-openshift-virtualization.html">Start here with OpenShift Virtualization</a></li>
+            <li><a class="" href="../virt/virt-learn-more-about-openshift-virtualization.html">Getting started with OpenShift Virtualization</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27530,31 +27554,7 @@
 
                   <li>
                     <a class="" href="../virt/install/preparing-cluster-for-virt.html">
-                      Preparing your OpenShift cluster for OpenShift Virtualization
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../virt/install/virt-planning-environment-object-maximums.html">
-                      Planning your environment according to OpenShift Virtualization object maximums
+                      Preparing your cluster for OpenShift Virtualization
                     </a>
                   </li>
 
@@ -29548,6 +29548,30 @@
 
 
                   <li>
+                    <a class="" href="../virt/logging_events_monitoring/virt-running-cluster-checkups.html">
+                      Running OpenShift cluster checkups
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
                     <a class="" href="../virt/logging_events_monitoring/virt-prometheus-queries.html">
                       Prometheus queries for virtual resources
                     </a>
@@ -31445,10 +31469,10 @@
 <div class="sect2">
 <h3 id="control-plane-and-node-host-compatibility"><a class="anchor" href="#control-plane-and-node-host-compatibility"></a>Control plane and node host compatibility</h3>
 <div class="paragraph">
-<p>The OpenShift Container Platform version must match between control plane host and node host. For example, in a 4.10 cluster, all control plane hosts must be 4.10 and all nodes must be 4.10.</p>
+<p>The OpenShift Container Platform version must match between control plane host and node host. For example, in a 4.11 cluster, all control plane hosts must be 4.11 and all nodes must be 4.11.</p>
 </div>
 <div class="paragraph">
-<p>Temporary mismatches during cluster upgrades are acceptable. For example, when upgrading from OpenShift Container Platform 4.9 to 4.10, some nodes will upgrade to 4.10 before others. Prolonged skewing of control plane hosts and node hosts might expose older compute machines to bugs and missing features. Users should resolve skewed control plane hosts and node hosts as soon as possible.</p>
+<p>Temporary mismatches during cluster upgrades are acceptable. For example, when upgrading from OpenShift Container Platform 4.10 to 4.11, some nodes will upgrade to 4.11 before others. Prolonged skewing of control plane hosts and node hosts might expose older compute machines to bugs and missing features. Users should resolve skewed control plane hosts and node hosts as soon as possible.</p>
 </div>
 <div class="paragraph">
 <p>The <code>kubelet</code> service must not be newer than <code>kube-apiserver</code>, and can be up to two minor versions older depending on whether your OpenShift Container Platform version is odd or even. The table below shows the appropriate version compatibility:</p>
@@ -31480,7 +31504,7 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>For example, OpenShift Container Platform 4.5, 4.7, 4.9.</p>
+<p>For example, OpenShift Container Platform 4.5, 4.7, 4.9, 4.11.</p>
 </li>
 <li>
 <p>For example, OpenShift Container Platform 4.6, 4.8, 4.10.</p>

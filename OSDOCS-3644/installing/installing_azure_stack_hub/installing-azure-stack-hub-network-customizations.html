@@ -13109,7 +13109,7 @@
 
                   <li>
                     <a class="" href="../../operators/operator_sdk/osdk-ha-sno.html">
-                      High-availability or single node cluster detection and support
+                      High-availability or single-node cluster detection and support
                     </a>
                   </li>
 
@@ -14169,6 +14169,30 @@
                   <li>
                     <a class="" href="../../cicd/gitops/uninstalling-openshift-gitops.html">
                       Uninstalling OpenShift GitOps
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../cicd/gitops/setting-up-argocd-instance.html">
+                      Setting up a new Argo CD instance
                     </a>
                   </li>
 
@@ -18835,7 +18859,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../monitoring/accessing-third-party-monitoring-uis-and-apis.html">Accessing third-party monitoring UIs and APIs</a></li>
+            <li><a class="" href="../../monitoring/accessing-third-party-monitoring-apis.html">Accessing third-party monitoring APIs</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19100,7 +19124,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single node OpenShift</a></li>
+            <li><a class="" href="../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19113,7 +19137,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single node OpenShift</a></li>
+            <li><a class="" href="../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27476,7 +27500,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../virt/virt-learn-more-about-openshift-virtualization.html">Start here with OpenShift Virtualization</a></li>
+            <li><a class="" href="../../virt/virt-learn-more-about-openshift-virtualization.html">Getting started with OpenShift Virtualization</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27530,31 +27554,7 @@
 
                   <li>
                     <a class="" href="../../virt/install/preparing-cluster-for-virt.html">
-                      Preparing your OpenShift cluster for OpenShift Virtualization
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../virt/install/virt-planning-environment-object-maximums.html">
-                      Planning your environment according to OpenShift Virtualization object maximums
+                      Preparing your cluster for OpenShift Virtualization
                     </a>
                   </li>
 
@@ -29526,6 +29526,30 @@
                   <li>
                     <a class="" href="../../virt/logging_events_monitoring/virt-openshift-cluster-monitoring.html">
                       OpenShift cluster monitoring, logging, and Telemetry
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../virt/logging_events_monitoring/virt-running-cluster-checkups.html">
+                      Running OpenShift cluster checkups
                     </a>
                   </li>
 
@@ -32175,7 +32199,7 @@ The prefix length for an IPv4 block is between <code>0</code> and <code>32</code
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>capabilities.baselineCapabilitySet</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Selects an initial set of optional capabilities to enable. Valid values are <code>None</code>, <code>v4.11</code> and <code>vCurrent</code>. The default value is <code>vCurrent</code> which installs the recommended set of capabilities for the current version of OpenShift Container Platform. In OpenShift Container Platform Branch Build, the <code>baremetal</code> Operator, the <code>marketplace</code> Operator, and the <code>samples</code> content are optional capabilities.</p>
+<p>Selects an initial set of optional capabilities to enable. Valid values are <code>None</code>, <code>v4.11</code> and <code>vCurrent</code>. <code>v4.11</code> enables the <code>baremetal</code> Operator, the <code>marketplace</code> Operator, and the <code>openshift-samples</code> content. <code>vCurrent</code> installs the recommended set of capabilities for the current version of OpenShift Container Platform. The default value is <code>vCurrent</code>.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>String</p>
@@ -32184,7 +32208,7 @@ The prefix length for an IPv4 block is between <code>0</code> and <code>32</code
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>capabilities.additionalEnabledCapabilities</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Extends the set of optional capabilities beyond what you specify in <code>baselineCapabilitySet</code>. Valid values are <code>baremetal</code>, <code>marketplace</code> and <code>samples</code>. You may specify multiple capabilities in this parameter.</p>
+<p>Extends the set of optional capabilities beyond what you specify in <code>baselineCapabilitySet</code>. Valid values are <code>baremetal</code>, <code>marketplace</code> and <code>openshift-samples</code>. You may specify multiple capabilities in this parameter.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>String array</p>
@@ -32624,7 +32648,11 @@ configuring user-defined routing.</p>
 <span class="na">additionalTrustBundle</span><span class="pi">:</span> <span class="pi">|</span> <i class="conum" data-value="13"></i><b>(13)</b>
     <span class="s">-----BEGIN CERTIFICATE-----</span>
     <span class="s">&lt;MY_TRUSTED_CA_CERT&gt;</span>
-    <span class="s">-----END CERTIFICATE-----</span></code></pre>
+    <span class="s">-----END CERTIFICATE-----</span>
+<span class="na">capabilities</span><span class="pi">:</span>
+    <span class="na">baselineCapabilitySet</span><span class="pi">:</span> <span class="s">None</span>
+    <span class="na">additionalEnabledCapabilities</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">openshift-samples</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">

@@ -14,7 +14,7 @@
   
   
   
-  <title>Workload partitioning on single node OpenShift | Scalability and performance | OpenShift Container Platform Branch Build</title>
+  <title>Workload partitioning on single-node OpenShift | Scalability and performance | OpenShift Container Platform Branch Build</title>
   <link href="https://assets.openshift.net/content/subdomain.css" rel="stylesheet" type="text/css">
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/search.css" rel="stylesheet" />
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/autumn.css" rel="stylesheet" />
@@ -221,7 +221,7 @@
       </li>
       
       <li class="hidden-xs active">
-        Workload partitioning on single node OpenShift
+        Workload partitioning on single-node OpenShift
       </li>
       
       <span text-align="right" style="float: right !important">
@@ -13109,7 +13109,7 @@
 
                   <li>
                     <a class="" href="../operators/operator_sdk/osdk-ha-sno.html">
-                      High-availability or single node cluster detection and support
+                      High-availability or single-node cluster detection and support
                     </a>
                   </li>
 
@@ -14169,6 +14169,30 @@
                   <li>
                     <a class="" href="../cicd/gitops/uninstalling-openshift-gitops.html">
                       Uninstalling OpenShift GitOps
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../cicd/gitops/setting-up-argocd-instance.html">
+                      Setting up a new Argo CD instance
                     </a>
                   </li>
 
@@ -18835,7 +18859,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../monitoring/accessing-third-party-monitoring-uis-and-apis.html">Accessing third-party monitoring UIs and APIs</a></li>
+            <li><a class="" href="../monitoring/accessing-third-party-monitoring-apis.html">Accessing third-party monitoring APIs</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19100,7 +19124,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single node OpenShift</a></li>
+            <li><a class="" href="../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19113,7 +19137,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class=" active" href="../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single node OpenShift</a></li>
+            <li><a class=" active" href="../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27476,7 +27500,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../virt/virt-learn-more-about-openshift-virtualization.html">Start here with OpenShift Virtualization</a></li>
+            <li><a class="" href="../virt/virt-learn-more-about-openshift-virtualization.html">Getting started with OpenShift Virtualization</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27530,31 +27554,7 @@
 
                   <li>
                     <a class="" href="../virt/install/preparing-cluster-for-virt.html">
-                      Preparing your OpenShift cluster for OpenShift Virtualization
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../virt/install/virt-planning-environment-object-maximums.html">
-                      Planning your environment according to OpenShift Virtualization object maximums
+                      Preparing your cluster for OpenShift Virtualization
                     </a>
                   </li>
 
@@ -29548,6 +29548,30 @@
 
 
                   <li>
+                    <a class="" href="../virt/logging_events_monitoring/virt-running-cluster-checkups.html">
+                      Running OpenShift cluster checkups
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
                     <a class="" href="../virt/logging_events_monitoring/virt-prometheus-queries.html">
                       Prometheus queries for virtual resources
                     </a>
@@ -31330,7 +31354,7 @@
       <div class="col-xs-12 col-sm-9 col-md-9 main">
         <div class="page-header">
           <h1>
-            Workload partitioning on single node OpenShift
+            Workload partitioning on single-node Openshift
           </h1>
         </div>
         
@@ -31344,13 +31368,13 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>In resource-constrained environments, such as single node production deployments, it is advantageous to reserve most of the CPU resources for your own workloads and configure OpenShift Container Platform to run on a fixed number of CPUs within the host. In these environments, management workloads, including the control plane, need to be configured to use fewer resources than they might by default in normal clusters. You can isolate the OpenShift Container Platform services, cluster management workloads, and infrastructure pods to run on a reserved set of CPUs.</p>
+<p>In resource-constrained environments, such as single-node Openshift deployments, it is advantageous to reserve most of the CPU resources for your own workloads and configure OpenShift Container Platform to run on a fixed number of CPUs within the host. In these environments, management workloads, including the control plane, need to be configured to use fewer resources than they might by default in normal clusters. You can isolate the OpenShift Container Platform services, cluster management workloads, and infrastructure pods to run on a reserved set of CPUs.</p>
 </div>
 <div class="paragraph">
-<p>When you use workload partitioning, the CPU resources used by OpenShift Container Platform for cluster management are isolated to a partitioned set of CPU resources on a single node cluster. This partitioning isolates cluster management functions to the defined number of CPUs. All cluster management functions operate solely on that <code>cpuset</code> configuration.</p>
+<p>When you use workload partitioning, the CPU resources used by OpenShift Container Platform for cluster management are isolated to a partitioned set of CPU resources on a single-node cluster. This partitioning isolates cluster management functions to the defined number of CPUs. All cluster management functions operate solely on that <code>cpuset</code> configuration.</p>
 </div>
 <div class="paragraph">
-<p>The minimum number of reserved CPUs required for the management partition for a single node cluster is four CPU Hyper threads (HTs). The set of pods that make up the baseline OpenShift Container Platform installation and a set of typical add-on Operators are annotated for inclusion in the management workload partition. These pods operate normally within the minimum size <code>cpuset</code> configuration. Inclusion of Operators or workloads outside of the set of accepted management pods requires additional CPU HTs to be added to that partition.</p>
+<p>The minimum number of reserved CPUs required for the management partition for a single-node cluster is four CPU Hyper threads (HTs). The set of pods that make up the baseline OpenShift Container Platform installation and a set of typical add-on Operators are annotated for inclusion in the management workload partition. These pods operate normally within the minimum size <code>cpuset</code> configuration. Inclusion of Operators or workloads outside of the set of accepted management pods requires additional CPU HTs to be added to that partition.</p>
 </div>
 <div class="paragraph">
 <p>Workload partitioning isolates the user workloads away from the platform workloads using the normal scheduling capabilities of Kubernetes to manage the number of pods that can be placed onto those cores, and avoids mixing cluster management workloads and user workloads.</p>
@@ -31381,7 +31405,7 @@ for each defined CPU pool, or workload-type. Kubelet advertises these new resour
 <h2 id="sno-du-enabling-workload-partitioning_sno-du-enabling-workload-partitioning-on-single-node-openshift"><a class="anchor" href="#sno-du-enabling-workload-partitioning_sno-du-enabling-workload-partitioning-on-single-node-openshift"></a>Enabling workload partitioning</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A key feature to enable as part of a single node installation is workload partitioning. This limits the cores allowed to run platform services, maximizing the CPU core for application payloads. You must configure workload partitioning at cluster installation time.</p>
+<p>A key feature to enable as part of a single-node Openshift installation is workload partitioning. This limits the cores allowed to run platform services, maximizing the CPU core for application payloads. You must configure workload partitioning at cluster installation time.</p>
 </div>
 <div class="admonitionblock note">
 <table>

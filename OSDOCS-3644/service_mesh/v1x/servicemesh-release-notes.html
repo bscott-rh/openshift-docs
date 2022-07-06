@@ -13109,7 +13109,7 @@
 
                   <li>
                     <a class="" href="../../operators/operator_sdk/osdk-ha-sno.html">
-                      High-availability or single node cluster detection and support
+                      High-availability or single-node cluster detection and support
                     </a>
                   </li>
 
@@ -14169,6 +14169,30 @@
                   <li>
                     <a class="" href="../../cicd/gitops/uninstalling-openshift-gitops.html">
                       Uninstalling OpenShift GitOps
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../cicd/gitops/setting-up-argocd-instance.html">
+                      Setting up a new Argo CD instance
                     </a>
                   </li>
 
@@ -18835,7 +18859,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../monitoring/accessing-third-party-monitoring-uis-and-apis.html">Accessing third-party monitoring UIs and APIs</a></li>
+            <li><a class="" href="../../monitoring/accessing-third-party-monitoring-apis.html">Accessing third-party monitoring APIs</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19100,7 +19124,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single node OpenShift</a></li>
+            <li><a class="" href="../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19113,7 +19137,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single node OpenShift</a></li>
+            <li><a class="" href="../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27476,7 +27500,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../virt/virt-learn-more-about-openshift-virtualization.html">Start here with OpenShift Virtualization</a></li>
+            <li><a class="" href="../../virt/virt-learn-more-about-openshift-virtualization.html">Getting started with OpenShift Virtualization</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27530,31 +27554,7 @@
 
                   <li>
                     <a class="" href="../../virt/install/preparing-cluster-for-virt.html">
-                      Preparing your OpenShift cluster for OpenShift Virtualization
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../virt/install/virt-planning-environment-object-maximums.html">
-                      Planning your environment according to OpenShift Virtualization object maximums
+                      Preparing your cluster for OpenShift Virtualization
                     </a>
                   </li>
 
@@ -29548,6 +29548,30 @@
 
 
                   <li>
+                    <a class="" href="../../virt/logging_events_monitoring/virt-running-cluster-checkups.html">
+                      Running OpenShift cluster checkups
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
                     <a class="" href="../../virt/logging_events_monitoring/virt-prometheus-queries.html">
                       Prometheus queries for virtual resources
                     </a>
@@ -31402,6 +31426,26 @@
 </li>
 </ul>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>You are viewing documentation for a Red Hat OpenShift Service Mesh release that is no longer supported.</strong></p>
+</div>
+<div class="paragraph">
+<p>Service Mesh version 1.0 and 1.1 control planes are no longer supported. For information about upgrading your service mesh control plane, see <a href="../../service_mesh/v2x/upgrading-ossm.html#ossm-versions_ossm-upgrade">Upgrading Service Mesh</a>.</p>
+</div>
+<div class="paragraph">
+<p>For information about the support status of a particular Red Hat OpenShift Service Mesh release, see the <a href="https://access.redhat.com/support/policy/updates/openshift#ossm">Product lifecycle page</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -31497,7 +31541,7 @@ and Red Hat OpenShift Service Mesh.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc adm must-gather  <span class="nt">--image</span><span class="o">=</span>registry.redhat.io/container-native-virtualization/cnv-must-gather-rhel8:v4.10.0</code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc adm must-gather  <span class="nt">--image</span><span class="o">=</span>registry.redhat.io/container-native-virtualization/cnv-must-gather-rhel8:v4.11.0</code></pre>
 </div>
 </div>
 </li>

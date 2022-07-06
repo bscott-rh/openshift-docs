@@ -13109,7 +13109,7 @@
 
                   <li>
                     <a class="" href="../../../operators/operator_sdk/osdk-ha-sno.html">
-                      High-availability or single node cluster detection and support
+                      High-availability or single-node cluster detection and support
                     </a>
                   </li>
 
@@ -14169,6 +14169,30 @@
                   <li>
                     <a class="" href="../../../cicd/gitops/uninstalling-openshift-gitops.html">
                       Uninstalling OpenShift GitOps
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../../cicd/gitops/setting-up-argocd-instance.html">
+                      Setting up a new Argo CD instance
                     </a>
                   </li>
 
@@ -18835,7 +18859,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../../monitoring/accessing-third-party-monitoring-uis-and-apis.html">Accessing third-party monitoring UIs and APIs</a></li>
+            <li><a class="" href="../../../monitoring/accessing-third-party-monitoring-apis.html">Accessing third-party monitoring APIs</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19100,7 +19124,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single node OpenShift</a></li>
+            <li><a class="" href="../../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19113,7 +19137,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single node OpenShift</a></li>
+            <li><a class="" href="../../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27476,7 +27500,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../../virt/virt-learn-more-about-openshift-virtualization.html">Start here with OpenShift Virtualization</a></li>
+            <li><a class="" href="../../../virt/virt-learn-more-about-openshift-virtualization.html">Getting started with OpenShift Virtualization</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27530,31 +27554,7 @@
 
                   <li>
                     <a class="" href="../../../virt/install/preparing-cluster-for-virt.html">
-                      Preparing your OpenShift cluster for OpenShift Virtualization
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../../virt/install/virt-planning-environment-object-maximums.html">
-                      Planning your environment according to OpenShift Virtualization object maximums
+                      Preparing your cluster for OpenShift Virtualization
                     </a>
                   </li>
 
@@ -29526,6 +29526,30 @@
                   <li>
                     <a class="" href="../../../virt/logging_events_monitoring/virt-openshift-cluster-monitoring.html">
                       OpenShift cluster monitoring, logging, and Telemetry
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../../virt/logging_events_monitoring/virt-running-cluster-checkups.html">
+                      Running OpenShift cluster checkups
                     </a>
                   </li>
 
@@ -31676,14 +31700,14 @@
 <div class="sect3">
 <h4 id="olm-catalogsource-image-template_olm-understanding-olm"><a class="anchor" href="#olm-catalogsource-image-template_olm-understanding-olm"></a>Image template for custom catalog sources</h4>
 <div class="paragraph">
-<p>Operator compatibility with the underlying cluster can be expressed by a catalog source in various ways. One way, which is used for the default Red Hat-provided catalog sources, is to identify image tags for index images that are specifically created for a particular platform release, for example OpenShift Container Platform 4.10.</p>
+<p>Operator compatibility with the underlying cluster can be expressed by a catalog source in various ways. One way, which is used for the default Red Hat-provided catalog sources, is to identify image tags for index images that are specifically created for a particular platform release, for example OpenShift Container Platform 4.11.</p>
 </div>
 <div class="paragraph">
-<p>During a cluster upgrade, the index image tag for the default Red Hat-provided catalog sources are updated automatically by the Cluster Version Operator (CVO) so that Operator Lifecycle Manager (OLM) pulls the updated version of the catalog. For example during an upgrade from OpenShift Container Platform 4.9 to 4.10, the <code>spec.image</code> field in the <code>CatalogSource</code> object for the <code>redhat-operators</code> catalog is updated from:</p>
+<p>During a cluster upgrade, the index image tag for the default Red Hat-provided catalog sources are updated automatically by the Cluster Version Operator (CVO) so that Operator Lifecycle Manager (OLM) pulls the updated version of the catalog. For example during an upgrade from OpenShift Container Platform 4.10 to 4.11, the <code>spec.image</code> field in the <code>CatalogSource</code> object for the <code>redhat-operators</code> catalog is updated from:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">registry.redhat.io/redhat/redhat-operator-index:v4.9</span></code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">registry.redhat.io/redhat/redhat-operator-index:v4.10</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -31691,7 +31715,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">registry.redhat.io/redhat/redhat-operator-index:v4.10</span></code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">registry.redhat.io/redhat/redhat-operator-index:v4.11</span></code></pre>
 </div>
 </div>
 <div class="paragraph">

@@ -13109,7 +13109,7 @@
 
                   <li>
                     <a class="" href="../../operators/operator_sdk/osdk-ha-sno.html">
-                      High-availability or single node cluster detection and support
+                      High-availability or single-node cluster detection and support
                     </a>
                   </li>
 
@@ -14169,6 +14169,30 @@
                   <li>
                     <a class="" href="../../cicd/gitops/uninstalling-openshift-gitops.html">
                       Uninstalling OpenShift GitOps
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../cicd/gitops/setting-up-argocd-instance.html">
+                      Setting up a new Argo CD instance
                     </a>
                   </li>
 
@@ -18835,7 +18859,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../monitoring/accessing-third-party-monitoring-uis-and-apis.html">Accessing third-party monitoring UIs and APIs</a></li>
+            <li><a class="" href="../../monitoring/accessing-third-party-monitoring-apis.html">Accessing third-party monitoring APIs</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19100,7 +19124,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single node OpenShift</a></li>
+            <li><a class="" href="../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19113,7 +19137,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single node OpenShift</a></li>
+            <li><a class="" href="../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27476,7 +27500,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../virt/virt-learn-more-about-openshift-virtualization.html">Start here with OpenShift Virtualization</a></li>
+            <li><a class="" href="../../virt/virt-learn-more-about-openshift-virtualization.html">Getting started with OpenShift Virtualization</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27530,31 +27554,7 @@
 
                   <li>
                     <a class="" href="../../virt/install/preparing-cluster-for-virt.html">
-                      Preparing your OpenShift cluster for OpenShift Virtualization
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../virt/install/virt-planning-environment-object-maximums.html">
-                      Planning your environment according to OpenShift Virtualization object maximums
+                      Preparing your cluster for OpenShift Virtualization
                     </a>
                   </li>
 
@@ -29526,6 +29526,30 @@
                   <li>
                     <a class="" href="../../virt/logging_events_monitoring/virt-openshift-cluster-monitoring.html">
                       OpenShift cluster monitoring, logging, and Telemetry
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../virt/logging_events_monitoring/virt-running-cluster-checkups.html">
+                      Running OpenShift cluster checkups
                     </a>
                   </li>
 
@@ -33494,7 +33518,11 @@ parameters.</p>
     <span class="na">diskType</span><span class="pi">:</span> <span class="s">thin</span> <i class="conum" data-value="14"></i><b>(14)</b>
 <span class="na">fips</span><span class="pi">:</span> <span class="no">false</span> <i class="conum" data-value="15"></i><b>(15)</b>
 <span class="na">pullSecret</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"auths":</span><span class="nv"> </span><span class="s">...}'</span> <i class="conum" data-value="16"></i><b>(16)</b>
-<span class="na">sshKey</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ssh-ed25519</span><span class="nv"> </span><span class="s">AAAA...'</span> <i class="conum" data-value="17"></i><b>(17)</b></code></pre>
+<span class="na">sshKey</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ssh-ed25519</span><span class="nv"> </span><span class="s">AAAA...'</span> <i class="conum" data-value="17"></i><b>(17)</b>
+<span class="na">capabilities</span><span class="pi">:</span>
+  <span class="na">baselineCapabilitySet</span><span class="pi">:</span> <span class="s">None</span>
+  <span class="na">additionalEnabledCapabilities</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">openshift-samples</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -35174,7 +35202,7 @@ preparation phases of an OpenShift Container Platform installation.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">variant</span><span class="pi">:</span> <span class="s">openshift</span>
-<span class="na">version</span><span class="pi">:</span> <span class="s">4.10.0</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s">4.11.0</span>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">labels</span><span class="pi">:</span>
     <span class="s">machineconfiguration.openshift.io/role</span><span class="pi">:</span> <span class="s">worker</span>
@@ -35785,37 +35813,37 @@ Operators so that they all become available.</p>
 <div class="title">Example output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">NAME                                       VERSION   AVAILABLE   PROGRESSING   DEGRADED   SINCE
-authentication                             4.10.0    True        False         False      19m
-baremetal                                  4.10.0    True        False         False      37m
-cloud-credential                           4.10.0    True        False         False      40m
-cluster-autoscaler                         4.10.0    True        False         False      37m
-config-operator                            4.10.0    True        False         False      38m
-console                                    4.10.0    True        False         False      26m
-csi-snapshot-controller                    4.10.0    True        False         False      37m
-dns                                        4.10.0    True        False         False      37m
-etcd                                       4.10.0    True        False         False      36m
-image-registry                             4.10.0    True        False         False      31m
-ingress                                    4.10.0    True        False         False      30m
-insights                                   4.10.0    True        False         False      31m
-kube-apiserver                             4.10.0    True        False         False      26m
-kube-controller-manager                    4.10.0    True        False         False      36m
-kube-scheduler                             4.10.0    True        False         False      36m
-kube-storage-version-migrator              4.10.0    True        False         False      37m
-machine-api                                4.10.0    True        False         False      29m
-machine-approver                           4.10.0    True        False         False      37m
-machine-config                             4.10.0    True        False         False      36m
-marketplace                                4.10.0    True        False         False      37m
-monitoring                                 4.10.0    True        False         False      29m
-network                                    4.10.0    True        False         False      38m
-node-tuning                                4.10.0    True        False         False      37m
-openshift-apiserver                        4.10.0    True        False         False      32m
-openshift-controller-manager               4.10.0    True        False         False      30m
-openshift-samples                          4.10.0    True        False         False      32m
-operator-lifecycle-manager                 4.10.0    True        False         False      37m
-operator-lifecycle-manager-catalog         4.10.0    True        False         False      37m
-operator-lifecycle-manager-packageserver   4.10.0    True        False         False      32m
-service-ca                                 4.10.0    True        False         False      38m
-storage                                    4.10.0    True        False         False      37m</span></code></pre>
+authentication                             4.11.0    True        False         False      19m
+baremetal                                  4.11.0    True        False         False      37m
+cloud-credential                           4.11.0    True        False         False      40m
+cluster-autoscaler                         4.11.0    True        False         False      37m
+config-operator                            4.11.0    True        False         False      38m
+console                                    4.11.0    True        False         False      26m
+csi-snapshot-controller                    4.11.0    True        False         False      37m
+dns                                        4.11.0    True        False         False      37m
+etcd                                       4.11.0    True        False         False      36m
+image-registry                             4.11.0    True        False         False      31m
+ingress                                    4.11.0    True        False         False      30m
+insights                                   4.11.0    True        False         False      31m
+kube-apiserver                             4.11.0    True        False         False      26m
+kube-controller-manager                    4.11.0    True        False         False      36m
+kube-scheduler                             4.11.0    True        False         False      36m
+kube-storage-version-migrator              4.11.0    True        False         False      37m
+machine-api                                4.11.0    True        False         False      29m
+machine-approver                           4.11.0    True        False         False      37m
+machine-config                             4.11.0    True        False         False      36m
+marketplace                                4.11.0    True        False         False      37m
+monitoring                                 4.11.0    True        False         False      29m
+network                                    4.11.0    True        False         False      38m
+node-tuning                                4.11.0    True        False         False      37m
+openshift-apiserver                        4.11.0    True        False         False      32m
+openshift-controller-manager               4.11.0    True        False         False      30m
+openshift-samples                          4.11.0    True        False         False      32m
+operator-lifecycle-manager                 4.11.0    True        False         False      37m
+operator-lifecycle-manager-catalog         4.11.0    True        False         False      37m
+operator-lifecycle-manager-packageserver   4.11.0    True        False         False      32m
+service-ca                                 4.11.0    True        False         False      38m
+storage                                    4.11.0    True        False         False      37m</span></code></pre>
 </div>
 </div>
 </li>

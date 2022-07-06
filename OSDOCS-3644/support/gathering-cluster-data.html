@@ -13109,7 +13109,7 @@
 
                   <li>
                     <a class="" href="../operators/operator_sdk/osdk-ha-sno.html">
-                      High-availability or single node cluster detection and support
+                      High-availability or single-node cluster detection and support
                     </a>
                   </li>
 
@@ -14169,6 +14169,30 @@
                   <li>
                     <a class="" href="../cicd/gitops/uninstalling-openshift-gitops.html">
                       Uninstalling OpenShift GitOps
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../cicd/gitops/setting-up-argocd-instance.html">
+                      Setting up a new Argo CD instance
                     </a>
                   </li>
 
@@ -18835,7 +18859,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../monitoring/accessing-third-party-monitoring-uis-and-apis.html">Accessing third-party monitoring UIs and APIs</a></li>
+            <li><a class="" href="../monitoring/accessing-third-party-monitoring-apis.html">Accessing third-party monitoring APIs</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19100,7 +19124,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single node OpenShift</a></li>
+            <li><a class="" href="../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19113,7 +19137,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single node OpenShift</a></li>
+            <li><a class="" href="../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27476,7 +27500,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../virt/virt-learn-more-about-openshift-virtualization.html">Start here with OpenShift Virtualization</a></li>
+            <li><a class="" href="../virt/virt-learn-more-about-openshift-virtualization.html">Getting started with OpenShift Virtualization</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27530,31 +27554,7 @@
 
                   <li>
                     <a class="" href="../virt/install/preparing-cluster-for-virt.html">
-                      Preparing your OpenShift cluster for OpenShift Virtualization
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../virt/install/virt-planning-environment-object-maximums.html">
-                      Planning your environment according to OpenShift Virtualization object maximums
+                      Preparing your cluster for OpenShift Virtualization
                     </a>
                   </li>
 
@@ -29548,6 +29548,30 @@
 
 
                   <li>
+                    <a class="" href="../virt/logging_events_monitoring/virt-running-cluster-checkups.html">
+                      Running OpenShift cluster checkups
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
                     <a class="" href="../virt/logging_events_monitoring/virt-prometheus-queries.html">
                       Prometheus queries for virtual resources
                     </a>
@@ -31409,7 +31433,7 @@ information about your cluster to Red Hat Support.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc adm must-gather  <span class="nt">--image</span><span class="o">=</span>registry.redhat.io/container-native-virtualization/cnv-must-gather-rhel8:v4.10.0</code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc adm must-gather  <span class="nt">--image</span><span class="o">=</span>registry.redhat.io/container-native-virtualization/cnv-must-gather-rhel8:v4.11.0</code></pre>
 </div>
 </div>
 </li>
@@ -31476,6 +31500,25 @@ openshift-must-gather-5drcj    must-gather-s8sdh    2/2     Running     0       
 <ol class="arabic">
 <li>
 <p>Navigate to the directory where you want to store the <code>must-gather</code> data.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If your cluster is using a restricted network, you must take additional steps. If your mirror registry has a trusted CA, you must first add the trusted CA to the cluster. For all clusters on restricted networks, you must import the default <code>must-gather</code> image as an image stream.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc import-image is/must-gather <span class="nt">-n</span> openshift</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Run the <code>oc adm must-gather</code> command:</p>
@@ -31492,12 +31535,16 @@ openshift-must-gather-5drcj    must-gather-s8sdh    2/2     Running     0       
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If this command fails, for example if you cannot schedule a pod on your cluster, then use the <code>oc adm inspect</code> command to gather information for particular resources. Contact Red Hat Support for the recommended resources to gather.</p>
+<p>Because this command picks a random control plane node by default, the pod might be scheduled to a control plane node that is in the <code>NotReady</code> and <code>SchedulingDisabled</code> state.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If this command fails, for example, if you cannot schedule a pod on your cluster, then use the <code>oc adm inspect</code> command to gather information for particular resources.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -31506,16 +31553,14 @@ openshift-must-gather-5drcj    must-gather-s8sdh    2/2     Running     0       
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If your cluster is using a restricted network, you must take additional steps. If your mirror registry has a trusted CA, you must first add the trusted CA to the cluster. For all clusters on restricted networks, you must import the default <code>must-gather</code> image as an image stream before you use the <code>oc adm must-gather</code> command.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc import-image is/must-gather <span class="nt">-n</span> openshift</code></pre>
-</div>
+<p>Contact Red Hat Support for the recommended resources to gather.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+</li>
+</ol>
 </div>
 </li>
 <li>

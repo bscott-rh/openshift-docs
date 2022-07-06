@@ -13109,7 +13109,7 @@
 
                   <li>
                     <a class="" href="../../operators/operator_sdk/osdk-ha-sno.html">
-                      High-availability or single node cluster detection and support
+                      High-availability or single-node cluster detection and support
                     </a>
                   </li>
 
@@ -14169,6 +14169,30 @@
                   <li>
                     <a class="" href="../../cicd/gitops/uninstalling-openshift-gitops.html">
                       Uninstalling OpenShift GitOps
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../cicd/gitops/setting-up-argocd-instance.html">
+                      Setting up a new Argo CD instance
                     </a>
                   </li>
 
@@ -18835,7 +18859,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../monitoring/accessing-third-party-monitoring-uis-and-apis.html">Accessing third-party monitoring UIs and APIs</a></li>
+            <li><a class="" href="../../monitoring/accessing-third-party-monitoring-apis.html">Accessing third-party monitoring APIs</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19100,7 +19124,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single node OpenShift</a></li>
+            <li><a class="" href="../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19113,7 +19137,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single node OpenShift</a></li>
+            <li><a class="" href="../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27476,7 +27500,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../virt/virt-learn-more-about-openshift-virtualization.html">Start here with OpenShift Virtualization</a></li>
+            <li><a class="" href="../../virt/virt-learn-more-about-openshift-virtualization.html">Getting started with OpenShift Virtualization</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27530,31 +27554,7 @@
 
                   <li>
                     <a class="" href="../../virt/install/preparing-cluster-for-virt.html">
-                      Preparing your OpenShift cluster for OpenShift Virtualization
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../virt/install/virt-planning-environment-object-maximums.html">
-                      Planning your environment according to OpenShift Virtualization object maximums
+                      Preparing your cluster for OpenShift Virtualization
                     </a>
                   </li>
 
@@ -29548,6 +29548,30 @@
 
 
                   <li>
+                    <a class="" href="../../virt/logging_events_monitoring/virt-running-cluster-checkups.html">
+                      Running OpenShift cluster checkups
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
                     <a class="" href="../../virt/logging_events_monitoring/virt-prometheus-queries.html">
                       Prometheus queries for virtual resources
                     </a>
@@ -31337,7 +31361,12 @@
         
         <div id="preamble">
 <div class="sectionbody">
-<!-- toc disabled -->
+<div id="toc" class="toc">
+<div id="toctitle" class="title"></div>
+<ul class="sectlevel1">
+<li><a href="#nw-creating-instance-aws-load-balancer-controller_create-instance-aws-load-balancer">Creating an instance of the AWS Load Balancer Controller using AWS Load Balancer Operator</a></li>
+</ul>
+</div>
 <div class="paragraph">
 <p>After installing the Operator, you can create an instance of the AWS Load Balancer Controller.</p>
 </div>
@@ -31367,7 +31396,7 @@
 <p>Create an <code>aws-load-balancer-controller</code> resource YAML file, for example, <code>sample-aws-lb.yaml</code>, as follows:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">networking.olm.openshift.io/v1alpha1</span>
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">networking.olm.openshift.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">AWSLoadBalancerController</span> <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s">cluster</span> <i class="conum" data-value="2"></i><b>(2)</b>
@@ -31424,7 +31453,7 @@
 <p>Create a <code>aws-load-balancer-controller</code> resource by running the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc create <span class="nt">-f</span> sample-aws-lb.yaml</code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc create <span class="nt">-f</span> sample-aws-lb.yaml</code></pre>
 </div>
 </div>
 </li>
@@ -31432,7 +31461,7 @@
 <p>After the AWS Load Balancer Controller is running, create a <code>deployment</code> resource:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span> <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;echoserver&gt;</span> <i class="conum" data-value="2"></i><b>(2)</b>
@@ -31479,7 +31508,7 @@
 <p>Create a <code>service</code> resource:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">Service</span> <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;echoserver&gt;</span> <i class="conum" data-value="2"></i><b>(2)</b>
@@ -31511,7 +31540,7 @@
 <p>Deploy an ALB-backed <code>Ingress</code> resource:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">networking.k8s.io/v1</span>
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">networking.k8s.io/v1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">Ingress</span> <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;echoserver&gt;</span> <i class="conum" data-value="2"></i><b>(2)</b>
@@ -31559,7 +31588,7 @@
 <p>Verify the status of the <code>Ingress</code> resource to show the host of the provisioned AWS Load Balancer (ALB) by running the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nv">HOST</span><span class="o">=</span><span class="si">$(</span>kubectl get ingress <span class="nt">-n</span> echoserver echoserver <span class="nt">-o</span> json | jq <span class="nt">-r</span> <span class="s1">'.status.loadBalancer.ingress[0].hostname'</span><span class="si">)</span></code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nv">HOST</span><span class="o">=</span><span class="si">$(</span>kubectl get ingress <span class="nt">-n</span> echoserver echoserver <span class="nt">-o</span> json | jq <span class="nt">-r</span> <span class="s1">'.status.loadBalancer.ingress[0].hostname'</span><span class="si">)</span></code></pre>
 </div>
 </div>
 </li>
@@ -31567,7 +31596,7 @@
 <p>Verify the status of the provisioned AWS Load Balancer (ALB) host by running the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>curl <span class="nv">$HOST</span></code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>curl <span class="nv">$HOST</span></code></pre>
 </div>
 </div>
 </li>

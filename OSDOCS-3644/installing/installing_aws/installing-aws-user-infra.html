@@ -13109,7 +13109,7 @@
 
                   <li>
                     <a class="" href="../../operators/operator_sdk/osdk-ha-sno.html">
-                      High-availability or single node cluster detection and support
+                      High-availability or single-node cluster detection and support
                     </a>
                   </li>
 
@@ -14169,6 +14169,30 @@
                   <li>
                     <a class="" href="../../cicd/gitops/uninstalling-openshift-gitops.html">
                       Uninstalling OpenShift GitOps
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../cicd/gitops/setting-up-argocd-instance.html">
+                      Setting up a new Argo CD instance
                     </a>
                   </li>
 
@@ -18835,7 +18859,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../monitoring/accessing-third-party-monitoring-uis-and-apis.html">Accessing third-party monitoring UIs and APIs</a></li>
+            <li><a class="" href="../../monitoring/accessing-third-party-monitoring-apis.html">Accessing third-party monitoring APIs</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19100,7 +19124,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single node OpenShift</a></li>
+            <li><a class="" href="../../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19113,7 +19137,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single node OpenShift</a></li>
+            <li><a class="" href="../../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27476,7 +27500,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../virt/virt-learn-more-about-openshift-virtualization.html">Start here with OpenShift Virtualization</a></li>
+            <li><a class="" href="../../virt/virt-learn-more-about-openshift-virtualization.html">Getting started with OpenShift Virtualization</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27530,31 +27554,7 @@
 
                   <li>
                     <a class="" href="../../virt/install/preparing-cluster-for-virt.html">
-                      Preparing your OpenShift cluster for OpenShift Virtualization
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../virt/install/virt-planning-environment-object-maximums.html">
-                      Planning your environment according to OpenShift Virtualization object maximums
+                      Preparing your cluster for OpenShift Virtualization
                     </a>
                   </li>
 
@@ -29526,6 +29526,30 @@
                   <li>
                     <a class="" href="../../virt/logging_events_monitoring/virt-openshift-cluster-monitoring.html">
                       OpenShift cluster monitoring, logging, and Telemetry
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../virt/logging_events_monitoring/virt-running-cluster-checkups.html">
+                      Running OpenShift cluster checkups
                     </a>
                   </li>
 
@@ -35151,7 +35175,7 @@ INFO Consuming Install Config from target directory
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">variant</span><span class="pi">:</span> <span class="s">openshift</span>
-<span class="na">version</span><span class="pi">:</span> <span class="s">4.10.0</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s">4.11.0</span>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">labels</span><span class="pi">:</span>
     <span class="s">machineconfiguration.openshift.io/role</span><span class="pi">:</span> <span class="s">worker</span>
@@ -37927,6 +37951,7 @@ that you need for your OpenShift Container Platform cluster.</p>
 or <code>arm64</code>
 AMI for an AWS region, such as <code>us-west-1</code>:</p>
 <div class="listingblock">
+<div class="title">For x86_64</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>openshift-install coreos print-stream-json | jq <span class="nt">-r</span> <span class="s1">'.architectures.x86_64.images.aws.regions["us-west-1"].image'</span></code></pre>
 </div>
@@ -37935,6 +37960,18 @@ AMI for an AWS region, such as <code>us-west-1</code>:</p>
 <div class="title">Example output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">ami-0d3e625f84626bbda</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">For arm64</div>
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>openshift-install coreos print-stream-json | jq <span class="nt">-r</span> <span class="s1">'.architectures.aarch64.images.aws.regions["us-west-1"].image'</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">ami-0af1d3b7fa5be2131</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -38418,7 +38455,7 @@ variable:</p>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The RHCOS VMDK version, like <code>4.10.0</code>.</td>
+<td>The RHCOS VMDK version, like <code>4.11.0</code>.</td>
 </tr>
 </table>
 </div>
@@ -38528,7 +38565,9 @@ file should contain your Amazon S3 bucket name and key.</td>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The RHCOS VMDK architecture type, like <code>x86_64</code>, <code>s390x</code>, or <code>ppc64le</code>.</td>
+<td>The RHCOS VMDK architecture type, like <code>x86_64</code>,
+<code>arm64</code>,
+<code>s390x</code>, or <code>ppc64le</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -38784,7 +38823,7 @@ file metadata, which has the format <code>&lt;cluster-name&gt;-&lt;random-string
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Current Red Hat Enterprise Linux CoreOS (RHCOS) AMI to use for the bootstrap node.</td>
+<td>Current Red Hat Enterprise Linux CoreOS (RHCOS) AMI to use for the bootstrap node based on your selected architecture.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
@@ -38993,8 +39032,7 @@ the other CloudFormation templates that you run to create your cluster:</p>
 <div class="sect2">
 <h3 id="installation-cloudformation-bootstrap_installing-aws-user-infra"><a class="anchor" href="#installation-cloudformation-bootstrap_installing-aws-user-infra"></a>CloudFormation template for the bootstrap machine</h3>
 <div class="paragraph">
-<p>You can use the following CloudFormation template to deploy the bootstrap
-machine that you need for your OpenShift Container Platform cluster.</p>
+<p>You can use the following CloudFormation template to deploy the bootstrap machine that you need for your OpenShift Container Platform cluster.</p>
 </div>
 <details>
 <summary class="title">CloudFormation template for the bootstrap machine</summary>
@@ -39359,7 +39397,7 @@ requires:</p>
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"ParameterKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MasterInstanceType"</span><span class="p">,</span><span class="w"> <i class="conum" data-value="21"></i><b>(21)</b>
-    </span><span class="nl">"ParameterValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m6i.xlarge"</span><span class="w"> <i class="conum" data-value="22"></i><b>(22)</b>
+    </span><span class="nl">"ParameterValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> <i class="conum" data-value="22"></i><b>(22)</b>
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"ParameterKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AutoRegisterELB"</span><span class="p">,</span><span class="w"> <i class="conum" data-value="23"></i><b>(23)</b>
@@ -39398,7 +39436,7 @@ file metadata, which has the format <code>&lt;cluster-name&gt;-&lt;random-string
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>CurrentRed Hat Enterprise Linux CoreOS (RHCOS) AMI to use for the control plane machines.</td>
+<td>Current Red Hat Enterprise Linux CoreOS (RHCOS) AMI to use for the control plane machines based on your selected architecture.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
@@ -39481,12 +39519,13 @@ the CloudFormation template for the security group and roles.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="21"></i><b>21</b></td>
-<td>The type of AWS instance to use for the control plane machines.</td>
+<td>The type of AWS instance to use for the control plane machines based on your selected architecture.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="22"></i><b>22</b></td>
 <td>The instance type value corresponds to the minimum resource requirements for
-control plane machines.</td>
+control plane machines. For example <code>m6i.xlarge</code> is a type for <code>x86_64</code>
+and <code>m6g.xlarge</code> is a type for <code>arm64</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="23"></i><b>23</b></td>
@@ -39649,17 +39688,16 @@ machines that you need for your OpenShift Container Platform cluster.</p>
     <span class="na">Description</span><span class="pi">:</span> <span class="s">Current Red Hat Enterprise Linux CoreOS AMI to use for bootstrap.</span>
     <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::EC2::Image::Id</span>
   <span class="na">AutoRegisterDNS</span><span class="pi">:</span>
-    <span class="na">Default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">yes"</span>
-    <span class="na">AllowedValues</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s2">"</span><span class="s">yes"</span>
-    <span class="pi">-</span> <span class="s2">"</span><span class="s">no"</span>
-    <span class="na">Description</span><span class="pi">:</span> <span class="s">Do you want to invoke DNS etcd registration, which requires Hosted Zone information?</span>
+    <span class="na">Default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">unused</span>
     <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
   <span class="na">PrivateHostedZoneId</span><span class="pi">:</span>
-    <span class="na">Description</span><span class="pi">:</span> <span class="s">The Route53 private zone ID to register the etcd targets with, such as Z21IXYZABCZ2A4.</span>
+    <span class="na">Default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">unused</span>
     <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
   <span class="na">PrivateHostedZoneName</span><span class="pi">:</span>
-    <span class="na">Description</span><span class="pi">:</span> <span class="s">The Route53 zone to register the targets with, such as cluster.example.com. Omit the trailing period.</span>
+    <span class="na">Default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">unused</span>
     <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
   <span class="na">Master0Subnet</span><span class="pi">:</span>
     <span class="na">Description</span><span class="pi">:</span> <span class="s">The subnets, recommend private, to launch the master nodes into.</span>
@@ -39733,12 +39771,6 @@ machines that you need for your OpenShift Container Platform cluster.</p>
       <span class="pi">-</span> <span class="s">Master1Subnet</span>
       <span class="pi">-</span> <span class="s">Master2Subnet</span>
     <span class="pi">-</span> <span class="na">Label</span><span class="pi">:</span>
-        <span class="na">default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">DNS"</span>
-      <span class="na">Parameters</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">AutoRegisterDNS</span>
-      <span class="pi">-</span> <span class="s">PrivateHostedZoneName</span>
-      <span class="pi">-</span> <span class="s">PrivateHostedZoneId</span>
-    <span class="pi">-</span> <span class="na">Label</span><span class="pi">:</span>
         <span class="na">default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Load</span><span class="nv"> </span><span class="s">Balancer</span><span class="nv"> </span><span class="s">Automation"</span>
       <span class="na">Parameters</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">AutoRegisterELB</span>
@@ -39769,18 +39801,11 @@ machines that you need for your OpenShift Container Platform cluster.</p>
         <span class="na">default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Ignition</span><span class="nv"> </span><span class="s">CA</span><span class="nv"> </span><span class="s">String"</span>
       <span class="na">MasterSecurityGroupId</span><span class="pi">:</span>
         <span class="na">default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Master</span><span class="nv"> </span><span class="s">Security</span><span class="nv"> </span><span class="s">Group</span><span class="nv"> </span><span class="s">ID"</span>
-      <span class="na">AutoRegisterDNS</span><span class="pi">:</span>
-        <span class="na">default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Use</span><span class="nv"> </span><span class="s">Provided</span><span class="nv"> </span><span class="s">DNS</span><span class="nv"> </span><span class="s">Automation"</span>
       <span class="na">AutoRegisterELB</span><span class="pi">:</span>
         <span class="na">default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Use</span><span class="nv"> </span><span class="s">Provided</span><span class="nv"> </span><span class="s">ELB</span><span class="nv"> </span><span class="s">Automation"</span>
-      <span class="na">PrivateHostedZoneName</span><span class="pi">:</span>
-        <span class="na">default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Private</span><span class="nv"> </span><span class="s">Hosted</span><span class="nv"> </span><span class="s">Zone</span><span class="nv"> </span><span class="s">Name"</span>
-      <span class="na">PrivateHostedZoneId</span><span class="pi">:</span>
-        <span class="na">default</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Private</span><span class="nv"> </span><span class="s">Hosted</span><span class="nv"> </span><span class="s">Zone</span><span class="nv"> </span><span class="s">ID"</span>
 
 <span class="na">Conditions</span><span class="pi">:</span>
   <span class="na">DoRegistration</span><span class="pi">:</span> <span class="kt">!Equals</span> <span class="pi">[</span><span class="s2">"</span><span class="s">yes"</span><span class="pi">,</span> <span class="kt">!Ref</span> <span class="nv">AutoRegisterELB</span><span class="pi">]</span>
-  <span class="na">DoDns</span><span class="pi">:</span> <span class="kt">!Equals</span> <span class="pi">[</span><span class="s2">"</span><span class="s">yes"</span><span class="pi">,</span> <span class="kt">!Ref</span> <span class="nv">AutoRegisterDNS</span><span class="pi">]</span>
 
 <span class="na">Resources</span><span class="pi">:</span>
   <span class="na">Master0</span><span class="pi">:</span>
@@ -39939,61 +39964,6 @@ machines that you need for your OpenShift Container Platform cluster.</p>
       <span class="na">TargetArn</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">InternalServiceTargetGroupArn</span>
       <span class="na">TargetIp</span><span class="pi">:</span> <span class="kt">!GetAtt</span> <span class="s">Master2.PrivateIp</span>
 
-  <span class="na">EtcdSrvRecords</span><span class="pi">:</span>
-    <span class="na">Condition</span><span class="pi">:</span> <span class="s">DoDns</span>
-    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::Route53::RecordSet</span>
-    <span class="na">Properties</span><span class="pi">:</span>
-      <span class="na">HostedZoneId</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">PrivateHostedZoneId</span>
-      <span class="na">Name</span><span class="pi">:</span> <span class="kt">!Join</span> <span class="pi">[</span><span class="s2">"</span><span class="s">."</span><span class="pi">,</span> <span class="pi">[</span><span class="s2">"</span><span class="s">_etcd-server-ssl._tcp"</span><span class="pi">,</span> <span class="kt">!Ref</span> <span class="nv">PrivateHostedZoneName</span><span class="pi">]]</span>
-      <span class="na">ResourceRecords</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="kt">!Join</span> <span class="pi">[</span>
-        <span class="s2">"</span><span class="nv"> </span><span class="s">"</span><span class="pi">,</span>
-        <span class="pi">[</span><span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">2380"</span><span class="pi">,</span> <span class="kt">!Join</span> <span class="pi">[</span><span class="s2">"</span><span class="s">."</span><span class="pi">,</span> <span class="pi">[</span><span class="s2">"</span><span class="s">etcd-0"</span><span class="pi">,</span> <span class="kt">!Ref</span> <span class="nv">PrivateHostedZoneName</span><span class="pi">]]],</span>
-      <span class="pi">]</span>
-      <span class="pi">-</span> <span class="kt">!Join</span> <span class="pi">[</span>
-        <span class="s2">"</span><span class="nv"> </span><span class="s">"</span><span class="pi">,</span>
-        <span class="pi">[</span><span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">2380"</span><span class="pi">,</span> <span class="kt">!Join</span> <span class="pi">[</span><span class="s2">"</span><span class="s">."</span><span class="pi">,</span> <span class="pi">[</span><span class="s2">"</span><span class="s">etcd-1"</span><span class="pi">,</span> <span class="kt">!Ref</span> <span class="nv">PrivateHostedZoneName</span><span class="pi">]]],</span>
-      <span class="pi">]</span>
-      <span class="pi">-</span> <span class="kt">!Join</span> <span class="pi">[</span>
-        <span class="s2">"</span><span class="nv"> </span><span class="s">"</span><span class="pi">,</span>
-        <span class="pi">[</span><span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">2380"</span><span class="pi">,</span> <span class="kt">!Join</span> <span class="pi">[</span><span class="s2">"</span><span class="s">."</span><span class="pi">,</span> <span class="pi">[</span><span class="s2">"</span><span class="s">etcd-2"</span><span class="pi">,</span> <span class="kt">!Ref</span> <span class="nv">PrivateHostedZoneName</span><span class="pi">]]],</span>
-      <span class="pi">]</span>
-      <span class="na">TTL</span><span class="pi">:</span> <span class="m">60</span>
-      <span class="na">Type</span><span class="pi">:</span> <span class="s">SRV</span>
-
-  <span class="na">Etcd0Record</span><span class="pi">:</span>
-    <span class="na">Condition</span><span class="pi">:</span> <span class="s">DoDns</span>
-    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::Route53::RecordSet</span>
-    <span class="na">Properties</span><span class="pi">:</span>
-      <span class="na">HostedZoneId</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">PrivateHostedZoneId</span>
-      <span class="na">Name</span><span class="pi">:</span> <span class="kt">!Join</span> <span class="pi">[</span><span class="s2">"</span><span class="s">."</span><span class="pi">,</span> <span class="pi">[</span><span class="s2">"</span><span class="s">etcd-0"</span><span class="pi">,</span> <span class="kt">!Ref</span> <span class="nv">PrivateHostedZoneName</span><span class="pi">]]</span>
-      <span class="na">ResourceRecords</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="kt">!GetAtt</span> <span class="s">Master0.PrivateIp</span>
-      <span class="na">TTL</span><span class="pi">:</span> <span class="m">60</span>
-      <span class="na">Type</span><span class="pi">:</span> <span class="s">A</span>
-
-  <span class="na">Etcd1Record</span><span class="pi">:</span>
-    <span class="na">Condition</span><span class="pi">:</span> <span class="s">DoDns</span>
-    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::Route53::RecordSet</span>
-    <span class="na">Properties</span><span class="pi">:</span>
-      <span class="na">HostedZoneId</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">PrivateHostedZoneId</span>
-      <span class="na">Name</span><span class="pi">:</span> <span class="kt">!Join</span> <span class="pi">[</span><span class="s2">"</span><span class="s">."</span><span class="pi">,</span> <span class="pi">[</span><span class="s2">"</span><span class="s">etcd-1"</span><span class="pi">,</span> <span class="kt">!Ref</span> <span class="nv">PrivateHostedZoneName</span><span class="pi">]]</span>
-      <span class="na">ResourceRecords</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="kt">!GetAtt</span> <span class="s">Master1.PrivateIp</span>
-      <span class="na">TTL</span><span class="pi">:</span> <span class="m">60</span>
-      <span class="na">Type</span><span class="pi">:</span> <span class="s">A</span>
-
-  <span class="na">Etcd2Record</span><span class="pi">:</span>
-    <span class="na">Condition</span><span class="pi">:</span> <span class="s">DoDns</span>
-    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::Route53::RecordSet</span>
-    <span class="na">Properties</span><span class="pi">:</span>
-      <span class="na">HostedZoneId</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">PrivateHostedZoneId</span>
-      <span class="na">Name</span><span class="pi">:</span> <span class="kt">!Join</span> <span class="pi">[</span><span class="s2">"</span><span class="s">."</span><span class="pi">,</span> <span class="pi">[</span><span class="s2">"</span><span class="s">etcd-2"</span><span class="pi">,</span> <span class="kt">!Ref</span> <span class="nv">PrivateHostedZoneName</span><span class="pi">]]</span>
-      <span class="na">ResourceRecords</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="kt">!GetAtt</span> <span class="s">Master2.PrivateIp</span>
-      <span class="na">TTL</span><span class="pi">:</span> <span class="m">60</span>
-      <span class="na">Type</span><span class="pi">:</span> <span class="s">A</span>
-
 <span class="na">Outputs</span><span class="pi">:</span>
   <span class="na">PrivateIPs</span><span class="pi">:</span>
     <span class="na">Description</span><span class="pi">:</span> <span class="s">The control-plane node private IP addresses.</span>
@@ -40126,7 +40096,7 @@ template requires:</p>
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"ParameterKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WorkerInstanceType"</span><span class="p">,</span><span class="w"> <i class="conum" data-value="15"></i><b>(15)</b>
-    </span><span class="nl">"ParameterValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m6i.large"</span><span class="w"> <i class="conum" data-value="16"></i><b>(16)</b>
+    </span><span class="nl">"ParameterValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> <i class="conum" data-value="16"></i><b>(16)</b>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre>
 </div>
@@ -40145,7 +40115,7 @@ file metadata, which has the format <code>&lt;cluster-name&gt;-&lt;random-string
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Current Red Hat Enterprise Linux CoreOS (RHCOS) AMI to use for the worker nodes.</td>
+<td>Current Red Hat Enterprise Linux CoreOS (RHCOS) AMI to use for the worker nodes based on your selected architecture.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
@@ -40199,12 +40169,13 @@ the CloudFormation template for the security group and roles.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="15"></i><b>15</b></td>
-<td>The type of AWS instance to use for the compute machines.</td>
+<td>The type of AWS instance to use for the compute machines based on your selected architecture.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="16"></i><b>16</b></td>
 <td>The instance type value corresponds to the minimum resource requirements
-for compute machines.</td>
+for compute machines. For example <code>m6i.large</code> is a type for <code>x86_64</code>
+ and <code>m6g.large</code> is a type for <code>arm64</code>.</td>
 </tr>
 </table>
 </div>
@@ -41027,37 +40998,37 @@ Operators so that they all become available.</p>
 <div class="title">Example output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">NAME                                       VERSION   AVAILABLE   PROGRESSING   DEGRADED   SINCE
-authentication                             4.10.0    True        False         False      19m
-baremetal                                  4.10.0    True        False         False      37m
-cloud-credential                           4.10.0    True        False         False      40m
-cluster-autoscaler                         4.10.0    True        False         False      37m
-config-operator                            4.10.0    True        False         False      38m
-console                                    4.10.0    True        False         False      26m
-csi-snapshot-controller                    4.10.0    True        False         False      37m
-dns                                        4.10.0    True        False         False      37m
-etcd                                       4.10.0    True        False         False      36m
-image-registry                             4.10.0    True        False         False      31m
-ingress                                    4.10.0    True        False         False      30m
-insights                                   4.10.0    True        False         False      31m
-kube-apiserver                             4.10.0    True        False         False      26m
-kube-controller-manager                    4.10.0    True        False         False      36m
-kube-scheduler                             4.10.0    True        False         False      36m
-kube-storage-version-migrator              4.10.0    True        False         False      37m
-machine-api                                4.10.0    True        False         False      29m
-machine-approver                           4.10.0    True        False         False      37m
-machine-config                             4.10.0    True        False         False      36m
-marketplace                                4.10.0    True        False         False      37m
-monitoring                                 4.10.0    True        False         False      29m
-network                                    4.10.0    True        False         False      38m
-node-tuning                                4.10.0    True        False         False      37m
-openshift-apiserver                        4.10.0    True        False         False      32m
-openshift-controller-manager               4.10.0    True        False         False      30m
-openshift-samples                          4.10.0    True        False         False      32m
-operator-lifecycle-manager                 4.10.0    True        False         False      37m
-operator-lifecycle-manager-catalog         4.10.0    True        False         False      37m
-operator-lifecycle-manager-packageserver   4.10.0    True        False         False      32m
-service-ca                                 4.10.0    True        False         False      38m
-storage                                    4.10.0    True        False         False      37m</span></code></pre>
+authentication                             4.11.0    True        False         False      19m
+baremetal                                  4.11.0    True        False         False      37m
+cloud-credential                           4.11.0    True        False         False      40m
+cluster-autoscaler                         4.11.0    True        False         False      37m
+config-operator                            4.11.0    True        False         False      38m
+console                                    4.11.0    True        False         False      26m
+csi-snapshot-controller                    4.11.0    True        False         False      37m
+dns                                        4.11.0    True        False         False      37m
+etcd                                       4.11.0    True        False         False      36m
+image-registry                             4.11.0    True        False         False      31m
+ingress                                    4.11.0    True        False         False      30m
+insights                                   4.11.0    True        False         False      31m
+kube-apiserver                             4.11.0    True        False         False      26m
+kube-controller-manager                    4.11.0    True        False         False      36m
+kube-scheduler                             4.11.0    True        False         False      36m
+kube-storage-version-migrator              4.11.0    True        False         False      37m
+machine-api                                4.11.0    True        False         False      29m
+machine-approver                           4.11.0    True        False         False      37m
+machine-config                             4.11.0    True        False         False      36m
+marketplace                                4.11.0    True        False         False      37m
+monitoring                                 4.11.0    True        False         False      29m
+network                                    4.11.0    True        False         False      38m
+node-tuning                                4.11.0    True        False         False      37m
+openshift-apiserver                        4.11.0    True        False         False      32m
+openshift-controller-manager               4.11.0    True        False         False      30m
+openshift-samples                          4.11.0    True        False         False      32m
+operator-lifecycle-manager                 4.11.0    True        False         False      37m
+operator-lifecycle-manager-catalog         4.11.0    True        False         False      37m
+operator-lifecycle-manager-packageserver   4.11.0    True        False         False      32m
+service-ca                                 4.11.0    True        False         False      38m
+storage                                    4.11.0    True        False         False      37m</span></code></pre>
 </div>
 </div>
 </li>
@@ -41309,7 +41280,6 @@ You can create either a wildcard record or specific records. While the following
 <span class="gp">console-openshift-console.apps.&lt;cluster_name&gt;</span>.&lt;domain_name&gt;
 <span class="gp">downloads-openshift-console.apps.&lt;cluster_name&gt;</span>.&lt;domain_name&gt;
 <span class="gp">alertmanager-main-openshift-monitoring.apps.&lt;cluster_name&gt;</span>.&lt;domain_name&gt;
-<span class="gp">grafana-openshift-monitoring.apps.&lt;cluster_name&gt;</span>.&lt;domain_name&gt;
 <span class="gp">prometheus-k8s-openshift-monitoring.apps.&lt;cluster_name&gt;</span>.&lt;domain_name&gt;</code></pre>
 </div>
 </div>

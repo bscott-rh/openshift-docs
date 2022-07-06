@@ -13109,7 +13109,7 @@
 
                   <li>
                     <a class="" href="../operators/operator_sdk/osdk-ha-sno.html">
-                      High-availability or single node cluster detection and support
+                      High-availability or single-node cluster detection and support
                     </a>
                   </li>
 
@@ -14169,6 +14169,30 @@
                   <li>
                     <a class="" href="../cicd/gitops/uninstalling-openshift-gitops.html">
                       Uninstalling OpenShift GitOps
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../cicd/gitops/setting-up-argocd-instance.html">
+                      Setting up a new Argo CD instance
                     </a>
                   </li>
 
@@ -18835,7 +18859,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../monitoring/accessing-third-party-monitoring-uis-and-apis.html">Accessing third-party monitoring UIs and APIs</a></li>
+            <li><a class="" href="../monitoring/accessing-third-party-monitoring-apis.html">Accessing third-party monitoring APIs</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19100,7 +19124,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single node OpenShift</a></li>
+            <li><a class="" href="../scalability_and_performance/ztp-configuring-single-node-cluster-deployment-during-installation.html">Deploying distributed units manually on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19113,7 +19137,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single node OpenShift</a></li>
+            <li><a class="" href="../scalability_and_performance/sno-du-enabling-workload-partitioning-on-single-node-openshift.html">Workload partitioning on single-node OpenShift</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27476,7 +27500,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../virt/virt-learn-more-about-openshift-virtualization.html">Start here with OpenShift Virtualization</a></li>
+            <li><a class="" href="../virt/virt-learn-more-about-openshift-virtualization.html">Getting started with OpenShift Virtualization</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -27530,31 +27554,7 @@
 
                   <li>
                     <a class="" href="../virt/install/preparing-cluster-for-virt.html">
-                      Preparing your OpenShift cluster for OpenShift Virtualization
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../virt/install/virt-planning-environment-object-maximums.html">
-                      Planning your environment according to OpenShift Virtualization object maximums
+                      Preparing your cluster for OpenShift Virtualization
                     </a>
                   </li>
 
@@ -29548,6 +29548,30 @@
 
 
                   <li>
+                    <a class="" href="../virt/logging_events_monitoring/virt-running-cluster-checkups.html">
+                      Running OpenShift cluster checkups
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
                     <a class="" href="../virt/logging_events_monitoring/virt-prometheus-queries.html">
                       Prometheus queries for virtual resources
                     </a>
@@ -31381,7 +31405,6 @@
 <li><a href="#setting-query-log-file-for-prometheus_configuring-the-monitoring-stack">Enabling the query log file for Prometheus</a></li>
 <li><a href="#enabling-query-logging-for-thanos-querier_configuring-the-monitoring-stack">Enabling query logging for Thanos Querier</a></li>
 <li><a href="#setting-audit-log-levels-for-the-prometheus-adapter_configuring-the-monitoring-stack">Setting audit log levels for the Prometheus Adapter</a></li>
-<li><a href="#disabling_grafana_configuring-the-monitoring-stack">Disabling the default Grafana deployment</a></li>
 <li><a href="#monitoring-disabling-the-local-alertmanager_configuring-the-monitoring-stack">Disabling the local Alertmanager</a></li>
 <li><a href="#next-steps">Next steps</a></li>
 </ul>
@@ -31444,9 +31467,6 @@
 </li>
 <li>
 <p><strong>Deploying user-defined workloads to <code>openshift-&#42;</code>, and <code>kube-&#42;</code> projects.</strong> These projects are reserved for Red Hat provided components and they should not be used for user-defined workloads.</p>
-</li>
-<li>
-<p><strong>Modifying the monitoring stack Grafana instance.</strong></p>
 </li>
 <li>
 <p><strong>Installing custom Prometheus instances on OpenShift Container Platform.</strong></p>
@@ -31979,11 +31999,6 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grafana</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grafana</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Telemeter Client</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>telemeterClient</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -32156,9 +32171,6 @@ data:
         nodename: worker1
         nodename: worker2
     kubeStateMetrics:
-      nodeSelector:
-        nodename: worker1
-    grafana:
       nodeSelector:
         nodename: worker1
     telemeterClient:
@@ -35409,107 +35421,6 @@ The new component placement configuration is applied automatically.</p>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc <span class="nt">-n</span> openshift-monitoring <span class="nb">exec</span> <span class="nt">-c</span> &lt;prometheus_adapter_pod_name&gt; <span class="nt">--</span> <span class="nb">cat</span> /var/log/adapter/audit.log</code></pre>
 </div>
-</div>
-</li>
-</ol>
-</div>
-<div class="ulist _additional-resources">
-<div class="title">Additional resources</div>
-<ul>
-<li>
-<p>See <a href="../monitoring/configuring-the-monitoring-stack.html#preparing-to-configure-the-monitoring-stack">Preparing to configure the monitoring stack</a> for steps to create monitoring config maps.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="disabling_grafana_configuring-the-monitoring-stack"><a class="anchor" href="#disabling_grafana_configuring-the-monitoring-stack"></a>Disabling the default Grafana deployment</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>By default, a read-only Grafana instance is deployed with a collection of dashboards displaying cluster metrics. The Grafana instance is not user-configurable.</p>
-</div>
-<div class="paragraph">
-<p>You can disable the Grafana deployment, causing the associated resources to be deleted from the cluster. You might do this if you do not need these dashboards and want to conserve resources in your cluster. You will still be able to view metrics and dashboards included in the web console. Grafana can be safely enabled again at any time.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You have access to the cluster as a user with the <code>cluster-admin</code> role.</p>
-</li>
-<li>
-<p>You have created the <code>cluster-monitoring-config</code> <code>ConfigMap</code> object.</p>
-</li>
-<li>
-<p>You have installed the OpenShift CLI (<code>oc</code>).</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Edit the <code>cluster-monitoring-config</code> <code>ConfigMap</code> object in the <code>openshift-monitoring</code> project:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc <span class="nt">-n</span> openshift-monitoring edit configmap cluster-monitoring-config</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Add <code>enabled: false</code> for the <code>grafana</code> component under <code>data/config.yaml</code>:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">kind</span><span class="pi">:</span> <span class="s">ConfigMap</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">cluster-monitoring-config</span>
-  <span class="na">namespace</span><span class="pi">:</span> <span class="s">openshift-monitoring</span>
-<span class="na">data</span><span class="pi">:</span>
-  <span class="s">config.yaml</span><span class="pi">:</span> <span class="pi">|</span>
-    <span class="s">grafana:</span>
-      <span class="s">enabled: false</span></code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Save the file to apply the changes. The resources will begin to be removed automatically when you apply the change.</p>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This change results in some components, including Prometheus and the Thanos Querier, being restarted. This might lead to previously collected metrics being lost if you have not yet followed the steps in the "Configuring persistent storage" section.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Check that the Grafana pod is no longer running. The following example lists the status of pods in the <code>openshift-monitoring</code> project:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc <span class="nt">-n</span> openshift-monitoring get pods</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>It may take a few minutes after applying the change for these pods to terminate.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 </li>
 </ol>
