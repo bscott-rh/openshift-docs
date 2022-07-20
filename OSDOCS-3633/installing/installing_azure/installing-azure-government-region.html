@@ -33823,10 +33823,10 @@ INFO Time elapsed: 36m22s</span></code></pre>
 </div>
 </li>
 <li>
-<p>Update the annotations on the <code>managed-premium</code> storage class to remove it as the default by running the following command:</p>
+<p>Update the annotations on the <code>managed-premium</code> storage class to make it the default storage class by running the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc patch storageclass managed-premium <span class="nt">-p</span> <span class="s1">'{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'</span></code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc patch storageclass managed-premium <span class="nt">-p</span> <span class="s1">'{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'</span></code></pre>
 </div>
 </div>
 </li>
