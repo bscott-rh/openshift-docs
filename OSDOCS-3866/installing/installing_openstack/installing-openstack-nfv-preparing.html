@@ -14,7 +14,7 @@
   
   
   
-  <title>Installing a cluster on vSphere - Installing on vSphere | Installing | OpenShift Container Platform Branch Build</title>
+  <title>Preparing to install a cluster that uses SR-IOV or OVS-DPDK on OpenStack - Installing on OpenStack | Installing | OpenShift Container Platform Branch Build</title>
   <link href="https://assets.openshift.net/content/subdomain.css" rel="stylesheet" type="text/css">
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/search.css" rel="stylesheet" />
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/autumn.css" rel="stylesheet" />
@@ -45,7 +45,7 @@
       
       var opt = {
         margin:       10,
-        filename:     'installing/installing_vsphere/installing-vsphere-installer-provisioned.pdf',
+        filename:     'installing/installing_openstack/installing-openstack-nfv-preparing.pdf',
         html2canvas:  { windowWidth: 650 },
         image:        { type: 'jpeg', quality: 0.98 }
       };
@@ -219,15 +219,15 @@
       <li class="hidden-xs active">
         <a href="../../installing/index.html">Installing</a>
       </li>
-      <li class="hidden-xs active"><a href="../../installing/installing_vsphere/preparing-to-install-on-vsphere.html">Installing on vSphere</a></li>
+      <li class="hidden-xs active"><a href="../../installing/installing_openstack/preparing-to-install-on-openstack.html">Installing on OpenStack</a></li>
       <li class="hidden-xs active">
-        Installing a cluster on vSphere
+        Preparing to install a cluster that uses SR-IOV or OVS-DPDK on OpenStack
       </li>
       
       <span text-align="right" style="float: right !important">
-        <a href="https://github.com/openshift/openshift-docs/commits/enterprise-Branch Build/installing/installing_vsphere/installing-vsphere-installer-provisioned.adoc"><span class="material-icons-outlined" title="Page history">history</span></a>
+        <a href="https://github.com/openshift/openshift-docs/commits/enterprise-Branch Build/installing/installing_openstack/installing-openstack-nfv-preparing.adoc"><span class="material-icons-outlined" title="Page history">history</span></a>
         
-        <a href="https://github.com/openshift/openshift-docs/issues/new?title=[enterprise-Branch Build] Issue in file installing/installing_vsphere/installing-vsphere-installer-provisioned.adoc">
+        <a href="https://github.com/openshift/openshift-docs/issues/new?title=[enterprise-Branch Build] Issue in file installing/installing_openstack/installing-openstack-nfv-preparing.adoc">
           <span class="material-icons-outlined" title="Open an issue">bug_report</span>
         </a>
         <a href="javascript: void(0);" onclick="getPDF();"><span class="material-icons-outlined" title="Download PDF (may take a while for large pages)">picture_as_pdf</span></a>
@@ -3148,14 +3148,14 @@
 
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-4-18">
-                <span id="sgSpan-4-18" class="fa fa-caret-right"></span>
+                <span id="sgSpan-4-18" class="fa fa-caret-down"></span>
                   &nbsp;Installing on OpenStack
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-4-18" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-4-18" class="nav-tertiary list-unstyled collapse in">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -3175,6 +3175,30 @@
                   <li>
                     <a class="" href="../../installing/installing_openstack/preparing-to-install-on-openstack.html">
                       Preparing to install on OpenStack
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class=" active" href="../../installing/installing_openstack/installing-openstack-nfv-preparing.html">
+                      Preparing to install a cluster that uses SR-IOV or OVS-DPDK on OpenStack
                     </a>
                   </li>
 
@@ -3245,54 +3269,6 @@
 
 
                   <li>
-                    <a class="" href="../../installing/installing_openstack/installing-openstack-installer-sr-iov.html">
-                      Installing a cluster that supports SR-IOV compute machines on OpenStack
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../installing/installing_openstack/installing-openstack-installer-ovs-dpdk.html">
-                      Installing a cluster on OpenStack that supports OVS-DPDK-connected compute machines
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
                     <a class="" href="../../installing/installing_openstack/installing-openstack-user.html">
                       Installing a cluster on OpenStack on your own infrastructure
                     </a>
@@ -3319,30 +3295,6 @@
                   <li>
                     <a class="" href="../../installing/installing_openstack/installing-openstack-user-kuryr.html">
                       Installing a cluster on OpenStack with Kuryr on your own infrastructure
-                    </a>
-                  </li>
-
-                
-
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../../installing/installing_openstack/installing-openstack-user-sr-iov.html">
-                      Installing a cluster on OpenStack on your own SR-IOV infrastructure
                     </a>
                   </li>
 
@@ -3600,14 +3552,14 @@
 
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-4-20">
-                <span id="sgSpan-4-20" class="fa fa-caret-down"></span>
+                <span id="sgSpan-4-20" class="fa fa-caret-right"></span>
                   &nbsp;Installing on vSphere
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-4-20" class="nav-tertiary list-unstyled collapse in">
+              <ul id="topicSubGroup-4-20" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -3649,7 +3601,7 @@
 
 
                   <li>
-                    <a class=" active" href="../../installing/installing_vsphere/installing-vsphere-installer-provisioned.html">
+                    <a class="" href="../../installing/installing_vsphere/installing-vsphere-installer-provisioned.html">
                       Installing a cluster on vSphere
                     </a>
                   </li>
@@ -8041,6 +7993,19 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
+            <li><a class="" href="../../authentication/understanding-and-managing-pod-security-admission.html">Understanding and managing pod security admission</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
             <li><a class="" href="../../authentication/impersonating-system-admin.html">Impersonating the system:admin user</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
@@ -8068,15 +8033,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-11-17">
-                <span id="sgSpan-11-17" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-11-18">
+                <span id="sgSpan-11-18" class="fa fa-caret-right"></span>
                   &nbsp;Managing cloud provider credentials
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-11-17" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-11-18" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -11868,6 +11833,19 @@
 
               </ul>
             </li>
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../../storage/generic-ephemeral-vols.html">Generic ephemeral volumes</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
         Welcome 2 and Welcome 1 More -->
@@ -16594,6 +16572,19 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
+            <li><a class="" href="../../machine_management/capi-machine-management.html">Managing machines with the Cluster API</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
             <li><a class="" href="../../machine_management/deploying-machine-health-checks.html">Deploying machine health checks</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
@@ -19044,6 +19035,19 @@
             <!-- ^ this establishs whether we are reading this current page -->
 
             <li><a class="" href="../../monitoring/troubleshooting-monitoring-issues.html">Troubleshooting monitoring issues</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../../monitoring/configmap-reference-for-cluster-monitoring-operator.html">ConfigMap reference for Cluster Monitoring Operator</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
       </ul>
@@ -27902,6 +27906,19 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
+            <li><a class="" href="../../virt/virt-architecture.html">OpenShift Virtualization architecture</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
             <li><a class="" href="../../virt/virt-learn-more-about-openshift-virtualization.html">Getting started with OpenShift Virtualization</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
@@ -27929,15 +27946,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-3">
-                <span id="sgSpan-32-3" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-4">
+                <span id="sgSpan-32-4" class="fa fa-caret-right"></span>
                   &nbsp;Installing
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-32-3" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-32-4" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -28158,15 +28175,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-7">
-                <span id="sgSpan-32-7" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-8">
+                <span id="sgSpan-32-8" class="fa fa-caret-right"></span>
                   &nbsp;Virtual machines
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-32-7" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-32-8" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -28547,11 +28564,11 @@
                 
 
                 <li class="nav-header">
-                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-32-7-15">
-                    <span id="ssgSpan-32-7-15" class="fa fa-caret-right"></span>
+                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-32-8-15">
+                    <span id="ssgSpan-32-8-15" class="fa fa-caret-right"></span>
                     &nbsp;Advanced virtual machine management
                   </a>
-                  <ul id="topicSubSubGroup-32-7-15" class="nav-tertiary list-unstyled collapse">
+                  <ul id="topicSubSubGroup-32-8-15" class="nav-tertiary list-unstyled collapse">
 
                     <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
 
@@ -28717,11 +28734,11 @@
                 
 
                 <li class="nav-header">
-                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-32-7-16">
-                    <span id="ssgSpan-32-7-16" class="fa fa-caret-right"></span>
+                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-32-8-16">
+                    <span id="ssgSpan-32-8-16" class="fa fa-caret-right"></span>
                     &nbsp;Importing virtual machines
                   </a>
-                  <ul id="topicSubSubGroup-32-7-16" class="nav-tertiary list-unstyled collapse">
+                  <ul id="topicSubSubGroup-32-8-16" class="nav-tertiary list-unstyled collapse">
 
                     <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
 
@@ -28777,11 +28794,11 @@
                 
 
                 <li class="nav-header">
-                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-32-7-17">
-                    <span id="ssgSpan-32-7-17" class="fa fa-caret-right"></span>
+                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-32-8-17">
+                    <span id="ssgSpan-32-8-17" class="fa fa-caret-right"></span>
                     &nbsp;Cloning virtual machines
                   </a>
-                  <ul id="topicSubSubGroup-32-7-17" class="nav-tertiary list-unstyled collapse">
+                  <ul id="topicSubSubGroup-32-8-17" class="nav-tertiary list-unstyled collapse">
 
                     <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
 
@@ -28847,11 +28864,11 @@
                 
 
                 <li class="nav-header">
-                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-32-7-18">
-                    <span id="ssgSpan-32-7-18" class="fa fa-caret-right"></span>
+                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-32-8-18">
+                    <span id="ssgSpan-32-8-18" class="fa fa-caret-right"></span>
                     &nbsp;Virtual machine networking
                   </a>
-                  <ul id="topicSubSubGroup-32-7-18" class="nav-tertiary list-unstyled collapse">
+                  <ul id="topicSubSubGroup-32-8-18" class="nav-tertiary list-unstyled collapse">
 
                     <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
 
@@ -28967,11 +28984,11 @@
                 
 
                 <li class="nav-header">
-                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-32-7-19">
-                    <span id="ssgSpan-32-7-19" class="fa fa-caret-right"></span>
+                  <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubSubGroup-32-8-19">
+                    <span id="ssgSpan-32-8-19" class="fa fa-caret-right"></span>
                     &nbsp;Virtual machine disks
                   </a>
-                  <ul id="topicSubSubGroup-32-7-19" class="nav-tertiary list-unstyled collapse">
+                  <ul id="topicSubSubGroup-32-8-19" class="nav-tertiary list-unstyled collapse">
 
                     <!-- list all topics within Welcome 3 here. Note that we are not coding this for more subtopics here -->
 
@@ -29200,15 +29217,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-8">
-                <span id="sgSpan-32-8" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-9">
+                <span id="sgSpan-32-9" class="fa fa-caret-right"></span>
                   &nbsp;Virtual machine templates
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-32-8" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-32-9" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -29251,7 +29268,7 @@
 
                   <li>
                     <a class="" href="../../virt/vm_templates/virt-editing-vm-template.html">
-                      Editing a virtual machine template
+                      Editing virtual machine templates
                     </a>
                   </li>
 
@@ -29342,15 +29359,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-9">
-                <span id="sgSpan-32-9" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-10">
+                <span id="sgSpan-32-10" class="fa fa-caret-right"></span>
                   &nbsp;Live migration
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-32-9" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-32-10" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -29532,15 +29549,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-10">
-                <span id="sgSpan-32-10" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-11">
+                <span id="sgSpan-32-11" class="fa fa-caret-right"></span>
                   &nbsp;Node maintenance
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-32-10" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-32-11" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -29698,15 +29715,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-11">
-                <span id="sgSpan-32-11" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-12">
+                <span id="sgSpan-32-12" class="fa fa-caret-right"></span>
                   &nbsp;Logging, events, and monitoring
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-32-11" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-32-12" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -30056,15 +30073,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-12">
-                <span id="sgSpan-32-12" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-32-13">
+                <span id="sgSpan-32-13" class="fa fa-caret-right"></span>
                   &nbsp;Backup and restore
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-32-12" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-32-13" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -31626,7 +31643,7 @@
       <div class="col-xs-12 col-sm-9 col-md-9 main">
         <div class="page-header">
           <h1>
-            Installing a cluster on vSphere
+            Preparing to install a cluster that uses SR-IOV or OVS-DPDK on OpenStack
           </h1>
         </div>
         
@@ -31636,1587 +31653,132 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
-<li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#cluster-entitlements_installing-vsphere-installer-provisioned">Internet access for OpenShift Container Platform</a></li>
-<li><a href="#installation-vsphere-infrastructure_installing-vsphere-installer-provisioned">VMware vSphere infrastructure requirements</a></li>
-<li><a href="#vsphere-csi-driver-reqs_installing-vsphere-installer-provisioned">VMware vSphere CSI Driver Operator requirements</a></li>
-<li><a href="#installation-vsphere-installer-infra-requirements_installing-vsphere-installer-provisioned">vCenter requirements</a></li>
-<li><a href="#ssh-agent-using_installing-vsphere-installer-provisioned">Generating a key pair for cluster node SSH access</a></li>
-<li><a href="#installation-obtaining-installer_installing-vsphere-installer-provisioned">Obtaining the installation program</a></li>
-<li><a href="#installation-adding-vcenter-root-certificates_installing-vsphere-installer-provisioned">Adding vCenter root CA certificates to your system trust</a></li>
-<li><a href="#installation-launching-installer_installing-vsphere-installer-provisioned">Deploying the cluster</a></li>
-<li><a href="#cli-installing-cli_installing-vsphere-installer-provisioned">Installing the OpenShift CLI by downloading the binary</a></li>
-<li><a href="#cli-logging-in-kubeadmin_installing-vsphere-installer-provisioned">Logging in to the cluster by using the CLI</a></li>
-<li><a href="#installing-vsphere-installer-provisioned-registry">Creating registry storage</a>
+<li><a href="#installation-openstack-nfv-requirements_installing-openstack-nfv-preparing">Requirements for clusters on RHOSP that use either SR-IOV or OVS-DPDK</a>
 <ul class="sectlevel2">
-<li><a href="#registry-removed_installing-vsphere-installer-provisioned">Image registry removed during installation</a></li>
-<li><a href="#installation-registry-storage-config_installing-vsphere-installer-provisioned">Image registry storage configuration</a></li>
+<li><a href="#installation-openstack-sr-iov-requirements_installing-openstack-nfv-preparing">Requirements for clusters on RHOSP that use SR-IOV</a></li>
+<li><a href="#installation-openstack-ovs-dpdk-requirements_installing-openstack-nfv-preparing">Requirements for clusters on RHOSP that use OVS-DPDK</a></li>
 </ul>
 </li>
-<li><a href="#vsphere-pv-backup_installing-vsphere-installer-provisioned">Backing up VMware vSphere volumes</a></li>
-<li><a href="#cluster-telemetry_installing-vsphere-installer-provisioned">Telemetry access for OpenShift Container Platform</a></li>
-<li><a href="#nw-osp-configuring-external-load-balancer_installing-vsphere-installer-provisioned">Configuring an external load balancer</a></li>
-<li><a href="#next-steps">Next steps</a></li>
+<li><a href="#installing-openstack-nfv-preparing-tasks-sr-iov">Preparing to install a cluster that uses SR-IOV</a>
+<ul class="sectlevel2">
+<li><a href="#installation-osp-configuring-sr-iov_installing-openstack-nfv-preparing">Creating SR-IOV networks for compute machines</a></li>
+</ul>
+</li>
+<li><a href="#installing-openstack-nfv-preparing-tasks-ovs-dpdk">Preparing to install a cluster that uses OVS-DPDK</a></li>
+<li><a href="#next-steps_installing-openstack-nfv-preparing">Next steps</a></li>
 </ul>
 </div>
 <div class="paragraph">
-<p>In OpenShift Container Platform version Branch Build, you can install a cluster on your
-VMware vSphere instance by using installer-provisioned infrastructure.</p>
+<p>Before you install a OpenShift Container Platform cluster that uses single-root I/O virtualization (SR-IOV) or Open vSwitch with the Data Plane Development Kit (OVS-DPDK) on Red Hat OpenStack Platform (RHOSP), you must understand the requirements for each technology and then perform preparatory tasks.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>You reviewed details about the <a href="../../architecture/architecture-installation.html#architecture-installation">OpenShift Container Platform installation and update</a> processes.</p>
-</li>
-<li>
-<p>You read the documentation on <a href="../../installing/installing-preparing.html#installing-preparing">selecting a cluster installation method and preparing it for users</a>.</p>
-</li>
-<li>
-<p>You provisioned <a href="../../storage/understanding-persistent-storage.html#understanding-persistent-storage">persistent storage</a> for your cluster. To deploy a private image registry, your storage must provide
-<code>ReadWriteMany</code> access modes.</p>
-</li>
-<li>
-<p>The OpenShift Container Platform installer requires access to port 443 on the vCenter and ESXi hosts. You verified that port 443 is accessible.</p>
-</li>
-<li>
-<p>If you use a firewall, you confirmed with the administrator that port 443 is accessible. Control plane nodes must be able to reach vCenter and ESXi hosts on port 443 for the installation to succeed.</p>
-</li>
-<li>
-<p>If you use a firewall, you <a href="../../installing/install_config/configuring-firewall.html#configuring-firewall">configured it to allow the sites</a> that your cluster requires access to.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Be sure to also review this site list if you are configuring a proxy.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cluster-entitlements_installing-vsphere-installer-provisioned"><a class="anchor" href="#cluster-entitlements_installing-vsphere-installer-provisioned"></a>Internet access for OpenShift Container Platform</h2>
+<h2 id="installation-openstack-nfv-requirements_installing-openstack-nfv-preparing"><a class="anchor" href="#installation-openstack-nfv-requirements_installing-openstack-nfv-preparing"></a>Requirements for clusters on RHOSP that use either SR-IOV or OVS-DPDK</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In OpenShift Container Platform Branch Build, you require access to the internet to
-install
-your cluster.</p>
-</div>
-<div class="paragraph">
-<p>You must have internet access to:</p>
+<p>If you use SR-IOV or OVS-DPDK with your deployment, you must meet the following requirements:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Access <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager</a> to download the installation program and perform subscription management. If the cluster has internet access and you do not disable Telemetry, that service automatically entitles your cluster.</p>
-</li>
-<li>
-<p>Access <a href="http://quay.io">Quay.io</a> to obtain the packages that are required to install your cluster.</p>
-</li>
-<li>
-<p>Obtain the packages that are required to perform cluster updates.</p>
+<p>RHOSP compute nodes must use a flavor that supports huge pages.</p>
 </li>
 </ul>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If your cluster cannot have direct internet access, you can perform a restricted network installation on some types of infrastructure that you provision. During that process, you download the required content and use it to populate a mirror registry with the installation packages. With some installation types, the environment that you install your cluster in will not require internet access. Before you update the cluster, you update the content of the mirror registry.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="installation-vsphere-infrastructure_installing-vsphere-installer-provisioned"><a class="anchor" href="#installation-vsphere-infrastructure_installing-vsphere-installer-provisioned"></a>VMware vSphere infrastructure requirements</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You must install the OpenShift Container Platform cluster on a VMware vSphere version 7 instance that meets the requirements for the components that you use.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Version requirements for vSphere virtual environments</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Virtual environment product</th>
-<th class="tableblock halign-left valign-top">Required version</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VM hardware version</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 or later</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vSphere ESXi hosts</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.0.2 or later</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vCenter host</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.0.2 or later</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Installing a cluster on VMware vSphere version 7.0.1 or earlier is now deprecated. These versions are still fully supported, but version 4.11 of OpenShift Container Platform requires vSphere virtual hardware version 15 or later. Hardware version 15 is now the default for vSphere virtual machines in OpenShift Container Platform. To update the hardware version for your vSphere nodes, see the "Updating hardware on nodes running in vSphere" article.</p>
-</div>
-<div class="paragraph">
-<p>If your vSphere nodes are below hardware version 15 or your VMware vSphere version is earlier than 6.7.3, upgrading from OpenShift Container Platform 4.10 to OpenShift Container Platform 4.11 is not available.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Minimum supported vSphere version for VMware components</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Component</th>
-<th class="tableblock halign-left valign-top">Minimum supported versions</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hypervisor</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vSphere 6.7u3 and later with HW version 15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This version is the minimum version that Red Hat Enterprise Linux CoreOS (RHCOS) supports. See the <a href="https://access.redhat.com/ecosystem/search/#/ecosystem/Red%20Hat%20Enterprise%20Linux?sort=sortTitle%20asc&amp;vendors=VMware&amp;category=Server">Red Hat Enterprise Linux 8 supported hypervisors list</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Storage with in-tree drivers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vSphere 6.7u3 and later</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This plug-in creates vSphere storage by using the in-tree storage drivers for vSphere included in OpenShift Container Platform.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional: Networking (NSX-T)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vSphere 7.0.1 and later</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vSphere 7.0.1 is required for OpenShift Container Platform. VMware&#8217;s NSX Container Plug-in (NCP) is certified with OpenShift Container Platform 4.6 and NSX-T 3.x+.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You must ensure that the time on your ESXi hosts is synchronized before you install OpenShift Container Platform. See <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vcenterhost.doc/GUID-8756D419-A878-4AE0-9183-C6D5A91A8FB1.html">Edit Time Configuration for a Host</a> in the VMware documentation.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="vsphere-csi-driver-reqs_installing-vsphere-installer-provisioned"><a class="anchor" href="#vsphere-csi-driver-reqs_installing-vsphere-installer-provisioned"></a>VMware vSphere CSI Driver Operator requirements</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following requirements must be met in order to install the CSI Driver Operator:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>VMware vSphere version 7.0.1 or later</p>
-</li>
-<li>
-<p>Virtual machines of hardware version 15 or later</p>
-</li>
-<li>
-<p>No third-party CSI driver already installed in the cluster</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If a third-party CSI driver is present in the cluster, OpenShift Container Platform does not overwrite it. The presence of a third-party CSI driver prevents OpenShift Container Platform from upgrading in a future release.</p>
-</div>
-<div class="ulist _additional-resources">
-<div class="title">Additional resources</div>
-<ul>
-<li>
-<p>To remove a third-party CSI driver, see <a href="../../storage/container_storage_interface/persistent-storage-csi-vsphere.html#persistent-storage-csi-vsphere-install-issues_persistent-storage-csi-vsphere">Removing a third-party vSphere CSI Driver</a>.</p>
-</li>
-<li>
-<p>To update the hardware version for your vSphere nodes, see <a href="../../updating/updating-hardware-on-nodes-running-on-vsphere.html#updating-hardware-on-nodes-running-on-vsphere">Updating hardware on nodes running in vSphere</a>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="installation-vsphere-installer-infra-requirements_installing-vsphere-installer-provisioned"><a class="anchor" href="#installation-vsphere-installer-infra-requirements_installing-vsphere-installer-provisioned"></a>vCenter requirements</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Before you install an OpenShift Container Platform cluster on your vCenter that uses infrastructure that the installer provisions, you must prepare your environment.</p>
-</div>
-<h3 id="installation-vsphere-installer-infra-requirements-account_installing-vsphere-installer-provisioned" class="discrete">Required vCenter account privileges</h3>
-<div class="paragraph">
-<p>To install an OpenShift Container Platform cluster in a vCenter, the installation program requires access to an account with privileges to read and create the required resources. Using an account that has global administrative privileges is the simplest way to access all of the necessary permissions.</p>
-</div>
-<div class="paragraph">
-<p>If you cannot use an account with global administrative privileges, you must create roles to grant the privileges necessary for OpenShift Container Platform cluster installation. While most of the privileges are always required, some are required only if you plan for the installation program to provision a folder to contain the OpenShift Container Platform cluster on your vCenter instance, which is the default behavior. You must create or amend vSphere roles for the specified objects to grant the required privileges.</p>
-</div>
-<div class="paragraph">
-<p>An additional role is required if the installation program is to create a vSphere virtual machine folder.</p>
-</div>
-<details>
-<summary class="title">Roles and privileges required for installation</summary>
-<div class="content">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">vSphere object for role</th>
-<th class="tableblock halign-left valign-top">When required</th>
-<th class="tableblock halign-left valign-top">Required privileges</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere vCenter</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Always</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>Cns.Searchable</code><br>
-<code>InventoryService.Tagging.AttachTag</code><br>
-<code>InventoryService.Tagging.CreateCategory</code><br>
-<code>InventoryService.Tagging.CreateTag</code><br>
-<code>InventoryService.Tagging.DeleteCategory</code><br>
-<code>InventoryService.Tagging.DeleteTag</code><br>
-<code>InventoryService.Tagging.EditCategory</code><br>
-<code>InventoryService.Tagging.EditTag</code><br>
-<code>Sessions.ValidateSession</code><br>
-<code>StorageProfile.Update</code><br>
-<code>StorageProfile.View</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere vCenter Cluster</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If VMs will be created in the cluster root</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>Host.Config.Storage</code><br>
-<code>Resource.AssignVMToPool</code><br>
-<code>VApp.AssignResourcePool</code><br>
-<code>VApp.Import</code><br>
-<code>VirtualMachine.Config.AddNewDisk</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere vCenter Resource Pool</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If an existing resource pool is provided</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>Host.Config.Storage</code><br>
-<code>Resource.AssignVMToPool</code><br>
-<code>VApp.AssignResourcePool</code><br>
-<code>VApp.Import</code><br>
-<code>VirtualMachine.Config.AddNewDisk</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere Datastore</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Always</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>Datastore.AllocateSpace</code><br>
-<code>Datastore.Browse</code><br>
-<code>Datastore.FileManagement</code><br>
-<code>InventoryService.Tagging.ObjectAttachable</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere Port Group</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Always</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>Network.Assign</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Virtual Machine Folder</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Always</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>Resource.AssignVMToPool</code><br>
-<code>VApp.Import</code><br>
-<code>VirtualMachine.Config.AddExistingDisk</code><br>
-<code>VirtualMachine.Config.AddNewDisk</code><br>
-<code>VirtualMachine.Config.AddRemoveDevice</code><br>
-<code>VirtualMachine.Config.AdvancedConfig</code><br>
-<code>VirtualMachine.Config.Annotation</code><br>
-<code>VirtualMachine.Config.CPUCount</code><br>
-<code>VirtualMachine.Config.DiskExtend</code><br>
-<code>VirtualMachine.Config.DiskLease</code><br>
-<code>VirtualMachine.Config.EditDevice</code><br>
-<code>VirtualMachine.Config.Memory</code><br>
-<code>VirtualMachine.Config.RemoveDisk</code><br>
-<code>VirtualMachine.Config.Rename</code><br>
-<code>VirtualMachine.Config.ResetGuestInfo</code><br>
-<code>VirtualMachine.Config.Resource</code><br>
-<code>VirtualMachine.Config.Settings</code><br>
-<code>VirtualMachine.Config.UpgradeVirtualHardware</code><br>
-<code>VirtualMachine.Interact.GuestControl</code><br>
-<code>VirtualMachine.Interact.PowerOff</code><br>
-<code>VirtualMachine.Interact.PowerOn</code><br>
-<code>VirtualMachine.Interact.Reset</code><br>
-<code>VirtualMachine.Inventory.Create</code><br>
-<code>VirtualMachine.Inventory.CreateFromExisting</code><br>
-<code>VirtualMachine.Inventory.Delete</code><br>
-<code>VirtualMachine.Provisioning.Clone</code><br>
-<code>VirtualMachine.Provisioning.MarkAsTemplate</code><br>
-<code>VirtualMachine.Provisioning.DeployTemplate</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere vCenter Datacenter</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If the installation program creates the virtual machine folder</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>Resource.AssignVMToPool</code><br>
-<code>VApp.Import</code><br>
-<code>VirtualMachine.Config.AddExistingDisk</code><br>
-<code>VirtualMachine.Config.AddNewDisk</code><br>
-<code>VirtualMachine.Config.AddRemoveDevice</code><br>
-<code>VirtualMachine.Config.AdvancedConfig</code><br>
-<code>VirtualMachine.Config.Annotation</code><br>
-<code>VirtualMachine.Config.CPUCount</code><br>
-<code>VirtualMachine.Config.DiskExtend</code><br>
-<code>VirtualMachine.Config.DiskLease</code><br>
-<code>VirtualMachine.Config.EditDevice</code><br>
-<code>VirtualMachine.Config.Memory</code><br>
-<code>VirtualMachine.Config.RemoveDisk</code><br>
-<code>VirtualMachine.Config.Rename</code><br>
-<code>VirtualMachine.Config.ResetGuestInfo</code><br>
-<code>VirtualMachine.Config.Resource</code><br>
-<code>VirtualMachine.Config.Settings</code><br>
-<code>VirtualMachine.Config.UpgradeVirtualHardware</code><br>
-<code>VirtualMachine.Interact.GuestControl</code><br>
-<code>VirtualMachine.Interact.PowerOff</code><br>
-<code>VirtualMachine.Interact.PowerOn</code><br>
-<code>VirtualMachine.Interact.Reset</code><br>
-<code>VirtualMachine.Inventory.Create</code><br>
-<code>VirtualMachine.Inventory.CreateFromExisting</code><br>
-<code>VirtualMachine.Inventory.Delete</code><br>
-<code>VirtualMachine.Provisioning.Clone</code><br>
-<code>VirtualMachine.Provisioning.DeployTemplate</code><br>
-<code>VirtualMachine.Provisioning.MarkAsTemplate</code><br>
-<code>Folder.Create</code><br>
-<code>Folder.Delete</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</details>
-<div class="paragraph">
-<p>Additionally, the user requires some <code>ReadOnly</code> permissions, and some of the roles require permission to propogate the permissions to child objects. These settings vary depending on whether or not you install the cluster into an existing folder.</p>
-</div>
-<details>
-<summary class="title">Required permissions and propagation settings</summary>
-<div class="content">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">vSphere object</th>
-<th class="tableblock halign-left valign-top">When required</th>
-<th class="tableblock halign-left valign-top">Propagate to children</th>
-<th class="tableblock halign-left valign-top">Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere vCenter</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Always</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>False</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Listed required privileges</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="paragraph">
-<p>vSphere vCenter Datacenter</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Existing folder</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>False</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>ReadOnly</code> permission</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Installation program creates the folder</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Listed required privileges</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="paragraph">
-<p>vSphere vCenter Cluster</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Existing resource pool</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>ReadOnly</code> permission</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>VMs in cluster root</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Listed required privileges</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere vCenter Datastore</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Always</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>False</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Listed required privileges</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere Switch</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Always</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>False</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>ReadOnly</code> permission</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere Port Group</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Always</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>False</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Listed required privileges</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere vCenter Virtual Machine Folder</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Existing folder</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Listed required privileges</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>vSphere vCenter Resource Pool</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Existing resource pool</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Listed required privileges</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</details>
-<div class="paragraph">
-<p>For more information about creating an account with only the required privileges, see <a href="https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-5372F580-5C23-4E9C-8A4E-EF1B4DD9033E.html">vSphere Permissions and User Management Tasks</a> in the vSphere documentation.</p>
-</div>
-<h3 id="installation-vsphere-installer-infra-requirements-vmotion_installing-vsphere-installer-provisioned" class="discrete">Using OpenShift Container Platform with vMotion</h3>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>OpenShift Container Platform generally supports compute-only vMotion. Using Storage vMotion can cause issues and is not supported.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>If you are using vSphere volumes in your pods, migrating a VM across datastores either manually or through Storage vMotion causes invalid references within OpenShift Container Platform persistent volume (PV) objects. These references prevent affected pods from starting up and can result in data loss.</p>
-</div>
-<div class="paragraph">
-<p>Similarly, OpenShift Container Platform does not support selective migration of VMDKs across datastores, using datastore clusters for VM provisioning or for dynamic or static provisioning of PVs, or using a datastore that is part of a datastore cluster for dynamic or static provisioning of PVs.</p>
-</div>
-<h3 id="installation-vsphere-installer-infra-requirements-resources_installing-vsphere-installer-provisioned" class="discrete">Cluster resources</h3>
-<div class="paragraph">
-<p>When you deploy an OpenShift Container Platform cluster that uses installer-provisioned infrastructure, the installation program must be able to create several resources in your vCenter instance.</p>
-</div>
-<div class="paragraph">
-<p>A standard OpenShift Container Platform installation creates the following vCenter resources:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>1 Folder</p>
-</li>
-<li>
-<p>1 Tag category</p>
-</li>
-<li>
-<p>1 Tag</p>
-</li>
-<li>
-<p>Virtual machines:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>1 template</p>
-</li>
-<li>
-<p>1 temporary bootstrap node</p>
-</li>
-<li>
-<p>3 control plane nodes</p>
-</li>
-<li>
-<p>3 compute machines</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Although these resources use 856 GB of storage, the bootstrap node is destroyed during the cluster installation process. A minimum of 800 GB of storage is required to use a standard cluster.</p>
-</div>
-<div class="paragraph">
-<p>If you deploy more compute machines, the OpenShift Container Platform cluster will use more storage.</p>
-</div>
-<h3 id="installation-vsphere-installer-infra-requirements-limits_installing-vsphere-installer-provisioned" class="discrete">Cluster limits</h3>
-<div class="paragraph">
-<p>Available resources vary between clusters. The number of possible clusters within a vCenter is limited primarily by available storage space and any limitations on the number of required resources. Be sure to consider both limitations to the vCenter resources that the cluster creates and the resources that you require to deploy a cluster, such as IP addresses and networks.</p>
-</div>
-<h3 id="installation-vsphere-installer-infra-requirements-networking_installing-vsphere-installer-provisioned" class="discrete">Networking requirements</h3>
-<div class="paragraph">
-<p>You must use DHCP for the network and ensure that the DHCP server is configured to provide persistent IP addresses to the cluster machines. All nodes must be in the same VLAN. You cannot scale the cluster using a second VLAN as a Day 2 operation.
-Additionally, you must create the following networking resources before you install the OpenShift Container Platform cluster:</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>It is recommended that each OpenShift Container Platform node in the cluster must have access to a Network Time Protocol (NTP) server that is discoverable via DHCP. Installation is possible without an NTP server. However, asynchronous server clocks will cause errors, which NTP server prevents.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<h4 id="installation-vsphere-installer-infra-requirements-_installing-vsphere-installer-provisioned" class="discrete">Required IP Addresses</h4>
-<div class="paragraph">
-<p>An installer-provisioned vSphere installation requires two static IP addresses:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong>API</strong> address is used to access the cluster API.</p>
-</li>
-<li>
-<p>The <strong>Ingress</strong> address is used for cluster ingress traffic.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>You must provide these IP addresses to the installation program when you install the OpenShift Container Platform cluster.</p>
-</div>
-<h4 id="installation-vsphere-installer-infra-requirements-dns-records_installing-vsphere-installer-provisioned" class="discrete">DNS records</h4>
-<div class="paragraph">
-<p>You must create DNS records for two static IP addresses in the appropriate DNS server for the vCenter instance that hosts your OpenShift Container Platform cluster. In each record, <code>&lt;cluster_name&gt;</code> is the cluster name and <code>&lt;base_domain&gt;</code> is the cluster base domain that you specify when you install the cluster. A complete DNS record takes the form: <code>&lt;component&gt;.&lt;cluster_name&gt;.&lt;base_domain&gt;.</code>.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Required DNS records</caption>
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 55.5555%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Component</th>
-<th class="tableblock halign-left valign-top">Record</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>API VIP</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>api.&lt;cluster_name&gt;.&lt;base_domain&gt;.</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>This DNS A/AAAA or CNAME record must point to the load balancer
-for the control plane machines. This record must be resolvable by both clients
-external to the cluster and from all the nodes within the cluster.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Ingress VIP</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>*.apps.&lt;cluster_name&gt;.&lt;base_domain&gt;.</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A wildcard DNS A/AAAA or CNAME record that points to the load balancer that targets the
-machines that run the Ingress router pods, which are the worker nodes by
-default. This record must be resolvable by both clients external to the cluster
-and from all the nodes within the cluster.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ssh-agent-using_installing-vsphere-installer-provisioned"><a class="anchor" href="#ssh-agent-using_installing-vsphere-installer-provisioned"></a>Generating a key pair for cluster node SSH access</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>During an OpenShift Container Platform installation, you can provide an SSH public key to the installation program. The key is passed to the Red Hat Enterprise Linux CoreOS (RHCOS) nodes through their Ignition config files and is used to authenticate SSH access to the nodes. The key is added to the <code>~/.ssh/authorized_keys</code> list for the <code>core</code> user on each node, which enables password-less authentication.</p>
-</div>
-<div class="paragraph">
-<p>After the key is passed to the nodes, you can use the key pair to SSH in to the RHCOS nodes as the user <code>core</code>. To access the nodes through SSH, the private key identity must be managed by SSH for your local user.</p>
-</div>
-<div class="paragraph">
-<p>If you want to SSH in to your cluster nodes to perform installation debugging or disaster recovery, you must provide the SSH public key during the installation process. The <code>./openshift-install gather</code> command also requires the SSH public key to be in place on the cluster nodes.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Do not skip this procedure in production environments, where disaster recovery and debugging is required.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You must use a local key, not one that you configured with platform-specific
-approaches such as
-<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">AWS key pairs</a>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>If you do not have an existing SSH key pair on your local machine to use for authentication onto your cluster nodes, create one. For example, on a computer that uses a Linux operating system, run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>ssh-keygen <span class="nt">-t</span> ed25519 <span class="nt">-N</span> <span class="s1">''</span> <span class="nt">-f</span> &lt;path&gt;/&lt;file_name&gt; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Specify the path and file name, such as <code>~/.ssh/id_ed25519</code>, of the new SSH key. If you have an existing key pair, ensure your public key is in the your <code>~/.ssh</code> directory.</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If you plan to install an OpenShift Container Platform cluster that uses FIPS Validated / Modules in Process cryptographic libraries on the <code>x86_64</code> architecture, do not create a key that uses the <code>ed25519</code> algorithm. Instead, create a key that uses the <code>rsa</code> or <code>ecdsa</code> algorithm.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>View the public SSH key:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">cat</span> &lt;path&gt;/&lt;file_name&gt;.pub</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For example, run the following to view the <code>~/.ssh/id_ed25519.pub</code> public key:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="termanal">$ cat ~/.ssh/id_ed25519.pub</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Add the SSH private key identity to the SSH agent for your local user, if it has not already been added. SSH agent management of the key is required for password-less SSH authentication onto your cluster nodes, or if you want to use the <code>./openshift-install gather</code> command.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>On some distributions, default SSH private key identities such as <code>~/.ssh/id_rsa</code> and <code>~/.ssh/id_dsa</code> are managed automatically.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>If the <code>ssh-agent</code> process is not already running for your local user, start it as a background task:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>ssh-agent <span class="nt">-s</span><span class="si">)</span><span class="s2">"</span></code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">Agent pid 31874</span></code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If your cluster is in FIPS mode, only use FIPS-compliant algorithms to generate the SSH key. The key must be either RSA or ECDSA.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Add your SSH private key to the <code>ssh-agent</code>:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>ssh-add &lt;path&gt;/&lt;file_name&gt; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Specify the path and file name for your SSH private key, such as <code>~/.ssh/id_ed25519</code></td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">Identity added: /home/&lt;you&gt;</span>/&lt;path&gt;/&lt;file_name&gt; <span class="o">(</span>&lt;computer_name&gt;<span class="o">)</span></code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="ulist">
-<div class="title">Next steps</div>
-<ul>
-<li>
-<p>When you install OpenShift Container Platform, provide the SSH public key to the installation program.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="installation-obtaining-installer_installing-vsphere-installer-provisioned"><a class="anchor" href="#installation-obtaining-installer_installing-vsphere-installer-provisioned"></a>Obtaining the installation program</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Before you install OpenShift Container Platform, download the installation file on
- a local computer.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You have a computer that runs Linux or macOS, with 500 MB of local disk space</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Access the <a href="https://console.redhat.com/openshift/install">Infrastructure Provider</a> page on the OpenShift Cluster Manager site. If you have a Red Hat account, log in with your credentials. If you do not, create an account.</p>
-</li>
-<li>
-<p>Select your infrastructure provider.</p>
-</li>
-<li>
-<p>Navigate to the page for your installation type, download the installation program that corresponds with your host operating system and architecture, and place the file in the directory where you will store the installation configuration files.</p>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The installation program creates several files on the computer that you use to install your cluster. You must keep the installation program and the files that the installation program creates after you finish installing the cluster. Both files are required to delete the cluster.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Deleting the files created by the installation program does not remove your cluster, even if the cluster failed during installation. To remove your cluster, complete the OpenShift Container Platform uninstallation procedures for your specific cloud provider.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Extract the installation program. For example, on a computer that uses a Linux
-operating system, run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">tar</span> <span class="nt">-xvf</span> openshift-install-linux.tar.gz</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Download your installation <a href="https://console.redhat.com/openshift/install/pull-secret">pull secret from the Red Hat OpenShift Cluster Manager</a>. This pull secret allows you to authenticate with the services that are provided by the included authorities, including Quay.io, which serves the container images for OpenShift Container Platform components.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="installation-adding-vcenter-root-certificates_installing-vsphere-installer-provisioned"><a class="anchor" href="#installation-adding-vcenter-root-certificates_installing-vsphere-installer-provisioned"></a>Adding vCenter root CA certificates to your system trust</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Because the installation program requires access to your vCenter&#8217;s API, you must add your vCenter&#8217;s trusted root CA certificates to your system trust before you install an OpenShift Container Platform cluster.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>From the vCenter home page, download the vCenter&#8217;s root CA certificates. Click <strong>Download trusted root CA certificates</strong> in the vSphere Web Services SDK section. The <code>&lt;vCenter&gt;/certs/download.zip</code> file downloads.</p>
-</li>
-<li>
-<p>Extract the compressed file that contains the vCenter root CA certificates. The contents of the compressed file resemble the following file structure:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="nowrap">certs
-├── lin
-│   ├── 108f4d17.0
-│   ├── 108f4d17.r1
-│   ├── 7e757f6a.0
-│   ├── 8e4f8471.0
-│   └── 8e4f8471.r0
-├── mac
-│   ├── 108f4d17.0
-│   ├── 108f4d17.r1
-│   ├── 7e757f6a.0
-│   ├── 8e4f8471.0
-│   └── 8e4f8471.r0
-└── win
-    ├── 108f4d17.0.crt
-    ├── 108f4d17.r1.crl
-    ├── 7e757f6a.0.crt
-    ├── 8e4f8471.0.crt
-    └── 8e4f8471.r0.crl
-
-3 directories, 15 files</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Add the files for your operating system to the system trust. For example, on a Fedora operating system, run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">#</span><span class="w"> </span><span class="nb">cp </span>certs/lin/<span class="k">*</span> /etc/pki/ca-trust/source/anchors</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Update your system trust. For example, on a Fedora operating system, run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">#</span><span class="w"> </span>update-ca-trust extract</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="installation-launching-installer_installing-vsphere-installer-provisioned"><a class="anchor" href="#installation-launching-installer_installing-vsphere-installer-provisioned"></a>Deploying the cluster</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can install OpenShift Container Platform on a compatible cloud platform.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You can run the <code>create cluster</code> command of the installation program only once, during initial installation.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>Obtain the OpenShift Container Platform installation program and the pull secret for your
-cluster.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Change to the directory that contains the installation program and initialize the cluster deployment:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>./openshift-install create cluster <span class="nt">--dir</span> &lt;installation_directory&gt; <span class="se">\ </span><i class="conum" data-value="1"></i><b>(1)</b>
-<span class="go">    --log-level=info <i class="conum" data-value="2"></i><b>(2)</b>
-</span></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>For <code>&lt;installation_directory&gt;</code>, specify the
-directory name to store the files that the installation program creates.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>To view different installation details, specify <code>warn</code>, <code>debug</code>, or
-<code>error</code> instead of <code>info</code>.</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>When specifying the directory:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Verify that the directory has the <code>execute</code> permission. This permission is required to run Terraform binaries under the installation directory.</p>
-</li>
-<li>
-<p>Use an empty directory. Some installation assets, such as bootstrap X.509 certificates, have short expiration intervals, therefore you must not reuse an installation directory. If you want to reuse individual files from another cluster installation, you can copy them into your directory. However, the file names for the installation assets might change between releases. Use caution when copying installation files from an earlier OpenShift Container Platform version.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Provide values at the prompts:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Optional: Select an SSH key to use to access your cluster machines.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>For production OpenShift Container Platform clusters on which you want to perform installation debugging or disaster recovery, specify an SSH key that your <code>ssh-agent</code> process uses.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Select <strong>vsphere</strong> as the platform to target.</p>
-</li>
-<li>
-<p>Specify the name of your vCenter instance.</p>
-</li>
-<li>
-<p>Specify the user name and password for the vCenter account that has the required permissions to create the cluster.</p>
-<div class="paragraph">
-<p>The installation program connects to your vCenter instance.</p>
-</div>
-</li>
-<li>
-<p>Select the datacenter in your vCenter instance to connect to.</p>
-</li>
-<li>
-<p>Select the default vCenter datastore to use.</p>
-</li>
-<li>
-<p>Select the vCenter cluster to install the OpenShift Container Platform cluster in. The installation program uses the root resource pool of the vSphere cluster as the default resource pool.</p>
-</li>
-<li>
-<p>Select the network in the vCenter instance that contains the virtual IP addresses and DNS records that you configured.</p>
-</li>
-<li>
-<p>Enter the virtual IP address that you configured for control plane API access.</p>
-</li>
-<li>
-<p>Enter the virtual IP address that you configured for cluster ingress.</p>
-</li>
-<li>
-<p>Enter the base domain. This base domain must be the same one that you used in the DNS records that you configured.</p>
-</li>
-<li>
-<p>Enter a descriptive name for your cluster.
-The cluster name must be the same one that you used in the DNS records that you configured.</p>
-</li>
-<li>
-<p>Paste the <a href="https://console.redhat.com/openshift/install/pull-secret">pull secret from the Red Hat OpenShift Cluster Manager</a>.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<div class="title">Verification</div>
-<p>When the cluster deployment completes successfully:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The terminal displays directions for accessing your cluster, including a link to the web console and credentials for the <code>kubeadmin</code> user.</p>
-</li>
-<li>
-<p>Credential information also outputs to <code>&lt;installation_directory&gt;/.openshift_install.log</code>.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Do not delete the installation program or the files that the installation program creates. Both are required to delete the cluster.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="c">...
-</span><span class="go">INFO Install complete!
-INFO To access the cluster as the system:admin user when using 'oc', run 'export KUBECONFIG=/home/myuser/install_dir/auth/kubeconfig'
-INFO Access the OpenShift web-console here: https://console-openshift-console.apps.mycluster.example.com
-INFO Login to the console with user: "kubeadmin", and password: "4vYBz-Ee6gm-ymBZj-Wt5AL"
-INFO Time elapsed: 36m22s</span></code></pre>
-</div>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The Ignition config files that the installation program generates contain certificates that expire after 24 hours, which are then renewed at that time. If the cluster is shut down before renewing the certificates and the cluster is later restarted after the 24 hours have elapsed, the cluster automatically recovers the expired certificates. The exception is that you must manually approve the pending <code>node-bootstrapper</code> certificate signing requests (CSRs) to recover kubelet certificates. See the documentation for <em>Recovering from expired control plane certificates</em> for more information.</p>
-</li>
-<li>
-<p>It is recommended that you use Ignition config files within 12 hours after they are generated because the 24-hour certificate rotates from 16 to 22 hours after the cluster is installed. By using the Ignition config files within 12 hours, you can avoid installation failure if the certificate update runs during installation.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cli-installing-cli_installing-vsphere-installer-provisioned"><a class="anchor" href="#cli-installing-cli_installing-vsphere-installer-provisioned"></a>Installing the OpenShift CLI by downloading the binary</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can install the OpenShift CLI (<code>oc</code>) to interact with OpenShift Container Platform from a
-command-line interface. You can install <code>oc</code> on Linux, Windows, or macOS.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If you installed an earlier version of <code>oc</code>, you cannot use it to complete all
-of the commands in OpenShift Container Platform Branch Build. Download and
-install the new version of <code>oc</code>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<h3 id="installing-the-openshift-cli-on-linux" class="discrete">Installing the OpenShift CLI on Linux</h3>
-<div class="paragraph">
-<p>You can install the OpenShift CLI (<code>oc</code>) binary on Linux by using the following procedure.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Navigate to the <a href="https://access.redhat.com/downloads/content/290">OpenShift Container Platform downloads page</a> on the Red Hat Customer Portal.</p>
-</li>
-<li>
-<p>Select the architecture in the <strong>Product Variant</strong> drop-down menu.</p>
-</li>
-<li>
-<p>Select the appropriate version in the <strong>Version</strong> drop-down menu.</p>
-</li>
-<li>
-<p>Click <strong>Download Now</strong> next to the <strong>OpenShift vBranch Build Linux Client</strong> entry and save the file.</p>
-</li>
-<li>
-<p>Unpack the archive:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">tar </span>xvzf &lt;file&gt;</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Place the <code>oc</code> binary in a directory that is on your <code>PATH</code>.</p>
-<div class="paragraph">
-<p>To check your <code>PATH</code>, execute the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="nv">$PATH</span></code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>After you install the OpenShift CLI, it is available using the <code>oc</code> command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc &lt;<span class="nb">command</span><span class="o">&gt;</span></code></pre>
-</div>
-</div>
-<h3 id="installing-the-openshift-cli-on-windows" class="discrete">Installing the OpenShift CLI on Windows</h3>
-<div class="paragraph">
-<p>You can install the OpenShift CLI (<code>oc</code>) binary on Windows by using the following procedure.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Navigate to the <a href="https://access.redhat.com/downloads/content/290">OpenShift Container Platform downloads page</a> on the Red Hat Customer Portal.</p>
-</li>
-<li>
-<p>Select the appropriate version in the <strong>Version</strong> drop-down menu.</p>
-</li>
-<li>
-<p>Click <strong>Download Now</strong> next to the <strong>OpenShift vBranch Build Windows Client</strong> entry and save the file.</p>
-</li>
-<li>
-<p>Unzip the archive with a ZIP program.</p>
-</li>
-<li>
-<p>Move the <code>oc</code> binary to a directory that is on your <code>PATH</code>.</p>
-<div class="paragraph">
-<p>To check your <code>PATH</code>, open the command prompt and execute the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">C:\&gt;</span><span class="w"> </span>path</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>After you install the OpenShift CLI, it is available using the <code>oc</code> command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">C:\&gt;</span><span class="w"> </span>oc &lt;<span class="nb">command</span><span class="o">&gt;</span></code></pre>
-</div>
-</div>
-<h3 id="installing-the-openshift-cli-on-macos" class="discrete">Installing the OpenShift CLI on macOS</h3>
-<div class="paragraph">
-<p>You can install the OpenShift CLI (<code>oc</code>) binary on macOS by using the following procedure.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Navigate to the <a href="https://access.redhat.com/downloads/content/290">OpenShift Container Platform downloads page</a> on the Red Hat Customer Portal.</p>
-</li>
-<li>
-<p>Select the appropriate version in the <strong>Version</strong> drop-down menu.</p>
-</li>
-<li>
-<p>Click <strong>Download Now</strong> next to the <strong>OpenShift vBranch Build MacOSX Client</strong> entry and save the file.</p>
-</li>
-<li>
-<p>Unpack and unzip the archive.</p>
-</li>
-<li>
-<p>Move the <code>oc</code> binary to a directory on your PATH.</p>
-<div class="paragraph">
-<p>To check your <code>PATH</code>, open a terminal and execute the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="nv">$PATH</span></code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>After you install the OpenShift CLI, it is available using the <code>oc</code> command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc &lt;<span class="nb">command</span><span class="o">&gt;</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cli-logging-in-kubeadmin_installing-vsphere-installer-provisioned"><a class="anchor" href="#cli-logging-in-kubeadmin_installing-vsphere-installer-provisioned"></a>Logging in to the cluster by using the CLI</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can log in to your cluster as a default system user by exporting the cluster <code>kubeconfig</code> file.
-The <code>kubeconfig</code> file contains information about the cluster that is used by the CLI to connect a client to the correct cluster and API server.
-The file is specific to a cluster and is created during OpenShift Container Platform installation.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You deployed an OpenShift Container Platform cluster.</p>
-</li>
-<li>
-<p>You installed the <code>oc</code> CLI.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Export the <code>kubeadmin</code> credentials:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">KUBECONFIG</span><span class="o">=</span>&lt;installation_directory&gt;/auth/kubeconfig <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>For <code>&lt;installation_directory&gt;</code>, specify the path to the directory that you stored
-the installation files in.</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Verify you can run <code>oc</code> commands successfully using the exported configuration:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc <span class="nb">whoami</span></code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">system:admin</span></code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="installing-vsphere-installer-provisioned-registry"><a class="anchor" href="#installing-vsphere-installer-provisioned-registry"></a>Creating registry storage</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>After you install the cluster, you must create storage for the registry Operator.</p>
 </div>
 <div class="sect2">
-<h3 id="registry-removed_installing-vsphere-installer-provisioned"><a class="anchor" href="#registry-removed_installing-vsphere-installer-provisioned"></a>Image registry removed during installation</h3>
+<h3 id="installation-openstack-sr-iov-requirements_installing-openstack-nfv-preparing"><a class="anchor" href="#installation-openstack-sr-iov-requirements_installing-openstack-nfv-preparing"></a>Requirements for clusters on RHOSP that use SR-IOV</h3>
 <div class="paragraph">
-<p>On platforms that do not provide shareable object storage, the OpenShift Image
-Registry Operator bootstraps itself as <code>Removed</code>. This allows
-<code>openshift-installer</code> to complete installations on these platform types.</p>
+<p>To use single-root I/O virtualization (SR-IOV) with your deployment, you must meet the following requirements:</p>
 </div>
-<div class="paragraph">
-<p>After installation, you must edit the Image Registry Operator configuration to
-switch the <code>managementState</code> from <code>Removed</code> to <code>Managed</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.2/html-single/network_functions_virtualization_planning_and_configuration_guide/index#assembly_sriov_parameters">Plan your Red Hat OpenStack Platform (RHOSP) SR-IOV deployment</a>.</p>
+</li>
+<li>
+<p>OpenShift Container Platform must support the NICs that you use. For a list of supported NICs, see "About Single Root I/O Virtualization (SR-IOV) hardware networks" in the "Hardware networks" subsection of the "Networking" documentation.</p>
+</li>
+<li>
+<p>For each node that will have an attached SR-IOV NIC, your RHOSP cluster must have:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>One instance from the RHOSP quota</p>
+</li>
+<li>
+<p>One port attached to the machines subnet</p>
+</li>
+<li>
+<p>One port for each SR-IOV Virtual Function</p>
+</li>
+<li>
+<p>A flavor with at least 16 GB memory, 4 vCPUs, and 25 GB storage space</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The Prometheus console provides an <code>ImageRegistryRemoved</code> alert, for example:</p>
+</li>
+<li>
+<p>SR-IOV deployments often employ performance optimizations, such as dedicated or isolated CPUs. For maximum performance, configure your underlying RHOSP deployment to use these optimizations, and then run OpenShift Container Platform compute machines on the optimized infrastructure.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For more information about configuring performant RHOSP compute nodes, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.1/html-single/configuring_the_compute_service_for_instance_creation/configuring-compute-nodes-for-performance#configuring-compute-nodes-for-performance">Configuring Compute nodes for performance</a>.</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>"Image Registry has been removed. <code>ImageStreamTags</code>, <code>BuildConfigs</code> and
-<code>DeploymentConfigs</code> which reference <code>ImageStreamTags</code> may not work as
-expected. Please configure storage and update the config to <code>Managed</code>
-state by editing configs.imageregistry.operator.openshift.io."</p>
-</div>
-</td>
-</tr>
-</table>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-registry-storage-config_installing-vsphere-installer-provisioned"><a class="anchor" href="#installation-registry-storage-config_installing-vsphere-installer-provisioned"></a>Image registry storage configuration</h3>
+<h3 id="installation-openstack-ovs-dpdk-requirements_installing-openstack-nfv-preparing"><a class="anchor" href="#installation-openstack-ovs-dpdk-requirements_installing-openstack-nfv-preparing"></a>Requirements for clusters on RHOSP that use OVS-DPDK</h3>
 <div class="paragraph">
-<p>The Image Registry Operator is not initially available for platforms that do
-not provide default storage. After installation, you must configure your
-registry to use storage so that the Registry Operator is made available.</p>
+<p>To use Open vSwitch with the Data Plane Development Kit (OVS-DPDK) with your deployment, you must meet the following requirements:</p>
 </div>
-<div class="paragraph">
-<p>Instructions are shown for configuring a persistent volume, which is required for production clusters. Where applicable, instructions are shown for configuring an empty directory as the storage location, which is available for only non-production clusters.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Plan your Red Hat OpenStack Platform (RHOSP) OVS-DPDK deployment by referring to <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.2/html/network_functions_virtualization_planning_and_configuration_guide/assembly_ovsdpdk_parameters">Planning your OVS-DPDK deployment</a> in the Network Functions Virtualization Planning and Configuration Guide.</p>
+</li>
+<li>
+<p>Configure your RHOSP OVS-DPDK deployment according to <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.2/html/network_functions_virtualization_planning_and_configuration_guide/part-dpdk-configure">Configuring an OVS-DPDK deployment</a> in the Network Functions Virtualization Planning and Configuration Guide.</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>Additional instructions are provided for allowing the image registry to use block storage types by using the <code>Recreate</code> rollout strategy during upgrades.</p>
 </div>
-<div class="sect3">
-<h4 id="registry-configuring-storage-vsphere_installing-vsphere-installer-provisioned"><a class="anchor" href="#registry-configuring-storage-vsphere_installing-vsphere-installer-provisioned"></a>Configuring registry storage for VMware vSphere</h4>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-openstack-nfv-preparing-tasks-sr-iov"><a class="anchor" href="#installing-openstack-nfv-preparing-tasks-sr-iov"></a>Preparing to install a cluster that uses SR-IOV</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>As a cluster administrator, following installation you must configure your registry to use storage.</p>
+<p>You must configure RHOSP before you install a cluster that uses SR-IOV on it.</p>
+</div>
+<div class="sect2">
+<h3 id="installation-osp-configuring-sr-iov_installing-openstack-nfv-preparing"><a class="anchor" href="#installation-osp-configuring-sr-iov_installing-openstack-nfv-preparing"></a>Creating SR-IOV networks for compute machines</h3>
+<div class="paragraph">
+<p>If your Red Hat OpenStack Platform (RHOSP) deployment supports <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.1/html-single/network_functions_virtualization_planning_and_configuration_guide/index#assembly_sriov_parameters">single root I/O virtualization (SR-IOV)</a>, you can provision SR-IOV networks that compute machines run on.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The following instructions entail creating an external flat network and an external, VLAN-based network that can be attached to a compute machine. Depending on your RHOSP deployment, other network types might be required.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>Cluster administrator permissions.</p>
-</li>
-<li>
-<p>A cluster on VMware vSphere.</p>
-</li>
-<li>
-<p>Persistent storage provisioned for your cluster, such as Red Hat OpenShift Data Foundation.</p>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>OpenShift Container Platform supports <code>ReadWriteOnce</code> access for image registry storage when you have only one replica. To deploy an image registry that supports high availability with two or more replicas, <code>ReadWriteMany</code> access is required.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Must have "100Gi" capacity.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Testing shows issues with using the NFS server on RHEL as storage backend for
-core services. This includes the OpenShift Container Registry and Quay,
-Prometheus for monitoring storage, and Elasticsearch for logging storage.
-Therefore, using RHEL NFS to back PVs used by core services is not recommended.</p>
-</div>
-<div class="paragraph">
-<p>Other NFS implementations on the marketplace might not have these issues.
-Contact the individual NFS implementation vendor for more information on any
-testing that was possibly completed against these OpenShift Container Platform core
-components.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>To configure your registry to use storage, change the <code>spec.storage.pvc</code> in the <code>configs.imageregistry/cluster</code> resource.</p>
+<p>Your cluster supports SR-IOV.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -33225,7 +31787,7 @@ components.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>When using shared storage, review your security settings to prevent outside access.</p>
+<p>If you are unsure about what your cluster supports, review the OpenShift Container Platform SR-IOV hardware networks documentation.</p>
 </div>
 </td>
 </tr>
@@ -33233,437 +31795,114 @@ components.</p>
 </div>
 </li>
 <li>
-<p>Verify that you do not have a registry pod:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc get pod <span class="nt">-n</span> openshift-image-registry <span class="nt">-l</span> docker-registry<span class="o">=</span>default</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">No resourses found in openshift-image-registry namespace</span></code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If you do have a registry pod in your output, you do not need to continue with this procedure.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
+<p>You created radio and uplink provider networks as part of your RHOSP deployment. The names <code>radio</code> and <code>uplink</code> are used in all example commands to represent these networks.</p>
 </li>
-<li>
-<p>Check the registry configuration:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc edit configs.imageregistry.operator.openshift.io</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">storage</span><span class="pi">:</span>
-  <span class="na">pvc</span><span class="pi">:</span>
-    <span class="na">claim</span><span class="pi">:</span> <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Leave the <code>claim</code> field blank to allow the automatic creation of an <code>image-registry-storage</code> PVC.</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Check the <code>clusteroperator</code> status:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc get clusteroperator image-registry</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">NAME             VERSION                              AVAILABLE   PROGRESSING   DEGRADED   SINCE   MESSAGE
-image-registry   4.7                                  True        False         False      6h50m</span></code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="installation-registry-storage-block-recreate-rollout_installing-vsphere-installer-provisioned"><a class="anchor" href="#installation-registry-storage-block-recreate-rollout_installing-vsphere-installer-provisioned"></a>Configuring block registry storage for VMware vSphere</h4>
-<div class="paragraph">
-<p>To allow the image registry to use block storage types such as vSphere Virtual Machine Disk (VMDK) during upgrades as a cluster administrator, you can use the <code>Recreate</code> rollout strategy.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Block storage volumes are supported but not recommended for use with image
-registry on production clusters. An installation where the registry is
-configured on block storage is not highly available because the registry cannot
-have more than one replica.</p>
-</div>
-</td>
-</tr>
-</table>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>To set the image registry storage as a block storage type, patch the registry so that it uses the <code>Recreate</code> rollout strategy and runs with only <code>1</code> replica:</p>
+<p>On a command line, create a radio RHOSP network:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc patch config.imageregistry.operator.openshift.io/cluster <span class="nt">--type</span><span class="o">=</span>merge <span class="nt">-p</span> <span class="s1">'{"spec":{"rolloutStrategy":"Recreate","replicas":1}}'</span></code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>openstack network create radio <span class="nt">--provider-physical-network</span> radio <span class="nt">--provider-network-type</span> flat <span class="nt">--external</span></code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Provision the PV for the block storage device, and create a PVC for that volume. The requested block volume uses the ReadWriteOnce (RWO) access mode.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Create a <code>pvc.yaml</code> file with the following contents to define a VMware vSphere <code>PersistentVolumeClaim</code> object:</p>
+<p>Create an uplink RHOSP network:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">image-registry-storage</span> <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="na">namespace</span><span class="pi">:</span> <span class="s">openshift-image-registry</span> <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">accessModes</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">ReadWriteOnce</span> <i class="conum" data-value="3"></i><b>(3)</b>
-  <span class="na">resources</span><span class="pi">:</span>
-    <span class="na">requests</span><span class="pi">:</span>
-      <span class="na">storage</span><span class="pi">:</span> <span class="s">100Gi</span> <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>openstack network create uplink <span class="nt">--provider-physical-network</span> uplink <span class="nt">--provider-network-type</span> vlan <span class="nt">--external</span></code></pre>
 </div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>A unique name that represents the <code>PersistentVolumeClaim</code> object.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>The namespace for the <code>PersistentVolumeClaim</code> object, which is <code>openshift-image-registry</code>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>The access mode of the persistent volume claim. With <code>ReadWriteOnce</code>, the volume can be mounted with read and write permissions by a single node.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>The size of the persistent volume claim.</td>
-</tr>
-</table>
 </div>
 </li>
 <li>
-<p>Create the <code>PersistentVolumeClaim</code> object from the file:</p>
+<p>Create a subnet for the radio network:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc create <span class="nt">-f</span> pvc.yaml <span class="nt">-n</span> openshift-image-registry</code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>openstack subnet create <span class="nt">--network</span> radio <span class="nt">--subnet-range</span> &lt;radio_network_subnet_range&gt; radio</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a subnet for the uplink network:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>openstack subnet create <span class="nt">--network</span> uplink <span class="nt">--subnet-range</span> &lt;uplink_network_subnet_range&gt; uplink</code></pre>
 </div>
 </div>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Edit the registry configuration so that it references the correct PVC:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc edit config.imageregistry.operator.openshift.io <span class="nt">-o</span> yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">storage</span><span class="pi">:</span>
-  <span class="na">pvc</span><span class="pi">:</span>
-    <span class="na">claim</span><span class="pi">:</span> <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Creating a custom PVC allows you to leave the <code>claim</code> field blank for the default automatic creation of an <code>image-registry-storage</code> PVC.</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>For instructions about configuring registry storage so that it references the correct PVC, see <a href="../../registry/configuring_registry_storage/configuring-registry-storage-vsphere.html#registry-configuring-storage-vsphere_configuring-registry-storage-vsphere">Configuring the registry for vSphere</a>.</p>
-</div>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="vsphere-pv-backup_installing-vsphere-installer-provisioned"><a class="anchor" href="#vsphere-pv-backup_installing-vsphere-installer-provisioned"></a>Backing up VMware vSphere volumes</h2>
+<h2 id="installing-openstack-nfv-preparing-tasks-ovs-dpdk"><a class="anchor" href="#installing-openstack-nfv-preparing-tasks-ovs-dpdk"></a>Preparing to install a cluster that uses OVS-DPDK</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>OpenShift Container Platform provisions new volumes as independent persistent disks to freely attach and detach the volume on any node in the cluster. As a consequence, it is not possible to back up volumes that use snapshots, or to restore volumes from snapshots. See <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-53F65726-A23B-4CF0-A7D5-48E584B88613.html">Snapshot Limitations</a> for more information.</p>
+<p>You must configure RHOSP before you install a cluster that uses SR-IOV on it.</p>
 </div>
-<div class="paragraph">
-<div class="title">Procedure</div>
-<p>To create a backup of persistent volumes:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Stop the application that is using the persistent volume.</p>
-</li>
-<li>
-<p>Clone the persistent volume.</p>
-</li>
-<li>
-<p>Restart the application.</p>
-</li>
-<li>
-<p>Create a backup of the cloned volume.</p>
-</li>
-<li>
-<p>Delete the cloned volume.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cluster-telemetry_installing-vsphere-installer-provisioned"><a class="anchor" href="#cluster-telemetry_installing-vsphere-installer-provisioned"></a>Telemetry access for OpenShift Container Platform</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In OpenShift Container Platform Branch Build, the Telemetry service, which runs by default to provide metrics about cluster health and the success of updates, requires internet access. If your cluster is connected to the internet, Telemetry runs automatically, and your cluster is registered to <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager</a>.</p>
-</div>
-<div class="paragraph">
-<p>After you confirm that your <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager</a> inventory is correct, either maintained automatically by Telemetry or manually by using OpenShift Cluster Manager, <a href="https://access.redhat.com/documentation/en-us/subscription_central/2020-04/html/getting_started_with_subscription_watch/con-how-to-select-datacollection-tool_assembly-requirements-and-your-responsibilities-ctxt#red_hat_openshift">use subscription watch</a> to track your OpenShift Container Platform subscriptions at the account or multi-cluster level.</p>
-</div>
-<div class="ulist _additional-resources">
-<div class="title">Additional resources</div>
-<ul>
-<li>
-<p>See <a href="../../support/remote_health_monitoring/about-remote-health-monitoring.html#about-remote-health-monitoring">About remote health monitoring</a> for more information about the Telemetry service</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="nw-osp-configuring-external-load-balancer_installing-vsphere-installer-provisioned"><a class="anchor" href="#nw-osp-configuring-external-load-balancer_installing-vsphere-installer-provisioned"></a>Configuring an external load balancer</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can configure an OpenShift Container Platform cluster
-to use an external load balancer in place of the default load balancer.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>On your load balancer, TCP over ports 6443, 443, and 80 must be available to any users of your system.</p>
-</li>
-<li>
-<p>Load balance the API port, 6443, between each of the control plane nodes.</p>
-</li>
-<li>
-<p>Load balance the application ports, 443 and 80, between all of the compute nodes.</p>
-</li>
-<li>
-<p>On your load balancer, port 22623, which is used to serve ignition startup configurations to nodes, is not exposed outside of the cluster.</p>
-</li>
-<li>
-<p>Your load balancer must be able to access every machine in your cluster. Methods to allow this access include:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Attaching the load balancer to the cluster&#8217;s machine subnet.</p>
-</li>
-<li>
-<p>Attaching floating IP addresses to machines that use the load balancer.</p>
+<p>Complete <a href="https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.2/html/network_functions_virtualization_planning_and_configuration_guide/part-dpdk-configure#p-ovs-dpdk-flavor-deploy-instance">Creating a flavor and deploying an instance for OVS-DPDK</a> before you install a cluster on RHOSP.</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>External load balancing services and the control plane nodes must run on the same L2 network, and on the same VLAN when using VLANs to route traffic between the load balancing services and the control plane nodes.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Enable access to the cluster from your load balancer on ports 6443, 443, and 80.</p>
-<div class="paragraph">
-<p>As an example, note this HAProxy configuration:</p>
-</div>
-<div class="listingblock">
-<div class="title">A section of a sample HAProxy configuration</div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="text">...
-listen my-cluster-api-6443
-    bind 0.0.0.0:6443
-    mode tcp
-    balance roundrobin
-    server my-cluster-master-2 192.0.2.2:6443 check
-    server my-cluster-master-0 192.0.2.3:6443 check
-    server my-cluster-master-1 192.0.2.1:6443 check
-listenmy-cluster-apps-443
-        bind 0.0.0.0:443
-        mode tcp
-        balance roundrobin
-        server my-cluster-worker-0 192.0.2.6:443 check
-        server my-cluster-worker-1 192.0.2.5:443 check
-        server my-cluster-worker-2 192.0.2.4:443 check
-listenmy-cluster-apps-80
-        bind 0.0.0.0:80
-        mode tcp
-        balance roundrobin
-        server my-cluster-worker-0 192.0.2.7:80 check
-        server my-cluster-worker-1 192.0.2.9:80 check
-        server my-cluster-worker-2 192.0.2.8:80 check</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Add records to your DNS server for the cluster API and apps over the load balancer. For example:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="dns">&lt;load_balancer_ip_address&gt; api.&lt;cluster_name&gt;.&lt;base_domain&gt;
-&lt;load_balancer_ip_address&gt; apps.&lt;cluster_name&gt;.&lt;base_domain&gt;</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>From a command line, use <code>curl</code> to verify that the external load balancer and DNS configuration are operational.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Verify that the cluster API is accessible:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>curl https://&lt;loadbalancer_ip_address&gt;:6443/version <span class="nt">--insecure</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If the configuration is correct, you receive a JSON object in response:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nl">"major"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"minor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11+"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"gitVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v1.11.0+ad103ed"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"gitCommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ad103ed"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"gitTreeState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clean"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"buildDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-09T06:44:10Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"goVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"go1.10.3"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"compiler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gc"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linux/amd64"</span><span class="w">
-</span><span class="p">}</span></code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Verify that cluster applications are accessible:</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You can also verify application accessibility by opening the OpenShift Container Platform console in a web browser.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>curl http://console-openshift-console.apps.&lt;cluster_name&gt;.&lt;base_domain&gt; <span class="nt">-I</span> <span class="nt">-L</span> <span class="nt">--insecure</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If the configuration is correct, you receive an HTTP response:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">HTTP/1.1 302 Found
-content-length: 0
-</span><span class="gp">location: https://console-openshift-console.apps.&lt;cluster-name&gt;</span>.&lt;base domain&gt;/
-<span class="go">cache-control: no-cacheHTTP/1.1 200 OK
-referrer-policy: strict-origin-when-cross-origin
-</span><span class="gp">set-cookie: csrf-token=39HoZgztDnzjJkq/JuLJMeoKNXlfiVv2YgZc09c3TBOBU4NI6kDXaJH1LdicNhN1UsQWzon4Dor9GWGfopaTEQ==;</span><span class="w"> </span><span class="nv">Path</span><span class="o">=</span>/<span class="p">;</span> Secure
-<span class="go">x-content-type-options: nosniff
-x-dns-prefetch-control: off
-x-frame-options: DENY
-</span><span class="gp">x-xss-protection: 1;</span><span class="w"> </span><span class="nv">mode</span><span class="o">=</span>block
-<span class="go">date: Tue, 17 Nov 2020 08:42:10 GMT
-</span><span class="gp">content-type: text/html;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>utf-8
-<span class="gp">set-cookie: 1e2670d92730b515ce3a1bb65da45062=9b714eb87e93cf34853e87a92d6894be;</span><span class="w"> </span><span class="nv">path</span><span class="o">=</span>/<span class="p">;</span> HttpOnly<span class="p">;</span> Secure<span class="p">;</span> <span class="nv">SameSite</span><span class="o">=</span>None
-<span class="go">cache-control: private</span></code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
+<p>After you perform pre-installation tasks, install your cluster by following the most relevant OpenShift Container Platform on RHOSP installation instructions. Then, perform the tasks under "Next steps" on this page.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next steps</h2>
+<h2 id="next-steps_installing-openstack-nfv-preparing"><a class="anchor" href="#next-steps_installing-openstack-nfv-preparing"></a>Next steps</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../../post_installation_configuration/cluster-tasks.html#available_cluster_customizations">Customize your cluster</a>.</p>
+<p>For either type of deployment:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../scalability_and_performance/what-huge-pages-do-and-how-they-are-consumed-by-apps.html#what-huge-pages-do_huge-pages">Configure the Node Tuning Operator with huge pages support</a>.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>If necessary, you can
-<a href="../../support/remote_health_monitoring/opting-out-of-remote-health-reporting.html#opting-out-remote-health-reporting_opting-out-remote-health-reporting">opt out of remote health reporting</a>.</p>
+<p>To complete SR-IOV configuration after you deploy your cluster:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../networking/hardware_networks/installing-sriov-operator.html#installing-sr-iov-operator_installing-sriov-operator">Install the SR-IOV Operator</a>.</p>
 </li>
 <li>
-<p><a href="../../registry/configuring_registry_storage/configuring-registry-storage-vsphere.html#configuring-registry-storage-vsphere">Set up your registry and configure registry storage</a>.</p>
+<p><a href="../../networking/hardware_networks/configuring-sriov-device.html#nw-sriov-networknodepolicy-object_configuring-sriov-device">Configure your SR-IOV network device</a>.</p>
 </li>
 <li>
-<p>Optional: <a href="../../installing/installing_vsphere/using-vsphere-problem-detector-operator.html#vsphere-problem-detector-viewing-events_vsphere-problem-detector">View the events from the vSphere Problem Detector Operator</a> to determine if the cluster has permission or storage configuration issues.</p>
+<p><a href="../../machine_management/creating_machinesets/creating-machineset-osp.html#machineset-yaml-osp-sr-iov_creating-machineset-osp">Create SR-IOV compute machines</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Consult the following references after you deploy your cluster to improve its performance:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../networking/hardware_networks/using-dpdk-and-rdma.html#nw-openstack-ovs-dpdk-testpmd-pod_using-dpdk-and-rdma">A test pod template for clusters that use OVS-DPDK on OpenStack</a>.</p>
+</li>
+<li>
+<p><a href="../../networking/hardware_networks/add-pod.html#nw-openstack-sr-iov-testpmd-pod_add-pod">A test pod template for clusters that use SR-IOV on OpenStack</a>.</p>
+</li>
+<li>
+<p><a href="../../scalability_and_performance/cnf-create-performance-profiles.html#installation-openstack-ovs-dpdk-performance-profile_cnf-create-performance-profiles">A performance profile template for clusters that use OVS-DPDK on OpenStack</a>.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
