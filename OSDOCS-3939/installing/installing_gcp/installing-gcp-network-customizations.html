@@ -33516,7 +33516,7 @@ accounts for the dramatically decreased machine performance.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.tags</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.defaultMachinePlatform.tags</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>Optional. Additional network tags to add to the control plane and compute machines.</p>
 </div></div></td>
@@ -33563,7 +33563,7 @@ accounts for the dramatically decreased machine performance.</p>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.gcp.tags</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Optional. Additional network tags to add to the control plane machines. If set, this parameter overrides the <code>platform.gcp.tags</code> parameter for control plane machines.</p>
+<p>Optional. Additional network tags to add to the control plane machines. If set, this parameter overrides the <code>platform.gcp.defaultMachinePlatform.tags</code> parameter for control plane machines.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>One or more strings, for example "control-plane-tag1".</p>
@@ -33608,7 +33608,7 @@ accounts for the dramatically decreased machine performance.</p>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.gcp.tags</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Optional. Additional network tags to add to the compute machines. If set, this parameter overrides the <code>platform.gcp.tags</code> parameter for compute machines.</p>
+<p>Optional. Additional network tags to add to the compute machines. If set, this parameter overrides the <code>platform.gcp.defaultMachinePlatform.tags</code> parameter for compute machines.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>One or more strings, for example "compute-network-tag1".</p>
@@ -33769,9 +33769,10 @@ accounts for the dramatically decreased machine performance.</p>
   <span class="na">gcp</span><span class="pi">:</span>
     <span class="na">projectID</span><span class="pi">:</span> <span class="s">openshift-production</span> <i class="conum" data-value="1"></i><b>(1)</b>
     <span class="na">region</span><span class="pi">:</span> <span class="s">us-central1</span> <i class="conum" data-value="1"></i><b>(1)</b>
-    <span class="na">tags</span><span class="pi">:</span> <i class="conum" data-value="6"></i><b>(6)</b>
-    <span class="pi">-</span> <span class="s">global-tag1</span>
-    <span class="pi">-</span> <span class="s">global-tag2</span>
+    <span class="na">defaultMachinePlatform</span><span class="pi">:</span>
+      <span class="na">tags</span><span class="pi">:</span> <i class="conum" data-value="6"></i><b>(6)</b>
+      <span class="pi">-</span> <span class="s">global-tag1</span>
+      <span class="pi">-</span> <span class="s">global-tag2</span>
 <span class="na">pullSecret</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"auths":</span><span class="nv"> </span><span class="s">...}'</span> <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="na">fips</span><span class="pi">:</span> <span class="no">false</span> <i class="conum" data-value="7"></i><b>(7)</b>
 <span class="na">sshKey</span><span class="pi">:</span> <span class="s">ssh-ed25519 AAAA...</span> <i class="conum" data-value="8"></i><b>(8)</b>
@@ -33819,7 +33820,7 @@ accounts for the dramatically decreased machine performance.</p>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Optional: A set of network tags to apply to the control plane or compute machine sets. <code>platform.gcp.tags</code> will apply to both control plane and compute machines. If set, <code>compute.platform.gcp.tags</code> and <code>controlPlane.platform.gcp.tags</code> will override <code>platform.gcp.tags</code>.</td>
+<td>Optional: A set of network tags to apply to the control plane or compute machine sets. <code>platform.gcp.defaultMachinePlatform.tags</code> will apply to both control plane and compute machines. If set, <code>compute.platform.gcp.tags</code> and <code>controlPlane.platform.gcp.tags</code> will override <code>platform.gcp.defaultMachinePlatform.tags</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>

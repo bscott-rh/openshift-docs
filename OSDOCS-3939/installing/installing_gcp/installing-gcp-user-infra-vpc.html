@@ -33938,9 +33938,10 @@ installation process. You must back it up now.</p>
   <span class="pi">-</span> <span class="s">172.30.0.0/16</span>
 <span class="na">platform</span><span class="pi">:</span>
   <span class="na">gcp</span><span class="pi">:</span>
-    <span class="na">tags</span><span class="pi">:</span> <i class="conum" data-value="5"></i><b>(5)</b>
-    <span class="pi">-</span> <span class="s">global-tag1</span>
-    <span class="pi">-</span> <span class="s">global-tag2</span>
+    <span class="na">defaultMachinePlatform</span><span class="pi">:</span>
+      <span class="na">tags</span><span class="pi">:</span> <i class="conum" data-value="5"></i><b>(5)</b>
+      <span class="pi">-</span> <span class="s">global-tag1</span>
+      <span class="pi">-</span> <span class="s">global-tag2</span>
     <span class="na">projectID</span><span class="pi">:</span> <span class="s">openshift-production</span> <i class="conum" data-value="6"></i><b>(6)</b>
     <span class="na">region</span><span class="pi">:</span> <span class="s">us-central1</span> <i class="conum" data-value="7"></i><b>(7)</b>
 <span class="na">pullSecret</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"auths":</span><span class="nv"> </span><span class="s">...}'</span>
@@ -33987,7 +33988,7 @@ installation process. You must back it up now.</p>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>Optional: A set of network tags to apply to the control plane or compute machine sets. <code>platform.gcp.tags</code> will apply to both control plane and compute machines. If set, <code>compute.platform.gcp.tags</code> and <code>controlPlane.platform.gcp.tags</code> will override <code>platform.gcp.tags</code>.</td>
+<td>Optional: A set of network tags to apply to the control plane or compute machine sets. <code>platform.gcp.defaultMachinePlatform.tags</code> will apply to both control plane and compute machines. If set, <code>compute.platform.gcp.tags</code> and <code>controlPlane.platform.gcp.tags</code> will override <code>platform.gcp.defaultMachinePlatform.tags</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
