@@ -33675,7 +33675,7 @@ you want to reuse the file, you must back it up now.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>apiVersion</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The API version for the <code>install-config.yaml</code> content. The current version is <code>v1</code>. The installer may also support older API versions.</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The API version for the <code>install-config.yaml</code> content. The current version is <code>v1</code>. The installation program may also support older API versions.</p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>String</p>
 </div></div></td>
@@ -34158,7 +34158,7 @@ accounts for the dramatically decreased machine performance.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Not all CCO modes are supported for all cloud providers. For more information on CCO modes, see the <em>Cloud Credential Operator</em> entry in the <em>Cluster Operators reference</em> content.</p>
+<p>Not all CCO modes are supported for all cloud providers. For more information about CCO modes, see the <em>Cloud Credential Operator</em> entry in the <em>Cluster Operators reference</em> content.</p>
 </div>
 </td>
 </tr>
@@ -34410,7 +34410,7 @@ accounts for the dramatically decreased machine performance.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.openstack.zones</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">RHOSP Compute (Nova) availability zones (AZs) to install machines on. If this parameter is not set, the installer relies on the default settings for Nova that the RHOSP administrator configured.</p>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">RHOSP Compute (Nova) availability zones (AZs) to install machines on. If this parameter is not set, the installation program relies on the default settings for Nova that the RHOSP administrator configured.</p>
 <p class="tableblock">On clusters that use Kuryr, RHOSP Octavia does not support availability zones. Load balancers and, if you are using the Amphora provider driver, OpenShift Container Platform services that rely on Amphora VMs, are not created according to the value of this property.</p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>A list of strings. For example, <code>["zone-1", "zone-2"]</code>.</p>
@@ -34418,7 +34418,7 @@ accounts for the dramatically decreased machine performance.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.openstack.rootVolume.zones</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">For compute machines, the availability zone to install root volumes on. If you do not set a value for this parameter, the installer selects the default availability zone.</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">For compute machines, the availability zone to install root volumes on. If you do not set a value for this parameter, the installation program selects the default availability zone.</p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>A list of strings, for example <code>["zone-1", "zone-2"]</code>.</p>
 </div></div></td>
@@ -34448,7 +34448,7 @@ accounts for the dramatically decreased machine performance.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.openstack.zones</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">RHOSP Compute (Nova) availability zones (AZs) to install machines on. If this parameter is not set, the installer relies on the default settings for Nova that the RHOSP administrator configured.</p>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">RHOSP Compute (Nova) availability zones (AZs) to install machines on. If this parameter is not set, the installation program relies on the default settings for Nova that the RHOSP administrator configured.</p>
 <p class="tableblock">On clusters that use Kuryr, RHOSP Octavia does not support availability zones. Load balancers and, if you are using the Amphora provider driver, OpenShift Container Platform services that rely on Amphora VMs, are not created according to the value of this property.</p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>A list of strings. For example, <code>["zone-1", "zone-2"]</code>.</p>
@@ -34456,7 +34456,7 @@ accounts for the dramatically decreased machine performance.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.openstack.rootVolume.zones</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">For control plane machines,  the availability zone to install root volumes on. If you do not set this value, the installer selects the default availability zone.</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">For control plane machines,  the availability zone to install root volumes on. If you do not set this value, the installation program selects the default availability zone.</p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>A list of strings, for example <code>["zone-1", "zone-2"]</code>.</p>
 </div></div></td>
@@ -34472,7 +34472,7 @@ accounts for the dramatically decreased machine performance.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.openstack.clusterOSImage</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The location from which the installer downloads the RHCOS image.</p>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The location from which the installation program downloads the RHCOS image.</p>
 <p class="tableblock">You must set this parameter to perform an installation in a restricted network.</p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>An HTTP or HTTPS URL, optionally with an SHA-256 checksum.</p>

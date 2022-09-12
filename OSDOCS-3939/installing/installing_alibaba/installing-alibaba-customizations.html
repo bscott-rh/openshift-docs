@@ -33050,7 +33050,7 @@ openshift-machine-api-alibabacloud-credentials-credentials.yaml</span></code></p
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>apiVersion</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The API version for the <code>install-config.yaml</code> content. The current version is <code>v1</code>. The installer may also support older API versions.</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The API version for the <code>install-config.yaml</code> content. The current version is <code>v1</code>. The installation program may also support older API versions.</p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>String</p>
 </div></div></td>
@@ -33532,7 +33532,7 @@ accounts for the dramatically decreased machine performance.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Not all CCO modes are supported for all cloud providers. For more information on CCO modes, see the <em>Cloud Credential Operator</em> entry in the <em>Cluster Operators reference</em> content.</p>
+<p>Not all CCO modes are supported for all cloud providers. For more information about CCO modes, see the <em>Cloud Credential Operator</em> entry in the <em>Cluster Operators reference</em> content.</p>
 </div>
 </td>
 </tr>
@@ -33687,7 +33687,7 @@ accounts for the dramatically decreased machine performance.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.alibabacloud.resourceGroupID</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The ID of an already existing resource group where the cluster will be installed. If empty, the installer will create a new resource group for the cluster.</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The ID of an already existing resource group where the cluster will be installed. If empty, the installation program will create a new resource group for the cluster.</p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>String.</p>
 </div></div></td>
@@ -33701,14 +33701,14 @@ accounts for the dramatically decreased machine performance.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.alibabacloud.vpcID</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The ID of an already existing VPC where the cluster should be installed. If empty, the installer will create a new VPC for the cluster.</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The ID of an already existing VPC where the cluster should be installed. If empty, the installation program will create a new VPC for the cluster.</p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>String.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.alibabacloud.vswitchIDs</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The ID list of already existing VSwitches where cluster resources will be created. The existing VSwitches can only be used when also using existing VPC. If empty, the installer will create new VSwitches for the cluster.</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The ID list of already existing VSwitches where cluster resources will be created. The existing VSwitches can only be used when also using existing VPC. If empty, the installation program will create new VSwitches for the cluster.</p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>String list.</p>
 </div></div></td>
@@ -33750,7 +33750,7 @@ accounts for the dramatically decreased machine performance.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.alibabacloud.privateZoneID</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The ID of an existing private zone into which to add DNS records for the cluster&#8217;s internal API. An existing private zone can only be used when also using existing VPC. The private zone must be associated with the VPC containing the subnets. Leave the private zone unset to have the installer create the private zone on your behalf.</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The ID of an existing private zone into which to add DNS records for the cluster&#8217;s internal API. An existing private zone can only be used when also using existing VPC. The private zone must be associated with the VPC containing the subnets. Leave the private zone unset to have the installation program create the private zone on your behalf.</p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>String.</p>
 </div></div></td>
