@@ -29225,6 +29225,7 @@
 <li><a href="#fixed-issues-1-7_op-release-notes">Fixed issues</a></li>
 <li><a href="#release-notes-1-7-1_op-release-notes">Release notes for Red Hat OpenShift Pipelines General Availability 1.7.1</a></li>
 <li><a href="#release-notes-1-7-2_op-release-notes">Release notes for Red Hat OpenShift Pipelines General Availability 1.7.2</a></li>
+<li><a href="#release-notes-1-7-3_op-release-notes">Release notes for Red Hat OpenShift Pipelines General Availability 1.7.3</a></li>
 </ul>
 </li>
 <li><a href="#op-release-notes-1-6_op-release-notes">Release notes for Red Hat OpenShift Pipelines General Availability 1.6</a>
@@ -29836,8 +29837,12 @@ GA
 <div class="ulist">
 <ul>
 <li>
-<p>Breaking change: The <code>disable-working-directory-overwrite</code> and <code>disable-home-env-overwrite</code> fields in the <code>TektonConfig</code> custom resource (CR) is removed. As a result, the <code>$HOME</code> environment variable and <code>workingDir</code> parameter are unavailable.</p>
+<p>Breaking change: This update removes the <code>disable-working-directory-overwrite</code> and <code>disable-home-env-overwrite</code> fields from the <code>TektonConfig</code> custom resource (CR). As a result, the <code>TektonConfig</code> CR no longer automatically sets the <code>$HOME</code> environment variable and <code>workingDir</code> parameter. You can still set the <code>$HOME</code> environment variable and <code>workingDir</code> parameter by using the <code>env</code> and <code>workingDir</code> fields in the <code>Task</code> custom resource definition (CRD).</p>
 </li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>The <code>Conditions</code> custom resource definition (CRD) type is deprecated and planned to be removed in a future release. Instead, use the recommended <code>When</code> expression.</p>
 </li>
@@ -30043,6 +30048,25 @@ time="2022-03-04T09:47:57Z" level=error msg="(unable to determine exit status)"<
 <div class="paragraph">
 <p>With this update, the <code>pipelines-scc</code> security context constraint (SCC) is compatible with the <code>SETFCAP</code> capability necessary for S2I and Buildah clustertasks. As a result, the S2I build tasks run successfully.</p>
 </div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="release-notes-1-7-3_op-release-notes"><a class="anchor" href="#release-notes-1-7-3_op-release-notes"></a>Release notes for Red Hat OpenShift Pipelines General Availability 1.7.3</h3>
+<div class="paragraph">
+<p>With this update, Red Hat OpenShift Pipelines General Availability (GA) 1.7.3 is available on OpenShift Container Platform 4.9, 4.10, and 4.11.</p>
+</div>
+<div class="sect3">
+<h4 id="fixed-issues-1-7-3_op-release-notes"><a class="anchor" href="#fixed-issues-1-7-3_op-release-notes"></a>Fixed issues</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Before this update, the Operator failed when creating RBAC resources if any namespace was in a <code>Terminating</code> state. With this update, the Operator ignores namespaces in a <code>Terminating</code> state and creates the RBAC resources.</p>
+</li>
+<li>
+<p>Previously, upgrading the Red Hat OpenShift Pipelines Operator caused the <code>pipeline</code> service account to be recreated, which meant that the secrets linked to the service account were lost. This update fixes the issue. During upgrades, the Operator no longer recreates the <code>pipeline</code> service account. As a result, secrets attached to the <code>pipeline</code> service account persist after upgrades, and the resources (tasks and pipelines) continue to work correctly.</p>
 </li>
 </ul>
 </div>

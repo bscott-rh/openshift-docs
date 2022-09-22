@@ -29374,6 +29374,12 @@ JVM threads.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies additional options for the Jenkins JVM. These options are appended to all other options, including the Java options above, and can be used to override any of them, if necessary. Separate each additional option with a space and if any option contains space characters, escape them with a backslash.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example settings: <code>-Dfoo -Dbar</code>; <code>-Dfoo=first\ value -Dbar=second\ value</code></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>USE_JAVA_VERSION</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the version of Java version to use to run the agent in its container. The container base image has two versions of java installed: <code>java-11</code> and <code>java-1.8.0</code>. If you extend the container base image, you can specify any alternative version of java using its associated suffix.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The default value is <code>java-11</code>.</p>
+<p class="tableblock">Example setting: <code>java-1.8.0</code></p></td>
+</tr>
 </tbody>
 </table>
 </div>

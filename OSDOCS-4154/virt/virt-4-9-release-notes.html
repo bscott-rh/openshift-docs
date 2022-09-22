@@ -29507,6 +29507,20 @@
 <div class="ulist">
 <ul>
 <li>
+<p>Updating to OpenShift Virtualization 4.9.6 causes some virtual machines (VMs) to get stuck in a live migration loop. This occurs if the <code>spec.volumes.containerDisk.path</code> field in the VM manifest is set to a relative path.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>As a workaround, delete and recreate the VM manifest, setting the value of the <code>spec.volumes.containerDisk.path</code> field to an absolute path. You can then update OpenShift Virtualization.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+<li>
 <p>If you hot-plug a virtual disk and then force delete the <code>virt-launcher</code> pod, you might lose data. This is due to a race condition that can cause the VM disk&#8217;s contents to be wiped from the persistent volume. (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=2007397"><strong>BZ#2007397</strong></a>)</p>
 </li>
 </ul>

@@ -29215,7 +29215,7 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
-<li><a href="#cnf-associating-secondary-interfaces-metrics-to-network-attachments_secondary-interfaces-metrics">Associating secondary interfaces metrics to network attachments</a>
+<li><a href="#cnf-associating-secondary-interfaces-metrics-to-network-attachments_secondary-interfaces-metrics">Extending secondary network metrics for monitoring</a>
 <ul class="sectlevel2">
 <li><a href="#cnf-associating-secondary-interfaces-metrics-to-network-attachments-network-metrics-daemon_secondary-interfaces-metrics">Network Metrics Daemon</a></li>
 <li><a href="#cnf-associating-secondary-interfaces-metrics-with-network-name_secondary-interfaces-metrics">Metrics with network name</a></li>
@@ -29226,19 +29226,19 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="cnf-associating-secondary-interfaces-metrics-to-network-attachments_secondary-interfaces-metrics"><a class="anchor" href="#cnf-associating-secondary-interfaces-metrics-to-network-attachments_secondary-interfaces-metrics"></a>Associating secondary interfaces metrics to network attachments</h2>
+<h2 id="cnf-associating-secondary-interfaces-metrics-to-network-attachments_secondary-interfaces-metrics"><a class="anchor" href="#cnf-associating-secondary-interfaces-metrics-to-network-attachments_secondary-interfaces-metrics"></a>Extending secondary network metrics for monitoring</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Secondary devices, or interfaces, are used for different purposes. It is important to have a way to classify them to be able to aggregate the metrics for secondary devices with the same classification.</p>
 </div>
 <div class="paragraph">
-<p>Exposed metrics contain the interface but do not specify where the interface originates. This is workable when there are no additional interfaces, but if a secondary interface is added, it is difficult to make use of the metrics since it is hard to identify the interfaces using only the interface name as an identifier.</p>
+<p>Exposed metrics contain the interface but do not specify where the interface originates. This is workable when there are no additional interfaces. However, if secondary interfaces are added, it can be difficult to use the metrics since it is hard to identify interfaces using only interface names.</p>
 </div>
 <div class="paragraph">
 <p>When adding secondary interfaces, their names depend on the order in which they are added, and different secondary interfaces might belong to different networks and can be used for different purposes.</p>
 </div>
 <div class="paragraph">
-<p>With <code>pod_network_name_info</code> it is possible to extend the current metrics with the additional information that identifies the interface type. In this way, it is possible to aggregate the metrics and to add specific alarms to specific interface types.</p>
+<p>With <code>pod_network_name_info</code> it is possible to extend the current metrics with additional information that identifies the interface type. In this way, it is possible to aggregate the metrics and to add specific alarms to specific interface types.</p>
 </div>
 <div class="paragraph">
 <p>The network type is generated using the name of the related <code>NetworkAttachmentDefinition</code>, that in turn is used to differentiate different classes of secondary networks. For example, different interfaces belonging to different networks or using different CNIs use different network attachment definition names.</p>
@@ -29316,7 +29316,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>The network name label is produced using the annotation added by Multus. It ia the concatenation of the namespace the network attachment definition belongs to, plus the name of the network attachment definition.</p>
+<p>The network name label is produced using the annotation added by Multus. It is the concatenation of the namespace the network attachment definition belongs to, plus the name of the network attachment definition.</p>
 </div>
 <div class="paragraph">
 <p>The new metric alone does not provide much value, but combined with the network related <code>container_network_*</code> metrics, it offers better support for monitoring secondary networks.</p>

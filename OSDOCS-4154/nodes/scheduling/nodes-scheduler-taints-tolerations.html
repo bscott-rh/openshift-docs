@@ -29253,14 +29253,10 @@
 <div class="title">Example taint in a node specification</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
-<span class="s">....</span>
-  <span class="s">template</span><span class="pi">:</span>
-<span class="s">....</span>
-    <span class="s">spec</span><span class="pi">:</span>
-      <span class="na">taints</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">effect</span><span class="pi">:</span> <span class="s">NoExecute</span>
-        <span class="na">key</span><span class="pi">:</span> <span class="s">key1</span>
-        <span class="na">value</span><span class="pi">:</span> <span class="s">value1</span>
+  <span class="na">taints</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">effect</span><span class="pi">:</span> <span class="s">NoExecute</span>
+    <span class="na">key</span><span class="pi">:</span> <span class="s">key1</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="s">value1</span>
 <span class="s">....</span></code></pre>
 </div>
 </div>
@@ -29268,16 +29264,12 @@
 <div class="title">Example toleration in a <code>Pod</code> spec</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
-<span class="s">....</span>
-  <span class="s">template</span><span class="pi">:</span>
-<span class="s">....</span>
-    <span class="s">spec</span><span class="pi">:</span>
-      <span class="na">tolerations</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
-        <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
-        <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
-        <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span>
-        <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="m">3600</span>
+  <span class="na">tolerations</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
+    <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
+    <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span>
+    <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="m">3600</span>
 <span class="s">....</span></code></pre>
 </div>
 </div>
@@ -29517,16 +29509,12 @@
 <div class="title">Example output</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
-<span class="s">....</span>
-  <span class="s">template</span><span class="pi">:</span>
-<span class="s">....</span>
-    <span class="s">spec</span><span class="pi">:</span>
-      <span class="na">tolerations</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
-        <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
-        <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
-        <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span>
-        <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">3600</span></code></pre>
+  <span class="na">tolerations</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
+    <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
+    <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span>
+    <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">3600</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -29602,19 +29590,15 @@
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
-<span class="s">....</span>
-  <span class="s">template</span><span class="pi">:</span>
-<span class="s">....</span>
-    <span class="s">spec</span><span class="pi">:</span>
-      <span class="na">tolerations</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
-        <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
-        <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
-        <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoSchedule"</span>
-      <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
-        <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
-        <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
-        <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span></code></pre>
+  <span class="na">tolerations</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
+    <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
+    <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoSchedule"</span>
+  <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
+    <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
+    <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span></code></pre>
 </div>
 </div>
 </li>
@@ -29711,19 +29695,15 @@ When a node experiences one of these conditions, OpenShift Container Platform au
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
-<span class="s">....</span>
-  <span class="s">template</span><span class="pi">:</span>
-<span class="s">....</span>
-    <span class="s">spec</span><span class="pi">:</span>
-      <span class="na">tolerations</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s">node.kubernetes.io/not-ready</span>
-        <span class="na">operator</span><span class="pi">:</span> <span class="s">Exists</span>
-        <span class="na">effect</span><span class="pi">:</span> <span class="s">NoExecute</span>
-        <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">300</span> <i class="conum" data-value="1"></i><b>(1)</b>
-      <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s">node.kubernetes.io/unreachable</span>
-        <span class="na">operator</span><span class="pi">:</span> <span class="s">Exists</span>
-        <span class="na">effect</span><span class="pi">:</span> <span class="s">NoExecute</span>
-        <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">300</span></code></pre>
+  <span class="na">tolerations</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s">node.kubernetes.io/not-ready</span>
+    <span class="na">operator</span><span class="pi">:</span> <span class="s">Exists</span>
+    <span class="na">effect</span><span class="pi">:</span> <span class="s">NoExecute</span>
+    <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">300</span> <i class="conum" data-value="1"></i><b>(1)</b>
+  <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s">node.kubernetes.io/unreachable</span>
+    <span class="na">operator</span><span class="pi">:</span> <span class="s">Exists</span>
+    <span class="na">effect</span><span class="pi">:</span> <span class="s">NoExecute</span>
+    <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">300</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -29764,12 +29744,8 @@ Pods with this toleration are not removed from a node that has taints.</p>
 <div class="title"><code>Pod</code> spec for tolerating all taints</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
-<span class="s">....</span>
-  <span class="s">template</span><span class="pi">:</span>
-<span class="s">....</span>
-    <span class="s">spec</span><span class="pi">:</span>
-      <span class="na">tolerations</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Exists"</span></code></pre>
+  <span class="na">tolerations</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Exists"</span></code></pre>
 </div>
 </div>
 </div>
@@ -29790,16 +29766,12 @@ Pods with this toleration are not removed from a node that has taints.</p>
 <div class="title">Sample pod configuration file with an Equal operator</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
-<span class="s">....</span>
-  <span class="s">template</span><span class="pi">:</span>
-<span class="s">....</span>
-    <span class="s">spec</span><span class="pi">:</span>
-      <span class="na">tolerations</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span> <i class="conum" data-value="1"></i><b>(1)</b>
-        <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
-        <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
-        <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span>
-        <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">3600</span> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+  <span class="na">tolerations</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
+    <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
+    <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span>
+    <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">3600</span> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -29821,15 +29793,11 @@ Pods with this toleration are not removed from a node that has taints.</p>
 <div class="title">Sample pod configuration file with an Exists operator</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
-<span class="s">....</span>
-  <span class="s">template</span><span class="pi">:</span>
-<span class="s">....</span>
-    <span class="s">spec</span><span class="pi">:</span>
-      <span class="na">tolerations</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
-        <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Exists"</span> <i class="conum" data-value="1"></i><b>(1)</b>
-        <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span>
-        <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">3600</span></code></pre>
+   <span class="na">tolerations</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
+      <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Exists"</span> <i class="conum" data-value="1"></i><b>(1)</b>
+      <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span>
+      <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">3600</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -29915,16 +29883,12 @@ Pods with this toleration are not removed from a node that has taints.</p>
 <div class="title">Sample pod configuration file with <code>Equal</code> operator</div>
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
-<span class="s">....</span>
-  <span class="s">template</span><span class="pi">:</span>
-<span class="s">....</span>
-    <span class="s">spec</span><span class="pi">:</span>
-      <span class="na">tolerations</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span> <i class="conum" data-value="1"></i><b>(1)</b>
-        <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
-        <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
-        <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span>
-        <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">3600</span> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+  <span class="na">tolerations</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
+    <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
+    <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoExecute"</span>
+    <span class="na">tolerationSeconds</span><span class="pi">:</span> <span class="s">3600</span> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
