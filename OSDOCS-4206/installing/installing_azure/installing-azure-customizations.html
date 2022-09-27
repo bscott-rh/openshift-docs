@@ -29645,7 +29645,7 @@ rh-ocp-worker  redhat-limited  rh-ocp-worker-gen1  redhat-limited:rh-ocp-worker:
 </div>
 </li>
 <li>
-<p>Record the image details of your offer. You must update the <code>99_openshift-cluster-api_worker-machineset-[0-2].yaml</code> files in the section titled "Updating Manifests for Marketplace Installation".</p>
+<p>Record the image details of your offer. You must update the <code>99_openshift-cluster-api_worker-machineset-[0-2].yaml</code> files in the section titled "Updating Manifests for Marketplace Installation" before completing the installation.</p>
 </li>
 </ol>
 </div>
@@ -31016,7 +31016,66 @@ proxies can be created.</p>
 <h2 id="installation-azure-marketplace-manifests_installing-azure-customizations"><a class="anchor" href="#installation-azure-marketplace-manifests_installing-azure-customizations"></a>Updating Manifests for Marketplace Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After selecting your Marketplace image and recording the image details of your offer, you must create and modify installation manifests to use the Marketplace image.</p>
+<p>If you have selected a Marketplace image for installation, you must create and modify the manifests to use the Marketplace image.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have created the <code>install-config.yaml</code> file and completed any modifications to it.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Change to the directory that contains the installation program and create the manifests by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>openshift-install create manifests <span class="nt">--dir</span> &lt;installation_dir&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Edit the <code>.spec.template.spec.providerSpec.value.image</code> property of the compute machine set definitions, replacing the <code>offer</code>, <code>publisher</code>, <code>sku</code>, and <code>version</code> values with the details gathered in the section titled "Selecting an Azure Marketplace image". These are the three files that must be updated:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;installation_dir&gt;/man/openshift/99_openshift-cluster-api_worker-machineset-0.yaml</code></p>
+</li>
+<li>
+<p><code>&lt;installation_dir&gt;/man/openshift/99_openshift-cluster-api_worker-machineset-1.yaml</code></p>
+</li>
+<li>
+<p><code>&lt;installation_dir&gt;/man/openshift/99_openshift-cluster-api_worker-machineset-2.yaml</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In each file, replace the value of the <code>.spec.template.spec.providerSpec.value.image.resourceID</code> property with an empty value (<code>""</code>).</p>
+</li>
+<li>
+<p>In each file, set the <code>type</code> property to <code>MarketplaceWithPlan</code>.</p>
+</li>
+<li>
+<p>Using the first machine set file as an example, the <code>.spec.template.spec.providerSpec.value.image</code> section should look like the following example:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="s">$ cat &lt;installation_dir&gt;/openshift/99_openshift-cluster-api_worker-machineset-0.yaml | grep -A5 -B1 offer</span>
+
+    <span class="s">image</span><span class="pi">:</span>
+      <span class="na">offer</span><span class="pi">:</span> <span class="s">rh-ocp-worker</span>
+      <span class="na">publisher</span><span class="pi">:</span> <span class="s">redhat</span>
+      <span class="na">resourceID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">sku</span><span class="pi">:</span> <span class="s">rh-ocp-worker</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="s">4.8.2021122100</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">MarketplaceWithPlan</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
