@@ -36531,7 +36531,7 @@ file metadata, which has the format <code>&lt;cluster-name&gt;-&lt;random-string
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>A subnet, preferably private, to launch the worker nodes on.</td>
+<td>A subnet, preferably private, to start the worker nodes on.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
@@ -36549,7 +36549,7 @@ CloudFormation template for the security group and roles.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="9"></i><b>9</b></td>
-<td>The location to fetch bootstrap Ignition config file from.</td>
+<td>The location to fetch the bootstrap Ignition config file from.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="10"></i><b>10</b></td>
@@ -36803,9 +36803,10 @@ section of this topic and save it as a YAML file on your computer. This template
 describes the networking objects and load balancers that your cluster requires.</p>
 </li>
 <li>
-<p>If you specified an <code>m5</code> instance type as the value for <code>WorkerInstanceType</code>,
-add that instance type to the <code>WorkerInstanceType.AllowedValues</code> parameter
-in the CloudFormation template.</p>
+<p>Optional: If you specified an <code>m5</code> instance type as the value for <code>WorkerInstanceType</code>, add that instance type to the <code>WorkerInstanceType.AllowedValues</code> parameter in the CloudFormation template.</p>
+</li>
+<li>
+<p>Optional: If you are deploying with an AWS Marketplace image, update the <code>Worker0.type.properties.ImageID</code> parameter with the AMI ID that you obtained from your subscription.</p>
 </li>
 <li>
 <p>Launch the CloudFormation template to create a stack of AWS resources that represent a worker node:</p>

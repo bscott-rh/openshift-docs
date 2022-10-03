@@ -28366,7 +28366,7 @@
 <h2 id="ipi-install-firmware-requirements-for-installing-with-virtual-media_ipi-install-prerequisites"><a class="anchor" href="#ipi-install-firmware-requirements-for-installing-with-virtual-media_ipi-install-prerequisites"></a>Firmware requirements for installing with virtual media</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The installer for installer-provisioned OpenShift Container Platform clusters validates the hardware and firmware compatibility with Redfish virtual media. The following table lists supported firmware for installer-provisioned OpenShift Container Platform clusters deployed with Redfish virtual media.</p>
+<p>The installer for installer-provisioned OpenShift Container Platform clusters validates the hardware and firmware compatibility with Redfish virtual media. The following table lists the minimum firmware versions tested and verified to work for installer-provisioned OpenShift Container Platform clusters deployed by using Redfish virtual media.</p>
 </div>
 <table class="tableblock frame-ends grid-all stretch">
 <caption class="title">Table 1. Firmware compatibility for Redfish virtual media</caption>
@@ -28381,7 +28381,7 @@
 <th class="tableblock halign-left valign-top">Hardware</th>
 <th class="tableblock halign-left valign-top">Model</th>
 <th class="tableblock halign-left valign-top">Management</th>
-<th class="tableblock halign-left valign-top">Firmware Versions</th>
+<th class="tableblock halign-left valign-top">Firmware versions</th>
 </tr>
 </thead>
 <tbody>
@@ -28389,18 +28389,18 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">HP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10th Generation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iLO5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.63</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.63 or later</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Dell</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">14th Generation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iDRAC 9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">v4.20.20.20 - 04.40.00.00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v4.20.20.20 - v4.40.00.00 only</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">13th Generation</p></td>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">iDRAC 8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">v2.75.75.75+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v2.75.75.75 or later</p></td>
 </tr>
 </tbody>
 </table>
@@ -28412,7 +28412,10 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>See the hardware documentation for the nodes or contact the hardware vendor for information on updating the firmware.</p>
+<p>Red Hat does not test every combination of firmware, hardware, or other third-party components. For further information about third-party support, see <a href="https://access.redhat.com/third-party-software-support">Red Hat third-party support policy</a>.</p>
+</div>
+<div class="paragraph">
+<p>See the hardware documentation for the nodes or contact the hardware vendor for information about updating the firmware.</p>
 </div>
 <div class="paragraph">
 <p>For HP servers, Redfish virtual media is not supported on 9th generation systems running iLO4, because Ironic does not support iLO4 with virtual media.</p>

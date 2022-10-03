@@ -28296,14 +28296,6 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>ephemeral-storage</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The sum of local ephemeral storage requests across all pods in a non-terminal state cannot exceed this value. <code>ephemeral-storage</code> and <code>requests.ephemeral-storage</code> are the same value and can be used interchangeably.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>requests.cpu</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -28320,14 +28312,6 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>requests.ephemeral-storage</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The sum of ephemeral storage requests across all pods in a non-terminal state cannot exceed this value. <code>ephemeral-storage</code> and <code>requests.ephemeral-storage</code> are the same value and can be used interchangeably.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>limits.cpu</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -28340,14 +28324,6 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The sum of memory limits across all pods in a non-terminal state cannot exceed this value.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>limits.ephemeral-storage</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The sum of ephemeral storage limits across all pods in a non-terminal state cannot exceed this value.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -28395,6 +28371,30 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The total number of persistent volume claims with a matching storage class that can exist in the project.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>ephemeral-storage</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The sum of local ephemeral storage requests across all pods in a non-terminal state cannot exceed this value. <code>ephemeral-storage</code> and <code>requests.ephemeral-storage</code> are the same value and can be used interchangeably.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>requests.ephemeral-storage</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The sum of ephemeral storage requests across all pods in a non-terminal state cannot exceed this value. <code>ephemeral-storage</code> and <code>requests.ephemeral-storage</code> are the same value and can be used interchangeably.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>limits.ephemeral-storage</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The sum of ephemeral storage limits across all pods in a non-terminal state cannot exceed this value.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -28575,15 +28575,6 @@ to tracking the following resources:</p>
 <li>
 <p><code>limits.cpu</code></p>
 </li>
-<li>
-<p><code>ephemeral-storage</code></p>
-</li>
-<li>
-<p><code>requests.ephemeral-storage</code></p>
-</li>
-<li>
-<p><code>limits.ephemeral-storage</code></p>
-</li>
 </ul>
 </div>
 </div>
@@ -28714,10 +28705,8 @@ project.</td>
     <span class="na">pods</span><span class="pi">:</span> <span class="s2">"</span><span class="s">4"</span> <i class="conum" data-value="1"></i><b>(1)</b>
     <span class="s">requests.cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1"</span> <i class="conum" data-value="2"></i><b>(2)</b>
     <span class="s">requests.memory</span><span class="pi">:</span> <span class="s">1Gi</span> <i class="conum" data-value="3"></i><b>(3)</b>
-    <span class="s">requests.ephemeral-storage</span><span class="pi">:</span> <span class="s">2Gi</span> <i class="conum" data-value="4"></i><b>(4)</b>
-    <span class="s">limits.cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2"</span> <i class="conum" data-value="5"></i><b>(5)</b>
-    <span class="s">limits.memory</span><span class="pi">:</span> <span class="s">2Gi</span> <i class="conum" data-value="6"></i><b>(6)</b>
-    <span class="s">limits.ephemeral-storage</span><span class="pi">:</span> <span class="s">4Gi</span> <i class="conum" data-value="7"></i><b>(7)</b></code></pre>
+    <span class="s">limits.cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2"</span> <i class="conum" data-value="4"></i><b>(4)</b>
+    <span class="s">limits.memory</span><span class="pi">:</span> <span class="s">2Gi</span> <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -28736,19 +28725,11 @@ project.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Across all pods in a non-terminal state, the sum of ephemeral storage requests cannot exceed 2Gi.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
 <td>Across all pods in a non-terminal state, the sum of CPU limits cannot exceed 2 cores.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
 <td>Across all pods in a non-terminal state, the sum of memory limits cannot exceed 2Gi.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>Across all pods in a non-terminal state, the sum of ephemeral storage limits cannot exceed 4Gi.</td>
 </tr>
 </table>
 </div>
@@ -28865,7 +28846,9 @@ project.</td>
     <span class="s">silver.storageclass.storage.k8s.io/requests.storage</span><span class="pi">:</span> <span class="s2">"</span><span class="s">20Gi"</span> <i class="conum" data-value="4"></i><b>(4)</b>
     <span class="s">silver.storageclass.storage.k8s.io/persistentvolumeclaims</span><span class="pi">:</span> <span class="s2">"</span><span class="s">5"</span> <i class="conum" data-value="5"></i><b>(5)</b>
     <span class="s">bronze.storageclass.storage.k8s.io/requests.storage</span><span class="pi">:</span> <span class="s2">"</span><span class="s">0"</span> <i class="conum" data-value="6"></i><b>(6)</b>
-    <span class="s">bronze.storageclass.storage.k8s.io/persistentvolumeclaims</span><span class="pi">:</span> <span class="s2">"</span><span class="s">0"</span> <i class="conum" data-value="7"></i><b>(7)</b></code></pre>
+    <span class="s">bronze.storageclass.storage.k8s.io/persistentvolumeclaims</span><span class="pi">:</span> <span class="s2">"</span><span class="s">0"</span> <i class="conum" data-value="7"></i><b>(7)</b>
+    <span class="s">requests.ephemeral-storage</span><span class="pi">:</span> <span class="s">2Gi</span> <i class="conum" data-value="8"></i><b>(8)</b>
+    <span class="s">limits.ephemeral-storage</span><span class="pi">:</span> <span class="s">4Gi</span> <i class="conum" data-value="9"></i><b>(9)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -28897,6 +28880,14 @@ project.</td>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
 <td>Across all persistent volume claims in a project, the sum of storage requested in the bronze storage class cannot exceed this value. When this is set to <code>0</code>, it means bronze storage class cannot create claims.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>Across all pods in a non-terminal state, the sum of ephemeral storage requests cannot exceed 2Gi.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td>Across all pods in a non-terminal state, the sum of ephemeral storage limits cannot exceed 4Gi.</td>
 </tr>
 </table>
 </div>

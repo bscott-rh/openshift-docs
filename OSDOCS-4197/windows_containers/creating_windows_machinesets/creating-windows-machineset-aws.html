@@ -28239,8 +28239,13 @@
 </li>
 <li>
 <p>You are using a supported Windows Server as the operating system image with the Docker-formatted container runtime add-on enabled.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Use the following <code>aws</code> command to query valid AMI images:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>aws ec2 describe-images <span class="nt">--region</span> &lt;aws region name&gt; <span class="nt">--filters</span> <span class="s2">"Name=name,Values=Windows_Server-2019*English*Full*Containers*"</span> <span class="s2">"Name=is-public,Values=true"</span> <span class="nt">--query</span> <span class="s2">"reverse(sort_by(Images, &amp;CreationDate))[*].{name: Name, id: ImageId}"</span> <span class="nt">--output</span> table</code></pre>
+</div>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -28255,6 +28260,9 @@
 </td>
 </tr>
 </table>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>

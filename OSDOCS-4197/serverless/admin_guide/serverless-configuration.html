@@ -28223,6 +28223,7 @@
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
 <li><a href="#serverless-channel-default_serverless-configuration">Configuring the default channel implementation</a></li>
+<li><a href="#serverless-broker-backing-channel-default_serverless-configuration">Configuring the default broker backing channel</a></li>
 <li><a href="#serverless-enable-scale-to-zero_serverless-configuration">Enabling scale-to-zero</a></li>
 <li><a href="#serverless-scale-to-zero-grace-period_serverless-configuration">Configuring the scale-to-zero grace period</a></li>
 <li><a href="#serverless-configuration-CR-system-deployments">Overriding system deployment configurations</a>
@@ -28345,6 +28346,85 @@
 </div>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-broker-backing-channel-default_serverless-configuration"><a class="anchor" href="#serverless-broker-backing-channel-default_serverless-configuration"></a>Configuring the default broker backing channel</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are using a channel-based broker, you can set the default backing channel type for the broker to either <code>InMemoryChannel</code> or <code>KafkaChannel</code>.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have administrator permissions on OpenShift Container Platform.</p>
+</li>
+<li>
+<p>You have installed the OpenShift Serverless Operator and Knative Eventing on your cluster.</p>
+</li>
+<li>
+<p>You have installed the OpenShift (<code>oc</code>) CLI.</p>
+</li>
+<li>
+<p>If you want to use Kafka channels as the default backing channel type, you must also install the <code>KnativeKafka</code> CR on your cluster.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Modify the <code>KnativeEventing</code> custom resource (CR) to add configuration details for the <code>config-br-default-channel</code> config map:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">operator.knative.dev/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KnativeEventing</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">knative-eventing</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">knative-eventing</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">config</span><span class="pi">:</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="na">config-br-default-channel</span><span class="pi">:</span>
+      <span class="na">channel-template-spec</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">apiVersion: messaging.knative.dev/v1beta1</span>
+        <span class="s">kind: KafkaChannel </span><i class="conum" data-value="2"></i><b>(2)</b>
+        <span class="s">spec:</span>
+          <span class="s">numPartitions: 6 </span><i class="conum" data-value="3"></i><b>(3)</b>
+          <span class="s">replicationFactor: 3 </span><i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>In <code>spec.config</code>, you can specify the config maps that you want to add modified configurations for.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The default backing channel type configuration. In this example, the default channel implementation for the cluster is <code>KafkaChannel</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The number of partitions for the Kafka channel that backs the broker.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>The replication factor for the Kafka channel that backs the broker.</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Apply the updated <code>KnativeEventing</code> CR:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc apply <span class="nt">-f</span> &lt;filename&gt;</code></pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
