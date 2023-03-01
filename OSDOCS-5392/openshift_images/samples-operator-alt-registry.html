@@ -907,7 +907,7 @@
 
                   <li>
                     <a class="" href="../installing/installing_alibaba/installing-alibaba-vpc.html">
-                      Installing a cluster on Alibaba Cloud into a shared VPC
+                      Installing a cluster on Alibaba Cloud into an existing VPC
                     </a>
                   </li>
 
@@ -4528,7 +4528,7 @@
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-9">
                 <span id="sgSpan-6-9" class="fa fa-caret-right"></span>
-                  &nbsp;Updating a disconnected environment
+                  &nbsp;Updating a cluster in a disconnected environment
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
@@ -4553,7 +4553,31 @@
 
                   <li>
                     <a class="" href="../updating/updating-restricted-network-cluster/index.html">
-                      About disconnected environment updates
+                      About cluster updates in a disconnected environment
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../updating/updating-restricted-network-cluster/mirroring-image-repository.html">
+                      Mirroring the OpenShift Container Platform image repository
                     </a>
                   </li>
 
@@ -4577,7 +4601,7 @@
 
                   <li>
                     <a class="" href="../updating/updating-restricted-network-cluster/restricted-network-update-osus.html">
-                      Updating disconnected environments using OSUS
+                      Updating a cluster in a disconnected environment using OSUS
                     </a>
                   </li>
 
@@ -4601,7 +4625,7 @@
 
                   <li>
                     <a class="" href="../updating/updating-restricted-network-cluster/restricted-network-update.html">
-                      Updating disconnected environments without OSUS
+                      Updating a cluster in a disconnected environment without OSUS
                     </a>
                   </li>
 
@@ -19460,20 +19484,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../scalability_and_performance/using-cpu-manager.html">Using CPU Manager</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../scalability_and_performance/using-topology-manager.html">Using Topology Manager</a></li>
+            <li><a class="" href="../scalability_and_performance/using-cpu-manager.html">Using CPU Manager and Topology Manager</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19656,15 +19667,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-19">
-                <span id="sgSpan-25-19" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-18">
+                <span id="sgSpan-25-18" class="fa fa-caret-right"></span>
                   &nbsp;Clusters at the network far edge
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-25-19" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-25-18" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -33751,7 +33762,8 @@ file and add a section that describes your registry to it:</p>
     </span><span class="nl">"&lt;mirror_registry&gt;"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> <i class="conum" data-value="1"></i><b>(1)</b>
       </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;credentials&gt;"</span><span class="p">,</span><span class="w"> <i class="conum" data-value="2"></i><b>(2)</b>
       </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@example.com"</span><span class="w">
-  </span><span class="p">},</span></code></pre>
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">

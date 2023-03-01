@@ -907,7 +907,7 @@
 
                   <li>
                     <a class="" href="../../installing/installing_alibaba/installing-alibaba-vpc.html">
-                      Installing a cluster on Alibaba Cloud into a shared VPC
+                      Installing a cluster on Alibaba Cloud into an existing VPC
                     </a>
                   </li>
 
@@ -4528,7 +4528,7 @@
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-9">
                 <span id="sgSpan-6-9" class="fa fa-caret-right"></span>
-                  &nbsp;Updating a disconnected environment
+                  &nbsp;Updating a cluster in a disconnected environment
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
@@ -4553,7 +4553,31 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/index.html">
-                      About disconnected environment updates
+                      About cluster updates in a disconnected environment
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../updating/updating-restricted-network-cluster/mirroring-image-repository.html">
+                      Mirroring the OpenShift Container Platform image repository
                     </a>
                   </li>
 
@@ -4577,7 +4601,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update-osus.html">
-                      Updating disconnected environments using OSUS
+                      Updating a cluster in a disconnected environment using OSUS
                     </a>
                   </li>
 
@@ -4601,7 +4625,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update.html">
-                      Updating disconnected environments without OSUS
+                      Updating a cluster in a disconnected environment without OSUS
                     </a>
                   </li>
 
@@ -19460,20 +19484,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../../scalability_and_performance/using-topology-manager.html">Using Topology Manager</a></li>
+            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager and Topology Manager</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19656,15 +19667,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-19">
-                <span id="sgSpan-25-19" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-18">
+                <span id="sgSpan-25-18" class="fa fa-caret-right"></span>
                   &nbsp;Clusters at the network far edge
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-25-19" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-25-18" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -33418,6 +33429,12 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
+<li><a href="#compliance-operator-release-notes-0-1-61">OpenShift Compliance Operator 0.1.61</a>
+<ul class="sectlevel2">
+<li><a href="#compliance-operator-0-1-61-new-features-and-enhancements">New features and enhancements</a></li>
+<li><a href="#compliance-operator-0-1-61-bug-fixes">Bug fixes</a></li>
+</ul>
+</li>
 <li><a href="#compliance-operator-release-notes-0-1-59">OpenShift Compliance Operator 0.1.59</a>
 <ul class="sectlevel2">
 <li><a href="#compliance-operator-0-1-59-new-features-and-enhancements">New features and enhancements</a></li>
@@ -33491,6 +33508,90 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="compliance-operator-release-notes-0-1-61"><a class="anchor" href="#compliance-operator-release-notes-0-1-61"></a>OpenShift Compliance Operator 0.1.61</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following advisory is available for the OpenShift Compliance Operator 0.1.61:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://access.redhat.com/errata/RHBA-2023:0557">RHBA-2023:0557 - OpenShift Compliance Operator bug fix update</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="compliance-operator-0-1-61-new-features-and-enhancements"><a class="anchor" href="#compliance-operator-0-1-61-new-features-and-enhancements"></a>New features and enhancements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The Compliance Operator now supports timeout configuration for Scanner Pods. The timeout is specified in the <code>ScanSetting</code> object. If the scan is not completed within the timeout, the scan retries until the maximum number of retries is reached. See <a href="../../security/compliance_operator/compliance-operator-troubleshooting.html#compliance-timeout_compliance-troubleshooting">Configuring ScanSetting timeout</a> for more information.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="compliance-operator-0-1-61-bug-fixes"><a class="anchor" href="#compliance-operator-0-1-61-bug-fixes"></a>Bug fixes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Before this update, Compliance Operator remediations required variables as inputs. Remediations without variables set were applied cluster-wide and resulted in stuck nodes, even though it appeared the remediation applied correctly. With this update, the Compliance Operator validates if a variable needs to be supplied using a <code>TailoredProfile</code> for a remediation. (<a href="https://issues.redhat.com/browse/OCPBUGS-3864"><strong>OCPBUGS-3864</strong></a>)</p>
+</li>
+<li>
+<p>Before this update, the instructions for <code>ocp4-kubelet-configure-tls-cipher-suites</code> were incomplete, requiring users to refine the query manually. With this update, the query provided in <code>ocp4-kubelet-configure-tls-cipher-suites</code> returns the actual results to perform the audit steps. (<a href="https://issues.redhat.com/browse/OCPBUGS-3017"><strong>OCPBUGS-3017</strong></a>)</p>
+</li>
+<li>
+<p>Before this update,<code>ScanSettingBinding</code> objects created without a <code>settingRef</code> variable did not use an appropriate default value. With this update, the <code>ScanSettingBinding</code> objects without a <code>settingRef</code> variable use the <code>default</code> value. (<a href="https://issues.redhat.com/browse/OCPBUGS-3420"><strong>OCPBUGS-3420</strong></a>)</p>
+</li>
+<li>
+<p>Before this update, system reserved parameters were not generated in kubelet configuration files, causing the Compliance Operator to fail to unpause the machine config pool. With this update, the Compliance Operator omits system reserved parameters during machine configuration pool evaluation. (<a href="https://issues.redhat.com/browse/OCPBUGS-4445"><strong>OCPBUGS-4445</strong></a>)</p>
+</li>
+<li>
+<p>Before this update, <code>ComplianceCheckResult</code> objects did not have correct descriptions. With this update, the Compliance Operator sources the <code>ComplianceCheckResult</code> information from the rule description. (<a href="https://issues.redhat.com/browse/OCPBUGS-4615"><strong>OCPBUGS-4615</strong></a>)</p>
+</li>
+<li>
+<p>Before this update, the Compliance Operator did not check for empty kubelet configuration files when parsing machine configurations. As a result, the Compliance Operator would panic and crash. With this update, the Compliance Operator implements improved checking of the kubelet configuration data structure and only continues if it is fully rendered. (<a href="https://issues.redhat.com/browse/OCPBUGS-4621"><strong>OCPBUGS-4621</strong></a>)</p>
+</li>
+<li>
+<p>Before this update, the Compliance Operator generated remediations for kubelet evictions based on machine config pool name and a grace period, resulting in multiple remediations for a single eviction rule. With this update, the Compliance Operator applies all remediations for a single rule. (<a href="https://issues.redhat.com/browse/OCPBUGS-4338"><strong>OCPBUGS-4338</strong></a>)</p>
+</li>
+<li>
+<p>Before this update, re-running scans on remediations that previously <code>Applied</code> might have been marked as <code>Outdated</code> after rescans were performed, despite no changes in the remediation content. The comparison of scans did not account for remediation metadata correctly. With this update, remediations retain the previously generated <code>Applied</code> status. (<a href="https://issues.redhat.com/browse/OCPBUGS-6710"><strong>OCPBUGS-6710</strong></a>)</p>
+</li>
+<li>
+<p>Before this update, a regression occurred when attempting to create a <code>ScanSettingBinding</code> that was using a <code>TailoredProfile</code> with a non-default <code>MachineConfigPool</code> marked the <code>ScanSettingBinding</code> as <code>Failed</code>. With this update, functionality is restored and custom <code>ScanSettingBinding</code> using a <code>TailoredProfile</code> performs correctly. (<a href="https://issues.redhat.com/browse/OCPBUGS-6827"><strong>OCPBUGS-6827</strong></a>)</p>
+</li>
+<li>
+<p>Before this update, some kubelet configuration parameters did not have default values. With this update, the following parameters contain default values (<a href="https://issues.redhat.com/browse/OCPBUGS-6708"><strong>OCPBUGS-6708</strong></a>):</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ocp4-cis-kubelet-enable-streaming-connections</code></p>
+</li>
+<li>
+<p><code>ocp4-cis-kubelet-eviction-thresholds-set-hard-imagefs-available</code></p>
+</li>
+<li>
+<p><code>ocp4-cis-kubelet-eviction-thresholds-set-hard-imagefs-inodesfree</code></p>
+</li>
+<li>
+<p><code>ocp4-cis-kubelet-eviction-thresholds-set-hard-memory-available</code></p>
+</li>
+<li>
+<p><code>ocp4-cis-kubelet-eviction-thresholds-set-hard-nodefs-available</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Before this update, the <code>selinux_confinement_of_daemons</code> rule failed running on the kubelet because of the permissions necessary for the kubelet to run. With this update, the <code>selinux_confinement_of_daemons</code> rule is disabled. (<a href="https://issues.redhat.com/browse/OCPBUGS-6968"><strong>OCPBUGS-6968</strong></a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="compliance-operator-release-notes-0-1-59"><a class="anchor" href="#compliance-operator-release-notes-0-1-59"></a>OpenShift Compliance Operator 0.1.59</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -33552,7 +33653,7 @@
 <p><code>KubeletConfig</code> checks changed from <code>Node</code> to <code>Platform</code> type. <code>KubeletConfig</code> checks the default configuration of the <code>KubeletConfig</code>. The configuration files are aggregated from all nodes into a single location per node pool. See <a href="../../security/compliance_operator/compliance-operator-remediation.html#compliance-evaluate-kubeletconfig-rules_compliance-remediation">Evaluating <code>KubeletConfig</code> rules against default configuration values</a>.</p>
 </li>
 <li>
-<p>The <code>ScanSetting</code> Custom Resource now allows users to override the default CPU and memory limits of scanner pods through the <code>scanLimits</code> attribute.  For more information, see <a href="../../security/compliance_operator/compliance-operator-troubleshooting.html#compliance-increasing-operator-limits_compliance-troubleshooting">Increasing Compliance Operator resource limits</a>.</p>
+<p>The <code>ScanSetting</code> Custom Resource now allows users to override the default CPU and memory limits of scanner pods through the <code>scanLimits</code> attribute. For more information, see <a href="../../security/compliance_operator/compliance-operator-troubleshooting.html#compliance-increasing-operator-limits_compliance-troubleshooting">Increasing Compliance Operator resource limits</a>.</p>
 </li>
 <li>
 <p>A <code>PriorityClass</code> object can now be set through <code>ScanSetting</code>. This ensures the Compliance Operator is prioritized and minimizes the chance that the cluster falls out of compliance. For more information, see <a href="../../security/compliance_operator/compliance-operator-advanced.html#compliance-priorityclass_compliance-advanced">Setting <code>PriorityClass</code> for <code>ScanSetting</code> scans</a>.</p>
@@ -33808,7 +33909,7 @@
 <p>Previously, the <code>openshift-compliance</code> content did not include platform-specific checks for network types. As a result, OVN- and SDN-specific checks would show as <code>failed</code> instead of <code>not-applicable</code> based on the network configuration. Now, new rules contain platform checks for networking rules, resulting in a more accurate assessment of network-specific checks. (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=1994609"><strong>BZ#1994609</strong></a>)</p>
 </li>
 <li>
-<p>Previously, the <code>ocp4-moderate-routes-protected-by-tls</code> rule incorrectly checked TLS settings that results in the rule failing the check, even if the connection secure SSL TLS protocol. Now, the check properly evaluates TLS settings that are consistent with the networking guidance and profile recommendations. (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=2002695"><strong>BZ#2002695</strong></a>)</p>
+<p>Previously, the <code>ocp4-moderate-routes-protected-by-tls</code> rule incorrectly checked TLS settings that results in the rule failing the check, even if the connection secure SSL/TLS protocol. Now, the check properly evaluates TLS settings that are consistent with the networking guidance and profile recommendations. (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=2002695"><strong>BZ#2002695</strong></a>)</p>
 </li>
 <li>
 <p>Previously, <code>ocp-cis-configure-network-policies-namespace</code> used pagination when requesting namespaces. This caused the rule to fail because the deployments truncated lists of more than 500 namespaces. Now, the entire namespace list is requested, and the rule for checking configured network policies works for deployments with more than 500 namespaces. (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=2038909"><strong>BZ#2038909</strong></a>)</p>
@@ -33851,7 +33952,7 @@
 <p>Previously, some rules associated with extended Open Vulnerability and Assessment Language (OVAL) definitions had a <code>checkType</code> of <code>None</code>. This was because the Compliance Operator was not processing extended OVAL definitions when parsing rules. With this update, content from extended OVAL definitions is parsed so that these rules now have a <code>checkType</code> of either <code>Node</code> or <code>Platform</code>. (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=2040282"><strong>BZ#2040282</strong></a>)</p>
 </li>
 <li>
-<p>Previously, a manually created <code>MachineConfig</code> object for <code>KubeletConfig</code> prevented a <code>KubeletConfig</code> object from being generated for remediation, leaving the remediation in the <code>Pending</code> state.  With this release, a <code>KubeletConfig</code>  object is created by the remediation, regardless if there is a manually created <code>MachineConfig</code> object for <code>KubeletConfig</code>. As a result, <code>KubeletConfig</code> remediations now work as expected. (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=2040401"><strong>BZ#2040401</strong></a>)</p>
+<p>Previously, a manually created <code>MachineConfig</code> object for <code>KubeletConfig</code> prevented a <code>KubeletConfig</code> object from being generated for remediation, leaving the remediation in the <code>Pending</code> state. With this release, a <code>KubeletConfig</code>  object is created by the remediation, regardless if there is a manually created <code>MachineConfig</code> object for <code>KubeletConfig</code>. As a result, <code>KubeletConfig</code> remediations now work as expected. (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=2040401"><strong>BZ#2040401</strong></a>)</p>
 </li>
 </ul>
 </div>
@@ -33942,13 +34043,13 @@
 <p>The Compliance Operator can now remediate <code>KubeletConfig</code> objects.</p>
 </li>
 <li>
-<p>A comment containing an error message is now added to help content developers differentiate between objects that do not exist in the cluster versus objects that cannot be fetched.</p>
+<p>A comment containing an error message is now added to help content developers differentiate between objects that do not exist in the cluster compared to objects that cannot be fetched.</p>
 </li>
 <li>
 <p>Rule objects now contain two new attributes, <code>checkType</code> and <code>description</code>. These attributes allow you to determine if the rule pertains to a node check or platform check, and also allow you to review what the rule does.</p>
 </li>
 <li>
-<p>This enhancement removes the requirement that you have to extend an existing profile in order to create a tailored profile. This means the <code>extends</code> field in the <code>TailoredProfile</code> CRD is no longer mandatory. You can now select a list of rule objects to create a tailored profile.  Note that you must select whether your profile applies to nodes or the platform by setting the <code>compliance.openshift.io/product-type:</code> annotation or by setting the <code>-node</code> suffix for the <code>TailoredProfile</code> CR.</p>
+<p>This enhancement removes the requirement that you have to extend an existing profile to create a tailored profile. This means the <code>extends</code> field in the <code>TailoredProfile</code> CRD is no longer mandatory. You can now select a list of rule objects to create a tailored profile. Note that you must select whether your profile applies to nodes or the platform by setting the <code>compliance.openshift.io/product-type:</code> annotation or by setting the <code>-node</code> suffix for the <code>TailoredProfile</code> CR.</p>
 </li>
 <li>
 <p>In this release, the Compliance Operator is now able to schedule scans on all nodes irrespective of their taints. Previously, the scan pods would only tolerated the <code>node-role.kubernetes.io/master taint</code>, meaning that they would either ran on nodes with no taints or only on nodes with the <code>node-role.kubernetes.io/master</code> taint. In deployments that use custom taints for their nodes, this resulted in the scans not being scheduled on those nodes. Now, the scan pods tolerate all node taints.</p>

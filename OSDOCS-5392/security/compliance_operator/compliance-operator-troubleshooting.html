@@ -907,7 +907,7 @@
 
                   <li>
                     <a class="" href="../../installing/installing_alibaba/installing-alibaba-vpc.html">
-                      Installing a cluster on Alibaba Cloud into a shared VPC
+                      Installing a cluster on Alibaba Cloud into an existing VPC
                     </a>
                   </li>
 
@@ -4528,7 +4528,7 @@
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-9">
                 <span id="sgSpan-6-9" class="fa fa-caret-right"></span>
-                  &nbsp;Updating a disconnected environment
+                  &nbsp;Updating a cluster in a disconnected environment
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
@@ -4553,7 +4553,31 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/index.html">
-                      About disconnected environment updates
+                      About cluster updates in a disconnected environment
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../updating/updating-restricted-network-cluster/mirroring-image-repository.html">
+                      Mirroring the OpenShift Container Platform image repository
                     </a>
                   </li>
 
@@ -4577,7 +4601,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update-osus.html">
-                      Updating disconnected environments using OSUS
+                      Updating a cluster in a disconnected environment using OSUS
                     </a>
                   </li>
 
@@ -4601,7 +4625,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update.html">
-                      Updating disconnected environments without OSUS
+                      Updating a cluster in a disconnected environment without OSUS
                     </a>
                   </li>
 
@@ -19460,20 +19484,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../../scalability_and_performance/using-topology-manager.html">Using Topology Manager</a></li>
+            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager and Topology Manager</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19656,15 +19667,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-19">
-                <span id="sgSpan-25-19" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-18">
+                <span id="sgSpan-25-18" class="fa fa-caret-right"></span>
                   &nbsp;Clusters at the network far edge
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-25-19" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-25-18" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -33430,6 +33441,7 @@
 </li>
 <li><a href="#compliance-increasing-operator-limits_compliance-troubleshooting">Increasing Compliance Operator resource limits</a></li>
 <li><a href="#operator-resource-constraints_compliance-troubleshooting">Configuring Operator resource constraints</a></li>
+<li><a href="#compliance-timeout_compliance-troubleshooting">Configuring ScanSetting timeout</a></li>
 <li><a href="#support_compliance-troubleshooting">Getting support</a></li>
 </ul>
 </div>
@@ -33986,6 +33998,56 @@ rhcos4-e8-worker-audit-rules-dac-modification-chmod   PASS     medium</span></co
         <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">128Mi"</span>
         <span class="na">cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">500m"</span></code></pre>
 </div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="compliance-timeout_compliance-troubleshooting"><a class="anchor" href="#compliance-timeout_compliance-troubleshooting"></a>Configuring ScanSetting timeout</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>ScanSetting</code> object has a timeout option that can be specified in the <code>ComplianceScanSetting</code> object as a duration string, such as <code>1h30m</code>. If the scan does not finish within the specified timeout, the scan reattempts until the <code>maxRetryOnTimeout</code> limit is reached.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>To set a <code>timeout</code> and <code>maxRetryOnTimeout</code> in ScanSetting, modify an existing <code>ScanSetting</code> object:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">compliance.openshift.io/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">ScanSetting</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">default</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">openshift-compliance</span>
+<span class="na">rawResultStorage</span><span class="pi">:</span>
+  <span class="na">rotation</span><span class="pi">:</span> <span class="m">3</span>
+  <span class="na">size</span><span class="pi">:</span> <span class="s">1Gi</span>
+<span class="na">roles</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="s">worker</span>
+<span class="pi">-</span> <span class="s">master</span>
+<span class="na">scanTolerations</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">effect</span><span class="pi">:</span> <span class="s">NoSchedule</span>
+  <span class="na">key</span><span class="pi">:</span> <span class="s">node-role.kubernetes.io/master</span>
+  <span class="na">operator</span><span class="pi">:</span> <span class="s">Exists</span>
+<span class="na">schedule</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
+<span class="na">timeout</span><span class="pi">:</span> <span class="s1">'</span><span class="s">10m0s'</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<span class="na">maxRetryOnTimeout</span><span class="pi">:</span> <span class="s">3</span> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>timeout</code> variable is defined as a duration string, such as <code>1h30m</code>. The default value is <code>30m</code>. To disable the timeout, set the value to <code>0s</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The <code>maxRetryOnTimeout</code> variable defines how many times a retry is attempted. The default value is <code>3</code>.</td>
+</tr>
+</table>
 </div>
 </li>
 </ul>

@@ -907,7 +907,7 @@
 
                   <li>
                     <a class="" href="../../installing/installing_alibaba/installing-alibaba-vpc.html">
-                      Installing a cluster on Alibaba Cloud into a shared VPC
+                      Installing a cluster on Alibaba Cloud into an existing VPC
                     </a>
                   </li>
 
@@ -4528,7 +4528,7 @@
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-9">
                 <span id="sgSpan-6-9" class="fa fa-caret-right"></span>
-                  &nbsp;Updating a disconnected environment
+                  &nbsp;Updating a cluster in a disconnected environment
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
@@ -4553,7 +4553,31 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/index.html">
-                      About disconnected environment updates
+                      About cluster updates in a disconnected environment
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../updating/updating-restricted-network-cluster/mirroring-image-repository.html">
+                      Mirroring the OpenShift Container Platform image repository
                     </a>
                   </li>
 
@@ -4577,7 +4601,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update-osus.html">
-                      Updating disconnected environments using OSUS
+                      Updating a cluster in a disconnected environment using OSUS
                     </a>
                   </li>
 
@@ -4601,7 +4625,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update.html">
-                      Updating disconnected environments without OSUS
+                      Updating a cluster in a disconnected environment without OSUS
                     </a>
                   </li>
 
@@ -19460,20 +19484,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../../scalability_and_performance/using-topology-manager.html">Using Topology Manager</a></li>
+            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager and Topology Manager</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19656,15 +19667,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-19">
-                <span id="sgSpan-25-19" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-18">
+                <span id="sgSpan-25-18" class="fa fa-caret-right"></span>
                   &nbsp;Clusters at the network far edge
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-25-19" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-25-18" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -33914,10 +33925,10 @@ See <a href="https://access.redhat.com/articles/rhel-limits">Red Hat Enterprise 
 <div class="ulist">
 <ul>
 <li>
-<p>3 LPARS that each have the equivalent of 6 IFLs, which are SMT2 enabled, for each cluster.</p>
+<p>Three LPARS that each have the equivalent of six IFLs, which are SMT2 enabled, for each cluster.</p>
 </li>
 <li>
-<p>Two network connections to connect to both connect to the <code>LoadBalancer</code> service and to serve data for traffic outside the cluster.</p>
+<p>Two network connections to both connect to the <code>LoadBalancer</code> service and to serve data for traffic outside the cluster.</p>
 </li>
 <li>
 <p>HiperSockets, which are attached to a node either directly as a device or by bridging with one z/VM VSWITCH to be transparent to the z/VM guest. To directly connect HiperSockets to a node, you must set up a gateway to the external network via a RHEL 8 guest to bridge to the HiperSockets network.</p>
@@ -33928,7 +33939,7 @@ See <a href="https://access.redhat.com/articles/rhel-limits">Red Hat Enterprise 
 <div class="ulist">
 <ul>
 <li>
-<p>2 or 3 instances of z/VM 7.1 or later for high availability</p>
+<p>Two or three instances of z/VM 7.1 or later for high availability</p>
 </li>
 </ul>
 </div>
@@ -33938,13 +33949,13 @@ See <a href="https://access.redhat.com/articles/rhel-limits">Red Hat Enterprise 
 <div class="ulist">
 <ul>
 <li>
-<p>3 guest virtual machines for OpenShift Container Platform control plane machines, one per z/VM instance.</p>
+<p>Three guest virtual machines for OpenShift Container Platform control plane machines, one per z/VM instance.</p>
 </li>
 <li>
-<p>At least 6 guest virtual machines for OpenShift Container Platform compute machines, distributed across the z/VM instances.</p>
+<p>At least six guest virtual machines for OpenShift Container Platform compute machines, distributed across the z/VM instances.</p>
 </li>
 <li>
-<p>1 guest virtual machine for the temporary OpenShift Container Platform bootstrap machine.</p>
+<p>One guest virtual machine for the temporary OpenShift Container Platform bootstrap machine.</p>
 </li>
 <li>
 <p>To ensure the availability of integral components in an overcommitted environment, increase the priority of the control plane by using the CP command <code>SET SHARE</code>. Do the same for infrastructure nodes, if they exist. See <a href="https://www.ibm.com/docs/en/zvm/7.1?topic=commands-set-share">SET SHARE</a> in IBM Documentation.</p>
@@ -34254,9 +34265,6 @@ the Cluster Version Operator on port <code>9099</code>.</p>
 <h4 id="ntp-configuration-for-user-provisioned-infrastructure" class="discrete">NTP configuration for user-provisioned infrastructure</h4>
 <div class="paragraph">
 <p>OpenShift Container Platform clusters are configured to use a public Network Time Protocol (NTP) server by default. If you want to use a local enterprise NTP server, or if your cluster is being deployed in a disconnected network, you can configure the cluster to use a specific time server. For more information, see the documentation for <em>Configuring chrony time service</em>.</p>
-</div>
-<div class="paragraph">
-<p>If a DHCP server provides NTP server information, the chrony time service on the Red Hat Enterprise Linux CoreOS (RHCOS) machines read the information and can sync the clock with the NTP servers.</p>
 </div>
 <div class="ulist _additional-resources">
 <div class="title">Additional resources</div>
@@ -34986,6 +34994,7 @@ listen ingress-router-80 <i class="conum" data-value="6"></i><b>(6)</b>
 </div>
 <div class="paragraph">
 <p>This section provides details about the high-level steps required to set up your cluster infrastructure in preparation for an OpenShift Container Platform installation. This includes configuring IP networking and network connectivity for your cluster nodes,
+preparing a web server for the Ignition files,
 enabling the required ports through your firewall, and setting up the required DNS and load balancing infrastructure.</p>
 </div>
 <div class="paragraph">
@@ -35006,48 +35015,10 @@ enabling the required ports through your firewall, and setting up the required D
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>If you are using DHCP to provide the IP networking configuration to your cluster nodes, configure your DHCP service.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Add persistent IP addresses for the nodes to your DHCP server configuration. In your configuration, match the MAC address of the relevant network interface to the intended IP address for each node.</p>
+<p>Set up static IP addresses.</p>
 </li>
 <li>
-<p>When you use DHCP to configure IP addressing for the cluster machines, the machines also obtain the DNS server information through DHCP. Define the persistent DNS server address that is used by the cluster nodes through your DHCP server configuration.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If you are not using a DHCP service, you must provide the IP networking configuration and the address of the DNS server to the nodes at RHCOS install time. These can be passed as boot arguments if you are installing from an ISO image. See the <em>Installing RHCOS and starting the OpenShift Container Platform bootstrap process</em> section for more information about static IP provisioning and advanced networking options.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Define the hostnames of your cluster nodes in your DHCP server configuration. See the <em>Setting the cluster node hostnames through DHCP</em> section for details about hostname considerations.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If you are not using a DHCP service, the cluster nodes obtain their hostname through a reverse DNS lookup.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
+<p>Set up an HTTP or HTTPS server to provide Ignition files to the cluster nodes.</p>
 </li>
 <li>
 <p>Ensure that your network infrastructure provides the required network connectivity between the cluster components. See the <em>Networking requirements for user-provisioned infrastructure</em> section for details about the requirements.</p>

@@ -907,7 +907,7 @@
 
                   <li>
                     <a class="" href="../../../installing/installing_alibaba/installing-alibaba-vpc.html">
-                      Installing a cluster on Alibaba Cloud into a shared VPC
+                      Installing a cluster on Alibaba Cloud into an existing VPC
                     </a>
                   </li>
 
@@ -4528,7 +4528,7 @@
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-9">
                 <span id="sgSpan-6-9" class="fa fa-caret-right"></span>
-                  &nbsp;Updating a disconnected environment
+                  &nbsp;Updating a cluster in a disconnected environment
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
@@ -4553,7 +4553,31 @@
 
                   <li>
                     <a class="" href="../../../updating/updating-restricted-network-cluster/index.html">
-                      About disconnected environment updates
+                      About cluster updates in a disconnected environment
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../../updating/updating-restricted-network-cluster/mirroring-image-repository.html">
+                      Mirroring the OpenShift Container Platform image repository
                     </a>
                   </li>
 
@@ -4577,7 +4601,7 @@
 
                   <li>
                     <a class="" href="../../../updating/updating-restricted-network-cluster/restricted-network-update-osus.html">
-                      Updating disconnected environments using OSUS
+                      Updating a cluster in a disconnected environment using OSUS
                     </a>
                   </li>
 
@@ -4601,7 +4625,7 @@
 
                   <li>
                     <a class="" href="../../../updating/updating-restricted-network-cluster/restricted-network-update.html">
-                      Updating disconnected environments without OSUS
+                      Updating a cluster in a disconnected environment without OSUS
                     </a>
                   </li>
 
@@ -19460,20 +19484,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../../../scalability_and_performance/using-topology-manager.html">Using Topology Manager</a></li>
+            <li><a class="" href="../../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager and Topology Manager</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19656,15 +19667,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-19">
-                <span id="sgSpan-25-19" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-18">
+                <span id="sgSpan-25-18" class="fa fa-caret-right"></span>
                   &nbsp;Clusters at the network far edge
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-25-19" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-25-18" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -33415,7 +33426,7 @@
         
         <!-- toc disabled -->
 <div class="paragraph">
-<p>A Knative <em>event source</em> can be any Kubernetes object that generates or imports cloud events, and relays those events to another endpoint, known as a <a href="../event-sinks/serverless-event-sinks.html#serverless-event-sinks"><em>sink</em></a>. Sourcing events is critical to developing a distributed system that reacts to events.</p>
+<p>A Knative <em>event source</em> can be any Kubernetes object that generates or imports cloud events, and relays those events to another endpoint, known as a <a href="../../../serverless/eventing/event-sinks/serverless-event-sinks.html#serverless-event-sinks"><em>sink</em></a>. Sourcing events is critical to developing a distributed system that reacts to events.</p>
 </div>
 <div class="paragraph">
 <p>You can create and manage Knative event sources by using the <strong>Developer</strong> perspective in the OpenShift Container Platform web console, the Knative (<code>kn</code>) CLI, or by applying YAML files.</p>
@@ -33425,22 +33436,22 @@
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><a href="./serverless-apiserversource.html#serverless-apiserversource">API server source</a></dt>
+<dt class="hdlist1"><a href="../../../serverless/eventing/event-sources/serverless-apiserversource.html#serverless-apiserversource">API server source</a></dt>
 <dd>
 <p>Brings Kubernetes API server events into Knative. The API server source sends a new event each time a Kubernetes resource is created, updated or deleted.</p>
 </dd>
-<dt class="hdlist1"><a href="./serverless-pingsource.html#serverless-pingsource">Ping source</a></dt>
+<dt class="hdlist1"><a href="../../../serverless/eventing/event-sources/serverless-pingsource.html#serverless-pingsource">Ping source</a></dt>
 <dd>
 <p>Produces events with a fixed payload on a specified cron schedule.</p>
 </dd>
-<dt class="hdlist1"><a href="./serverless-kafka-developer-source.html#serverless-kafka-developer-source">Kafka event source</a></dt>
+<dt class="hdlist1"><a href="../../../serverless/eventing/event-sources/serverless-kafka-developer-source.html#serverless-kafka-developer-source">Kafka event source</a></dt>
 <dd>
 <p>Connects a Kafka cluster to a sink as an event source.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>You can also create a <a href="./serverless-custom-event-sources.html#serverless-custom-event-sources">custom event source</a>.</p>
+<p>You can also create a <a href="../../../serverless/eventing/event-sources/serverless-custom-event-sources.html#serverless-custom-event-sources">custom event source</a>.</p>
 </div>
       </div>
     </div>

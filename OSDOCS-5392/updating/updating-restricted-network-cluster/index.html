@@ -12,7 +12,7 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-  <title>About disconnected environment updates - Updating a disconnected environment | Updating clusters | OpenShift Container Platform Branch Build</title>
+  <title>About cluster updates in a disconnected environment - Updating a cluster in a disconnected environment | Updating clusters | OpenShift Container Platform Branch Build</title>
   <link href="https://assets.openshift.net/content/subdomain.css" rel="stylesheet" type="text/css"/>
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/search.css" rel="stylesheet" media="screen"/>
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/autumn.css" rel="stylesheet"  media="screen"/>
@@ -201,10 +201,10 @@
       <li class="hidden-xs active">
         <a href="../../updating/index.html">Updating clusters</a>
       </li>
-      <li class="hidden-xs active"><a href="../../updating/updating-restricted-network-cluster/index.html">Updating a disconnected environment</a></li>
+      <li class="hidden-xs active"><a href="../../updating/updating-restricted-network-cluster/index.html">Updating a cluster in a disconnected environment</a></li>
       
       <li class="hidden-xs active">
-        About disconnected environment updates
+        About cluster updates in a disconnected environment
       </li>
       
       <span text-align="right" style="float: right !important">
@@ -907,7 +907,7 @@
 
                   <li>
                     <a class="" href="../../installing/installing_alibaba/installing-alibaba-vpc.html">
-                      Installing a cluster on Alibaba Cloud into a shared VPC
+                      Installing a cluster on Alibaba Cloud into an existing VPC
                     </a>
                   </li>
 
@@ -4528,7 +4528,7 @@
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-9">
                 <span id="sgSpan-6-9" class="fa fa-caret-down"></span>
-                  &nbsp;Updating a disconnected environment
+                  &nbsp;Updating a cluster in a disconnected environment
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
@@ -4553,7 +4553,31 @@
 
                   <li>
                     <a class=" active" href="../../updating/updating-restricted-network-cluster/index.html">
-                      About disconnected environment updates
+                      About cluster updates in a disconnected environment
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../updating/updating-restricted-network-cluster/mirroring-image-repository.html">
+                      Mirroring the OpenShift Container Platform image repository
                     </a>
                   </li>
 
@@ -4577,7 +4601,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update-osus.html">
-                      Updating disconnected environments using OSUS
+                      Updating a cluster in a disconnected environment using OSUS
                     </a>
                   </li>
 
@@ -4601,7 +4625,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update.html">
-                      Updating disconnected environments without OSUS
+                      Updating a cluster in a disconnected environment without OSUS
                     </a>
                   </li>
 
@@ -19460,20 +19484,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../../scalability_and_performance/using-topology-manager.html">Using Topology Manager</a></li>
+            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager and Topology Manager</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19656,15 +19667,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-19">
-                <span id="sgSpan-25-19" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-18">
+                <span id="sgSpan-25-18" class="fa fa-caret-right"></span>
                   &nbsp;Clusters at the network far edge
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-25-19" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-25-18" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -33408,7 +33419,7 @@
       <div class="col-xs-12 col-sm-9 col-md-9 main">
         <div class="page-header">
           <h1>
-            About disconnected environment updates
+            About cluster updates in a disconnected environment
           </h1>
         </div>
         
@@ -33418,7 +33429,8 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
-<li><a href="#performing-a-disconnected-environment-update">Performing a disconnected environment update</a></li>
+<li><a href="#about-disconnected-updates-mirroring">Mirroring the OpenShift Container Platform image repository</a></li>
+<li><a href="#about-disconnected-updates-update">Performing a cluster update in a disconnected environment</a></li>
 </ul>
 </div>
 <div class="paragraph">
@@ -33433,7 +33445,22 @@ If the local container registry and the cluster are connected to the mirror regi
 </div>
 </div>
 <div class="sect1">
-<h2 id="performing-a-disconnected-environment-update"><a class="anchor" href="#performing-a-disconnected-environment-update"></a>Performing a disconnected environment update</h2>
+<h2 id="about-disconnected-updates-mirroring"><a class="anchor" href="#about-disconnected-updates-mirroring"></a>Mirroring the OpenShift Container Platform image repository</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To update a cluster in a disconnected environment, your cluster environment must have access to a mirror registry that has the necessary images and resources for your targeted update. The following page has instructions for mirroring images onto a repository in your disconnected cluster:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../updating/updating-restricted-network-cluster/mirroring-image-repository.html#mirroring-ocp-image-repository">Mirroring the OpenShift Container Platform image repository</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="about-disconnected-updates-update"><a class="anchor" href="#about-disconnected-updates-update"></a>Performing a cluster update in a disconnected environment</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can use one of the following procedures to update a disconnected OpenShift Container Platform cluster:</p>
@@ -33441,10 +33468,10 @@ If the local container registry and the cluster are connected to the mirror regi
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../../updating/updating-restricted-network-cluster/restricted-network-update-osus.html#updating-restricted-network-cluster-OSUS">Updating disconnected environments using the OpenShift Update Service</a></p>
+<p><a href="../../updating/updating-restricted-network-cluster/restricted-network-update-osus.html#updating-restricted-network-cluster-OSUS">Updating a cluster in a disconnected environment using the OpenShift Update Service</a></p>
 </li>
 <li>
-<p><a href="../../updating/updating-restricted-network-cluster/restricted-network-update.html#updating-restricted-network-cluster">Updating disconnected environments without the OpenShift Update Service</a></p>
+<p><a href="../../updating/updating-restricted-network-cluster/restricted-network-update.html#updating-restricted-network-cluster">Updating a cluster in a disconnected environment without the OpenShift Update Service</a></p>
 </li>
 </ul>
 </div>

@@ -907,7 +907,7 @@
 
                   <li>
                     <a class="" href="../../installing/installing_alibaba/installing-alibaba-vpc.html">
-                      Installing a cluster on Alibaba Cloud into a shared VPC
+                      Installing a cluster on Alibaba Cloud into an existing VPC
                     </a>
                   </li>
 
@@ -4528,7 +4528,7 @@
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-9">
                 <span id="sgSpan-6-9" class="fa fa-caret-right"></span>
-                  &nbsp;Updating a disconnected environment
+                  &nbsp;Updating a cluster in a disconnected environment
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
@@ -4553,7 +4553,31 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/index.html">
-                      About disconnected environment updates
+                      About cluster updates in a disconnected environment
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../updating/updating-restricted-network-cluster/mirroring-image-repository.html">
+                      Mirroring the OpenShift Container Platform image repository
                     </a>
                   </li>
 
@@ -4577,7 +4601,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update-osus.html">
-                      Updating disconnected environments using OSUS
+                      Updating a cluster in a disconnected environment using OSUS
                     </a>
                   </li>
 
@@ -4601,7 +4625,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update.html">
-                      Updating disconnected environments without OSUS
+                      Updating a cluster in a disconnected environment without OSUS
                     </a>
                   </li>
 
@@ -19460,20 +19484,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../../scalability_and_performance/using-topology-manager.html">Using Topology Manager</a></li>
+            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager and Topology Manager</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19656,15 +19667,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-19">
-                <span id="sgSpan-25-19" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-18">
+                <span id="sgSpan-25-18" class="fa fa-caret-right"></span>
                   &nbsp;Clusters at the network far edge
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-25-19" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-25-18" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -33418,7 +33429,11 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
-<li><a href="#compatibility-and-support-matrix">Compatibility and support matrix</a></li>
+<li><a href="#GitOps-compatibility-support-matrix_gitops-release-notes">Compatibility and support matrix</a>
+<ul class="sectlevel2">
+<li><a href="#GitOps-technology-preview_gitops-release-notes">Technology Preview features</a></li>
+</ul>
+</li>
 <li><a href="#making-open-source-more-inclusive_gitops-release-notes">Making open source more inclusive</a></li>
 <li><a href="#gitops-release-notes-1-7-1_gitops-release-notes">Release notes for Red Hat OpenShift GitOps 1.7.1</a>
 <ul class="sectlevel2">
@@ -33639,7 +33654,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="compatibility-and-support-matrix"><a class="anchor" href="#compatibility-and-support-matrix"></a>Compatibility and support matrix</h2>
+<h2 id="GitOps-compatibility-support-matrix_gitops-release-notes"><a class="anchor" href="#GitOps-compatibility-support-matrix_gitops-release-notes"></a>Compatibility and support matrix</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Some features in this release are currently in <a href="https://access.redhat.com/support/offerings/techpreview">Technology Preview</a>. These experimental features are not intended for production use.</p>
@@ -33655,25 +33670,27 @@
 <li>
 <p><strong>GA</strong>: <em>General Availability</em></p>
 </li>
+<li>
+<p><strong>NA</strong>: <em>Not Applicable</em></p>
+</li>
 </ul>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1112%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top"><strong>OpenShift GitOps</strong></th>
-<th class="tableblock halign-left valign-top" colspan="8"><strong>Component Versions</strong></th>
+<th class="tableblock halign-left valign-top" colspan="7"><strong>Component Versions</strong></th>
 <th class="tableblock halign-left valign-top"><strong>OpenShift Versions</strong></th>
 </tr>
 </thead>
@@ -33687,7 +33704,6 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ApplicationSet</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Dex</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>RH SSO</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Notifications Controller</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -33696,11 +33712,10 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">3.10.0 GA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4.5.7 GA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.5.4 GA</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.4.5 GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.35.1 GA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">7.5.1 GA</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.4.5 TP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.8-4.11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.10-4.12</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.6.0</p></td>
@@ -33708,11 +33723,10 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">3.8.1 GA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4.4.1 GA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.4.5 GA</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.4.5 GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA and included in ArgoCD component</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.30.3 GA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">7.5.1 GA</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.4.5 TP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.8-4.10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.8-4.11</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.5.0</p></td>
@@ -33723,8 +33737,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.4.1 TP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.30.3 GA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">7.5.1 GA</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.8-4.10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.8-4.11</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.4.0</p></td>
@@ -33735,8 +33748,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.2.0 TP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.30.0 GA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">7.4.0 GA</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.7-4.9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.7-4.10</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.3.0</p></td>
@@ -33747,8 +33759,29 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.2.0 TP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.28.0 GA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">7.4.0 GA</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.7-4.9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.7-4.9, 4.6 with limited GA support</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.0.38 TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.5.0 GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.9.4 GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.5 GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1.0 TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.4.0 GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.0.32 TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.5.0 GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.9.4 GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.0 GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.7</p></td>
 </tr>
 </tbody>
 </table>
@@ -33760,10 +33793,45 @@
 <li>
 <p>"RH SSO" is an abbreviation for Red Hat SSO.</p>
 </li>
-<li>
-<p>The <strong>Environments</strong> page in the <strong>Developer</strong> perspective of the OpenShift Container Platform web console is also in Technology Preview.</p>
-</li>
 </ul>
+</div>
+<div class="sect2">
+<h3 id="GitOps-technology-preview_gitops-release-notes"><a class="anchor" href="#GitOps-technology-preview_gitops-release-notes"></a>Technology Preview features</h3>
+<div class="paragraph">
+<p>Some features in this release are currently in Technology Preview (TP). These experimental features are not intended for production use.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Technology Preview tracker</caption>
+<colgroup>
+<col style="width: 66.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">TP in OCP versions</th>
+<th class="tableblock halign-left valign-top">GA in OCP versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Argo CD applications in non-control plane namespaces</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.8, 4.9, 4.10, 4.11, 4.12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Red Hat OpenShift GitOps <strong>Environments</strong> page in the <strong>Developer</strong> perspective of the OpenShift Container Platform web console </p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.7, 4.8, 4.9, 4.10, 4.11, 4.12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Argo CD Notifications controller</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.8, 4.9, 4.10, 4.11, 4.12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -33779,7 +33847,7 @@
 <h2 id="gitops-release-notes-1-7-1_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-7-1_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.7.1</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.7.1 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, 4.11, and 4.12.</p>
+<p>Red Hat OpenShift GitOps 1.7.1 is now available on OpenShift Container Platform 4.10, 4.11, and 4.12.</p>
 </div>
 <div class="sect2">
 <h3 id="errata-updates-1-7-1_gitops-release-notes"><a class="anchor" href="#errata-updates-1-7-1_gitops-release-notes"></a>Errata updates</h3>
@@ -33807,7 +33875,7 @@
 <h2 id="gitops-release-notes-1-7-0_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-7-0_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.7.0</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.7.0 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
+<p>Red Hat OpenShift GitOps 1.7.0 is now available on OpenShift Container Platform 4.10, 4.11, and 4.12.</p>
 </div>
 <div class="sect2">
 <h3 id="new-features-1-7-0_gitops-release-notes"><a class="anchor" href="#new-features-1-7-0_gitops-release-notes"></a>New features</h3>
@@ -33880,7 +33948,7 @@
 </div>
 </li>
 <li>
-<p>With this update, to use the <strong>Environments</strong> feature on the <strong>Developer</strong> tab you must upgrade if you are using a Red Hat OpenShift GitOps version prior to 1.7 and OpenShift Container Platform 4.15 or above. <a href="https://issues.redhat.com/browse/GITOPS-2415">GITOPS-2415</a></p>
+<p>With this update, to use the <strong>Environments</strong> page in the <strong>Developer</strong> perspective, you must upgrade if you are using a Red Hat OpenShift GitOps version prior to 1.7 and OpenShift Container Platform 4.15 or above. <a href="https://issues.redhat.com/browse/GITOPS-2415">GITOPS-2415</a></p>
 </li>
 <li>
 <p>With this update, you can create applications, which are managed by the same control plane Argo CD instance, in any namespace in the same cluster. As an administrator, perform the following actions to enable this update:</p>
@@ -34003,7 +34071,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-6-4_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-6-4_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.6.4</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.6.4 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, 4.11, and 4.12.</p>
+<p>Red Hat OpenShift GitOps 1.6.4 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-6-4_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-6-4_gitops-release-notes"></a>Fixed issues</h3>
@@ -34058,7 +34126,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-6-1_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-6-1_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.6.1</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.6.1 is now available on OpenShift Container Platform 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.6.1 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-6-1_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-6-1_gitops-release-notes"></a>Fixed issues</h3>
@@ -34127,7 +34195,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-6-0_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-6-0_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.6.0</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.6.0 is now available on OpenShift Container Platform 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.6.0 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="new-features-1-6-0_gitops-release-notes"><a class="anchor" href="#new-features-1-6-0_gitops-release-notes"></a>New features</h3>
@@ -34185,7 +34253,7 @@ the development process.</p>
 <p>With this update, you can add entries to the <code>argocd-cm</code> configMap using the <code>extraConfig</code> field of Red Hat OpenShift GitOps Argo CD custom resource. The entries specified are reconciled to the live <code>config-cm</code> configMap without validations. <a href="https://issues.redhat.com/browse/GITOPS-1964">GITOPS-1964</a></p>
 </li>
 <li>
-<p>With this update, on OpenShift Container Platform 4.11, the Red Hat OpenShift GitOps <strong>Environments Details</strong> page in the Red Hat OpenShift GitOps developer perspective shows history of the successful deployments of the application environments, along with links to the revision for each deployment. <a href="https://issues.redhat.com/browse/GITOPS-1269">GITOPS-1269</a></p>
+<p>With this update, on OpenShift Container Platform 4.11, the Red Hat OpenShift GitOps <strong>Environments</strong> page in the <strong>Developer</strong> perspective shows history of the successful deployments of the application environments, along with links to the revision for each deployment. <a href="https://issues.redhat.com/browse/GITOPS-1269">GITOPS-1269</a></p>
 </li>
 <li>
 <p>With this update, you can manage resources with Argo CD that are also being used as template resources or "source" by an Operator. <a href="https://issues.redhat.com/browse/GITOPS-982">GITOPS-982</a></p>
@@ -34254,7 +34322,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-5-9_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-5-9_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.5.9</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.5.9 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, 4.11, and 4.12.</p>
+<p>Red Hat OpenShift GitOps 1.5.9 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-5-9_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-5-9_gitops-release-notes"></a>Fixed issues</h3>
@@ -34272,7 +34340,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-5-7_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-5-7_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.5.7</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.5.7 is now available on OpenShift Container Platform 4.8, 4.9, 4.10 and 4.11.</p>
+<p>Red Hat OpenShift GitOps 1.5.7 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-5-7_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-5-7_gitops-release-notes"></a>Fixed issues</h3>
@@ -34293,7 +34361,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-5-6_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-5-6_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.5.6</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.5.6 is now available on OpenShift Container Platform 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.5.6 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-5-6_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-5-6_gitops-release-notes"></a>Fixed issues</h3>
@@ -34362,7 +34430,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-5-5_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-5-5_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.5.5</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.5.5 is now available on OpenShift Container Platform 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.5.5 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="new-features-1-5-5_gitops-release-notes"><a class="anchor" href="#new-features-1-5-5_gitops-release-notes"></a>New features</h3>
@@ -34421,7 +34489,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-5-4_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-5-4_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.5.4</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.5.4 is now available on OpenShift Container Platform 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.5.4 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-5-4_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-5-4_gitops-release-notes"></a>Fixed issues</h3>
@@ -34442,7 +34510,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-5-3_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-5-3_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.5.3</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.5.3 is now available on OpenShift Container Platform 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.5.3 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-5-3_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-5-3_gitops-release-notes"></a>Fixed issues</h3>
@@ -34472,7 +34540,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-5-2_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-5-2_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.5.2</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.5.2 is now available on OpenShift Container Platform 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.5.2 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-5-2_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-5-2_gitops-release-notes"></a>Fixed issues</h3>
@@ -34493,7 +34561,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-5-1_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-5-1_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.5.1</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.5.1 is now available on OpenShift Container Platform 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.5.1 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-5-1_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-5-1_gitops-release-notes"></a>Fixed issues</h3>
@@ -34520,7 +34588,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-5-0_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-5-0_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.5.0</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Red Hat OpenShift GitOps 1.5.0 is now available on OpenShift Container Platform 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.5.0 is now available on OpenShift Container Platform 4.8, 4.9, 4.10, and 4.11.</p>
 </div>
 <div class="sect2">
 <h3 id="new-features-1-5-0_gitops-release-notes"><a class="anchor" href="#new-features-1-5-0_gitops-release-notes"></a>New features</h3>
@@ -34619,7 +34687,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-4-13_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-4-13_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.4.13</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.4.13 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, 4.10 and 4.11.</p>
+<p>Red Hat OpenShift GitOps 1.4.13 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.10.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-4-13_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-4-13_gitops-release-notes"></a>Fixed issues</h3>
@@ -34640,7 +34708,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-4-12_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-4-12_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.4.12</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.4.12 is now available on OpenShift Container Platform 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.4.12 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.10.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-4-12_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-4-12_gitops-release-notes"></a>Fixed issues</h3>
@@ -34709,7 +34777,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-4-11_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-4-11_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.4.11</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.4.11 is now available on OpenShift Container Platform 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.4.11 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.10.</p>
 </div>
 <div class="sect2">
 <h3 id="new-features-1-4-11_gitops-release-notes"><a class="anchor" href="#new-features-1-4-11_gitops-release-notes"></a>New features</h3>
@@ -34803,7 +34871,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-4-5_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-4-5_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.4.5</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Red Hat OpenShift GitOps 1.4.5 is now available on OpenShift Container Platform 4.7, 4.8, 4.9 and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.4.5 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.10.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-4-5_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-4-5_gitops-release-notes"></a>Fixed issues</h3>
@@ -34851,7 +34919,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-4-3_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-4-3_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.4.3</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Red Hat OpenShift GitOps 1.4.3 is now available on OpenShift Container Platform 4.7, 4.8, and 4.9.</p>
+<p>Red Hat OpenShift GitOps 1.4.3 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.10.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-4-3_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-4-3_gitops-release-notes"></a>Fixed issues</h3>
@@ -34872,7 +34940,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-4-2_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-4-2_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.4.2</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Red Hat OpenShift GitOps 1.4.2 is now available on OpenShift Container Platform 4.7, 4.8, and 4.9.</p>
+<p>Red Hat OpenShift GitOps 1.4.2 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.10.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-4-2_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-4-2_gitops-release-notes"></a>Fixed issues</h3>
@@ -34893,7 +34961,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-4-1_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-4-1_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.4.1</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.4.1 is now available on OpenShift Container Platform 4.7, 4.8, and 4.9.</p>
+<p>Red Hat OpenShift GitOps 1.4.1 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.10.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-4-1_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-4-1_gitops-release-notes"></a>Fixed issues</h3>
@@ -34930,7 +34998,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-4-0_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-4-0_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.4.0</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.4.0 is now available on OpenShift Container Platform 4.7, 4.8, and 4.9.</p>
+<p>Red Hat OpenShift GitOps 1.4.0 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.10.</p>
 </div>
 <div class="sect2">
 <h3 id="new-features-1-4-0_gitops-release-notes"><a class="anchor" href="#new-features-1-4-0_gitops-release-notes"></a>New features</h3>
@@ -34961,7 +35029,7 @@ the development process.</p>
 </div>
 </li>
 <li>
-<p>With this update, the Environment page in the OpenShift Container Platform Developer Console displays a broken heart icon to indicate degraded resources, excluding ones whose status is Progressing, Missing, and Unknown. The console displays a yellow yield sign icon to indicate out-of-sync resources. <a href="https://issues.redhat.com/browse/GITOPS-1307">GITOPS-1307</a></p>
+<p>With this update, the <strong>Environments</strong> page in the OpenShift Container Platform <strong>Developer</strong> perspective displays a broken heart icon to indicate degraded resources, excluding ones whose status is <code>Progressing</code>, <code>Missing</code>, and <code>Unknown</code>. The console displays a yellow yield sign icon to indicate out-of-sync resources. <a href="https://issues.redhat.com/browse/GITOPS-1307">GITOPS-1307</a></p>
 </li>
 </ul>
 </div>
@@ -35016,7 +35084,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-3-7_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-3-7_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.3.7</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.3.7 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.3.7 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.6 with limited GA support.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-3-7_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-3-7_gitops-release-notes"></a>Fixed issues</h3>
@@ -35051,7 +35119,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-3-6_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-3-6_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.3.6</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.3.6 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.10.</p>
+<p>Red Hat OpenShift GitOps 1.3.6 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.6 with limited GA support.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-3-6_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-3-6_gitops-release-notes"></a>Fixed issues</h3>
@@ -35078,7 +35146,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-3-2_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-3-2_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.3.2</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.3.2 is now available on OpenShift Container Platform 4.6, 4.7, 4.8, and 4.9.</p>
+<p>Red Hat OpenShift GitOps 1.3.2 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.6 with limited GA support.</p>
 </div>
 <div class="sect2">
 <h3 id="new-features-1-3-2_gitops-release-notes"><a class="anchor" href="#new-features-1-3-2_gitops-release-notes"></a>New features</h3>
@@ -35132,7 +35200,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-3-1_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-3-1_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.3.1</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.3.1 is now available on OpenShift Container Platform 4.6, 4.7, 4.8, and 4.9.</p>
+<p>Red Hat OpenShift GitOps 1.3.1 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.6 with limited GA support.</p>
 </div>
 <div class="sect2">
 <h3 id="fixed-issues-1-3-1_gitops-release-notes"><a class="anchor" href="#fixed-issues-1-3-1_gitops-release-notes"></a>Fixed issues</h3>
@@ -35150,7 +35218,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-3_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-3_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.3</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.3 is now available on OpenShift Container Platform 4.7, 4.8, and 4.9.</p>
+<p>Red Hat OpenShift GitOps 1.3 is now available on OpenShift Container Platform 4.7, 4.8, 4.9, and 4.6 with limited GA support.</p>
 </div>
 <div class="sect2">
 <h3 id="new-features-1-3_gitops-release-notes"><a class="anchor" href="#new-features-1-3_gitops-release-notes"></a>New features</h3>
@@ -35169,7 +35237,7 @@ the development process.</p>
 <p>Internal communications in Argo CD can now be secured using the TLS and the OpenShift cluster certificates. The Argo CD routes can now leverage the OpenShift cluster certificates in addition to using external certificate managers such as the cert-manager.</p>
 </li>
 <li>
-<p>Use the improved <strong>environment details</strong> view in the <strong>Developer</strong> perspective of the console 4.9 to gain insights into the GitOps environments.</p>
+<p>Use the improved <strong>Environments</strong> page in the <strong>Developer</strong> perspective of the console 4.9 to gain insights into the GitOps environments.</p>
 </li>
 <li>
 <p>You can now access custom health checks in Argo CD for <code>DeploymentConfig</code> resources, <code>Route</code> resources, and Operators installed using OLM.</p>
@@ -35247,7 +35315,7 @@ the development process.</p>
 <h2 id="gitops-release-notes-1-2-1_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-2-1_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.2.1</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.2.1 is now available on OpenShift Container Platform 4.7 and 4.8.</p>
+<p>Red Hat OpenShift GitOps 1.2.1 is now available on OpenShift Container Platform 4.8.</p>
 </div>
 <div class="sect2">
 <h3 id="support-matrix-1-2-1_gitops-release-notes"><a class="anchor" href="#support-matrix-1-2-1_gitops-release-notes"></a>Support matrix</h3>
@@ -35274,7 +35342,7 @@ the development process.</p>
 <p>Note the following scope of support on the Red Hat Customer Portal for these features:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Support matrix</caption>
+<caption class="title">Table 2. Support matrix</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -35338,7 +35406,7 @@ this value can be overridden by specifying a number for <code>.spec.controller.k
 <h2 id="gitops-release-notes-1-2_gitops-release-notes"><a class="anchor" href="#gitops-release-notes-1-2_gitops-release-notes"></a>Release notes for Red Hat OpenShift GitOps 1.2</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat OpenShift GitOps 1.2 is now available on OpenShift Container Platform 4.7, 4.8, and 4.9.</p>
+<p>Red Hat OpenShift GitOps 1.2 is now available on OpenShift Container Platform 4.8.</p>
 </div>
 <div class="sect2">
 <h3 id="support-matrix-1-2_gitops-release-notes"><a class="anchor" href="#support-matrix-1-2_gitops-release-notes"></a>Support matrix</h3>
@@ -35365,7 +35433,7 @@ this value can be overridden by specifying a number for <code>.spec.controller.k
 <p>Note the following scope of support on the Red Hat Customer Portal for these features:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Support matrix</caption>
+<caption class="title">Table 3. Support matrix</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -35561,7 +35629,7 @@ this value can be overridden by specifying a number for <code>.spec.controller.k
 <p>Note the following scope of support on the Red Hat Customer Portal for these features:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Support matrix</caption>
+<caption class="title">Table 4. Support matrix</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">

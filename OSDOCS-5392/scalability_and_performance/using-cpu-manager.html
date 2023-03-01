@@ -12,7 +12,7 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-  <title>Using CPU Manager | Scalability and performance | OpenShift Container Platform Branch Build</title>
+  <title>Using CPU Manager and Topology Manager | Scalability and performance | OpenShift Container Platform Branch Build</title>
   <link href="https://assets.openshift.net/content/subdomain.css" rel="stylesheet" type="text/css"/>
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/search.css" rel="stylesheet" media="screen"/>
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/autumn.css" rel="stylesheet"  media="screen"/>
@@ -204,7 +204,7 @@
       
       
       <li class="hidden-xs active">
-        Using CPU Manager
+        Using CPU Manager and Topology Manager
       </li>
       
       <span text-align="right" style="float: right !important">
@@ -907,7 +907,7 @@
 
                   <li>
                     <a class="" href="../installing/installing_alibaba/installing-alibaba-vpc.html">
-                      Installing a cluster on Alibaba Cloud into a shared VPC
+                      Installing a cluster on Alibaba Cloud into an existing VPC
                     </a>
                   </li>
 
@@ -4528,7 +4528,7 @@
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-9">
                 <span id="sgSpan-6-9" class="fa fa-caret-right"></span>
-                  &nbsp;Updating a disconnected environment
+                  &nbsp;Updating a cluster in a disconnected environment
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
@@ -4553,7 +4553,31 @@
 
                   <li>
                     <a class="" href="../updating/updating-restricted-network-cluster/index.html">
-                      About disconnected environment updates
+                      About cluster updates in a disconnected environment
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../updating/updating-restricted-network-cluster/mirroring-image-repository.html">
+                      Mirroring the OpenShift Container Platform image repository
                     </a>
                   </li>
 
@@ -4577,7 +4601,7 @@
 
                   <li>
                     <a class="" href="../updating/updating-restricted-network-cluster/restricted-network-update-osus.html">
-                      Updating disconnected environments using OSUS
+                      Updating a cluster in a disconnected environment using OSUS
                     </a>
                   </li>
 
@@ -4601,7 +4625,7 @@
 
                   <li>
                     <a class="" href="../updating/updating-restricted-network-cluster/restricted-network-update.html">
-                      Updating disconnected environments without OSUS
+                      Updating a cluster in a disconnected environment without OSUS
                     </a>
                   </li>
 
@@ -19460,20 +19484,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class=" active" href="../scalability_and_performance/using-cpu-manager.html">Using CPU Manager</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../scalability_and_performance/using-topology-manager.html">Using Topology Manager</a></li>
+            <li><a class=" active" href="../scalability_and_performance/using-cpu-manager.html">Using CPU Manager and Topology Manager</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19656,15 +19667,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-19">
-                <span id="sgSpan-25-19" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-18">
+                <span id="sgSpan-25-18" class="fa fa-caret-right"></span>
                   &nbsp;Clusters at the network far edge
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-25-19" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-25-18" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -33408,7 +33419,7 @@
       <div class="col-xs-12 col-sm-9 col-md-9 main">
         <div class="page-header">
           <h1>
-            Using CPU Manager
+            Using CPU Manager and Topology Manager
           </h1>
         </div>
         
@@ -33418,7 +33429,10 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
-<li><a href="#seting_up_cpu_manager_using-cpu-manager">Setting up CPU Manager</a></li>
+<li><a href="#seting_up_cpu_manager_using-cpu-manager-and-topology_manager">Setting up CPU Manager</a></li>
+<li><a href="#topology_manager_policies_using-cpu-manager-and-topology_manager">Topology Manager policies</a></li>
+<li><a href="#seting_up_topology_manager_using-cpu-manager-and-topology_manager">Setting up Topology Manager</a></li>
+<li><a href="#pod-interactions-with-topology-manager_using-cpu-manager-and-topology_manager">Pod interactions with Topology Manager policies</a></li>
 </ul>
 </div>
 <div class="paragraph">
@@ -33444,10 +33458,22 @@ cache.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Topology Manager collects hints from the CPU Manager, Device Manager, and other Hint Providers to align pod resources, such as CPU, SR-IOV VFs, and other device resources, for all Quality of Service (QoS) classes on the same non-uniform memory access (NUMA) node.</p>
+</div>
+<div class="paragraph">
+<p>Topology Manager uses topology information from the collected hints to decide if a pod can be accepted or rejected on a node, based on the configured Topology Manager policy and pod resources requested.</p>
+</div>
+<div class="paragraph">
+<p>Topology Manager is useful for workloads that use hardware accelerators to support latency-critical execution and high throughput parallel computation.</p>
+</div>
+<div class="paragraph">
+<p>To use Topology Manager you must configure CPU Manager with the <code>static</code> policy.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="seting_up_cpu_manager_using-cpu-manager"><a class="anchor" href="#seting_up_cpu_manager_using-cpu-manager"></a>Setting up CPU Manager</h2>
+<h2 id="seting_up_cpu_manager_using-cpu-manager-and-topology_manager"><a class="anchor" href="#seting_up_cpu_manager_using-cpu-manager-and-topology_manager"></a>Setting up CPU Manager</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -33505,10 +33531,10 @@ cache.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>none</code>. This policy explicitly enables the existing default CPU affinity scheme, providing no affinity beyond what the scheduler does automatically.</p>
+<p><code>none</code>. This policy explicitly enables the existing default CPU affinity scheme, providing no affinity beyond what the scheduler does automatically. This is the default policy.</p>
 </li>
 <li>
-<p><code>static</code>. This policy allows pods with certain resource characteristics to be granted increased CPU affinity and exclusivity on the node. If <code>static</code>, you must use a lowercase <code>s</code>.</p>
+<p><code>static</code>. This policy allows containers in guaranteed pods with integer CPU requests. It also limits access to exclusive CPUs on the node. If <code>static</code>, you must use a lowercase <code>s</code>.</p>
 </li>
 </ul>
 </div></td>
@@ -33737,6 +33763,165 @@ cpumanager-7qc2t        0/1     Pending   0          11s</span></code></pre>
 </div>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="topology_manager_policies_using-cpu-manager-and-topology_manager"><a class="anchor" href="#topology_manager_policies_using-cpu-manager-and-topology_manager"></a>Topology Manager policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Topology Manager aligns <code>Pod</code> resources of all Quality of Service (QoS) classes by collecting topology hints from Hint Providers, such as CPU Manager and Device Manager, and using the collected hints to align the <code>Pod</code> resources.</p>
+</div>
+<div class="paragraph">
+<p>Topology Manager supports four allocation policies, which you assign in the <code>cpumanager-enabled</code> custom resource (CR):</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>none</code> policy</dt>
+<dd>
+<p>This is the default policy and does not perform any topology alignment.</p>
+</dd>
+<dt class="hdlist1"><code>best-effort</code> policy</dt>
+<dd>
+<p>For each container in a pod with the <code>best-effort</code> topology management policy, kubelet calls each Hint Provider to discover their resource
+availability. Using this information, the Topology Manager stores the preferred NUMA Node affinity for that container. If the affinity is not preferred, Topology Manager stores this and admits the pod to the node.</p>
+</dd>
+<dt class="hdlist1"><code>restricted</code> policy</dt>
+<dd>
+<p>For each container in a pod with the <code>restricted</code> topology management policy, kubelet calls each Hint Provider to discover their resource
+availability. Using this information, the Topology Manager stores the preferred NUMA Node affinity for that container. If the affinity is not
+preferred, Topology Manager rejects this pod from the node, resulting in a pod in a <code>Terminated</code> state with a pod admission failure.</p>
+</dd>
+<dt class="hdlist1"><code>single-numa-node</code> policy</dt>
+<dd>
+<p>For each container in a pod with the <code>single-numa-node</code> topology management policy, kubelet calls each Hint Provider to discover their resource availability. Using this information, the Topology Manager determines if a single NUMA Node affinity is possible. If it is, the pod is admitted to the node. If a single NUMA Node affinity is not possible, the Topology Manager rejects the pod from the node. This results in a pod in a Terminated state with a pod admission failure.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="seting_up_topology_manager_using-cpu-manager-and-topology_manager"><a class="anchor" href="#seting_up_topology_manager_using-cpu-manager-and-topology_manager"></a>Setting up Topology Manager</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To use Topology Manager, you must configure an allocation policy in the <code>cpumanager-enabled</code> custom resource (CR). This file might exist if you have set up CPU Manager. If the file does not exist, you can create the file.</p>
+</div>
+<div class="ulist">
+<div class="title">Prequisites</div>
+<ul>
+<li>
+<p>Configure the CPU Manager policy to be <code>static</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>To activate Topololgy Manager:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Configure the Topology Manager allocation policy in the <code>cpumanager-enabled</code> custom resource (CR).</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc edit KubeletConfig cpumanager-enabled</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">machineconfiguration.openshift.io/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KubeletConfig</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">cpumanager-enabled</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">machineConfigPoolSelector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">custom-kubelet</span><span class="pi">:</span> <span class="s">cpumanager-enabled</span>
+  <span class="na">kubeletConfig</span><span class="pi">:</span>
+     <span class="na">cpuManagerPolicy</span><span class="pi">:</span> <span class="s">static</span> <i class="conum" data-value="1"></i><b>(1)</b>
+     <span class="na">cpuManagerReconcilePeriod</span><span class="pi">:</span> <span class="s">5s</span>
+     <span class="na">topologyManagerPolicy</span><span class="pi">:</span> <span class="s">single-numa-node</span> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This parameter must be <code>static</code> with a lowercase <code>s</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Specify your selected Topology Manager allocation policy. Here, the policy is <code>single-numa-node</code>.
+Acceptable values are: <code>default</code>, <code>best-effort</code>, <code>restricted</code>, <code>single-numa-node</code>.</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pod-interactions-with-topology-manager_using-cpu-manager-and-topology_manager"><a class="anchor" href="#pod-interactions-with-topology-manager_using-cpu-manager-and-topology_manager"></a>Pod interactions with Topology Manager policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The example <code>Pod</code> specs below help illustrate pod interactions with Topology Manager.</p>
+</div>
+<div class="paragraph">
+<p>The following pod runs in the <code>BestEffort</code> QoS class because no resource requests or limits are specified.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
+  <span class="na">containers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">nginx</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The next pod runs in the <code>Burstable</code> QoS class because requests are less than limits.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
+  <span class="na">containers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">nginx</span>
+    <span class="na">resources</span><span class="pi">:</span>
+      <span class="na">limits</span><span class="pi">:</span>
+        <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">200Mi"</span>
+      <span class="na">requests</span><span class="pi">:</span>
+        <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">100Mi"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the selected policy is anything other than <code>none</code>, Topology Manager would not consider either of these <code>Pod</code> specifications.</p>
+</div>
+<div class="paragraph">
+<p>The last example pod below runs in the Guaranteed QoS class because requests are equal to limits.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">spec</span><span class="pi">:</span>
+  <span class="na">containers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">nginx</span>
+    <span class="na">resources</span><span class="pi">:</span>
+      <span class="na">limits</span><span class="pi">:</span>
+        <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">200Mi"</span>
+        <span class="na">cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2"</span>
+        <span class="s">example.com/device</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1"</span>
+      <span class="na">requests</span><span class="pi">:</span>
+        <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">200Mi"</span>
+        <span class="na">cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2"</span>
+        <span class="s">example.com/device</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Topology Manager would consider this pod. The Topology Manager would consult the hint providers, which are CPU Manager and Device Manager, to get topology hints for the pod.</p>
+</div>
+<div class="paragraph">
+<p>Topology Manager will use this information to store the best topology for this container. In the case of this pod, CPU Manager and Device Manager will use this stored information at the resource allocation stage.</p>
 </div>
 </div>
 </div>

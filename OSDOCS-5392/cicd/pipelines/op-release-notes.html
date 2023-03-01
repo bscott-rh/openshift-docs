@@ -907,7 +907,7 @@
 
                   <li>
                     <a class="" href="../../installing/installing_alibaba/installing-alibaba-vpc.html">
-                      Installing a cluster on Alibaba Cloud into a shared VPC
+                      Installing a cluster on Alibaba Cloud into an existing VPC
                     </a>
                   </li>
 
@@ -4528,7 +4528,7 @@
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-9">
                 <span id="sgSpan-6-9" class="fa fa-caret-right"></span>
-                  &nbsp;Updating a disconnected environment
+                  &nbsp;Updating a cluster in a disconnected environment
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
@@ -4553,7 +4553,31 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/index.html">
-                      About disconnected environment updates
+                      About cluster updates in a disconnected environment
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../updating/updating-restricted-network-cluster/mirroring-image-repository.html">
+                      Mirroring the OpenShift Container Platform image repository
                     </a>
                   </li>
 
@@ -4577,7 +4601,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update-osus.html">
-                      Updating disconnected environments using OSUS
+                      Updating a cluster in a disconnected environment using OSUS
                     </a>
                   </li>
 
@@ -4601,7 +4625,7 @@
 
                   <li>
                     <a class="" href="../../updating/updating-restricted-network-cluster/restricted-network-update.html">
-                      Updating disconnected environments without OSUS
+                      Updating a cluster in a disconnected environment without OSUS
                     </a>
                   </li>
 
@@ -19460,20 +19484,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../../scalability_and_performance/using-topology-manager.html">Using Topology Manager</a></li>
+            <li><a class="" href="../../scalability_and_performance/using-cpu-manager.html">Using CPU Manager and Topology Manager</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -19656,15 +19667,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-19">
-                <span id="sgSpan-25-19" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-25-18">
+                <span id="sgSpan-25-18" class="fa fa-caret-right"></span>
                   &nbsp;Clusters at the network far edge
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-25-19" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-25-18" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -33428,6 +33439,7 @@
 <li><a href="#known-issues-1-8_op-release-notes">Known issues</a></li>
 <li><a href="#fixed-issues-1-8_op-release-notes">Fixed issues</a></li>
 <li><a href="#release-notes-1-8-1_op-release-notes">Release notes for Red Hat OpenShift Pipelines General Availability 1.8.1</a></li>
+<li><a href="#release-notes-1-8-2_op-release-notes">Release notes for Red Hat OpenShift Pipelines General Availability 1.8.2</a></li>
 </ul>
 </li>
 <li><a href="#op-release-notes-1-7_op-release-notes">Release notes for Red Hat OpenShift Pipelines General Availability 1.7</a>
@@ -33681,7 +33693,7 @@ GA
 <h2 id="op-release-notes-1-8_op-release-notes"><a class="anchor" href="#op-release-notes-1-8_op-release-notes"></a>Release notes for Red Hat OpenShift Pipelines General Availability 1.8</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>With this update, Red Hat OpenShift Pipelines General Availability (GA) 1.8 is available on OpenShift Container Platform 4.10, and is planned to be available on OpenShift Container Platform 4.11 and 4.12.</p>
+<p>With this update, Red Hat OpenShift Pipelines General Availability (GA) 1.8 is available on OpenShift Container Platform 4.10, 4.11 and 4.12.</p>
 </div>
 <div class="sect2">
 <h3 id="new-features-1-8_op-release-notes"><a class="anchor" href="#new-features-1-8_op-release-notes"></a>New features</h3>
@@ -34118,6 +34130,23 @@ the development process.</p>
 <div class="ulist">
 <ul>
 <li>
+<p>Starting with OpenShift Container Platform 4.11, the <code>preview</code> and <code>stable</code> channels for installing and upgrading the Red Hat OpenShift Pipelines Operator are removed. To install and upgrade the Operator, use the appropriate <code>pipelines-&lt;version&gt;</code> channel, or the <code>latest</code> channel for the most recent stable version. For example, to install the Pipelines Operator version <code>1.8.x</code>, use the <code>pipelines-1.8</code> channel.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In OpenShift Container Platform 4.10 and earlier versions, you can use the <code>preview</code> and <code>stable</code> channels for installing and upgrading the Operator.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
 <p>Support for the <code>tekton.dev/v1alpha1</code> API version, which was deprecated in Red Hat OpenShift Pipelines GA 1.6, is planned to be removed in the upcoming Red Hat OpenShift Pipelines GA 1.9 release.</p>
 <div class="paragraph">
 <p>This change affects the pipeline component, which includes the <code>TaskRun</code>, <code>PipelineRun</code>, <code>Task</code>, <code>Pipeline</code>, and similar <code>tekton.dev/v1alpha1</code> resources. As an alternative, update existing resources to use <code>apiVersion: tekton.dev/v1beta1</code> as described in <a href="https://tekton.dev/docs/pipelines/migrating-v1alpha1-to-v1beta1/">Migrating From Tekton v1alpha1 to Tekton v1beta1</a>.</p>
@@ -34373,6 +34402,12 @@ time="2022-03-04T09:47:57Z" level=error msg="(unable to determine exit status)"<
 <div class="ulist">
 <ul>
 <li>
+<p>By default, the containers have restricted permissions for enhanced security. The restricted permissions apply to all controller pods in the Red Hat OpenShift Pipelines Operator, and to some cluster tasks. Due to restricted permissions, the <code>git-clone</code> cluster task fails under certain configurations.</p>
+<div class="paragraph">
+<p>Workaround: None. You can track the issue <a href="https://issues.redhat.com/browse/SRVKP-2634">SRVKP-2634</a>.</p>
+</div>
+</li>
+<li>
 <p>When installer sets are in a failed state, the status of the <code>TektonConfig</code> custom resource is incorrectly displayed as <code>True</code> instead of <code>False</code>.</p>
 <div class="listingblock">
 <div class="title">Example: Failed installer sets</div>
@@ -34431,6 +34466,22 @@ config   1.8.1     True</span></code></pre>
 </li>
 <li>
 <p>Before this update, cluster administrators could not provide a <code>config.json</code> file to the <code>Buildah</code> cluster task for accessing a container registry. With this update, cluster administrators can provide the <code>Buildah</code> cluster task with a <code>config.json</code> file by using the <code>dockerconfig</code> workspace.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="release-notes-1-8-2_op-release-notes"><a class="anchor" href="#release-notes-1-8-2_op-release-notes"></a>Release notes for Red Hat OpenShift Pipelines General Availability 1.8.2</h3>
+<div class="paragraph">
+<p>With this update, Red Hat OpenShift Pipelines General Availability (GA) 1.8.2 is available on OpenShift Container Platform 4.10 and 4.11.</p>
+</div>
+<div class="sect3">
+<h4 id="fixed-issues-1-8-2_op-release-notes"><a class="anchor" href="#fixed-issues-1-8-2_op-release-notes"></a>Fixed issues</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Before this update, the <code>git-clone</code> task failed when cloning a repository using SSH keys. With this update, the role of the non-root user in the <code>git-init</code> task is removed, and the SSH program looks in the <code>$HOME/.ssh/</code> directory for the correct keys.</p>
 </li>
 </ul>
 </div>
