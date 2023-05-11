@@ -36748,7 +36748,7 @@ OpenShift Container Platform 4.13.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Due to a known issue, you cannot create persistent volume storage on a cluster that uses Confidential VMs. For more information, see <a href="https://issues.redhat.com/browse/OCPBUGS-7582">OCPBUGS-7582</a>.</p>
+<p>Due to a known issue, you cannot use persistent volume storage on a cluster with Confidential VMs. For more information, see <a href="https://issues.redhat.com/browse/OCPBUGS-7582">OCPBUGS-7582</a>.</p>
 </div>
 </td>
 </tr>
@@ -38975,6 +38975,12 @@ Now, during container image pre-caching, TALM compares the available host disk s
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not Available</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Technology Preview</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GCP Confidential VMs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not Available</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not Available</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technology Preview</p></td>
+</tr>
 </tbody>
 </table>
 <h3 id="node-technology-preview-features" class="discrete">Node Technology Preview features</h3>
@@ -39605,7 +39611,7 @@ oc patch clusterrolebinding <span class="k">${</span><span class="nv">clusterrol
 <p>For OpenShift Container Platform Branch Build, the Driver Toolkit (DTK) container image requires the <code>ubi9</code> image as the second layer of the software stack for building driver containers. If you attempt to use the <code>ubi8</code> image as the second layer in the your software stack, you will receive a build error. (<a href="https://issues.redhat.com/browse/OCPBUGS-11120"><strong>OCPBUGS-11120</strong></a>)</p>
 </li>
 <li>
-<p>Due to a known issue in RHEL 9.2, you cannot create persistent volumes on a GCP cluster that uses Confidential VMs. (<a href="https://issues.redhat.com/browse/OCPBUGS-7582"><strong>OCPBUGS-7582</strong></a>)</p>
+<p>Due to a known issue in RHEL 9.2, you cannot use persistent volumes on a GCP cluster with Confidential VMs. (<a href="https://issues.redhat.com/browse/OCPBUGS-7582"><strong>OCPBUGS-7582</strong></a>)</p>
 </li>
 </ul>
 </div>
