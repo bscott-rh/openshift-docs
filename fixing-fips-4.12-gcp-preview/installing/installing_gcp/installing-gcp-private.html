@@ -12,7 +12,7 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-  <title>Installing a cluster on GCP in a restricted network - Installing on GCP | Installing | OpenShift Container Platform Branch Build</title>
+  <title>Installing a private cluster on GCP - Installing on GCP | Installing | OpenShift Container Platform Branch Build</title>
   <link href="https://assets.openshift.net/content/subdomain.css" rel="stylesheet" type="text/css"/>
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/search.css" rel="stylesheet" media="screen"/>
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/autumn.css" rel="stylesheet"  media="screen"/>
@@ -203,13 +203,13 @@
       <li class="hidden-xs active"><a href="../../installing/installing_gcp/preparing-to-install-on-gcp.html">Installing on GCP</a></li>
       
       <li class="hidden-xs active">
-        Installing a cluster on GCP in a restricted network
+        Installing a private cluster on GCP
       </li>
       
       <span text-align="right" style="float: right !important">
-        <a href="https://github.com/openshift/openshift-docs/commits/enterprise-Branch Build/installing/installing_gcp/installing-restricted-networks-gcp-installer-provisioned.adoc"><span class="material-icons-outlined" title="Page history">history</span></a>
+        <a href="https://github.com/openshift/openshift-docs/commits/enterprise-Branch Build/installing/installing_gcp/installing-gcp-private.adoc"><span class="material-icons-outlined" title="Page history">history</span></a>
         
-        <a href="https://github.com/openshift/openshift-docs/issues/new?title=[enterprise-Branch Build] Issue in file installing/installing_gcp/installing-restricted-networks-gcp-installer-provisioned.adoc">
+        <a href="https://github.com/openshift/openshift-docs/issues/new?title=[enterprise-Branch Build] Issue in file installing/installing_gcp/installing-gcp-private.adoc">
           <span class="material-icons-outlined" title="Open an issue">bug_report</span>
         </a>
         <a href="javascript: void(0);" onclick="window.print()"><span class="material-icons-outlined" title="Print page (Save as PDF)">picture_as_pdf</span></a>
@@ -2051,7 +2051,7 @@
 
 
                   <li>
-                    <a class=" active" href="../../installing/installing_gcp/installing-restricted-networks-gcp-installer-provisioned.html">
+                    <a class="" href="../../installing/installing_gcp/installing-restricted-networks-gcp-installer-provisioned.html">
                       Installing a cluster on GCP in a restricted network
                     </a>
                   </li>
@@ -2123,7 +2123,7 @@
 
 
                   <li>
-                    <a class="" href="../../installing/installing_gcp/installing-gcp-private.html">
+                    <a class=" active" href="../../installing/installing_gcp/installing-gcp-private.html">
                       Installing a private cluster on GCP
                     </a>
                   </li>
@@ -34547,7 +34547,7 @@
       <div class="col-xs-12 col-sm-9 col-md-9 main">
         <div class="page-header">
           <h1>
-            Installing a cluster on GCP in a restricted network
+            Installing a private cluster on GCP
           </h1>
         </div>
         
@@ -34557,54 +34557,52 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
-<li><a href="#prerequisites_installing-restricted-networks-gcp-installer-provisioned">Prerequisites</a></li>
-<li><a href="#installation-about-restricted-networks_installing-restricted-networks-gcp-installer-provisioned">About installations in restricted networks</a>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#private-clusters-default_installing-gcp-private">Private clusters</a>
 <ul class="sectlevel2">
-<li><a href="#installation-restricted-network-limits_installing-restricted-networks-gcp-installer-provisioned">Additional limits</a></li>
+<li><a href="#private-clusters-about-gcp_installing-gcp-private">Private clusters in GCP</a></li>
 </ul>
 </li>
-<li><a href="#cluster-entitlements_installing-restricted-networks-gcp-installer-provisioned">Internet access for OpenShift Container Platform</a></li>
-<li><a href="#ssh-agent-using_installing-restricted-networks-gcp-installer-provisioned">Generating a key pair for cluster node SSH access</a></li>
-<li><a href="#installation-initializing_installing-restricted-networks-gcp-installer-provisioned">Creating the installation configuration file</a>
+<li><a href="#installation-about-custom-gcp-vpc_installing-gcp-private">About using a custom VPC</a>
 <ul class="sectlevel2">
-<li><a href="#installation-configuration-parameters_installing-restricted-networks-gcp-installer-provisioned">Installation configuration parameters</a></li>
-<li><a href="#installation-minimum-resource-requirements_installing-restricted-networks-gcp-installer-provisioned">Minimum resource requirements for cluster installation</a></li>
-<li><a href="#installation-gcp-tested-machine-types_installing-restricted-networks-gcp-installer-provisioned">Tested instance types for GCP</a></li>
-<li><a href="#installation-custom-machine-types_installing-restricted-networks-gcp-installer-provisioned">Using custom machine types</a></li>
-<li><a href="#installation-gcp-config-yaml_installing-restricted-networks-gcp-installer-provisioned">Sample customized install-config.yaml file for GCP</a></li>
-<li><a href="#nw-gcp-global-access-configuration_installing-restricted-networks-gcp-installer-provisioned">Create an Ingress Controller with global access on GCP</a></li>
-<li><a href="#installation-configure-proxy_installing-restricted-networks-gcp-installer-provisioned">Configuring the cluster-wide proxy during installation</a></li>
+<li><a href="#installation-about-custom-gcp-vpcs-requirements_installing-gcp-private">Requirements for using your VPC</a></li>
+<li><a href="#installation-about-custom-gcp-permissions_installing-gcp-private">Division of permissions</a></li>
+<li><a href="#installation-about-custom-gcp-vpcs-isolation_installing-gcp-private">Isolation between clusters</a></li>
 </ul>
 </li>
-<li><a href="#installation-launching-installer_installing-restricted-networks-gcp-installer-provisioned">Deploying the cluster</a></li>
-<li><a href="#cli-installing-cli_installing-restricted-networks-gcp-installer-provisioned">Installing the OpenShift CLI by downloading the binary</a></li>
-<li><a href="#cli-logging-in-kubeadmin_installing-restricted-networks-gcp-installer-provisioned">Logging in to the cluster by using the CLI</a></li>
-<li><a href="#olm-restricted-networks-operatorhub_installing-restricted-networks-gcp-installer-provisioned">Disabling the default OperatorHub catalog sources</a></li>
-<li><a href="#cluster-telemetry_installing-restricted-networks-gcp-installer-provisioned">Telemetry access for OpenShift Container Platform</a></li>
-<li><a href="#next-steps_installing-restricted-networks-gcp-installer-provisioned">Next steps</a></li>
+<li><a href="#cluster-entitlements_installing-gcp-private">Internet access for OpenShift Container Platform</a></li>
+<li><a href="#ssh-agent-using_installing-gcp-private">Generating a key pair for cluster node SSH access</a></li>
+<li><a href="#installation-obtaining-installer_installing-gcp-private">Obtaining the installation program</a></li>
+<li><a href="#installation-initializing-manual_installing-gcp-private">Manually creating the installation configuration file</a>
+<ul class="sectlevel2">
+<li><a href="#installation-configuration-parameters_installing-gcp-private">Installation configuration parameters</a></li>
+<li><a href="#installation-minimum-resource-requirements_installing-gcp-private">Minimum resource requirements for cluster installation</a></li>
+<li><a href="#installation-gcp-tested-machine-types_installing-gcp-private">Tested instance types for GCP</a></li>
+<li><a href="#installation-custom-machine-types_installing-gcp-private">Using custom machine types</a></li>
+<li><a href="#installation-gcp-config-yaml_installing-gcp-private">Sample customized install-config.yaml file for GCP</a></li>
+<li><a href="#nw-gcp-global-access-configuration_installing-gcp-private">Create an Ingress Controller with global access on GCP</a></li>
+</ul>
+</li>
+<li><a href="#additional-resources">Additional resources</a>
+<ul class="sectlevel2">
+<li><a href="#installation-configure-proxy_installing-gcp-private">Configuring the cluster-wide proxy during installation</a></li>
+</ul>
+</li>
+<li><a href="#installation-launching-installer_installing-gcp-private">Deploying the cluster</a></li>
+<li><a href="#cli-installing-cli_installing-gcp-private">Installing the OpenShift CLI by downloading the binary</a></li>
+<li><a href="#cli-logging-in-kubeadmin_installing-gcp-private">Logging in to the cluster by using the CLI</a></li>
+<li><a href="#cluster-telemetry_installing-gcp-private">Telemetry access for OpenShift Container Platform</a></li>
+<li><a href="#next-steps">Next steps</a></li>
 </ul>
 </div>
 <div class="paragraph">
-<p>In OpenShift Container Platform Branch Build, you can install a cluster on Google Cloud Platform (GCP) in a restricted network by creating an internal mirror of the installation release content on an existing Google Virtual Private Cloud (VPC).</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You can install an OpenShift Container Platform cluster by using mirrored installation release content, but your cluster will require internet access to use the GCP APIs.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>In OpenShift Container Platform version Branch Build, you can install a private cluster into an existing VPC on Google Cloud Platform (GCP). The installation program provisions the rest of the required infrastructure, which you can further customize. To customize the installation, you modify
+parameters in the <code>install-config.yaml</code> file before you install the cluster.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="prerequisites_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#prerequisites_installing-restricted-networks-gcp-installer-provisioned"></a>Prerequisites</h2>
+<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -34618,37 +34616,7 @@
 <p>You <a href="../../installing/installing_gcp/installing-gcp-account.html#installing-gcp-account">configured a GCP project</a> to host the cluster.</p>
 </li>
 <li>
-<p>You <a href="../../installing/disconnected_install/installing-mirroring-installation-images.html#installation-about-mirror-registry_installing-mirroring-installation-images">mirrored the images for a disconnected installation</a> to your registry and obtained the <code>imageContentSources</code> data for your version of OpenShift Container Platform.</p>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Because the installation media is on the mirror host, you can use that computer to complete all installation steps.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>You have an existing VPC in GCP. While installing a cluster in a restricted network that uses installer-provisioned infrastructure, you cannot use the installer-provisioned VPC. You must use a user-provisioned VPC that satisfies one of the following requirements:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Contains the mirror registry</p>
-</li>
-<li>
-<p>Has firewall rules or a peering connection to access the mirror registry hosted elsewhere</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>If you use a firewall, you <a href="../../installing/install_config/configuring-firewall.html#configuring-firewall">configured it to allow the sites</a> that your cluster requires access to. While you might need to grant access to more sites, you must grant access to <code>*.googleapis.com</code> and <code>accounts.google.com</code>.</p>
+<p>If you use a firewall, you <a href="../../installing/install_config/configuring-firewall.html#configuring-firewall">configured it to allow the sites</a> that your cluster requires access to.</p>
 </li>
 <li>
 <p>If the cloud identity and access management (IAM) APIs are not accessible in your environment, or if you do not want to store an administrator-level credential secret in the <code>kube-system</code> namespace, you can <a href="../../installing/installing_gcp/manually-creating-iam-gcp.html#manually-creating-iam-gcp">manually create and maintain IAM credentials</a>.</p>
@@ -34658,40 +34626,208 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-about-restricted-networks_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-about-restricted-networks_installing-restricted-networks-gcp-installer-provisioned"></a>About installations in restricted networks</h2>
+<h2 id="private-clusters-default_installing-gcp-private"><a class="anchor" href="#private-clusters-default_installing-gcp-private"></a>Private clusters</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In OpenShift Container Platform Branch Build, you can perform an installation that does not
-require an active connection to the internet to obtain software components. Restricted network installations can be completed using installer-provisioned infrastructure or user-provisioned infrastructure, depending on the cloud platform to which you are installing the cluster.</p>
+<p>You can deploy a private OpenShift Container Platform cluster that does not expose external endpoints. Private clusters are accessible from only an internal network and are not visible to the internet.</p>
 </div>
 <div class="paragraph">
-<p>If you choose to perform a restricted network installation on a cloud platform, you
-still require access to its cloud APIs. Some cloud functions, like
-Amazon Web Service&#8217;s Route 53 DNS and IAM services, require internet access.
-Depending on your network, you might require less internet
-access for an installation on bare metal hardware, Nutanix, or on VMware vSphere.</p>
+<p>By default, OpenShift Container Platform is provisioned to use publicly-accessible DNS and endpoints. A private cluster sets the DNS, Ingress Controller, and API server to private when you deploy your cluster. This means that the cluster resources are only accessible from your internal network and are not visible to the internet.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the cluster has any public subnets, load balancer services created by administrators might be publicly accessible. To ensure cluster security, verify that these services are explicitly annotated as private.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>To complete a restricted network installation, you must create a registry that
-mirrors the contents of the OpenShift image registry and contains the
-installation media. You can create this registry on a mirror host, which can
-access both the internet and your closed network, or by using other methods
-that meet your restrictions.</p>
-</div>
-<div class="sect2">
-<h3 id="installation-restricted-network-limits_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-restricted-network-limits_installing-restricted-networks-gcp-installer-provisioned"></a>Additional limits</h3>
-<div class="paragraph">
-<p>Clusters in restricted networks have the following additional limitations and restrictions:</p>
+<p>To deploy a private cluster, you must:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>ClusterVersion</code> status includes an <code>Unable to retrieve available updates</code>
-error.</p>
+<p>Use existing networking that meets your requirements. Your cluster resources might be shared between other clusters on the network.</p>
 </li>
 <li>
-<p>By default, you cannot use the contents of the Developer Catalog because
-you cannot access the required image stream tags.</p>
+<p>Deploy from a machine that has access to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The API services for the cloud to which you provision.</p>
+</li>
+<li>
+<p>The hosts on the network that you provision.</p>
+</li>
+<li>
+<p>The internet to obtain installation media.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can use any machine that meets these access requirements and follows your company&#8217;s guidelines. For example, this machine can be a bastion host on your cloud network or a machine that has access to the network through a VPN.</p>
+</div>
+<div class="sect2">
+<h3 id="private-clusters-about-gcp_installing-gcp-private"><a class="anchor" href="#private-clusters-about-gcp_installing-gcp-private"></a>Private clusters in GCP</h3>
+<div class="paragraph">
+<p>To create a private cluster on Google Cloud Platform (GCP), you must provide an existing private VPC and subnets to host the cluster. The installation program must also be able to resolve the DNS records that the cluster requires. The installation program configures the Ingress Operator and API server for only internal traffic.</p>
+</div>
+<div class="paragraph">
+<p>The cluster still requires access to internet to access the GCP APIs.</p>
+</div>
+<div class="paragraph">
+<p>The following items are not required or created when you install a private cluster:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Public subnets</p>
+</li>
+<li>
+<p>Public network load balancers, which support public ingress</p>
+</li>
+<li>
+<p>A public DNS zone that matches the <code>baseDomain</code> for the cluster</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The installation program does use the <code>baseDomain</code> that you specify to create a private DNS zone and the required records for the cluster. The cluster is configured so that the Operators do not create public records for the cluster and all cluster machines are placed in the private subnets that you specify.</p>
+</div>
+<div class="paragraph">
+<p>Because it is not possible to limit access to external load balancers based on source tags, the private cluster uses only internal load balancers to allow access to internal instances.</p>
+</div>
+<div class="paragraph">
+<p>The internal load balancer relies on instance groups rather than the target pools that the network load balancers use. The installation program creates instance groups for each zone, even if there is no instance in that group.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The cluster IP address is internal only.</p>
+</li>
+<li>
+<p>One forwarding rule manages both the Kubernetes API and machine config server ports.</p>
+</li>
+<li>
+<p>The backend service is comprised of each zone&#8217;s instance group and, while it exists, the bootstrap instance group.</p>
+</li>
+<li>
+<p>The firewall uses a single rule that is based on only internal source ranges.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="private-clusters-limitations-gcp_installing-gcp-private"><a class="anchor" href="#private-clusters-limitations-gcp_installing-gcp-private"></a>Limitations</h4>
+<div class="paragraph">
+<p>No health check for the Machine config server, <code>/healthz</code>, runs because of a difference in load balancer functionality. Two internal load balancers cannot share a single IP address, but two network load balancers can share a single external IP address. Instead, the health of an instance is determined entirely by the <code>/readyz</code> check on port 6443.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installation-about-custom-gcp-vpc_installing-gcp-private"><a class="anchor" href="#installation-about-custom-gcp-vpc_installing-gcp-private"></a>About using a custom VPC</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In OpenShift Container Platform Branch Build, you can deploy a cluster into an existing VPC in Google Cloud Platform (GCP). If you do, you must also use existing subnets within the VPC and routing rules.</p>
+</div>
+<div class="paragraph">
+<p>By deploying OpenShift Container Platform into an existing GCP VPC, you might be able to avoid limit constraints in new accounts or more easily abide by the operational constraints that your company&#8217;s guidelines set. This is a good option to use if you cannot obtain the infrastructure creation permissions that are required to create the VPC yourself.</p>
+</div>
+<div class="sect2">
+<h3 id="installation-about-custom-gcp-vpcs-requirements_installing-gcp-private"><a class="anchor" href="#installation-about-custom-gcp-vpcs-requirements_installing-gcp-private"></a>Requirements for using your VPC</h3>
+<div class="paragraph">
+<p>The installation program will no longer create the following components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>VPC</p>
+</li>
+<li>
+<p>Subnets</p>
+</li>
+<li>
+<p>Cloud router</p>
+</li>
+<li>
+<p>Cloud NAT</p>
+</li>
+<li>
+<p>NAT IP addresses</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you use a custom VPC, you must correctly configure it and its subnets for the installation program and the cluster to use. The installation program cannot subdivide network ranges for the cluster to use, set route tables for the subnets, or set VPC options like DHCP, so you must do so before you install the cluster.</p>
+</div>
+<div class="paragraph">
+<p>Your VPC and subnets must meet the following characteristics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The VPC must be in the same GCP project that you deploy the OpenShift Container Platform cluster to.</p>
+</li>
+<li>
+<p>To allow access to the internet from the control plane and compute machines, you must configure cloud NAT on the subnets to allow egress to it. These machines do not have a public address. Even if you do not require access to the internet, you must allow egress to the VPC network to obtain the installation program and images. Because multiple cloud NATs cannot be configured on the shared subnets, the installation program cannot configure it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To ensure that the subnets that you provide are suitable, the installation program confirms the following data:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All the subnets that you specify exist and belong to the VPC that you specified.</p>
+</li>
+<li>
+<p>The subnet CIDRs belong to the machine CIDR.</p>
+</li>
+<li>
+<p>You must provide a subnet to deploy the cluster control plane and compute machines to. You can use the same subnet for both machine types.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you destroy a cluster that uses an existing VPC, the VPC is not deleted.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation-about-custom-gcp-permissions_installing-gcp-private"><a class="anchor" href="#installation-about-custom-gcp-permissions_installing-gcp-private"></a>Division of permissions</h3>
+<div class="paragraph">
+<p>Starting with OpenShift Container Platform 4.3, you do not need all of the permissions that are required for an installation program-provisioned infrastructure cluster to deploy a cluster. This change mimics the division of permissions that you might have at your company: some individuals can create different resources in your clouds than others. For example, you might be able to create application-specific items, like instances, buckets, and load balancers, but not networking-related components such as VPCs, subnets, or Ingress rules.</p>
+</div>
+<div class="paragraph">
+<p>The GCP credentials that you use when you create your cluster do not need the networking permissions that are required to make VPCs and core networking components within the VPC, such as subnets, routing tables, internet gateways, NAT, and VPN. You still need permission to make the application resources that the machines within the cluster require, such as load balancers, security groups, storage, and nodes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation-about-custom-gcp-vpcs-isolation_installing-gcp-private"><a class="anchor" href="#installation-about-custom-gcp-vpcs-isolation_installing-gcp-private"></a>Isolation between clusters</h3>
+<div class="paragraph">
+<p>If you deploy OpenShift Container Platform to an existing network, the isolation of cluster services is preserved by firewall rules that reference the machines in your cluster by the cluster&#8217;s infrastructure ID. Only traffic within the cluster is allowed.</p>
+</div>
+<div class="paragraph">
+<p>If you deploy multiple clusters to the same VPC, the following components might share access between clusters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The API, which is globally available with an external publishing strategy or available throughout the network in an internal publishing strategy</p>
+</li>
+<li>
+<p>Debugging tools, such as ports on VM instances that are open to the machine CIDR for SSH and ICMP access</p>
 </li>
 </ul>
 </div>
@@ -34699,11 +34835,11 @@ you cannot access the required image stream tags.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cluster-entitlements_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#cluster-entitlements_installing-restricted-networks-gcp-installer-provisioned"></a>Internet access for OpenShift Container Platform</h2>
+<h2 id="cluster-entitlements_installing-gcp-private"><a class="anchor" href="#cluster-entitlements_installing-gcp-private"></a>Internet access for OpenShift Container Platform</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In OpenShift Container Platform Branch Build, you require access to the internet to
-obtain the images that are necessary to install
+install
 your cluster.</p>
 </div>
 <div class="paragraph">
@@ -34739,7 +34875,7 @@ your cluster.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ssh-agent-using_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#ssh-agent-using_installing-restricted-networks-gcp-installer-provisioned"></a>Generating a key pair for cluster node SSH access</h2>
+<h2 id="ssh-agent-using_installing-gcp-private"><a class="anchor" href="#ssh-agent-using_installing-gcp-private"></a>Generating a key pair for cluster node SSH access</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>During an OpenShift Container Platform installation, you can provide an SSH public key to the installation program. The key is passed to the Red Hat Enterprise Linux CoreOS (RHCOS) nodes through their Ignition config files and is used to authenticate SSH access to the nodes. The key is added to the <code>~/.ssh/authorized_keys</code> list for the <code>core</code> user on each node, which enables password-less authentication.</p>
@@ -34913,27 +35049,17 @@ approaches such as
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-initializing_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-initializing_installing-restricted-networks-gcp-installer-provisioned"></a>Creating the installation configuration file</h2>
+<h2 id="installation-obtaining-installer_installing-gcp-private"><a class="anchor" href="#installation-obtaining-installer_installing-gcp-private"></a>Obtaining the installation program</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can customize the OpenShift Container Platform cluster you install on
-Google Cloud Platform (GCP).</p>
+<p>Before you install OpenShift Container Platform, download the installation file on
+ the host you are using for installation.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>Obtain the OpenShift Container Platform installation program and the pull secret for your cluster.
-For a restricted network installation, these files are on your mirror host.</p>
-</li>
-<li>
-<p>Have the <code>imageContentSources</code> values that were generated during mirror registry creation.</p>
-</li>
-<li>
-<p>Obtain the contents of the certificate for your mirror registry.</p>
-</li>
-<li>
-<p>Obtain service principal permissions at the subscription level.</p>
+<p>You have a computer that runs Linux or macOS, with 500 MB of local disk space.</p>
 </li>
 </ul>
 </div>
@@ -34941,165 +35067,13 @@ For a restricted network installation, these files are on your mirror host.</p>
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Create the <code>install-config.yaml</code> file.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Change to the directory that contains the installation program and run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>./openshift-install create install-config <span class="nt">--dir</span> &lt;installation_directory&gt; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>For <code>&lt;installation_directory&gt;</code>, specify the directory name to store the
-files that the installation program creates.</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>When specifying the directory:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Verify that the directory has the <code>execute</code> permission. This permission is required to run Terraform binaries under the installation directory.</p>
+<p>Access the <a href="https://console.redhat.com/openshift/install">Infrastructure Provider</a> page on the OpenShift Cluster Manager site. If you have a Red Hat account, log in with your credentials. If you do not, create an account.</p>
 </li>
 <li>
-<p>Use an empty directory. Some installation assets, such as bootstrap X.509 certificates, have short expiration intervals, therefore you must not reuse an installation directory. If you want to reuse individual files from another cluster installation, you can copy them into your directory. However, the file names for the installation assets might change between releases. Use caution when copying installation files from an earlier OpenShift Container Platform version.</p>
-</li>
-</ul>
-</div>
+<p>Select your infrastructure provider.</p>
 </li>
 <li>
-<p>At the prompts, provide the configuration details for your cloud:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>Optional: Select an SSH key to use to access your cluster machines.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>For production OpenShift Container Platform clusters on which you want to perform installation debugging or disaster recovery, specify an SSH key that your <code>ssh-agent</code> process uses.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Select <strong>gcp</strong> as the platform to target.</p>
-</li>
-<li>
-<p>If you have not configured the service account key for your GCP account on
-your computer, you must obtain it from GCP and paste the contents of the file
-or enter the absolute path to the file.</p>
-</li>
-<li>
-<p>Select the project ID to provision the cluster in. The default value is
-specified by the service account that you configured.</p>
-</li>
-<li>
-<p>Select the region to deploy the cluster to.</p>
-</li>
-<li>
-<p>Select the base domain to deploy the cluster to. The base domain corresponds
-to the public DNS zone that you created for your cluster.</p>
-</li>
-<li>
-<p>Enter a descriptive name for your cluster.</p>
-</li>
-<li>
-<p>Paste the <a href="https://console.redhat.com/openshift/install/pull-secret">pull secret from the Red Hat OpenShift Cluster Manager</a>.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Edit the <code>install-config.yaml</code> file to give the additional information that
-is required for an installation in a restricted network.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Update the <code>pullSecret</code> value to contain the authentication information for
-your registry:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">pullSecret</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"auths":{"&lt;mirror_host_name&gt;:5000":</span><span class="nv"> </span><span class="s">{"auth":</span><span class="nv"> </span><span class="s">"&lt;credentials&gt;","email":</span><span class="nv"> </span><span class="s">"you@example.com"}}}'</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For <code>&lt;mirror_host_name&gt;</code>, specify the registry domain name
-that you specified in the certificate for your mirror registry, and for
-<code>&lt;credentials&gt;</code>, specify the base64-encoded user name and password for
-your mirror registry.</p>
-</div>
-</li>
-<li>
-<p>Add the <code>additionalTrustBundle</code> parameter and value.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">additionalTrustBundle</span><span class="pi">:</span> <span class="pi">|</span>
-  <span class="s">-----BEGIN CERTIFICATE-----</span>
-  <span class="s">ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ</span>
-  <span class="s">-----END CERTIFICATE-----</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The value must be the contents of the certificate file that you used for your mirror registry. The certificate file can be an existing, trusted certificate authority, or the self-signed certificate that you generated for the mirror registry.</p>
-</div>
-</li>
-<li>
-<p>Define the network and subnets for the VPC to install the cluster in under the parent <code>platform.gcp</code> field:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">network</span><span class="pi">:</span> <span class="s">&lt;existing_vpc&gt;</span>
-<span class="na">controlPlaneSubnet</span><span class="pi">:</span> <span class="s">&lt;control_plane_subnet&gt;</span>
-<span class="na">computeSubnet</span><span class="pi">:</span> <span class="s">&lt;compute_subnet&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For <code>platform.gcp.network</code>, specify the name for the existing Google VPC. For <code>platform.gcp.controlPlaneSubnet</code> and <code>platform.gcp.computeSubnet</code>, specify the existing subnets to deploy the control plane machines and compute machines, respectively.</p>
-</div>
-</li>
-<li>
-<p>Add the image content resources, which resemble the following YAML excerpt:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">imageContentSources</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">mirrors</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">&lt;mirror_host_name&gt;:5000/&lt;repo_name&gt;/release</span>
-  <span class="na">source</span><span class="pi">:</span> <span class="s">quay.io/openshift-release-dev/ocp-release</span>
-<span class="pi">-</span> <span class="na">mirrors</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">&lt;mirror_host_name&gt;:5000/&lt;repo_name&gt;/release</span>
-  <span class="na">source</span><span class="pi">:</span> <span class="s">registry.redhat.io/ocp/release</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For these values, use the <code>imageContentSources</code> that you recorded during mirror registry creation.</p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Make any other modifications to the <code>install-config.yaml</code> file that you require. You can find more information about
-the available parameters in the <strong>Installation configuration parameters</strong> section.</p>
-</li>
-<li>
-<p>Back up the <code>install-config.yaml</code> file so that you can use
-it to install multiple clusters.</p>
+<p>Navigate to the page for your installation type, download the installation program that corresponds with your host operating system and architecture, and place the file in the directory where you will store the installation configuration files.</p>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -35108,8 +35082,136 @@ it to install multiple clusters.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <code>install-config.yaml</code> file is consumed during the installation process. If
-you want to reuse the file, you must back it up now.</p>
+<p>The installation program creates several files on the computer that you use to install your cluster. You must keep the installation program and the files that the installation program creates after you finish installing the cluster. Both files are required to delete the cluster.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Deleting the files created by the installation program does not remove your cluster, even if the cluster failed during installation. To remove your cluster, complete the OpenShift Container Platform uninstallation procedures for your specific cloud provider.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Extract the installation program. For example, on a computer that uses a Linux
+operating system, run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">tar</span> <span class="nt">-xvf</span> openshift-install-linux.tar.gz</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Download your installation <a href="https://console.redhat.com/openshift/install/pull-secret">pull secret from the Red Hat OpenShift Cluster Manager</a>. This pull secret allows you to authenticate with the services that are provided by the included authorities, including Quay.io, which serves the container images for OpenShift Container Platform components.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installation-initializing-manual_installing-gcp-private"><a class="anchor" href="#installation-initializing-manual_installing-gcp-private"></a>Manually creating the installation configuration file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When installing a private OpenShift Container Platform cluster, you must manually generate the installation configuration file.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have an SSH public key on your local machine to provide to the installation program. The key will be used for SSH authentication onto your cluster nodes for debugging and disaster recovery.</p>
+</li>
+<li>
+<p>You have obtained the OpenShift Container Platform installation program and the pull secret for your
+cluster.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create an installation directory to store your required installation assets in:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">mkdir</span> &lt;installation_directory&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must create a directory. Some installation assets, like bootstrap X.509
+certificates have short expiration intervals, so you must not reuse an
+installation directory. If you want to reuse individual files from another
+cluster installation, you can copy them into your directory. However, the file
+names for the installation assets might change between releases. Use caution
+when copying installation files from an earlier OpenShift Container Platform version.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Customize the sample <code>install-config.yaml</code> file template that is provided and save
+it in the <code>&lt;installation_directory&gt;</code>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must name this configuration file <code>install-config.yaml</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For some platform types, you can alternatively run <code>./openshift-install create install-config --dir &lt;installation_directory&gt;</code> to generate an <code>install-config.yaml</code> file. You can provide details about your cluster configuration at the prompts.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Back up the <code>install-config.yaml</code> file so that you can use it to install
+multiple clusters.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>install-config.yaml</code> file is consumed during the next step of the
+installation process. You must back it up now.</p>
 </div>
 </td>
 </tr>
@@ -35119,7 +35221,7 @@ you want to reuse the file, you must back it up now.</p>
 </ol>
 </div>
 <div class="sect2">
-<h3 id="installation-configuration-parameters_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-configuration-parameters_installing-restricted-networks-gcp-installer-provisioned"></a>Installation configuration parameters</h3>
+<h3 id="installation-configuration-parameters_installing-gcp-private"><a class="anchor" href="#installation-configuration-parameters_installing-gcp-private"></a>Installation configuration parameters</h3>
 <div class="paragraph">
 <p>Before you deploy an OpenShift Container Platform cluster, you provide parameter values to describe your account on the cloud platform that hosts your cluster and optionally customize your cluster&#8217;s platform. When you create the <code>install-config.yaml</code> installation configuration file, you provide values for the required parameters through the command line. If you customize your cluster, you can modify the <code>install-config.yaml</code> file to provide more details about the platform.</p>
 </div>
@@ -35138,7 +35240,7 @@ you want to reuse the file, you must back it up now.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="installation-configuration-parameters-required_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-configuration-parameters-required_installing-restricted-networks-gcp-installer-provisioned"></a>Required configuration parameters</h4>
+<h4 id="installation-configuration-parameters-required_installing-gcp-private"><a class="anchor" href="#installation-configuration-parameters-required_installing-gcp-private"></a>Required configuration parameters</h4>
 <div class="paragraph">
 <p>Required installation configuration parameters are described in the following table:</p>
 </div>
@@ -35216,7 +35318,7 @@ you want to reuse the file, you must back it up now.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="installation-configuration-parameters-network_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-configuration-parameters-network_installing-restricted-networks-gcp-installer-provisioned"></a>Network configuration parameters</h4>
+<h4 id="installation-configuration-parameters-network_installing-gcp-private"><a class="anchor" href="#installation-configuration-parameters-network_installing-gcp-private"></a>Network configuration parameters</h4>
 <div class="paragraph">
 <p>You can customize your installation configuration based on the requirements of your existing network infrastructure. For example, you can expand the IP address block for the cluster network or provide different IP address blocks than the defaults.</p>
 </div>
@@ -35400,7 +35502,7 @@ The prefix length for an IPv4 block is between <code>0</code> and <code>32</code
 </table>
 </div>
 <div class="sect3">
-<h4 id="installation-configuration-parameters-optional_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-configuration-parameters-optional_installing-restricted-networks-gcp-installer-provisioned"></a>Optional configuration parameters</h4>
+<h4 id="installation-configuration-parameters-optional_installing-gcp-private"><a class="anchor" href="#installation-configuration-parameters-optional_installing-gcp-private"></a>Optional configuration parameters</h4>
 <div class="paragraph">
 <p>Optional installation configuration parameters are described in the following table:</p>
 </div>
@@ -35748,7 +35850,7 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </table>
 </div>
 <div class="sect3">
-<h4 id="installation-configuration-parameters-additional-gcp_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-configuration-parameters-additional-gcp_installing-restricted-networks-gcp-installer-provisioned"></a>Additional Google Cloud Platform (GCP) configuration parameters</h4>
+<h4 id="installation-configuration-parameters-additional-gcp_installing-gcp-private"><a class="anchor" href="#installation-configuration-parameters-additional-gcp_installing-gcp-private"></a>Additional Google Cloud Platform (GCP) configuration parameters</h4>
 <div class="paragraph">
 <p>Additional GCP configuration parameters are described in the following table:</p>
 </div>
@@ -36167,7 +36269,7 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-minimum-resource-requirements_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-minimum-resource-requirements_installing-restricted-networks-gcp-installer-provisioned"></a>Minimum resource requirements for cluster installation</h3>
+<h3 id="installation-minimum-resource-requirements_installing-gcp-private"><a class="anchor" href="#installation-minimum-resource-requirements_installing-gcp-private"></a>Minimum resource requirements for cluster installation</h3>
 <div class="paragraph">
 <p>Each cluster machine must meet the following minimum requirements:</p>
 </div>
@@ -36240,7 +36342,7 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-gcp-tested-machine-types_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-gcp-tested-machine-types_installing-restricted-networks-gcp-installer-provisioned"></a>Tested instance types for GCP</h3>
+<h3 id="installation-gcp-tested-machine-types_installing-gcp-private"><a class="anchor" href="#installation-gcp-tested-machine-types_installing-gcp-private"></a>Tested instance types for GCP</h3>
 <div class="paragraph">
 <p>The following Google Cloud Platform instance types have been tested with OpenShift Container Platform.</p>
 </div>
@@ -36251,6 +36353,12 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 <ul>
 <li>
 <p><code>C2</code></p>
+</li>
+<li>
+<p><code>C2D</code></p>
+</li>
+<li>
+<p><code>C3</code></p>
 </li>
 <li>
 <p><code>E2</code></p>
@@ -36276,7 +36384,7 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </details>
 </div>
 <div class="sect2">
-<h3 id="installation-custom-machine-types_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-custom-machine-types_installing-restricted-networks-gcp-installer-provisioned"></a>Using custom machine types</h3>
+<h3 id="installation-custom-machine-types_installing-gcp-private"><a class="anchor" href="#installation-custom-machine-types_installing-gcp-private"></a>Using custom machine types</h3>
 <div class="paragraph">
 <p>Using a custom machine type to install a OpenShift Container Platform cluster is supported.</p>
 </div>
@@ -36329,7 +36437,7 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-gcp-config-yaml_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-gcp-config-yaml_installing-restricted-networks-gcp-installer-provisioned"></a>Sample customized install-config.yaml file for GCP</h3>
+<h3 id="installation-gcp-config-yaml_installing-gcp-private"><a class="anchor" href="#installation-gcp-config-yaml_installing-gcp-private"></a>Sample customized install-config.yaml file for GCP</h3>
 <div class="paragraph">
 <p>You can customize the <code>install-config.yaml</code> file to specify more details about your OpenShift Container Platform cluster&#8217;s platform or modify the values of the required parameters.</p>
 </div>
@@ -36417,20 +36525,10 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
     <span class="na">network</span><span class="pi">:</span> <span class="s">existing_vpc</span> <i class="conum" data-value="8"></i><b>(8)</b>
     <span class="na">controlPlaneSubnet</span><span class="pi">:</span> <span class="s">control_plane_subnet</span> <i class="conum" data-value="9"></i><b>(9)</b>
     <span class="na">computeSubnet</span><span class="pi">:</span> <span class="s">compute_subnet</span> <i class="conum" data-value="10"></i><b>(10)</b>
-<span class="na">pullSecret</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"auths":{"&lt;local_registry&gt;":</span><span class="nv"> </span><span class="s">{"auth":</span><span class="nv"> </span><span class="s">"&lt;credentials&gt;","email":</span><span class="nv"> </span><span class="s">"you@example.com"}}}'</span> <i class="conum" data-value="11"></i><b>(11)</b>
-<span class="na">fips</span><span class="pi">:</span> <span class="no">false</span> <i class="conum" data-value="12"></i><b>(12)</b>
-<span class="na">sshKey</span><span class="pi">:</span> <span class="s">ssh-ed25519 AAAA...</span> <i class="conum" data-value="13"></i><b>(13)</b>
-<span class="na">additionalTrustBundle</span><span class="pi">:</span> <span class="pi">|</span> <i class="conum" data-value="14"></i><b>(14)</b>
-    <span class="s">-----BEGIN CERTIFICATE-----</span>
-    <span class="s">&lt;MY_TRUSTED_CA_CERT&gt;</span>
-    <span class="s">-----END CERTIFICATE-----</span>
-<span class="na">imageContentSources</span><span class="pi">:</span> <i class="conum" data-value="15"></i><b>(15)</b>
-<span class="pi">-</span> <span class="na">mirrors</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">&lt;local_registry&gt;/&lt;local_repository_name&gt;/release</span>
-  <span class="na">source</span><span class="pi">:</span> <span class="s">quay.io/openshift-release-dev/ocp-release</span>
-<span class="pi">-</span> <span class="na">mirrors</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">&lt;local_registry&gt;/&lt;local_repository_name&gt;/release</span>
-  <span class="na">source</span><span class="pi">:</span> <span class="s">quay.io/openshift-release-dev/ocp-v4.0-art-dev</span></code></pre>
+<span class="na">pullSecret</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"auths":</span><span class="nv"> </span><span class="s">...}'</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<span class="na">fips</span><span class="pi">:</span> <span class="no">false</span> <i class="conum" data-value="11"></i><b>(11)</b>
+<span class="na">sshKey</span><span class="pi">:</span> <span class="s">ssh-ed25519 AAAA...</span> <i class="conum" data-value="12"></i><b>(12)</b>
+<span class="na">publish</span><span class="pi">:</span> <span class="s">Internal</span> <i class="conum" data-value="13"></i><b>(13)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -36491,10 +36589,6 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </tr>
 <tr>
 <td><i class="conum" data-value="11"></i><b>11</b></td>
-<td>For <code>&lt;local_registry&gt;</code>, specify the registry domain name, and optionally the port, that your mirror registry uses to serve content. For example, <code>registry.example.com</code> or <code>registry.example.com:5000</code>. For <code>&lt;credentials&gt;</code>, specify the base64-encoded user name and password for your mirror registry.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="12"></i><b>12</b></td>
 <td>Whether to enable or disable FIPS mode. By default, FIPS mode is not enabled. If FIPS mode is enabled, the Red Hat Enterprise Linux CoreOS (RHCOS) machines that OpenShift Container Platform runs on bypass the default Kubernetes cryptography suite and use the cryptography modules that are provided with RHCOS instead.
 <div class="admonitionblock important">
 <table>
@@ -36512,7 +36606,7 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </div></td>
 </tr>
 <tr>
-<td><i class="conum" data-value="13"></i><b>13</b></td>
+<td><i class="conum" data-value="12"></i><b>12</b></td>
 <td>You can optionally provide the <code>sshKey</code> value that you use to access the machines in your cluster.
 <div class="admonitionblock note">
 <table>
@@ -36530,18 +36624,14 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </div></td>
 </tr>
 <tr>
-<td><i class="conum" data-value="14"></i><b>14</b></td>
-<td>Provide the contents of the certificate file that you used for your mirror registry.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="15"></i><b>15</b></td>
-<td>Provide the <code>imageContentSources</code> section from the output of the command to mirror the repository.</td>
+<td><i class="conum" data-value="13"></i><b>13</b></td>
+<td>How to publish the user-facing endpoints of your cluster. Set <code>publish</code> to <code>Internal</code> to deploy a private cluster, which cannot be accessed from the internet. The default value is <code>External</code>.</td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="nw-gcp-global-access-configuration_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#nw-gcp-global-access-configuration_installing-restricted-networks-gcp-installer-provisioned"></a>Create an Ingress Controller with global access on GCP</h3>
+<h3 id="nw-gcp-global-access-configuration_installing-gcp-private"><a class="anchor" href="#nw-gcp-global-access-configuration_installing-gcp-private"></a>Create an Ingress Controller with global access on GCP</h3>
 <div class="paragraph">
 <p>You can create an Ingress Controller that has global access to a Google Cloud Platform (GCP) cluster. Global access is only available to Ingress Controllers using internal load balancers.</p>
 </div>
@@ -36645,8 +36735,20 @@ contains the <code>install-config.yaml</code> file for your cluster.</td>
 </ol>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1 _additional-resources">
+<h2 id="additional-resources"><a class="anchor" href="#additional-resources"></a>Additional resources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../machine_management/creating_machinesets/creating-machineset-gcp.html#machineset-enabling-customer-managed-encryption_creating-machineset-gcp">Enabling customer-managed encryption keys for a compute machine set</a></p>
+</li>
+</ul>
+</div>
 <div class="sect2">
-<h3 id="installation-configure-proxy_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-configure-proxy_installing-restricted-networks-gcp-installer-provisioned"></a>Configuring the cluster-wide proxy during installation</h3>
+<h3 id="installation-configure-proxy_installing-gcp-private"><a class="anchor" href="#installation-configure-proxy_installing-gcp-private"></a>Configuring the cluster-wide proxy during installation</h3>
 <div class="paragraph">
 <p>Production environments can deny direct access to the internet and instead have
 an HTTP or HTTPS proxy available. You can configure a new OpenShift Container Platform
@@ -36796,7 +36898,7 @@ proxies can be created.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-launching-installer_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#installation-launching-installer_installing-restricted-networks-gcp-installer-provisioned"></a>Deploying the cluster</h2>
+<h2 id="installation-launching-installer_installing-gcp-private"><a class="anchor" href="#installation-launching-installer_installing-gcp-private"></a>Deploying the cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can install OpenShift Container Platform on a compatible cloud platform.</p>
@@ -36971,7 +37073,7 @@ INFO Time elapsed: 36m22s</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cli-installing-cli_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#cli-installing-cli_installing-restricted-networks-gcp-installer-provisioned"></a>Installing the OpenShift CLI by downloading the binary</h2>
+<h2 id="cli-installing-cli_installing-gcp-private"><a class="anchor" href="#cli-installing-cli_installing-gcp-private"></a>Installing the OpenShift CLI by downloading the binary</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can install the OpenShift CLI (<code>oc</code>) to interact with OpenShift Container Platform from a
@@ -37136,7 +37238,7 @@ command-line interface. You can install <code>oc</code> on Linux, Windows, or ma
 </div>
 </div>
 <div class="sect1">
-<h2 id="cli-logging-in-kubeadmin_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#cli-logging-in-kubeadmin_installing-restricted-networks-gcp-installer-provisioned"></a>Logging in to the cluster by using the CLI</h2>
+<h2 id="cli-logging-in-kubeadmin_installing-gcp-private"><a class="anchor" href="#cli-logging-in-kubeadmin_installing-gcp-private"></a>Logging in to the cluster by using the CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can log in to your cluster as a default system user by exporting the cluster <code>kubeconfig</code> file.
@@ -37190,47 +37292,18 @@ the installation files in.</td>
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="olm-restricted-networks-operatorhub_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#olm-restricted-networks-operatorhub_installing-restricted-networks-gcp-installer-provisioned"></a>Disabling the default OperatorHub catalog sources</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Operator catalogs that source content provided by Red Hat and community projects are configured for OperatorHub by default during an OpenShift Container Platform installation.
-In a restricted network environment, you must disable the default catalogs as a cluster administrator.</p>
-</div>
-<div class="ulist">
-<div class="title">Procedure</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
 <ul>
 <li>
-<p>Disable the sources for the default catalogs by adding <code>disableAllDefaultSources: true</code> to the <code>OperatorHub</code> object:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc patch OperatorHub cluster <span class="nt">--type</span> json <span class="se">\</span>
-    <span class="nt">-p</span> <span class="s1">'[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": true}]'</span></code></pre>
-</div>
-</div>
+<p>See <a href="../../web_console/web-console.html#web-console">Accessing the web console</a> for more details about accessing and understanding the OpenShift Container Platform web console.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Alternatively, you can use the web console to manage catalog sources. From the <strong>Administration</strong> &#8594; <strong>Cluster Settings</strong> &#8594; <strong>Configuration</strong> &#8594; <strong>OperatorHub</strong> page, click the <strong>Sources</strong> tab, where you can create, update, delete, disable, and enable individual sources.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cluster-telemetry_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#cluster-telemetry_installing-restricted-networks-gcp-installer-provisioned"></a>Telemetry access for OpenShift Container Platform</h2>
+<h2 id="cluster-telemetry_installing-gcp-private"><a class="anchor" href="#cluster-telemetry_installing-gcp-private"></a>Telemetry access for OpenShift Container Platform</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In OpenShift Container Platform Branch Build, the Telemetry service, which runs by default to provide metrics about cluster health and the success of updates, requires internet access. If your cluster is connected to the internet, Telemetry runs automatically, and your cluster is registered to <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager Hybrid Cloud Console</a>.</p>
@@ -37249,27 +37322,16 @@ In a restricted network environment, you must disable the default catalogs as a 
 </div>
 </div>
 <div class="sect1">
-<h2 id="next-steps_installing-restricted-networks-gcp-installer-provisioned"><a class="anchor" href="#next-steps_installing-restricted-networks-gcp-installer-provisioned"></a>Next steps</h2>
+<h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next steps</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../../installing/validating-an-installation.html#validating-an-installation">Validate an installation</a>.</p>
-</li>
-<li>
 <p><a href="../../post_installation_configuration/cluster-tasks.html#available_cluster_customizations">Customize your cluster</a>.</p>
 </li>
 <li>
-<p><a href="../../post_installation_configuration/cluster-tasks.html#post-install-must-gather-disconnected">Configure image streams</a> for the Cluster Samples Operator and the <code>must-gather</code> tool.</p>
-</li>
-<li>
-<p>Learn how to <a href="../../operators/admin/olm-restricted-networks.html#olm-restricted-networks">use Operator Lifecycle Manager (OLM) on restricted networks</a>.</p>
-</li>
-<li>
-<p>If the mirror registry that you used to install your cluster has a trusted CA, add it to the cluster by <a href="../../openshift_images/image-configuration.html#images-configuration-cas_image-configuration">configuring additional trust stores</a>.</p>
-</li>
-<li>
-<p>If necessary, you can <a href="../../support/remote_health_monitoring/opting-out-of-remote-health-reporting.html#opting-out-remote-health-reporting_opting-out-remote-health-reporting">opt out of remote health reporting</a>.</p>
+<p>If necessary, you can
+<a href="../../support/remote_health_monitoring/opting-out-of-remote-health-reporting.html#opting-out-remote-health-reporting_opting-out-remote-health-reporting">opt out of remote health reporting</a>.</p>
 </li>
 </ul>
 </div>

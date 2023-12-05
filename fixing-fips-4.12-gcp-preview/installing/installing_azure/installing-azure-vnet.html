@@ -12,7 +12,7 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-  <title>Installing a private cluster on GCP - Installing on GCP | Installing | OpenShift Container Platform Branch Build</title>
+  <title>Installing a cluster on Azure into an existing VNet - Installing on Azure | Installing | OpenShift Container Platform Branch Build</title>
   <link href="https://assets.openshift.net/content/subdomain.css" rel="stylesheet" type="text/css"/>
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/search.css" rel="stylesheet" media="screen"/>
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/autumn.css" rel="stylesheet"  media="screen"/>
@@ -200,16 +200,16 @@
       <li class="hidden-xs active">
         <a href="../../installing/index.html">Installing</a>
       </li>
-      <li class="hidden-xs active"><a href="../../installing/installing_gcp/preparing-to-install-on-gcp.html">Installing on GCP</a></li>
+      <li class="hidden-xs active"><a href="../../installing/installing_azure/preparing-to-install-on-azure.html">Installing on Azure</a></li>
       
       <li class="hidden-xs active">
-        Installing a private cluster on GCP
+        Installing a cluster on Azure into an existing VNet
       </li>
       
       <span text-align="right" style="float: right !important">
-        <a href="https://github.com/openshift/openshift-docs/commits/enterprise-Branch Build/installing/installing_gcp/installing-gcp-private.adoc"><span class="material-icons-outlined" title="Page history">history</span></a>
+        <a href="https://github.com/openshift/openshift-docs/commits/enterprise-Branch Build/installing/installing_azure/installing-azure-vnet.adoc"><span class="material-icons-outlined" title="Page history">history</span></a>
         
-        <a href="https://github.com/openshift/openshift-docs/issues/new?title=[enterprise-Branch Build] Issue in file installing/installing_gcp/installing-gcp-private.adoc">
+        <a href="https://github.com/openshift/openshift-docs/issues/new?title=[enterprise-Branch Build] Issue in file installing/installing_azure/installing-azure-vnet.adoc">
           <span class="material-icons-outlined" title="Open an issue">bug_report</span>
         </a>
         <a href="javascript: void(0);" onclick="window.print()"><span class="material-icons-outlined" title="Print page (Save as PDF)">picture_as_pdf</span></a>
@@ -1406,14 +1406,14 @@
 
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-4-6">
-                <span id="sgSpan-4-6" class="fa fa-caret-right"></span>
+                <span id="sgSpan-4-6" class="fa fa-caret-down"></span>
                   &nbsp;Installing on Azure
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-4-6" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-4-6" class="nav-tertiary list-unstyled collapse in">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -1599,7 +1599,7 @@
 
 
                   <li>
-                    <a class="" href="../../installing/installing_azure/installing-azure-vnet.html">
+                    <a class=" active" href="../../installing/installing_azure/installing-azure-vnet.html">
                       Installing a cluster on Azure into an existing VNet
                     </a>
                   </li>
@@ -1882,14 +1882,14 @@
 
             <li class="nav-header">
               <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-4-8">
-                <span id="sgSpan-4-8" class="fa fa-caret-down"></span>
+                <span id="sgSpan-4-8" class="fa fa-caret-right"></span>
                   &nbsp;Installing on GCP
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-4-8" class="nav-tertiary list-unstyled collapse in">
+              <ul id="topicSubGroup-4-8" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -2123,7 +2123,7 @@
 
 
                   <li>
-                    <a class=" active" href="../../installing/installing_gcp/installing-gcp-private.html">
+                    <a class="" href="../../installing/installing_gcp/installing-gcp-private.html">
                       Installing a private cluster on GCP
                     </a>
                   </li>
@@ -34547,7 +34547,7 @@
       <div class="col-xs-12 col-sm-9 col-md-9 main">
         <div class="page-header">
           <h1>
-            Installing a private cluster on GCP
+            Installing a cluster on Azure into an existing VNet
           </h1>
         </div>
         
@@ -34558,46 +34558,36 @@
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
 <li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#private-clusters-default_installing-gcp-private">Private clusters</a>
+<li><a href="#installation-about-custom-azure-vnet_installing-azure-vnet">About reusing a VNet for your OpenShift Container Platform cluster</a>
 <ul class="sectlevel2">
-<li><a href="#private-clusters-about-gcp_installing-gcp-private">Private clusters in GCP</a></li>
+<li><a href="#installation-about-custom-azure-vnet-requirements_installing-azure-vnet">Requirements for using your VNet</a></li>
+<li><a href="#installation-about-custom-azure-permissions_installing-azure-vnet">Division of permissions</a></li>
+<li><a href="#installation-about-custom-azure-vnet-isolation_installing-azure-vnet">Isolation between clusters</a></li>
 </ul>
 </li>
-<li><a href="#installation-about-custom-gcp-vpc_installing-gcp-private">About using a custom VPC</a>
+<li><a href="#cluster-entitlements_installing-azure-vnet">Internet access for OpenShift Container Platform</a></li>
+<li><a href="#ssh-agent-using_installing-azure-vnet">Generating a key pair for cluster node SSH access</a></li>
+<li><a href="#installation-obtaining-installer_installing-azure-vnet">Obtaining the installation program</a></li>
+<li><a href="#installation-initializing_installing-azure-vnet">Creating the installation configuration file</a>
 <ul class="sectlevel2">
-<li><a href="#installation-about-custom-gcp-vpcs-requirements_installing-gcp-private">Requirements for using your VPC</a></li>
-<li><a href="#installation-about-custom-gcp-permissions_installing-gcp-private">Division of permissions</a></li>
-<li><a href="#installation-about-custom-gcp-vpcs-isolation_installing-gcp-private">Isolation between clusters</a></li>
+<li><a href="#installation-configuration-parameters_installing-azure-vnet">Installation configuration parameters</a></li>
+<li><a href="#installation-minimum-resource-requirements_installing-azure-vnet">Minimum resource requirements for cluster installation</a></li>
+<li><a href="#installation-azure-tested-machine-types_installing-azure-vnet">Tested instance types for Azure</a></li>
+<li><a href="#installation-azure-arm-tested-machine-types_installing-azure-vnet">Tested instance types for Azure on 64-bit ARM infrastructures</a></li>
+<li><a href="#installation-azure-config-yaml_installing-azure-vnet">Sample customized install-config.yaml file for Azure</a></li>
+<li><a href="#installation-configure-proxy_installing-azure-vnet">Configuring the cluster-wide proxy during installation</a></li>
 </ul>
 </li>
-<li><a href="#cluster-entitlements_installing-gcp-private">Internet access for OpenShift Container Platform</a></li>
-<li><a href="#ssh-agent-using_installing-gcp-private">Generating a key pair for cluster node SSH access</a></li>
-<li><a href="#installation-obtaining-installer_installing-gcp-private">Obtaining the installation program</a></li>
-<li><a href="#installation-initializing-manual_installing-gcp-private">Manually creating the installation configuration file</a>
-<ul class="sectlevel2">
-<li><a href="#installation-configuration-parameters_installing-gcp-private">Installation configuration parameters</a></li>
-<li><a href="#installation-minimum-resource-requirements_installing-gcp-private">Minimum resource requirements for cluster installation</a></li>
-<li><a href="#installation-gcp-tested-machine-types_installing-gcp-private">Tested instance types for GCP</a></li>
-<li><a href="#installation-custom-machine-types_installing-gcp-private">Using custom machine types</a></li>
-<li><a href="#installation-gcp-config-yaml_installing-gcp-private">Sample customized install-config.yaml file for GCP</a></li>
-<li><a href="#nw-gcp-global-access-configuration_installing-gcp-private">Create an Ingress Controller with global access on GCP</a></li>
-</ul>
-</li>
-<li><a href="#additional-resources">Additional resources</a>
-<ul class="sectlevel2">
-<li><a href="#installation-configure-proxy_installing-gcp-private">Configuring the cluster-wide proxy during installation</a></li>
-</ul>
-</li>
-<li><a href="#installation-launching-installer_installing-gcp-private">Deploying the cluster</a></li>
-<li><a href="#cli-installing-cli_installing-gcp-private">Installing the OpenShift CLI by downloading the binary</a></li>
-<li><a href="#cli-logging-in-kubeadmin_installing-gcp-private">Logging in to the cluster by using the CLI</a></li>
-<li><a href="#cluster-telemetry_installing-gcp-private">Telemetry access for OpenShift Container Platform</a></li>
+<li><a href="#installation-launching-installer_installing-azure-vnet">Deploying the cluster</a></li>
+<li><a href="#finalizing-encryption_installing-azure-vnet">Finalizing user-managed encryption after installation</a></li>
+<li><a href="#cli-installing-cli_installing-azure-vnet">Installing the OpenShift CLI by downloading the binary</a></li>
+<li><a href="#cli-logging-in-kubeadmin_installing-azure-vnet">Logging in to the cluster by using the CLI</a></li>
+<li><a href="#cluster-telemetry_installing-azure-vnet">Telemetry access for OpenShift Container Platform</a></li>
 <li><a href="#next-steps">Next steps</a></li>
 </ul>
 </div>
 <div class="paragraph">
-<p>In OpenShift Container Platform version Branch Build, you can install a private cluster into an existing VPC on Google Cloud Platform (GCP). The installation program provisions the rest of the required infrastructure, which you can further customize. To customize the installation, you modify
-parameters in the <code>install-config.yaml</code> file before you install the cluster.</p>
+<p>In OpenShift Container Platform version Branch Build, you can install a cluster into an existing Azure Virtual Network (VNet) on Microsoft Azure. The installation program provisions the rest of the required infrastructure, which you can further customize. To customize the installation, you modify parameters in the <code>install-config.yaml</code> file before you install the cluster.</p>
 </div>
 </div>
 </div>
@@ -34613,26 +34603,122 @@ parameters in the <code>install-config.yaml</code> file before you install the c
 <p>You read the documentation on <a href="../../installing/installing-preparing.html#installing-preparing">selecting a cluster installation method and preparing it for users</a>.</p>
 </li>
 <li>
-<p>You <a href="../../installing/installing_gcp/installing-gcp-account.html#installing-gcp-account">configured a GCP project</a> to host the cluster.</p>
+<p>You <a href="../../installing/installing_azure/installing-azure-account.html#installing-azure-account">configured an Azure account</a> to host the cluster and determined the tested and validated region to deploy the cluster to.</p>
 </li>
 <li>
 <p>If you use a firewall, you <a href="../../installing/install_config/configuring-firewall.html#configuring-firewall">configured it to allow the sites</a> that your cluster requires access to.</p>
 </li>
 <li>
-<p>If the cloud identity and access management (IAM) APIs are not accessible in your environment, or if you do not want to store an administrator-level credential secret in the <code>kube-system</code> namespace, you can <a href="../../installing/installing_gcp/manually-creating-iam-gcp.html#manually-creating-iam-gcp">manually create and maintain IAM credentials</a>.</p>
+<p>If the cloud identity and access management (IAM) APIs are not accessible in your environment, or if you do not want to store an administrator-level credential secret in the <code>kube-system</code> namespace, you can <a href="../../installing/installing_azure/manually-creating-iam-azure.html#manually-creating-iam-azure">manually create and maintain IAM credentials</a>.</p>
+</li>
+<li>
+<p>If you use customer-managed encryption keys, you <a href="../../installing/installing_azure/enabling-user-managed-encryption-azure.html#enabling-user-managed-encryption-azure">prepared your Azure environment for encryption</a>.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="private-clusters-default_installing-gcp-private"><a class="anchor" href="#private-clusters-default_installing-gcp-private"></a>Private clusters</h2>
+<h2 id="installation-about-custom-azure-vnet_installing-azure-vnet"><a class="anchor" href="#installation-about-custom-azure-vnet_installing-azure-vnet"></a>About reusing a VNet for your OpenShift Container Platform cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can deploy a private OpenShift Container Platform cluster that does not expose external endpoints. Private clusters are accessible from only an internal network and are not visible to the internet.</p>
+<p>In OpenShift Container Platform Branch Build, you can deploy a cluster into an existing Azure Virtual Network (VNet) in Microsoft Azure. If you do, you must also use existing subnets within the VNet and routing rules.</p>
 </div>
 <div class="paragraph">
-<p>By default, OpenShift Container Platform is provisioned to use publicly-accessible DNS and endpoints. A private cluster sets the DNS, Ingress Controller, and API server to private when you deploy your cluster. This means that the cluster resources are only accessible from your internal network and are not visible to the internet.</p>
+<p>By deploying OpenShift Container Platform into an existing Azure VNet, you might be able to avoid service limit constraints in new accounts or more easily abide by the operational constraints that your company&#8217;s guidelines set. This is a good option to use if you cannot obtain the infrastructure creation permissions that are required to create the VNet.</p>
+</div>
+<div class="sect2">
+<h3 id="installation-about-custom-azure-vnet-requirements_installing-azure-vnet"><a class="anchor" href="#installation-about-custom-azure-vnet-requirements_installing-azure-vnet"></a>Requirements for using your VNet</h3>
+<div class="paragraph">
+<p>When you deploy a cluster by using an existing VNet, you must perform additional network configuration before you install the cluster. In installer-provisioned infrastructure clusters, the installer usually creates the following components, but it does not create them when you install into an existing VNet:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Subnets</p>
+</li>
+<li>
+<p>Route tables</p>
+</li>
+<li>
+<p>VNets</p>
+</li>
+<li>
+<p>Network Security Groups</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The installation program requires that you use the cloud-provided DNS server. Using a custom DNS server is not supported and causes the installation to fail.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you use a custom VNet, you must correctly configure it and its subnets for the installation program and the cluster to use. The installation program cannot subdivide network ranges for the cluster to use, set route tables for the subnets, or set VNet options like DHCP, so you must do so before you install the cluster.</p>
+</div>
+<div class="paragraph">
+<p>The cluster must be able to access the resource group that contains the existing VNet and subnets. While all of the resources that the cluster creates are placed in a separate resource group that it creates, some network resources are used from a separate group. Some cluster Operators must be able to access resources in both resource groups. For example, the Machine API controller attaches NICS for the virtual machines that it creates to subnets from the networking resource group.</p>
+</div>
+<div class="paragraph">
+<p>Your VNet must meet the following characteristics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The VNet&#8217;s CIDR block must contain the <code>Networking.MachineCIDR</code> range, which is the IP address pool for cluster machines.</p>
+</li>
+<li>
+<p>The VNet and its subnets must belong to the same resource group, and the subnets must be configured to use Azure-assigned DHCP IP addresses instead of static IP addresses.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You must provide two subnets within your VNet, one for the control plane machines and one for the compute machines. Because Azure distributes machines in different availability zones within the region that you specify, your cluster will have high availability by default.</p>
+</div>
+<div class="paragraph">
+<p>To ensure that the subnets that you provide are suitable, the installation program confirms the following data:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All the specified subnets exist.</p>
+</li>
+<li>
+<p>There are two private subnets, one for the control plane machines and one for the compute machines.</p>
+</li>
+<li>
+<p>The subnet CIDRs belong to the machine CIDR that you specified. Machines are not provisioned in availability zones that you do not provide private subnets for.
+If required, the installation program creates public load balancers that manage the control plane and worker nodes, and Azure allocates a public IP address to them.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you destroy a cluster that uses an existing VNet, the VNet is not deleted.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="installation-about-custom-azure-vnet-nsg-requirements_installing-azure-vnet"><a class="anchor" href="#installation-about-custom-azure-vnet-nsg-requirements_installing-azure-vnet"></a>Network security group requirements</h4>
+<div class="paragraph">
+<p>The network security groups for the subnets that host the compute and control plane machines require specific access to ensure that the cluster communication is correct. You must create rules to allow access to the required cluster communication ports.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -34642,200 +34728,104 @@ parameters in the <code>install-config.yaml</code> file before you install the c
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If the cluster has any public subnets, load balancer services created by administrators might be publicly accessible. To ensure cluster security, verify that these services are explicitly annotated as private.</p>
+<p>The network security group rules must be in place before you install the cluster. If you attempt to install a cluster without the required access, the installation program cannot reach the Azure APIs, and installation fails.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Required ports</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Port</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Control plane</th>
+<th class="tableblock halign-left valign-top">Compute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>80</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows HTTP traffic</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>443</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows HTTPS traffic</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>6443</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows communication to the control plane machines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>22623</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows internal communication to the machine config server for provisioning machines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Currently, there is no supported way to block or restrict the machine config server endpoint. The machine config server must be exposed to the network so that newly-provisioned machines, which have no existing configuration or state, are able to fetch their configuration. In this model, the root of trust is the certificate signing requests (CSR) endpoint, which is where the kubelet sends its certificate signing request for approval to join the cluster. Because of this, machine configs should not be used to distribute sensitive information, such as secrets and certificates.</p>
+</div>
+<div class="paragraph">
+<p>To ensure that the machine config server endpoints, ports 22623 and 22624, are secured in bare metal scenarios, customers must configure proper network policies.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>To deploy a private cluster, you must:</p>
+<p>Because cluster components do not modify the user-provided network security groups, which the Kubernetes controllers update, a pseudo-network security group is created for the Kubernetes controller to modify without impacting the rest of the environment.</p>
 </div>
 <div class="ulist">
+<div class="title">Additional resources</div>
 <ul>
 <li>
-<p>Use existing networking that meets your requirements. Your cluster resources might be shared between other clusters on the network.</p>
-</li>
-<li>
-<p>Deploy from a machine that has access to:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The API services for the cloud to which you provision.</p>
-</li>
-<li>
-<p>The hosts on the network that you provision.</p>
-</li>
-<li>
-<p>The internet to obtain installation media.</p>
+<p><a href="../../networking/openshift_sdn/about-openshift-sdn.html#about-openshift-sdn">About the OpenShift SDN network plugin</a></p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
 </div>
-<div class="paragraph">
-<p>You can use any machine that meets these access requirements and follows your company&#8217;s guidelines. For example, this machine can be a bastion host on your cloud network or a machine that has access to the network through a VPN.</p>
 </div>
 <div class="sect2">
-<h3 id="private-clusters-about-gcp_installing-gcp-private"><a class="anchor" href="#private-clusters-about-gcp_installing-gcp-private"></a>Private clusters in GCP</h3>
+<h3 id="installation-about-custom-azure-permissions_installing-azure-vnet"><a class="anchor" href="#installation-about-custom-azure-permissions_installing-azure-vnet"></a>Division of permissions</h3>
 <div class="paragraph">
-<p>To create a private cluster on Google Cloud Platform (GCP), you must provide an existing private VPC and subnets to host the cluster. The installation program must also be able to resolve the DNS records that the cluster requires. The installation program configures the Ingress Operator and API server for only internal traffic.</p>
-</div>
-<div class="paragraph">
-<p>The cluster still requires access to internet to access the GCP APIs.</p>
+<p>Starting with OpenShift Container Platform 4.3, you do not need all of the permissions that are required for an installation program-provisioned infrastructure cluster to deploy a cluster. This change mimics the division of permissions that you might have at your company: some individuals can create different resources in your clouds than others. For example, you might be able to create application-specific items, like instances, storage, and load balancers, but not networking-related components such as VNets, subnet, or ingress rules.</p>
 </div>
 <div class="paragraph">
-<p>The following items are not required or created when you install a private cluster:</p>
+<p>The Azure credentials that you use when you create your cluster do not need the networking permissions that are required to make VNets and core networking components within the VNet, such as subnets, routing tables, internet gateways, NAT, and VPN. You still need permission to make the application resources that the machines within the cluster require, such as load balancers, security groups, storage accounts, and nodes.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Public subnets</p>
-</li>
-<li>
-<p>Public network load balancers, which support public ingress</p>
-</li>
-<li>
-<p>A public DNS zone that matches the <code>baseDomain</code> for the cluster</p>
-</li>
-</ul>
 </div>
+<div class="sect2">
+<h3 id="installation-about-custom-azure-vnet-isolation_installing-azure-vnet"><a class="anchor" href="#installation-about-custom-azure-vnet-isolation_installing-azure-vnet"></a>Isolation between clusters</h3>
 <div class="paragraph">
-<p>The installation program does use the <code>baseDomain</code> that you specify to create a private DNS zone and the required records for the cluster. The cluster is configured so that the Operators do not create public records for the cluster and all cluster machines are placed in the private subnets that you specify.</p>
-</div>
-<div class="paragraph">
-<p>Because it is not possible to limit access to external load balancers based on source tags, the private cluster uses only internal load balancers to allow access to internal instances.</p>
-</div>
-<div class="paragraph">
-<p>The internal load balancer relies on instance groups rather than the target pools that the network load balancers use. The installation program creates instance groups for each zone, even if there is no instance in that group.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The cluster IP address is internal only.</p>
-</li>
-<li>
-<p>One forwarding rule manages both the Kubernetes API and machine config server ports.</p>
-</li>
-<li>
-<p>The backend service is comprised of each zone&#8217;s instance group and, while it exists, the bootstrap instance group.</p>
-</li>
-<li>
-<p>The firewall uses a single rule that is based on only internal source ranges.</p>
-</li>
-</ul>
-</div>
-<div class="sect3">
-<h4 id="private-clusters-limitations-gcp_installing-gcp-private"><a class="anchor" href="#private-clusters-limitations-gcp_installing-gcp-private"></a>Limitations</h4>
-<div class="paragraph">
-<p>No health check for the Machine config server, <code>/healthz</code>, runs because of a difference in load balancer functionality. Two internal load balancers cannot share a single IP address, but two network load balancers can share a single external IP address. Instead, the health of an instance is determined entirely by the <code>/readyz</code> check on port 6443.</p>
-</div>
+<p>Because the cluster is unable to modify network security groups in an existing subnet, there is no way to isolate clusters from each other on the VNet.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-about-custom-gcp-vpc_installing-gcp-private"><a class="anchor" href="#installation-about-custom-gcp-vpc_installing-gcp-private"></a>About using a custom VPC</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In OpenShift Container Platform Branch Build, you can deploy a cluster into an existing VPC in Google Cloud Platform (GCP). If you do, you must also use existing subnets within the VPC and routing rules.</p>
-</div>
-<div class="paragraph">
-<p>By deploying OpenShift Container Platform into an existing GCP VPC, you might be able to avoid limit constraints in new accounts or more easily abide by the operational constraints that your company&#8217;s guidelines set. This is a good option to use if you cannot obtain the infrastructure creation permissions that are required to create the VPC yourself.</p>
-</div>
-<div class="sect2">
-<h3 id="installation-about-custom-gcp-vpcs-requirements_installing-gcp-private"><a class="anchor" href="#installation-about-custom-gcp-vpcs-requirements_installing-gcp-private"></a>Requirements for using your VPC</h3>
-<div class="paragraph">
-<p>The installation program will no longer create the following components:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>VPC</p>
-</li>
-<li>
-<p>Subnets</p>
-</li>
-<li>
-<p>Cloud router</p>
-</li>
-<li>
-<p>Cloud NAT</p>
-</li>
-<li>
-<p>NAT IP addresses</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If you use a custom VPC, you must correctly configure it and its subnets for the installation program and the cluster to use. The installation program cannot subdivide network ranges for the cluster to use, set route tables for the subnets, or set VPC options like DHCP, so you must do so before you install the cluster.</p>
-</div>
-<div class="paragraph">
-<p>Your VPC and subnets must meet the following characteristics:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The VPC must be in the same GCP project that you deploy the OpenShift Container Platform cluster to.</p>
-</li>
-<li>
-<p>To allow access to the internet from the control plane and compute machines, you must configure cloud NAT on the subnets to allow egress to it. These machines do not have a public address. Even if you do not require access to the internet, you must allow egress to the VPC network to obtain the installation program and images. Because multiple cloud NATs cannot be configured on the shared subnets, the installation program cannot configure it.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>To ensure that the subnets that you provide are suitable, the installation program confirms the following data:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>All the subnets that you specify exist and belong to the VPC that you specified.</p>
-</li>
-<li>
-<p>The subnet CIDRs belong to the machine CIDR.</p>
-</li>
-<li>
-<p>You must provide a subnet to deploy the cluster control plane and compute machines to. You can use the same subnet for both machine types.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If you destroy a cluster that uses an existing VPC, the VPC is not deleted.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="installation-about-custom-gcp-permissions_installing-gcp-private"><a class="anchor" href="#installation-about-custom-gcp-permissions_installing-gcp-private"></a>Division of permissions</h3>
-<div class="paragraph">
-<p>Starting with OpenShift Container Platform 4.3, you do not need all of the permissions that are required for an installation program-provisioned infrastructure cluster to deploy a cluster. This change mimics the division of permissions that you might have at your company: some individuals can create different resources in your clouds than others. For example, you might be able to create application-specific items, like instances, buckets, and load balancers, but not networking-related components such as VPCs, subnets, or Ingress rules.</p>
-</div>
-<div class="paragraph">
-<p>The GCP credentials that you use when you create your cluster do not need the networking permissions that are required to make VPCs and core networking components within the VPC, such as subnets, routing tables, internet gateways, NAT, and VPN. You still need permission to make the application resources that the machines within the cluster require, such as load balancers, security groups, storage, and nodes.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="installation-about-custom-gcp-vpcs-isolation_installing-gcp-private"><a class="anchor" href="#installation-about-custom-gcp-vpcs-isolation_installing-gcp-private"></a>Isolation between clusters</h3>
-<div class="paragraph">
-<p>If you deploy OpenShift Container Platform to an existing network, the isolation of cluster services is preserved by firewall rules that reference the machines in your cluster by the cluster&#8217;s infrastructure ID. Only traffic within the cluster is allowed.</p>
-</div>
-<div class="paragraph">
-<p>If you deploy multiple clusters to the same VPC, the following components might share access between clusters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The API, which is globally available with an external publishing strategy or available throughout the network in an internal publishing strategy</p>
-</li>
-<li>
-<p>Debugging tools, such as ports on VM instances that are open to the machine CIDR for SSH and ICMP access</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cluster-entitlements_installing-gcp-private"><a class="anchor" href="#cluster-entitlements_installing-gcp-private"></a>Internet access for OpenShift Container Platform</h2>
+<h2 id="cluster-entitlements_installing-azure-vnet"><a class="anchor" href="#cluster-entitlements_installing-azure-vnet"></a>Internet access for OpenShift Container Platform</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In OpenShift Container Platform Branch Build, you require access to the internet to
@@ -34875,7 +34865,7 @@ your cluster.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ssh-agent-using_installing-gcp-private"><a class="anchor" href="#ssh-agent-using_installing-gcp-private"></a>Generating a key pair for cluster node SSH access</h2>
+<h2 id="ssh-agent-using_installing-azure-vnet"><a class="anchor" href="#ssh-agent-using_installing-azure-vnet"></a>Generating a key pair for cluster node SSH access</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>During an OpenShift Container Platform installation, you can provide an SSH public key to the installation program. The key is passed to the Red Hat Enterprise Linux CoreOS (RHCOS) nodes through their Ignition config files and is used to authenticate SSH access to the nodes. The key is added to the <code>~/.ssh/authorized_keys</code> list for the <code>core</code> user on each node, which enables password-less authentication.</p>
@@ -35049,7 +35039,7 @@ approaches such as
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-obtaining-installer_installing-gcp-private"><a class="anchor" href="#installation-obtaining-installer_installing-gcp-private"></a>Obtaining the installation program</h2>
+<h2 id="installation-obtaining-installer_installing-azure-vnet"><a class="anchor" href="#installation-obtaining-installer_installing-azure-vnet"></a>Obtaining the installation program</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Before you install OpenShift Container Platform, download the installation file on
@@ -35120,20 +35110,20 @@ operating system, run the following command:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-initializing-manual_installing-gcp-private"><a class="anchor" href="#installation-initializing-manual_installing-gcp-private"></a>Manually creating the installation configuration file</h2>
+<h2 id="installation-initializing_installing-azure-vnet"><a class="anchor" href="#installation-initializing_installing-azure-vnet"></a>Creating the installation configuration file</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When installing a private OpenShift Container Platform cluster, you must manually generate the installation configuration file.</p>
+<p>You can customize the OpenShift Container Platform cluster you install on
+Microsoft Azure.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You have an SSH public key on your local machine to provide to the installation program. The key will be used for SSH authentication onto your cluster nodes for debugging and disaster recovery.</p>
+<p>Obtain the OpenShift Container Platform installation program and the pull secret for your cluster.</p>
 </li>
 <li>
-<p>You have obtained the OpenShift Container Platform installation program and the pull secret for your
-cluster.</p>
+<p>Obtain service principal permissions at the subscription level.</p>
 </li>
 </ul>
 </div>
@@ -35141,35 +35131,45 @@ cluster.</p>
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Create an installation directory to store your required installation assets in:</p>
+<p>Create the <code>install-config.yaml</code> file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Change to the directory that contains the installation program and run the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">mkdir</span> &lt;installation_directory&gt;</code></pre>
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>./openshift-install create install-config <span class="nt">--dir</span> &lt;installation_directory&gt; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
-<div class="admonitionblock important">
+<div class="colist arabic">
 <table>
 <tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You must create a directory. Some installation assets, like bootstrap X.509
-certificates have short expiration intervals, so you must not reuse an
-installation directory. If you want to reuse individual files from another
-cluster installation, you can copy them into your directory. However, the file
-names for the installation assets might change between releases. Use caution
-when copying installation files from an earlier OpenShift Container Platform version.</p>
-</div>
-</td>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>For <code>&lt;installation_directory&gt;</code>, specify the directory name to store the
+files that the installation program creates.</td>
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>When specifying the directory:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Verify that the directory has the <code>execute</code> permission. This permission is required to run Terraform binaries under the installation directory.</p>
 </li>
 <li>
-<p>Customize the sample <code>install-config.yaml</code> file template that is provided and save
-it in the <code>&lt;installation_directory&gt;</code>.</p>
+<p>Use an empty directory. Some installation assets, such as bootstrap X.509 certificates, have short expiration intervals, therefore you must not reuse an installation directory. If you want to reuse individual files from another cluster installation, you can copy them into your directory. However, the file names for the installation assets might change between releases. Use caution when copying installation files from an earlier OpenShift Container Platform version.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>At the prompts, provide the configuration details for your cloud:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Optional: Select an SSH key to use to access your cluster machines.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -35178,21 +35178,7 @@ it in the <code>&lt;installation_directory&gt;</code>.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You must name this configuration file <code>install-config.yaml</code>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>For some platform types, you can alternatively run <code>./openshift-install create install-config --dir &lt;installation_directory&gt;</code> to generate an <code>install-config.yaml</code> file. You can provide details about your cluster configuration at the prompts.</p>
+<p>For production OpenShift Container Platform clusters on which you want to perform installation debugging or disaster recovery, specify an SSH key that your <code>ssh-agent</code> process uses.</p>
 </div>
 </td>
 </tr>
@@ -35200,8 +35186,41 @@ it in the <code>&lt;installation_directory&gt;</code>.</p>
 </div>
 </li>
 <li>
-<p>Back up the <code>install-config.yaml</code> file so that you can use it to install
-multiple clusters.</p>
+<p>Select <strong>azure</strong> as the platform to target.</p>
+</li>
+<li>
+<p>If you do not have a Microsoft Azure profile stored on your computer, specify the
+following Azure parameter values for your subscription and service principal:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>azure subscription id</strong>: The subscription ID to use for the cluster.
+Specify the <code>id</code> value in your account output.</p>
+</li>
+<li>
+<p><strong>azure tenant id</strong>: The tenant ID. Specify the <code>tenantId</code> value in your
+account output.</p>
+</li>
+<li>
+<p><strong>azure service principal client id</strong>: The value of the <code>appId</code> parameter
+for the service principal.</p>
+</li>
+<li>
+<p><strong>azure service principal client secret</strong>: The value of the <code>password</code>
+parameter for the service principal.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select the region to deploy the cluster to.</p>
+</li>
+<li>
+<p>Select the base domain to deploy the cluster to. The base domain corresponds
+to the Azure DNS Zone that you created for your cluster.</p>
+</li>
+<li>
+<p>Enter a descriptive name for your cluster.</p>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -35210,8 +35229,43 @@ multiple clusters.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <code>install-config.yaml</code> file is consumed during the next step of the
-installation process. You must back it up now.</p>
+<p>All Azure resources that are available through public endpoints are subject to
+resource name restrictions, and you cannot create resources that use certain
+terms. For a list of terms that Azure restricts, see
+<a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-reserved-resource-name">Resolve reserved resource name errors</a>
+in the Azure documentation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Paste the <a href="https://console.redhat.com/openshift/install/pull-secret">pull secret from the Red Hat OpenShift Cluster Manager</a>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Modify the <code>install-config.yaml</code> file. You can find more information about
+the available parameters in the "Installation configuration parameters" section.</p>
+</li>
+<li>
+<p>Back up the <code>install-config.yaml</code> file so that you can use
+it to install multiple clusters.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>install-config.yaml</code> file is consumed during the installation process. If
+you want to reuse the file, you must back it up now.</p>
 </div>
 </td>
 </tr>
@@ -35221,7 +35275,7 @@ installation process. You must back it up now.</p>
 </ol>
 </div>
 <div class="sect2">
-<h3 id="installation-configuration-parameters_installing-gcp-private"><a class="anchor" href="#installation-configuration-parameters_installing-gcp-private"></a>Installation configuration parameters</h3>
+<h3 id="installation-configuration-parameters_installing-azure-vnet"><a class="anchor" href="#installation-configuration-parameters_installing-azure-vnet"></a>Installation configuration parameters</h3>
 <div class="paragraph">
 <p>Before you deploy an OpenShift Container Platform cluster, you provide parameter values to describe your account on the cloud platform that hosts your cluster and optionally customize your cluster&#8217;s platform. When you create the <code>install-config.yaml</code> installation configuration file, you provide values for the required parameters through the command line. If you customize your cluster, you can modify the <code>install-config.yaml</code> file to provide more details about the platform.</p>
 </div>
@@ -35240,12 +35294,12 @@ installation process. You must back it up now.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="installation-configuration-parameters-required_installing-gcp-private"><a class="anchor" href="#installation-configuration-parameters-required_installing-gcp-private"></a>Required configuration parameters</h4>
+<h4 id="installation-configuration-parameters-required_installing-azure-vnet"><a class="anchor" href="#installation-configuration-parameters-required_installing-azure-vnet"></a>Required configuration parameters</h4>
 <div class="paragraph">
 <p>Required installation configuration parameters are described in the following table:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Required parameters</caption>
+<caption class="title">Table 2. Required parameters</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 30%;">
@@ -35318,7 +35372,7 @@ installation process. You must back it up now.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="installation-configuration-parameters-network_installing-gcp-private"><a class="anchor" href="#installation-configuration-parameters-network_installing-gcp-private"></a>Network configuration parameters</h4>
+<h4 id="installation-configuration-parameters-network_installing-azure-vnet"><a class="anchor" href="#installation-configuration-parameters-network_installing-azure-vnet"></a>Network configuration parameters</h4>
 <div class="paragraph">
 <p>You can customize your installation configuration based on the requirements of your existing network infrastructure. For example, you can expand the IP address block for the cluster network or provide different IP address blocks than the defaults.</p>
 </div>
@@ -35340,7 +35394,7 @@ installation process. You must back it up now.</p>
 </table>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Network parameters</caption>
+<caption class="title">Table 3. Network parameters</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 37.5%;">
@@ -35502,12 +35556,12 @@ The prefix length for an IPv4 block is between <code>0</code> and <code>32</code
 </table>
 </div>
 <div class="sect3">
-<h4 id="installation-configuration-parameters-optional_installing-gcp-private"><a class="anchor" href="#installation-configuration-parameters-optional_installing-gcp-private"></a>Optional configuration parameters</h4>
+<h4 id="installation-configuration-parameters-optional_installing-azure-vnet"><a class="anchor" href="#installation-configuration-parameters-optional_installing-azure-vnet"></a>Optional configuration parameters</h4>
 <div class="paragraph">
 <p>Optional installation configuration parameters are described in the following table:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Optional parameters</caption>
+<caption class="title">Table 4. Optional parameters</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 37.5%;">
@@ -35569,7 +35623,7 @@ The prefix length for an IPv4 block is between <code>0</code> and <code>32</code
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.architecture</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Determines the instruction set architecture of the machines in the pool. Currently, clusters with varied architectures are not supported. All pools must specify the same architecture. Valid values are <code>amd64</code> (the default).</p>
+<p>Determines the instruction set architecture of the machines in the pool. Currently, clusters with varied architectures are not supported. All pools must specify the same architecture. Valid values are <code>amd64</code> and <code>arm64</code>. See <em>Supported installation methods for different platforms</em> in <em>Installing</em> documentation for information about instance availability.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>String</p>
@@ -35647,7 +35701,7 @@ accounts for the dramatically decreased machine performance.</p>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.architecture</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Determines the instruction set architecture of the machines in the pool. Currently, clusters with varied architectures are not supported. All pools must specify the same architecture. Valid values are <code>amd64</code> (the default).</p>
+<p>Determines the instruction set architecture of the machines in the pool. Currently, clusters with varied architectures are not supported. All pools must specify the same architecture. Valid values are <code>amd64</code> and <code>arm64</code>. See <em>Supported installation methods for different platforms</em> in <em>Installing</em> documentation for information about instance availability.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>String</p>
@@ -35707,8 +35761,7 @@ accounts for the dramatically decreased machine performance.</p>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>credentialsMode</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The Cloud Credential Operator (CCO) mode. If no mode is specified, the CCO dynamically tries to determine the capabilities of the provided credentials, with a preference for mint mode on the platforms where multiple modes are supported.
-If you are installing on GCP into a shared virtual private cloud (VPC), <code>credentialsMode</code> must be set to <code>Passthrough</code>.</p>
+<p>The Cloud Credential Operator (CCO) mode. If no mode is specified, the CCO dynamically tries to determine the capabilities of the provided credentials, with a preference for mint mode on the platforms where multiple modes are supported.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -35850,16 +35903,16 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </table>
 </div>
 <div class="sect3">
-<h4 id="installation-configuration-parameters-additional-gcp_installing-gcp-private"><a class="anchor" href="#installation-configuration-parameters-additional-gcp_installing-gcp-private"></a>Additional Google Cloud Platform (GCP) configuration parameters</h4>
+<h4 id="installation-configuration-parameters-additional-azure_installing-azure-vnet"><a class="anchor" href="#installation-configuration-parameters-additional-azure_installing-azure-vnet"></a>Additional Azure configuration parameters</h4>
 <div class="paragraph">
-<p>Additional GCP configuration parameters are described in the following table:</p>
+<p>Additional Azure configuration parameters are described in the following table:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Additional GCP parameters</caption>
+<caption class="title">Table 5. Additional Azure parameters</caption>
 <colgroup>
-<col style="width: 10%;">
-<col style="width: 60%;">
-<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 37.5%;">
+<col style="width: 37.5%;">
 </colgroup>
 <thead>
 <tr>
@@ -35870,411 +35923,399 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.network</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.azure.encryptionAtHost</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The name of the existing Virtual Private Cloud (VPC) where you want to deploy your cluster. If you want to deploy your cluster into a shared VPC, you must set <code>platform.gcp.networkProjectID</code> with the name of the GCP project that contains the shared VPC.</p>
+<p>Enables host-level encryption for compute machines. You can enable this encryption alongside user-managed server-side encryption. This feature encrypts temporary, ephemeral, cached and un-managed disks on the VM host. This is not a prerequisite for user-managed server-side encryption.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>String.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.networkProjectID</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Optional. The name of the GCP project that contains the shared VPC where you want to deploy your cluster.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>String.</p>
+<p><code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.projectID</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.azure.osDisk.diskSizeGB</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The name of the GCP project where the installation program installs the cluster.</p>
+<p>The Azure disk size for the VM.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>String.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.region</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The name of the GCP region that hosts your cluster.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Any valid region name, such as <code>us-central1</code>.</p>
+<p>Integer that represents the size of the disk in GB. The default is <code>128</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.controlPlaneSubnet</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.azure.osDisk.diskType</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The name of the existing subnet where you want to deploy your control plane machines.</p>
+<p>Defines the type of disk.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The subnet name.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.computeSubnet</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The name of the existing subnet where you want to deploy your compute machines.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The subnet name.</p>
+<p><code>standard_LRS</code>, <code>premium_LRS</code>, or <code>standardSSD_LRS</code>. The default is <code>premium_LRS</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.createFirewallRules</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.azure.ultraSSDCapability</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Optional. Set this value to <code>Disabled</code> if you want to create and manage your firewall rules using network tags. By default, the cluster will automatically create and manage the firewall rules that are required for cluster communication. Your service account must have <code>roles/compute.networkAdmin</code> and <code>roles/compute.securityAdmin</code> privileges in the host project to perform these tasks automatically. If your service account does not have the <code>roles/dns.admin</code> privilege in the host project, it must have the <code>dns.networks.bindPrivateDNSZone</code> permission.</p>
+<p>Enables the use of Azure ultra disks for persistent storage on compute nodes. This requires that your Azure region and zone have ultra disks available.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p><code>Enabled</code> or <code>Disabled</code>. The default value is <code>Enabled</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.publicDNSZone.project</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Optional. The name of the project that contains the public DNS zone. If you set this value, your service account must have the <code>roles/dns.admin</code> privilege in the specified project. If you do not set this value, it defaults to <code>gcp.projectId</code>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The name of the project that contains the public DNS zone.</p>
+<p><code>Enabled</code>, <code>Disabled</code>. The default is <code>Disabled</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.publicDNSZone.id</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.azure.osDisk.diskEncryptionSet.resourceGroup</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Optional. The ID or name of an existing public DNS zone.  The public DNS zone domain must match the <code>baseDomain</code> parameter. If you do not set this value, the installation program will use a public DNS zone in the service project.</p>
+<p>The name of the Azure resource group that contains the disk encryption set from the installation prerequisites. This resource group should be different from the resource group where you install the cluster to avoid deleting your Azure encryption key when the cluster is destroyed. This value is only necessary if you intend to install the cluster with user-managed disk encryption.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The public DNS zone name.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.privateDNSZone.project</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Optional. The name of the project that contains the private DNS zone. If you set this value, your service account must have the <code>roles/dns.admin</code> privilege in the host project. If you do not set this value, it defaults to <code>gcp.projectId</code>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The name of the project that contains the private DNS zone.</p>
+<p>String, for example <code>production_encryption_resource_group</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.privateDNSZone.id</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.azure.osDisk.diskEncryptionSet.name</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Optional. The ID or name of an existing private DNS zone.  If you do not set this value, the installation program will create a private DNS zone in the service project.</p>
+<p>The name of the disk encryption set that contains the encryption key from the installation prerequisites.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The private DNS zone name.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.licenses</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>A list of license URLs that must be applied to the compute images.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The <code>licenses</code> parameter is a deprecated field and nested virtualization is enabled by default. It is not recommended to use this field.</p>
-</div>
-</td>
-</tr>
-</table>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Any license available with the <a href="https://cloud.google.com/compute/docs/reference/rest/v1/licenses/list">license API</a>, such as the license to enable <a href="https://cloud.google.com/compute/docs/instances/nested-virtualization/overview">nested virtualization</a>. You cannot use this parameter with a mechanism that generates pre-built images. Using a license URL forces the installation program to copy the source image before use.</p>
+<p>String, for example <code>production_disk_encryption_set</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.defaultMachinePlatform.zones</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.azure.osDisk.diskEncryptionSet.subscriptionId</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The availability zones where the installation program creates machines.</p>
+<p>Defines the Azure subscription of the disk encryption set where the disk encryption set resides. This secondary disk encryption set is used to encrypt compute machines.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>A list of valid <a href="https://cloud.google.com/compute/docs/regions-zones#available">GCP availability zones</a>, such as <code>us-central1-a</code>, in a
-<a href="https://yaml.org/spec/1.2/spec.html#sequence//">YAML sequence</a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.defaultMachinePlatform.osDisk.diskSizeGB</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The size of the disk in gigabytes (GB).</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Any size between 16 GB and 65536 GB.</p>
+<p>String, in the format <code>00000000-0000-0000-0000-000000000000</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.defaultMachinePlatform.osDisk.diskType</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.azure.vmNetworkingType</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The <a href="https://cloud.google.com/compute/docs/disks#disk-types">GCP disk type</a>.</p>
+<p>Enables accelerated networking. Accelerated networking enables single root I/O virtualization (SR-IOV) to a VM, improving its networking performance. If instance type of compute machines support <code>Accelerated</code> networking, by default, the installer enables <code>Accelerated</code> networking, otherwise the default networking type is <code>Basic</code>.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Either the default <code>pd-ssd</code> or the <code>pd-standard</code> disk type. The control plane nodes must be the <code>pd-ssd</code> disk type. Compute nodes can be either type.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.defaultMachinePlatform.tags</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Optional. Additional network tags to add to the control plane and compute machines.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>One or more strings, for example <code>network-tag1</code>.</p>
+<p><code>Accelerated</code> or <code>Basic</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.defaultMachinePlatform.type</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.azure.type</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The <a href="https://cloud.google.com/compute/docs/machine-types">GCP machine type</a> for control plane and compute machines.</p>
+<p>Defines the Azure instance type for compute machines.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP machine type, for example <code>n1-standard-4</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.defaultMachinePlatform.osDisk.encryptionKey.kmsKey.name</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The name of the customer managed encryption key to be used for machine disk encryption.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The encryption key name.</p>
+<p>String</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.defaultMachinePlatform.osDisk.encryptionKey.kmsKey.keyRing</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The name of the Key Management Service (KMS) key ring to which the KMS key belongs.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The KMS key ring name.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.defaultMachinePlatform.osDisk.encryptionKey.kmsKey.location</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The <a href="https://cloud.google.com/kms/docs/locations">GCP location</a> in which the KMS key ring exists.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP location.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.defaultMachinePlatform.osDisk.encryptionKey.kmsKey.projectID</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The ID of the project in which the KMS key ring exists. This value defaults to the value of the <code>platform.gcp.projectID</code> parameter if it is not set.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP project ID.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.gcp.defaultMachinePlatform.osDisk.encryptionKey.kmsKeyServiceAccount</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP service account used for the encryption request for control plane and compute machines. If absent, the Compute Engine default service account is used. For more information about GCP service accounts, see Google&#8217;s documentation on <a href="https://cloud.google.com/compute/docs/access/service-accounts#compute_engine_service_account">service accounts</a>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP service account email, for example <code>&lt;service_account_name&gt;@&lt;project_id&gt;.iam.gserviceaccount.com</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.gcp.osDisk.encryptionKey.kmsKey.name</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The name of the customer managed encryption key to be used for control plane machine disk encryption.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The encryption key name.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.gcp.osDisk.encryptionKey.kmsKey.keyRing</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>For control plane machines, the name of the KMS key ring to which the KMS key belongs.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The KMS key ring name.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.gcp.osDisk.encryptionKey.kmsKey.location</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>For control plane machines, the GCP location in which the key ring exists. For more information about KMS locations, see Google&#8217;s documentation on <a href="https://cloud.google.com/kms/docs/locations">Cloud KMS locations</a>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP location for the key ring.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.gcp.osDisk.encryptionKey.kmsKey.projectID</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>For control plane machines, the ID of the project in which the KMS key ring exists. This value defaults to the VM project ID if not set.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP project ID.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.gcp.osDisk.encryptionKey.kmsKeyServiceAccount</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP service account used for the encryption request for control plane machines. If absent, the Compute Engine default service account is used. For more information about GCP service accounts, see Google&#8217;s documentation on <a href="https://cloud.google.com/compute/docs/access/service-accounts#compute_engine_service_account">service accounts</a>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP service account email, for example <code>&lt;service_account_name&gt;@&lt;project_id&gt;.iam.gserviceaccount.com</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.gcp.osDisk.diskSizeGB</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The size of the disk in gigabytes (GB). This value applies to control plane machines.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Any integer between 16 and 65536.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.gcp.osDisk.diskType</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The <a href="https://cloud.google.com/compute/docs/disks#disk-types">GCP disk type</a> for control plane machines.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Control plane machines must use the <code>pd-ssd</code> disk type, which is the default.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.gcp.tags</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Optional. Additional network tags to add to the control plane machines. If set, this parameter overrides the <code>platform.gcp.defaultMachinePlatform.tags</code> parameter for control plane machines.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>One or more strings, for example <code>control-plane-tag1</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.gcp.type</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The <a href="https://cloud.google.com/compute/docs/machine-types">GCP machine type</a> for control plane machines. If set, this parameter overrides the <code>platform.gcp.defaultMachinePlatform.type</code> parameter.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP machine type, for example <code>n1-standard-4</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.gcp.zones</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The availability zones where the installation program creates control plane machines.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>A list of valid <a href="https://cloud.google.com/compute/docs/regions-zones#available">GCP availability zones</a>, such as <code>us-central1-a</code>, in a
-<a href="https://yaml.org/spec/1.2/spec.html#sequence//">YAML sequence</a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.gcp.osDisk.encryptionKey.kmsKey.name</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The name of the customer managed encryption key to be used for compute machine disk encryption.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The encryption key name.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.gcp.osDisk.encryptionKey.kmsKey.keyRing</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>For compute machines, the name of the KMS key ring to which the KMS key belongs.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The KMS key ring name.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.gcp.osDisk.encryptionKey.kmsKey.location</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>For compute machines, the GCP location in which the key ring exists. For more information about KMS locations, see Google&#8217;s documentation on <a href="https://cloud.google.com/kms/docs/locations">Cloud KMS locations</a>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP location for the key ring.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.gcp.osDisk.encryptionKey.kmsKey.projectID</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>For compute machines, the ID of the project in which the KMS key ring exists. This value defaults to the VM project ID if not set.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP project ID.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.gcp.osDisk.encryptionKey.kmsKeyServiceAccount</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP service account used for the encryption request for compute machines. If this value is not set, the Compute Engine default service account is used. For more information about GCP service accounts, see Google&#8217;s documentation on <a href="https://cloud.google.com/compute/docs/access/service-accounts#compute_engine_service_account">service accounts</a>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP service account email, for example <code>&lt;service_account_name&gt;@&lt;project_id&gt;.iam.gserviceaccount.com</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.gcp.osDisk.diskSizeGB</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The size of the disk in gigabytes (GB). This value applies to compute machines.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Any integer between 16 and 65536.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.gcp.osDisk.diskType</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The <a href="https://cloud.google.com/compute/docs/disks#disk-types">GCP disk type</a> for compute machines.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Either the default <code>pd-ssd</code> or the <code>pd-standard</code> disk type.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.gcp.tags</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Optional. Additional network tags to add to the compute machines. If set, this parameter overrides the <code>platform.gcp.defaultMachinePlatform.tags</code> parameter for compute machines.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>One or more strings, for example <code>compute-network-tag1</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.gcp.type</code></p></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The <a href="https://cloud.google.com/compute/docs/machine-types">GCP machine type</a> for compute machines. If set, this parameter overrides the <code>platform.gcp.defaultMachinePlatform.type</code> parameter.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>The GCP machine type, for example <code>n1-standard-4</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.gcp.zones</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>compute.platform.azure.zones</code></p></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>The availability zones where the installation program creates compute machines.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>A list of valid <a href="https://cloud.google.com/compute/docs/regions-zones#available">GCP availability zones</a>, such as <code>us-central1-a</code>, in a
-<a href="https://yaml.org/spec/1.2/spec.html#sequence//">YAML sequence</a>.</p>
+<p>String list</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.azure.type</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Defines the Azure instance type for control plane machines.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.azure.zones</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The availability zones where the installation program creates control plane machines.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String list</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.defaultMachinePlatform.encryptionAtHost</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Enables host-level encryption for compute machines. You can enable this encryption alongside user-managed server-side encryption. This feature encrypts temporary, ephemeral, cached, and un-managed disks on the VM host. This parameter is not a prerequisite for user-managed server-side encryption.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.defaultMachinePlatform.osDisk.diskEncryptionSet.name</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of the disk encryption set that contains the encryption key from the installation prerequisites.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String, for example, <code>production_disk_encryption_set</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.defaultMachinePlatform.osDisk.diskEncryptionSet.resourceGroup</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of the Azure resource group that contains the disk encryption set from the installation prerequisites. To avoid deleting your Azure encryption key when the cluster is destroyed, this resource group must be different from the resource group where you install the cluster. This value is necessary only if you intend to install the cluster with user-managed disk encryption.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String, for example, <code>production_encryption_resource_group</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.defaultMachinePlatform.osDisk.diskEncryptionSet.subscriptionId</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Defines the Azure subscription of the disk encryption set where the disk encryption set resides. This secondary disk encryption set is used to encrypt compute machines.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String, in the format <code>00000000-0000-0000-0000-000000000000</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.defaultMachinePlatform.osDisk.diskSizeGB</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The Azure disk size for the VM.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Integer that represents the size of the disk in GB. The default is <code>128</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.defaultMachinePlatform.osDisk.diskType</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Defines the type of disk.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>premium_LRS</code> or <code>standardSSD_LRS</code>. The default is <code>premium_LRS</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.defaultMachinePlatform.type</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The Azure instance type for control plane and compute machines.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The Azure instance type.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.defaultMachinePlatform.zones</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The availability zones where the installation program creates compute and control plane machines.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String list.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.azure.encryptionAtHost</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Enables host-level encryption for control plane machines. You can enable this encryption alongside user-managed server-side encryption. This feature encrypts temporary, ephemeral, cached and un-managed disks on the VM host. This is not a prerequisite for user-managed server-side encryption.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.azure.osDisk.diskEncryptionSet.resourceGroup</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of the Azure resource group that contains the disk encryption set from the installation prerequisites. This resource group should be different from the resource group where you install the cluster to avoid deleting your Azure encryption key when the cluster is destroyed. This value is only necessary if you intend to install the cluster with user-managed disk encryption.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String, for example <code>production_encryption_resource_group</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.azure.osDisk.diskEncryptionSet.name</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of the disk encryption set that contains the encryption key from the installation prerequisites.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String, for example <code>production_disk_encryption_set</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.azure.osDisk.diskEncryptionSet.subscriptionId</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Defines the Azure subscription of the disk encryption set where the disk encryption set resides. This secondary disk encryption set is used to encrypt control plane machines.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String, in the format <code>00000000-0000-0000-0000-000000000000</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.azure.osDisk.diskSizeGB</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The Azure disk size for the VM.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Integer that represents the size of the disk in GB. The default is <code>1024</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.azure.osDisk.diskType</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Defines the type of disk.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>premium_LRS</code> or <code>standardSSD_LRS</code>. The default is <code>premium_LRS</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.azure.ultraSSDCapability</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Enables the use of Azure ultra disks for persistent storage on control plane machines. This requires that your Azure region and zone have ultra disks available.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>Enabled</code>, <code>Disabled</code>. The default is <code>Disabled</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>controlPlane.platform.azure.vmNetworkingType</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Enables accelerated networking. Accelerated networking enables single root I/O virtualization (SR-IOV) to a VM, improving its networking performance. If instance type of control plane machines support <code>Accelerated</code> networking, by default, the installer enables <code>Accelerated</code> networking, otherwise the default networking type is <code>Basic</code>.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>Accelerated</code> or <code>Basic</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.baseDomainResourceGroupName</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of the resource group that contains the DNS zone for your base domain.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String, for example <code>production_cluster</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.resourceGroupName</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of an already existing resource group to install your cluster to. This resource group must be empty and only used for this specific cluster; the cluster components assume ownership of all resources in the resource group. If you limit the service principal scope of the installation program to this resource group, you must ensure all other resources used by the installation program in your environment have the necessary permissions, such as the public DNS zone and virtual network. Destroying the cluster by using the installation program deletes this resource group.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String, for example <code>existing_resource_group</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.outboundType</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The outbound routing strategy used to connect your cluster to the internet. If
+you are using user-defined routing, you must have pre-existing networking
+available where the outbound routing has already been configured prior to
+installing a cluster. The installation program is not responsible for
+configuring user-defined routing.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>LoadBalancer</code> or <code>UserDefinedRouting</code>. The default is <code>LoadBalancer</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.region</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of the Azure region that hosts your cluster.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Any valid region name, such as <code>centralus</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.zone</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>List of availability zones to place machines in. For high availability, specify
+at least two zones.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>List of zones, for example <code>["1", "2", "3"]</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.defaultMachinePlatform.ultraSSDCapability</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Enables the use of Azure ultra disks for persistent storage on control plane and compute machines. This requires that your Azure region and zone have ultra disks available.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>Enabled</code>, <code>Disabled</code>. The default is <code>Disabled</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.networkResourceGroupName</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of the resource group that contains the existing VNet that you want to deploy your cluster to. This name cannot be the same as the <code>platform.azure.baseDomainResourceGroupName</code>.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.virtualNetwork</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of the existing VNet that you want to deploy your cluster to.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>String.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.controlPlaneSubnet</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of the existing subnet in your VNet that you want to deploy your control plane machines to.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Valid CIDR, for example <code>10.0.0.0/16</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.computeSubnet</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of the existing subnet in your VNet that you want to deploy your compute machines to.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Valid CIDR, for example <code>10.0.0.0/16</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.cloudName</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The name of the Azure cloud environment that is used to configure the Azure SDK with the appropriate Azure API endpoints. If empty, the default value <code>AzurePublicCloud</code> is used.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Any valid cloud environment, such as <code>AzurePublicCloud</code> or <code>AzureUSGovernmentCloud</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>platform.azure.defaultMachinePlatform.vmNetworkingType</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Enables accelerated networking. Accelerated networking enables single root I/O virtualization (SR-IOV) to a VM, improving its networking performance.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>Accelerated</code> or <code>Basic</code>. If instance type of control plane and compute machines support <code>Accelerated</code> networking, by default, the installer enables <code>Accelerated</code> networking, otherwise the default networking type is <code>Basic</code>.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot customize
+<a href="https://azure.microsoft.com/en-us/global-infrastructure/availability-zones/">Azure Availability Zones</a>
+or
+<a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags">Use tags to organize your Azure resources</a>
+with an Azure cluster.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-minimum-resource-requirements_installing-gcp-private"><a class="anchor" href="#installation-minimum-resource-requirements_installing-gcp-private"></a>Minimum resource requirements for cluster installation</h3>
+<h3 id="installation-minimum-resource-requirements_installing-azure-vnet"><a class="anchor" href="#installation-minimum-resource-requirements_installing-azure-vnet"></a>Minimum resource requirements for cluster installation</h3>
 <div class="paragraph">
 <p>Each cluster machine must meet the following minimum requirements:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Minimum resource requirements</caption>
+<caption class="title">Table 6. Minimum resource requirements</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 16.6666%;">
@@ -36337,40 +36378,243 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </div>
 </div>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You are required to use Azure virtual machines that have the <code>premiumIO</code> parameter set to <code>true</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>If an instance type for your platform meets the minimum requirements for cluster machines, it is supported to use in OpenShift Container Platform.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-gcp-tested-machine-types_installing-gcp-private"><a class="anchor" href="#installation-gcp-tested-machine-types_installing-gcp-private"></a>Tested instance types for GCP</h3>
+<h3 id="installation-azure-tested-machine-types_installing-azure-vnet"><a class="anchor" href="#installation-azure-tested-machine-types_installing-azure-vnet"></a>Tested instance types for Azure</h3>
 <div class="paragraph">
-<p>The following Google Cloud Platform instance types have been tested with OpenShift Container Platform.</p>
+<p>The following Microsoft Azure instance types have been tested with OpenShift Container Platform.</p>
 </div>
 <details>
-<summary class="title">Machine series</summary>
+<summary class="title">Machine types based on 64-bit x86 architecture</summary>
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>C2</code></p>
+<p><code>standardBSFamily</code></p>
 </li>
 <li>
-<p><code>E2</code></p>
+<p><code>standardBsv2Family</code></p>
 </li>
 <li>
-<p><code>M1</code></p>
+<p><code>standardDADSv5Family</code></p>
 </li>
 <li>
-<p><code>N1</code></p>
+<p><code>standardDASv4Family</code></p>
 </li>
 <li>
-<p><code>N2</code></p>
+<p><code>standardDASv5Family</code></p>
 </li>
 <li>
-<p><code>N2D</code></p>
+<p><code>standardDCACCV5Family</code></p>
 </li>
 <li>
-<p><code>Tau T2D</code></p>
+<p><code>standardDCADCCV5Family</code></p>
+</li>
+<li>
+<p><code>standardDCADSv5Family</code></p>
+</li>
+<li>
+<p><code>standardDCASv5Family</code></p>
+</li>
+<li>
+<p><code>standardDCSv3Family</code></p>
+</li>
+<li>
+<p><code>standardDCSv2Family</code></p>
+</li>
+<li>
+<p><code>standardDDCSv3Family</code></p>
+</li>
+<li>
+<p><code>standardDDSv4Family</code></p>
+</li>
+<li>
+<p><code>standardDDSv5Family</code></p>
+</li>
+<li>
+<p><code>standardDLDSv5Family</code></p>
+</li>
+<li>
+<p><code>standardDLSv5Family</code></p>
+</li>
+<li>
+<p><code>standardDSFamily</code></p>
+</li>
+<li>
+<p><code>standardDSv2Family</code></p>
+</li>
+<li>
+<p><code>standardDSv2PromoFamily</code></p>
+</li>
+<li>
+<p><code>standardDSv3Family</code></p>
+</li>
+<li>
+<p><code>standardDSv4Family</code></p>
+</li>
+<li>
+<p><code>standardDSv5Family</code></p>
+</li>
+<li>
+<p><code>standardEADSv5Family</code></p>
+</li>
+<li>
+<p><code>standardEASv4Family</code></p>
+</li>
+<li>
+<p><code>standardEASv5Family</code></p>
+</li>
+<li>
+<p><code>standardEBDSv5Family</code></p>
+</li>
+<li>
+<p><code>standardEBSv5Family</code></p>
+</li>
+<li>
+<p><code>standardECACCV5Family</code></p>
+</li>
+<li>
+<p><code>standardECADCCV5Family</code></p>
+</li>
+<li>
+<p><code>standardECADSv5Family</code></p>
+</li>
+<li>
+<p><code>standardECASv5Family</code></p>
+</li>
+<li>
+<p><code>standardEDSv4Family</code></p>
+</li>
+<li>
+<p><code>standardEDSv5Family</code></p>
+</li>
+<li>
+<p><code>standardEIADSv5Family</code></p>
+</li>
+<li>
+<p><code>standardEIASv4Family</code></p>
+</li>
+<li>
+<p><code>standardEIASv5Family</code></p>
+</li>
+<li>
+<p><code>standardEIBDSv5Family</code></p>
+</li>
+<li>
+<p><code>standardEIBSv5Family</code></p>
+</li>
+<li>
+<p><code>standardEIDSv5Family</code></p>
+</li>
+<li>
+<p><code>standardEISv3Family</code></p>
+</li>
+<li>
+<p><code>standardEISv5Family</code></p>
+</li>
+<li>
+<p><code>standardESv3Family</code></p>
+</li>
+<li>
+<p><code>standardESv4Family</code></p>
+</li>
+<li>
+<p><code>standardESv5Family</code></p>
+</li>
+<li>
+<p><code>standardFXMDVSFamily</code></p>
+</li>
+<li>
+<p><code>standardFSFamily</code></p>
+</li>
+<li>
+<p><code>standardFSv2Family</code></p>
+</li>
+<li>
+<p><code>standardGSFamily</code></p>
+</li>
+<li>
+<p><code>standardHBrsv2Family</code></p>
+</li>
+<li>
+<p><code>standardHBSFamily</code></p>
+</li>
+<li>
+<p><code>standardHCSFamily</code></p>
+</li>
+<li>
+<p><code>standardHXFamily</code></p>
+</li>
+<li>
+<p><code>standardLASv3Family</code></p>
+</li>
+<li>
+<p><code>standardLSFamily</code></p>
+</li>
+<li>
+<p><code>standardLSv2Family</code></p>
+</li>
+<li>
+<p><code>standardLSv3Family</code></p>
+</li>
+<li>
+<p><code>standardMDSMediumMemoryv2Family</code></p>
+</li>
+<li>
+<p><code>standardMIDSMediumMemoryv2Family</code></p>
+</li>
+<li>
+<p><code>standardMISMediumMemoryv2Family</code></p>
+</li>
+<li>
+<p><code>standardMSFamily</code></p>
+</li>
+<li>
+<p><code>standardMSMediumMemoryv2Family</code></p>
+</li>
+<li>
+<p><code>StandardNCADSA100v4Family</code></p>
+</li>
+<li>
+<p><code>Standard NCASv3_T4 Family</code></p>
+</li>
+<li>
+<p><code>standardNCSv2Family</code></p>
+</li>
+<li>
+<p><code>standardNCSv3Family</code></p>
+</li>
+<li>
+<p><code>standardNDSv2Family</code></p>
+</li>
+<li>
+<p><code>standardNPSFamily</code></p>
+</li>
+<li>
+<p><code>StandardNVADSA10v5Family</code></p>
+</li>
+<li>
+<p><code>standardNVSv3Family</code></p>
+</li>
+<li>
+<p><code>standardXEISv4Family</code></p>
 </li>
 </ul>
 </div>
@@ -36378,60 +36622,40 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </details>
 </div>
 <div class="sect2">
-<h3 id="installation-custom-machine-types_installing-gcp-private"><a class="anchor" href="#installation-custom-machine-types_installing-gcp-private"></a>Using custom machine types</h3>
+<h3 id="installation-azure-arm-tested-machine-types_installing-azure-vnet"><a class="anchor" href="#installation-azure-arm-tested-machine-types_installing-azure-vnet"></a>Tested instance types for Azure on 64-bit ARM infrastructures</h3>
 <div class="paragraph">
-<p>Using a custom machine type to install a OpenShift Container Platform cluster is supported.</p>
+<p>The following Microsoft Azure ARM64 instance types have been tested with OpenShift Container Platform.</p>
 </div>
-<div class="paragraph">
-<p>Consider the following when using a custom machine type:</p>
-</div>
+<details>
+<summary class="title">Machine types based on 64-bit ARM architecture</summary>
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Similar to predefined instance types, custom machine types must meet the minimum resource requirements for control plane and compute machines. For more information, see "Minimum resource requirements for cluster installation".</p>
+<p><code>standardDPSv5Family</code></p>
 </li>
 <li>
-<p>The name of the custom machine type must adhere to the following syntax:</p>
-<div class="openblock">
-<div class="content">
-<div class="paragraph">
-<p><code>custom-&lt;number_of_cpus&gt;-&lt;amount_of_memory_in_mb&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>For example, <code>custom-6-20480</code>.</p>
-</div>
-</div>
-</div>
+<p><code>standardDPDSv5Family</code></p>
+</li>
+<li>
+<p><code>standardDPLDSv5Family</code></p>
+</li>
+<li>
+<p><code>standardDPLSv5Family</code></p>
+</li>
+<li>
+<p><code>standardEPSv5Family</code></p>
+</li>
+<li>
+<p><code>standardEPDSv5Family</code></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>As part of the installation process, you specify the custom machine type in the <code>install-config.yaml</code> file.</p>
 </div>
-<div class="listingblock">
-<div class="title">Sample <code>install-config.yaml</code> file with a custom machine type</div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">compute</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">architecture</span><span class="pi">:</span> <span class="s">amd64</span>
-  <span class="na">hyperthreading</span><span class="pi">:</span> <span class="s">Enabled</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">worker</span>
-  <span class="na">platform</span><span class="pi">:</span>
-    <span class="na">gcp</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">custom-6-20480</span>
-  <span class="na">replicas</span><span class="pi">:</span> <span class="m">2</span>
-<span class="na">controlPlane</span><span class="pi">:</span>
-  <span class="na">architecture</span><span class="pi">:</span> <span class="s">amd64</span>
-  <span class="na">hyperthreading</span><span class="pi">:</span> <span class="s">Enabled</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">master</span>
-  <span class="na">platform</span><span class="pi">:</span>
-    <span class="na">gcp</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">custom-6-20480</span>
-  <span class="na">replicas</span><span class="pi">:</span> <span class="s">3</span></code></pre>
-</div>
-</div>
+</details>
 </div>
 <div class="sect2">
-<h3 id="installation-gcp-config-yaml_installing-gcp-private"><a class="anchor" href="#installation-gcp-config-yaml_installing-gcp-private"></a>Sample customized install-config.yaml file for GCP</h3>
+<h3 id="installation-azure-config-yaml_installing-azure-vnet"><a class="anchor" href="#installation-azure-config-yaml_installing-azure-vnet"></a>Sample customized install-config.yaml file for Azure</h3>
 <div class="paragraph">
 <p>You can customize the <code>install-config.yaml</code> file to specify more details about your OpenShift Container Platform cluster&#8217;s platform or modify the values of the required parameters.</p>
 </div>
@@ -36453,50 +36677,42 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 <div class="content">
 <pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
 <span class="na">baseDomain</span><span class="pi">:</span> <span class="s">example.com</span> <i class="conum" data-value="1"></i><b>(1)</b>
-<span class="na">controlPlane</span><span class="pi">:</span>  <i class="conum" data-value="2"></i><b>(2)</b> <i class="conum" data-value="3"></i><b>(3)</b>
-  <span class="na">hyperthreading</span><span class="pi">:</span> <span class="s">Enabled</span> <i class="conum" data-value="4"></i><b>(4)</b>
+<span class="na">controlPlane</span><span class="pi">:</span> <i class="conum" data-value="2"></i><b>(2)</b>
+  <span class="na">hyperthreading</span><span class="pi">:</span> <span class="s">Enabled</span>  <i class="conum" data-value="3"></i><b>(3)</b> <i class="conum" data-value="4"></i><b>(4)</b>
   <span class="na">name</span><span class="pi">:</span> <span class="s">master</span>
   <span class="na">platform</span><span class="pi">:</span>
-    <span class="na">gcp</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">n2-standard-4</span>
-      <span class="na">zones</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">us-central1-a</span>
-      <span class="pi">-</span> <span class="s">us-central1-c</span>
+    <span class="na">azure</span><span class="pi">:</span>
+      <span class="na">encryptionAtHost</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">ultraSSDCapability</span><span class="pi">:</span> <span class="s">Enabled</span>
       <span class="na">osDisk</span><span class="pi">:</span>
-        <span class="na">diskType</span><span class="pi">:</span> <span class="s">pd-ssd</span>
-        <span class="na">diskSizeGB</span><span class="pi">:</span> <span class="m">1024</span>
-        <span class="na">encryptionKey</span><span class="pi">:</span> <i class="conum" data-value="5"></i><b>(5)</b>
-          <span class="na">kmsKey</span><span class="pi">:</span>
-            <span class="na">name</span><span class="pi">:</span> <span class="s">worker-key</span>
-            <span class="na">keyRing</span><span class="pi">:</span> <span class="s">test-machine-keys</span>
-            <span class="na">location</span><span class="pi">:</span> <span class="s">global</span>
-            <span class="na">projectID</span><span class="pi">:</span> <span class="s">project-id</span>
-      <span class="na">tags</span><span class="pi">:</span> <i class="conum" data-value="6"></i><b>(6)</b>
-      <span class="pi">-</span> <span class="s">control-plane-tag1</span>
-      <span class="pi">-</span> <span class="s">control-plane-tag2</span>
+        <span class="na">diskSizeGB</span><span class="pi">:</span> <span class="s">1024</span> <i class="conum" data-value="5"></i><b>(5)</b>
+        <span class="na">diskType</span><span class="pi">:</span> <span class="s">Premium_LRS</span>
+        <span class="na">diskEncryptionSet</span><span class="pi">:</span>
+          <span class="na">resourceGroup</span><span class="pi">:</span> <span class="s">disk_encryption_set_resource_group</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">disk_encryption_set_name</span>
+          <span class="na">subscriptionId</span><span class="pi">:</span> <span class="s">secondary_subscription_id</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Standard_D8s_v3</span>
   <span class="na">replicas</span><span class="pi">:</span> <span class="m">3</span>
-<span class="na">compute</span><span class="pi">:</span>  <i class="conum" data-value="2"></i><b>(2)</b> <i class="conum" data-value="3"></i><b>(3)</b>
-<span class="pi">-</span> <span class="na">hyperthreading</span><span class="pi">:</span> <span class="s">Enabled</span> <i class="conum" data-value="4"></i><b>(4)</b>
+<span class="na">compute</span><span class="pi">:</span> <i class="conum" data-value="2"></i><b>(2)</b>
+<span class="pi">-</span> <span class="na">hyperthreading</span><span class="pi">:</span> <span class="s">Enabled</span> <i class="conum" data-value="3"></i><b>(3)</b>
   <span class="na">name</span><span class="pi">:</span> <span class="s">worker</span>
   <span class="na">platform</span><span class="pi">:</span>
-    <span class="na">gcp</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">n2-standard-4</span>
-      <span class="na">zones</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">us-central1-a</span>
-      <span class="pi">-</span> <span class="s">us-central1-c</span>
+    <span class="na">azure</span><span class="pi">:</span>
+      <span class="na">ultraSSDCapability</span><span class="pi">:</span> <span class="s">Enabled</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Standard_D2s_v3</span>
+      <span class="na">encryptionAtHost</span><span class="pi">:</span> <span class="no">true</span>
       <span class="na">osDisk</span><span class="pi">:</span>
-        <span class="na">diskType</span><span class="pi">:</span> <span class="s">pd-standard</span>
-        <span class="na">diskSizeGB</span><span class="pi">:</span> <span class="m">128</span>
-        <span class="na">encryptionKey</span><span class="pi">:</span> <i class="conum" data-value="5"></i><b>(5)</b>
-          <span class="na">kmsKey</span><span class="pi">:</span>
-            <span class="na">name</span><span class="pi">:</span> <span class="s">worker-key</span>
-            <span class="na">keyRing</span><span class="pi">:</span> <span class="s">test-machine-keys</span>
-            <span class="na">location</span><span class="pi">:</span> <span class="s">global</span>
-            <span class="na">projectID</span><span class="pi">:</span> <span class="s">project-id</span>
-        <span class="na">tags</span><span class="pi">:</span> <i class="conum" data-value="6"></i><b>(6)</b>
-        <span class="pi">-</span> <span class="s">compute-tag1</span>
-        <span class="pi">-</span> <span class="s">compute-tag2</span>
-  <span class="na">replicas</span><span class="pi">:</span> <span class="m">3</span>
+        <span class="na">diskSizeGB</span><span class="pi">:</span> <span class="s">512</span> <i class="conum" data-value="5"></i><b>(5)</b>
+        <span class="na">diskType</span><span class="pi">:</span> <span class="s">Standard_LRS</span>
+        <span class="na">diskEncryptionSet</span><span class="pi">:</span>
+          <span class="na">resourceGroup</span><span class="pi">:</span> <span class="s">disk_encryption_set_resource_group</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">disk_encryption_set_name</span>
+          <span class="na">subscriptionId</span><span class="pi">:</span> <span class="s">secondary_subscription_id</span>
+      <span class="na">zones</span><span class="pi">:</span> <i class="conum" data-value="6"></i><b>(6)</b>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">1"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">2"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">3"</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">5</span>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s">test-cluster</span> <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="na">networking</span><span class="pi">:</span>
@@ -36509,20 +36725,21 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
   <span class="na">serviceNetwork</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">172.30.0.0/16</span>
 <span class="na">platform</span><span class="pi">:</span>
-  <span class="na">gcp</span><span class="pi">:</span>
-    <span class="na">projectID</span><span class="pi">:</span> <span class="s">openshift-production</span> <i class="conum" data-value="1"></i><b>(1)</b>
-    <span class="na">region</span><span class="pi">:</span> <span class="s">us-central1</span> <i class="conum" data-value="1"></i><b>(1)</b>
+  <span class="na">azure</span><span class="pi">:</span>
     <span class="na">defaultMachinePlatform</span><span class="pi">:</span>
-      <span class="na">tags</span><span class="pi">:</span> <i class="conum" data-value="6"></i><b>(6)</b>
-      <span class="pi">-</span> <span class="s">global-tag1</span>
-      <span class="pi">-</span> <span class="s">global-tag2</span>
-    <span class="na">network</span><span class="pi">:</span> <span class="s">existing_vpc</span> <i class="conum" data-value="8"></i><b>(8)</b>
-    <span class="na">controlPlaneSubnet</span><span class="pi">:</span> <span class="s">control_plane_subnet</span> <i class="conum" data-value="9"></i><b>(9)</b>
-    <span class="na">computeSubnet</span><span class="pi">:</span> <span class="s">compute_subnet</span> <i class="conum" data-value="10"></i><b>(10)</b>
+      <span class="na">ultraSSDCapability</span><span class="pi">:</span> <span class="s">Enabled</span>
+    <span class="na">baseDomainResourceGroupName</span><span class="pi">:</span> <span class="s">resource_group</span> <i class="conum" data-value="8"></i><b>(8)</b>
+    <span class="na">region</span><span class="pi">:</span> <span class="s">centralus</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="na">resourceGroupName</span><span class="pi">:</span> <span class="s">existing_resource_group</span> <i class="conum" data-value="9"></i><b>(9)</b>
+    <span class="na">networkResourceGroupName</span><span class="pi">:</span> <span class="s">vnet_resource_group</span> <i class="conum" data-value="10"></i><b>(10)</b>
+    <span class="na">virtualNetwork</span><span class="pi">:</span> <span class="s">vnet</span> <i class="conum" data-value="11"></i><b>(11)</b>
+    <span class="na">controlPlaneSubnet</span><span class="pi">:</span> <span class="s">control_plane_subnet</span> <i class="conum" data-value="12"></i><b>(12)</b>
+    <span class="na">computeSubnet</span><span class="pi">:</span> <span class="s">compute_subnet</span> <i class="conum" data-value="13"></i><b>(13)</b>
+    <span class="na">outboundType</span><span class="pi">:</span> <span class="s">Loadbalancer</span>
+    <span class="na">cloudName</span><span class="pi">:</span> <span class="s">AzurePublicCloud</span>
 <span class="na">pullSecret</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"auths":</span><span class="nv"> </span><span class="s">...}'</span> <i class="conum" data-value="1"></i><b>(1)</b>
-<span class="na">fips</span><span class="pi">:</span> <span class="no">false</span> <i class="conum" data-value="11"></i><b>(11)</b>
-<span class="na">sshKey</span><span class="pi">:</span> <span class="s">ssh-ed25519 AAAA...</span> <i class="conum" data-value="12"></i><b>(12)</b>
-<span class="na">publish</span><span class="pi">:</span> <span class="s">Internal</span> <i class="conum" data-value="13"></i><b>(13)</b></code></pre>
+<span class="na">fips</span><span class="pi">:</span> <span class="no">false</span> <i class="conum" data-value="14"></i><b>(14)</b>
+<span class="na">sshKey</span><span class="pi">:</span> <span class="s">ssh-ed25519 AAAA...</span> <i class="conum" data-value="15"></i><b>(15)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -36550,7 +36767,7 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you disable simultaneous multithreading, ensure that your capacity planning accounts for the dramatically decreased machine performance. Use larger machine types, such as <code>n1-standard-8</code>, for your machines if you disable simultaneous multithreading.</p>
+<p>If you disable simultaneous multithreading, ensure that your capacity planning accounts for the dramatically decreased machine performance. Use larger virtual machine types, such as <code>Standard_D8s_v3</code>, for your machines if you disable simultaneous multithreading.</p>
 </div>
 </td>
 </tr>
@@ -36559,11 +36776,11 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>Optional: The custom encryption key section to encrypt both virtual machines and persistent volumes. Your default compute service account must have the permissions granted to use your KMS key and have the correct IAM role assigned. The default service account name follows the <code>service-&lt;project_number&gt;@compute-system.iam.gserviceaccount.com</code> pattern. For more information about granting the correct permissions for your service account, see "Machine management" &#8594; "Creating compute machine sets" &#8594; "Creating a compute machine set on GCP".</td>
+<td>You can specify the size of the disk to use in GB. Minimum recommendation for control plane nodes is 1024 GB.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Optional: A set of network tags to apply to the control plane or compute machine sets. The <code>platform.gcp.defaultMachinePlatform.tags</code> parameter will apply to both control plane and compute machines. If the <code>compute.platform.gcp.tags</code> or <code>controlPlane.platform.gcp.tags</code> parameters are set, they override the <code>platform.gcp.defaultMachinePlatform.tags</code> parameter.</td>
+<td>Specify a list of zones to deploy your machines to. For high availability, specify at least two zones.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
@@ -36571,18 +36788,30 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </tr>
 <tr>
 <td><i class="conum" data-value="8"></i><b>8</b></td>
-<td>Specify the name of an existing VPC.</td>
+<td>Specify the name of the resource group that contains the DNS zone for your base domain.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="9"></i><b>9</b></td>
-<td>Specify the name of the existing subnet to deploy the control plane machines to. The subnet must belong to the VPC that you specified.</td>
+<td>Specify the name of an already existing resource group to install your cluster to. If undefined, a new resource group is created for the cluster.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="10"></i><b>10</b></td>
-<td>Specify the name of the existing subnet to deploy the compute machines to. The subnet must belong to the VPC that you specified.</td>
+<td>If you use an existing VNet, specify the name of the resource group that contains it.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="11"></i><b>11</b></td>
+<td>If you use an existing VNet, specify its name.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="12"></i><b>12</b></td>
+<td>If you use an existing VNet, specify the name of the subnet to host the control plane machines.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="13"></i><b>13</b></td>
+<td>If you use an existing VNet, specify the name of the subnet to host the compute machines.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="14"></i><b>14</b></td>
 <td>Whether to enable or disable FIPS mode. By default, FIPS mode is not enabled. If FIPS mode is enabled, the Red Hat Enterprise Linux CoreOS (RHCOS) machines that OpenShift Container Platform runs on bypass the default Kubernetes cryptography suite and use the cryptography modules that are provided with RHCOS instead.
 <div class="admonitionblock important">
 <table>
@@ -36600,7 +36829,7 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </div></td>
 </tr>
 <tr>
-<td><i class="conum" data-value="12"></i><b>12</b></td>
+<td><i class="conum" data-value="15"></i><b>15</b></td>
 <td>You can optionally provide the <code>sshKey</code> value that you use to access the machines in your cluster.
 <div class="admonitionblock note">
 <table>
@@ -36617,132 +36846,11 @@ If you are installing on GCP into a shared virtual private cloud (VPC), <code>cr
 </table>
 </div></td>
 </tr>
-<tr>
-<td><i class="conum" data-value="13"></i><b>13</b></td>
-<td>How to publish the user-facing endpoints of your cluster. Set <code>publish</code> to <code>Internal</code> to deploy a private cluster, which cannot be accessed from the internet. The default value is <code>External</code>.</td>
-</tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="nw-gcp-global-access-configuration_installing-gcp-private"><a class="anchor" href="#nw-gcp-global-access-configuration_installing-gcp-private"></a>Create an Ingress Controller with global access on GCP</h3>
-<div class="paragraph">
-<p>You can create an Ingress Controller that has global access to a Google Cloud Platform (GCP) cluster. Global access is only available to Ingress Controllers using internal load balancers.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You created the <code>install-config.yaml</code> and complete any modifications to it.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<div class="title">Procedure</div>
-<p>Create an Ingress Controller with global access on a new GCP cluster.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Change to the directory that contains the installation program and create a manifest file:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>./openshift-install create manifests <span class="nt">--dir</span> &lt;installation_directory&gt; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>For <code>&lt;installation_directory&gt;</code>, specify the name of the directory that
-contains the <code>install-config.yaml</code> file for your cluster.</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Create a file that is named <code>cluster-ingress-default-ingresscontroller.yaml</code> in the <code>&lt;installation_directory&gt;/manifests/</code> directory:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">touch</span> &lt;installation_directory&gt;/manifests/cluster-ingress-default-ingresscontroller.yaml <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>For <code>&lt;installation_directory&gt;</code>, specify the directory name that contains the
-<code>manifests/</code> directory for your cluster.</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>After creating the file, several network configuration files are in the
-<code>manifests/</code> directory, as shown:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">ls</span> &lt;installation_directory&gt;/manifests/cluster-ingress-default-ingresscontroller.yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">cluster-ingress-default-ingresscontroller.yaml</span></code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Open the <code>cluster-ingress-default-ingresscontroller.yaml</code> file in an editor and enter a custom resource (CR) that describes the Operator configuration you want:</p>
-<div class="listingblock">
-<div class="title">Sample <code>clientAccess</code> configuration to <code>Global</code></div>
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="yaml">  <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">operator.openshift.io/v1</span>
-  <span class="na">kind</span><span class="pi">:</span> <span class="s">IngressController</span>
-  <span class="na">metadata</span><span class="pi">:</span>
-    <span class="na">name</span><span class="pi">:</span> <span class="s">default</span>
-    <span class="na">namespace</span><span class="pi">:</span> <span class="s">openshift-ingress-operator</span>
-  <span class="na">spec</span><span class="pi">:</span>
-    <span class="na">endpointPublishingStrategy</span><span class="pi">:</span>
-      <span class="na">loadBalancer</span><span class="pi">:</span>
-        <span class="na">providerParameters</span><span class="pi">:</span>
-          <span class="na">gcp</span><span class="pi">:</span>
-            <span class="na">clientAccess</span><span class="pi">:</span> <span class="s">Global</span> <i class="conum" data-value="1"></i><b>(1)</b>
-          <span class="na">type</span><span class="pi">:</span> <span class="s">GCP</span>
-        <span class="na">scope</span><span class="pi">:</span> <span class="s">Internal</span>          <i class="conum" data-value="2"></i><b>(2)</b>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">LoadBalancerService</span></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Set <code>gcp.clientAccess</code> to <code>Global</code>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Global access is only available to Ingress Controllers using internal load balancers.</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1 _additional-resources">
-<h2 id="additional-resources"><a class="anchor" href="#additional-resources"></a>Additional resources</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../../machine_management/creating_machinesets/creating-machineset-gcp.html#machineset-enabling-customer-managed-encryption_creating-machineset-gcp">Enabling customer-managed encryption keys for a compute machine set</a></p>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="installation-configure-proxy_installing-gcp-private"><a class="anchor" href="#installation-configure-proxy_installing-gcp-private"></a>Configuring the cluster-wide proxy during installation</h3>
+<h3 id="installation-configure-proxy_installing-azure-vnet"><a class="anchor" href="#installation-configure-proxy_installing-azure-vnet"></a>Configuring the cluster-wide proxy during installation</h3>
 <div class="paragraph">
 <p>Production environments can deny direct access to the internet and instead have
 an HTTP or HTTPS proxy available. You can configure a new OpenShift Container Platform
@@ -36888,11 +36996,19 @@ proxies can be created.</p>
 </tr>
 </table>
 </div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p>For more details about Accelerated Networking, see <a href="../../machine_management/creating_machinesets/creating-machineset-azure.html#machineset-azure-accelerated-networking_creating-machineset-azure">Accelerated Networking for Microsoft Azure VMs</a>.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-launching-installer_installing-gcp-private"><a class="anchor" href="#installation-launching-installer_installing-gcp-private"></a>Deploying the cluster</h2>
+<h2 id="installation-launching-installer_installing-azure-vnet"><a class="anchor" href="#installation-launching-installer_installing-azure-vnet"></a>Deploying the cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can install OpenShift Container Platform on a compatible cloud platform.</p>
@@ -36926,28 +37042,9 @@ cluster.</p>
 </li>
 </ul>
 </div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Remove any existing GCP credentials that do not use the service account key
-for the GCP account that you configured for your cluster and that are stored in the
-following locations:</p>
 <div class="ulist">
+<div class="title">Procedure</div>
 <ul>
-<li>
-<p>The <code>GOOGLE_CREDENTIALS</code>, <code>GOOGLE_CLOUD_KEYFILE_JSON</code>, or <code>GCLOUD_KEYFILE_JSON</code>
-environment variables</p>
-</li>
-<li>
-<p>The <code>~/.gcp/osServiceAccount.json</code> file</p>
-</li>
-<li>
-<p>The <code>gcloud cli</code> default credentials</p>
-</li>
-</ul>
-</div>
-</li>
 <li>
 <p>Change to the directory that contains the installation program and initialize the cluster deployment:</p>
 <div class="listingblock">
@@ -36988,21 +37085,7 @@ missing permissions are displayed.</p>
 </table>
 </div>
 </li>
-<li>
-<p>Optional: You can reduce the number of permissions for the service account that you used to install the cluster.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>If you assigned the <code>Owner</code> role to your service account, you can remove that role and replace it with the <code>Viewer</code> role.</p>
-</li>
-<li>
-<p>If you included the <code>Service Account Key Admin</code> role,
-you can remove it.</p>
-</li>
 </ul>
-</div>
-</li>
-</ol>
 </div>
 <div class="paragraph">
 <div class="title">Verification</div>
@@ -37067,7 +37150,190 @@ INFO Time elapsed: 36m22s</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cli-installing-cli_installing-gcp-private"><a class="anchor" href="#cli-installing-cli_installing-gcp-private"></a>Installing the OpenShift CLI by downloading the binary</h2>
+<h2 id="finalizing-encryption_installing-azure-vnet"><a class="anchor" href="#finalizing-encryption_installing-azure-vnet"></a>Finalizing user-managed encryption after installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you installed OpenShift Container Platform using a user-managed encryption key, you can complete the installation by creating a new storage class and granting write permissions to the Azure cluster resource group.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Obtain the identity of the cluster resource group used by the installer:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If you specified an existing resource group in <code>install-config.yaml</code>, obtain its Azure identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az identity list <span class="nt">--resource-group</span> <span class="s2">"&lt;existing_resource_group&gt;"</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>If you did not specify a existing resource group in <code>install-config.yaml</code>, locate the resource group that the installer created, and then obtain its Azure identity by running the following commands:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az group list</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az identity list <span class="nt">--resource-group</span> <span class="s2">"&lt;installer_created_resource_group&gt;"</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Grant a role assignment to the cluster resource group so that it can write to the Disk Encryption Set by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az role assignment create <span class="nt">--role</span> <span class="s2">"&lt;privileged_role&gt;"</span> <span class="se">\</span><i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="nt">--assignee</span> <span class="s2">"&lt;resource_group_identity&gt;"</span> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Specifies an Azure role that has read/write permissions to the disk encryption set. You can use the <code>Owner</code> role or a custom role with the necessary permissions.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Specifies the identity of the cluster resource group.</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Obtain the <code>id</code> of the disk encryption set you created prior to installation by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az disk-encryption-set show <span class="nt">-n</span> &lt;disk_encryption_set_name&gt; <span class="se">\</span><i class="conum" data-value="1"></i><b>(1)</b>
+     <span class="nt">--resource-group</span> &lt;resource_group_name&gt; <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Specifies the name of the disk encryption set.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Specifies the resource group that contains the disk encryption set.
+The <code>id</code> is in the format of <code>"/subscriptions/&#8230;&#8203;/resourceGroups/&#8230;&#8203;/providers/Microsoft.Compute/diskEncryptionSets/&#8230;&#8203;"</code>.</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Obtain the identity of the cluster service principal by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az identity show <span class="nt">-g</span> &lt;cluster_resource_group&gt; <span class="se">\</span><i class="conum" data-value="1"></i><b>(1)</b>
+     <span class="nt">-n</span> &lt;cluster_service_principal_name&gt; <span class="se">\</span><i class="conum" data-value="2"></i><b>(2)</b>
+     <span class="nt">--query</span> principalId <span class="nt">--out</span> tsv</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Specifies the name of the cluster resource group created by the installation program.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Specifies the name of the cluster service principal created by the installation program.
+The identity is in the format of <code>12345678-1234-1234-1234-1234567890</code>.</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Create a role assignment that grants the cluster service principal necessary privileges to the disk encryption set by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>az role assignment create <span class="nt">--assignee</span> &lt;cluster_service_principal_id&gt; <span class="se">\</span><i class="conum" data-value="1"></i><b>(1)</b>
+     <span class="nt">--role</span> &lt;privileged_role&gt; <span class="se">\</span><i class="conum" data-value="2"></i><b>(2)</b>
+     <span class="nt">--scope</span> &lt;disk_encryption_set_id&gt; <span class="se">\</span><i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Specifies the ID of the cluster service principal obtained in the previous step.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Specifies the Azure role name. You can use the <code>Contributor</code> role or a custom role with the necessary permissions.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Specifies the ID of the disk encryption set.</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Create a storage class that uses the user-managed disk encryption set:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Save the following storage class definition to a file, for example <code>storage-class-definition.yaml</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">StorageClass</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">storage.k8s.io/v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">managed-premium</span>
+<span class="na">provisioner</span><span class="pi">:</span> <span class="s">kubernetes.io/azure-disk</span>
+<span class="na">parameters</span><span class="pi">:</span>
+  <span class="na">skuname</span><span class="pi">:</span> <span class="s">Premium_LRS</span>
+  <span class="na">kind</span><span class="pi">:</span> <span class="s">Managed</span>
+  <span class="na">diskEncryptionSetID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;disk_encryption_set_ID&gt;"</span> <i class="conum" data-value="1"></i><b>(1)</b>
+  <span class="na">resourceGroup</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;resource_group_name&gt;"</span> <i class="conum" data-value="2"></i><b>(2)</b>
+<span class="na">reclaimPolicy</span><span class="pi">:</span> <span class="s">Delete</span>
+<span class="na">allowVolumeExpansion</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">volumeBindingMode</span><span class="pi">:</span> <span class="s">WaitForFirstConsumer</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Specifies the ID of the disk encryption set that you created in the prerequisite steps, for example <code>"/subscriptions/xxxxxx-xxxxx-xxxxx/resourceGroups/test-encryption/providers/Microsoft.Compute/diskEncryptionSets/disk-encryption-set-xxxxxx"</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Specifies the name of the resource group used by the installer. This is the same resource group from the first step.</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Create the storage class <code>managed-premium</code> from the file you created by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc create <span class="nt">-f</span> storage-class-definition.yaml</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Select the <code>managed-premium</code> storage class when you create persistent volumes to use encrypted storage.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-installing-cli_installing-azure-vnet"><a class="anchor" href="#cli-installing-cli_installing-azure-vnet"></a>Installing the OpenShift CLI by downloading the binary</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can install the OpenShift CLI (<code>oc</code>) to interact with OpenShift Container Platform from a
@@ -37232,7 +37498,7 @@ command-line interface. You can install <code>oc</code> on Linux, Windows, or ma
 </div>
 </div>
 <div class="sect1">
-<h2 id="cli-logging-in-kubeadmin_installing-gcp-private"><a class="anchor" href="#cli-logging-in-kubeadmin_installing-gcp-private"></a>Logging in to the cluster by using the CLI</h2>
+<h2 id="cli-logging-in-kubeadmin_installing-azure-vnet"><a class="anchor" href="#cli-logging-in-kubeadmin_installing-azure-vnet"></a>Logging in to the cluster by using the CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can log in to your cluster as a default system user by exporting the cluster <code>kubeconfig</code> file.
@@ -37297,7 +37563,7 @@ the installation files in.</td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cluster-telemetry_installing-gcp-private"><a class="anchor" href="#cluster-telemetry_installing-gcp-private"></a>Telemetry access for OpenShift Container Platform</h2>
+<h2 id="cluster-telemetry_installing-azure-vnet"><a class="anchor" href="#cluster-telemetry_installing-azure-vnet"></a>Telemetry access for OpenShift Container Platform</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In OpenShift Container Platform Branch Build, the Telemetry service, which runs by default to provide metrics about cluster health and the success of updates, requires internet access. If your cluster is connected to the internet, Telemetry runs automatically, and your cluster is registered to <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager Hybrid Cloud Console</a>.</p>
