@@ -1,0 +1,28 @@
+ifeval::["{context}" == "ben"]
+:bensfile:
+endif::[]
+
+ifeval::["{context}" == "brendan"]
+:brendansfile:
+endif::[]
+
+:_mod-docs-content-type: REFERENCE
+[id="testmodule_{context}"]
+= Test module
+
+My best friend is named
+
+ifdef::bensfile[]
+ben.
+endif::[]
+
+ifdef::brendansfile[]
+brendan.
+endif::[]
+
+ifeval::["{context}" == "ben"]
+:!bensfile:
+endif::[]
+ifeval::["{context}" == "brendan"]
+:!brendansfile:
+endif::[]

@@ -1,0 +1,9 @@
+:_mod-docs-content-type: ASSEMBLY
+[id="brendan"]
+= brendan assembly
+:context: brendan
+
+[id="brendan-section1"]
+== brendan-section1
+
+include::modules/testmodule1.adoc[leveloffset=+1]
