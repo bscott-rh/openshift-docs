@@ -1,0 +1,69 @@
+// Module included in the following assemblies:
+//
+// * installing/installing_gcp/installing-gcp-account.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="installation-gcp-organization-policies_{context}"]
+= Configuring {gcp-short} organization policies and VPC service controls
+
+[role="_abstract"]
+{product-title} requires that you modify or remove some organization policies and VPC service controls when installing a cluster on {gcp-first}. If your organization uses the following policies, they must be modified or removed:
+
+* `compute.trustedImageProjects`
+* `iam.allowedPolicyMemberDomains`
+* `storage.publicAccessPrevention`
+* VPC Service Controls egress rules
+
+.Prerequisites
+
+* You created a project to host your cluster.
+
+.Procedure
+
+. Modify the `constraints.compute.trustedImageProjects` constraint in your {gcp-short} project and add `projects/rhcos-cloud` to the `allowedValues` list, as in the following example. Alternatively, you can delete the `constraints.compute.trustedImageProjects` constraint.
++
+[source,yaml]
+----
+constraint: constraints/compute.trustedImageProjects
+listPolicy:
+ allowedValues:
+    - projects/rhcos-cloud
+----
+. Modify the `iam.allowedPolicyMemberDomains` constraint to allow the service account that the installation program uses to authenticate with {gcp-short} and create storage as in the following example:
++
+[source,yaml]
+----
+name: organizations/<organization_id>/policies/iam.managed.allowedPolicyMembers
+spec:
+rules:
+ - enforce: true
+   parameters:
+     allowedMemberSubjects:
+       - <role_name>
+     allowedPrincipalSets:
+       - projects/7991419043
+----
+where:
++
+`<organization_id>`:: Specifies the numeric ID of your {gcp-short} organization.
+`<role_name>`:: Specifies the IAM role that you created for the installation program.
+
+. Disable the `storage.publicAccessPrevention` constraint so that the installation program can access your project's cloud storage.
+. Create an egress rule that allows access to the {op-system} project, as in the following example:
++
+[source,yaml]
+----
+- egressTo:
+    roles:
+    - <role_name>
+    resources:
+    - projects/7991419043
+  egressFrom:
+    identityType: <identity_type>
+    identities: <identity_list>
+----
+where:
++
+`<role_name>`:: Specifies the IAM role that you created for the installation program.
+`<identity_type>`:: Specifies the types of identities that can access the specified resources from outside the perimeter. Valid values are `ANY_IDENTITY`, `ANY_USER_ACCOUNT`, or `ANY_SERVICE_ACCOUNT`. Either `egressFrom.identityType` or `egressFrom.identities` must be specified.
+`<identity_list>`:: Specifies the list of service accounts or other identities that can access the specified resources from outside the perimeter. Either `egressFrom.identityType` or `egressFrom.identities` must be specified.
