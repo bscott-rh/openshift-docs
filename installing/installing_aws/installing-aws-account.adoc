@@ -1,13 +1,15 @@
 :_mod-docs-content-type: ASSEMBLY
+include::_attributes/common-attributes.adoc[]
 [id="installing-aws-account"]
 = Configuring an {aws-short} account
-include::_attributes/common-attributes.adoc[]
+
 :context: installing-aws-account
 
 toc::[]
 
 [role="_abstract"]
-To ensure {product-title} can successfully install and run the cluster in {aws-first}, you must configure an {aws-short} account with the correct identity and permissions before you start the installation.
+Before you can install {product-title}, you must configure an
+{aws-first} account.
 
 include::modules/installation-aws-route53.adoc[leveloffset=+1]
 
