@@ -14,7 +14,7 @@ See "Creating infrastructure machine sets" for installer-provisioned infrastruct
 ====
 
 [role="_abstract"]
-You can use labels to configure worker nodes as infrastructure nodes, where you can move infrastructure resources. 
+You can use labels to configure worker nodes as infrastructure nodes, where you can move infrastructure resources.
 
 After you create the infrastructure nodes, you can move appropriate workloads to those nodes by using taints and tolerations.
 
@@ -22,6 +22,8 @@ You can optionally create a default cluster-wide node selector. The default node
 
 [IMPORTANT]
 ====
+See Creating infrastructure machine sets for installer-provisioned infrastructure environments or for any cluster where the control plane nodes are managed by the machine API.
+
 If the default node selector key conflicts with the key of a pod's label, then the default node selector is not applied.
 
 However, do not set a default node selector that might cause a pod to become unschedulable. For example, setting the default node selector to a specific node role, such as `node-role.kubernetes.io/infra=""`, when a pod's label is set to a different node role, such as `node-role.kubernetes.io/master=""`, can cause the pod to become unschedulable. For this reason, use caution when setting the default node selector to specific node roles.
