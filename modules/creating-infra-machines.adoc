@@ -28,7 +28,7 @@ where:
 +
 `<node_name>`:: Specifies the name of the node you want to assign as an infra node.
 
-. Create a text file that defines the machine config pool, as in the following example:
+. Create a YAML file that defines the machine config pool, as in the following example:
 +
 [source,yaml]
 ----
@@ -83,7 +83,7 @@ You should see a new machine config, with the `rendered-infra-*` prefix.
 After you create the new machine config pool, the MCO generates a new rendered config for that pool, and associated nodes of that pool reboot to apply the new configuration.
 ====
 
-.. Create a text file that defines the machine config pool, as in the following example:
+.. Create a YAML file that defines the machine config pool, as in the following example:
 +
 [source,terminal]
 ----
@@ -138,4 +138,4 @@ master   rendered-master-9360fdb895d4c131c7c4bebbae099c90   True      False     
 worker   rendered-worker-60e35c2e99f42d976e084fa94da4d0fc   True      False      False      2              2                   2                     0                      91m
 ----
 +
-In this example, a worker node was changed to an infra node.
+In this example, the role of the node was changes from `worker` to `infra`.

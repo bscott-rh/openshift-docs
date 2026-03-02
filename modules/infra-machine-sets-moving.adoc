@@ -2,7 +2,7 @@
 //
 // * machine_management/creating-infrastructure-machinesets.adoc
 
-:_mod-docs-content-type: CONCEPT
+:_mod-docs-content-type: PROCEDURE
 [id="moving-resources-to-infrastructure-machinesets_{context}"]
 = Moving resources to infrastructure machine sets
 
@@ -29,6 +29,8 @@ spec:
       key: node-role.kubernetes.io/infra
       value: reserved
 ----
-Add a `nodeSelector` parameter with the appropriate value to the component you want to move. You can use a `nodeSelector` in the format shown or use `<key>: <value>` pairs, based on the value specified for the node. If you added a taint to the infrastructure node, also add a matching toleration.
 
 Applying a specific node selector to all infrastructure components causes {product-title} to schedule those workloads on nodes with that label.
+
+.Procedure
+. Add a `nodeSelector` parameter with the appropriate value to the component you want to move. You can use a `nodeSelector` in the format shown or use `<key>: <value>` pairs, based on the value specified for the node. If you added a taint to the infrastructure node, also add a matching toleration.
