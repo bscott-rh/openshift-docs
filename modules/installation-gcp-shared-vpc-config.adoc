@@ -1,30 +1,33 @@
 // This file is referenced in the following assembly:
 // installing/installing_gcp/installing-gcp-shared-vpc.adoc
 
-:_mod-docs-content-type: PROCEDURE
+:_mod-docs-content-type: REFERENCE
 [id="installation-gcp-shared-vpc-config_{context}"]
 = Sample customized install-config.yaml file for shared VPC installation
 
+[role="_abstract"]
 There are several configuration parameters which are required to install {product-title} on {gcp-short} using a shared VPC. The following is a sample `install-config.yaml` file which demonstrates these fields.
 
 [IMPORTANT]
 ====
-This sample YAML file is provided for reference only. You must modify this file with the correct values for your environment and cluster.
+This sample YAML snippet is provided for reference only. You must modify this file with the correct values for your environment and cluster.
 ====
 
-.Shared VPC parameters in `install-config.yaml`
 [source,yaml]
 ----
+# ...
 platform:
   gcp:
-    computeSubnet: shared-vpc-subnet-1 <1>
-    controlPlaneSubnet: shared-vpc-subnet-2 <2>
-    network: shared-vpc <3>
-    networkProjectID: host-project-name <4>
-    projectID: service-project-name <5>
+    computeSubnet: <shared_vpc_compute_subnet>
+    controlPlaneSubnet: <shared_vpc_control_plane_subnet>
+    network: <shared_vpc_name>
+    networkProjectID: <host_project_name>
+    projectID: <service_project_name>
 ----
-<1> The name of the subnet in the shared VPC for compute machines to use.
-<2> The name of the subnet in the shared VPC for control plane machines to use.
-<3> The name of the shared VPC.
-<4> The name of the host project where the shared VPC exists.
-<5> The name of the GCP project where you want to install the cluster.
+where:
+
+`<shared_vpc_compute_subnet>`:: Specifies the name of the subnet in the shared VPC for compute machines to use.
+`<shared_vpc_control_plane_subnet>`:: Specifies the name of the subnet in the shared VPC for control plane machines to use.
+`<shared_vpc_name>`:: Specifies the name of the shared VPC.
+`<host_project_name>`:: Specifies the name of the host project where the shared VPC exists.
+`<service_project_name>`:: Specifies the name of the project where you want to install the cluster.
