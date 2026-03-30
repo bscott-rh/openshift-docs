@@ -368,6 +368,7 @@ ifeval::["{context}" == "installing-vsphere"]
 endif::[]
 ifeval::["{context}" == "installing-restricted-networks-vsphere"]
 :!restricted-upi:
+:!vsphere-upi-vsphere:
 endif::[]
 ifeval::["{context}" == "installing-restricted-networks-bare-metal"]
 :!restricted:
