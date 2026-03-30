@@ -45,10 +45,11 @@ spec:
 +
 where:
 +
-`metadata`:: Specifies the object name, and namespace name.
-`spec.labelSelector`:: Optional. Specifies a label so that the `PodPlacementConfig` only applies to a subset of pods in the namespace. If you do not specify this parameter, the `PodPlacementConfig` applies to all pods in the namespace.
-`spec.priority`:: Specifies a priority in case multiple `PodPlacementConfig` objects exist in one namespace. Higher priorities take precedence. Valid values are 0-255, and the default value is 0. If you specify multiple `PodPlacementConfig` objects in one namespace, they must have different priority values.
-`spec.plugins.nodeAffinityScoring`:: Specifies architecture preferences for pod placement. The controller prioritizes nodes based on the architecture scores, with higher weights taking precedence.
+`metadata`:: Specifies the object name, and namespace name. This parameter is required.
+`spec.labelSelector`:: Optionally specifies a label so that the `PodPlacementConfig` only applies to a subset of pods in the namespace. If you do not specify this parameter, the `PodPlacementConfig` applies to all pods in the namespace.
+`spec.priority`:: Optionally specifies a priority in case multiple `PodPlacementConfig` objects exist in one namespace. Higher priorities take precedence. Valid values are 0-255, and the default value is 0. If you specify multiple `PodPlacementConfig` objects in one namespace, they must have different priority values.
+`spec.plugins.nodeAffinityScoring`:: Specifies architecture preferences for pod placement. The controller prioritizes nodes based on the architecture scores, with higher weights taking precedence. If you enable this plugin by setting `spec.plugins.nodeAffinityScoring` to "true", you must specify at least one platform with an architecture and weight value.
+`spec.plugins.nodeAffinityScoring.platforms[]`:: Specifies one or more pairs of architecture and weight values for pod placement. Valid architecture values are `arm64`, `amd64`, `ppc64le`, and `s390x`. Valid weight values are 0-100.
 +
 . Apply the configuration file by running the following command:
 +
