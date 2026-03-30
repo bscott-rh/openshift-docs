@@ -46,8 +46,8 @@ spec:
 where:
 +
 `metadata`:: Specifies the object name, and namespace name.
-`spec.labelSelector`:: Specifies a label so that the `PodPlacementConfig` only applies to a subset of pods in the namespace.
-`spec.priority`:: Specifies a priority in case multiple `PodPlacementConfig` objects exist in one namespace. Higher priorities take precedence.
+`spec.labelSelector`:: Optional. Specifies a label so that the `PodPlacementConfig` only applies to a subset of pods in the namespace. If you do not specify this parameter, the `PodPlacementConfig` applies to all pods in the namespace.
+`spec.priority`:: Specifies a priority in case multiple `PodPlacementConfig` objects exist in one namespace. Higher priorities take precedence. Valid values are 0-255, and the default value is 0. If you specify multiple `PodPlacementConfig` objects in one namespace, they must have different priority values.
 `spec.plugins.nodeAffinityScoring`:: Specifies architecture preferences for pod placement. The controller prioritizes nodes based on the architecture scores, with higher weights taking precedence.
 +
 . Apply the configuration file by running the following command:
