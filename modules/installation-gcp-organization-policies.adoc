@@ -29,7 +29,7 @@ listPolicy:
  allowedValues:
     - projects/rhcos-cloud
 ----
-. Modify the `iam.allowedPolicyMemberDomains` constraint to allow the service account that the installation program uses to authenticate with {gcp-short} and create storage as in the following example:
+. Modify the `iam.allowedPolicyMembers` constraint to allow the service account that the installation program uses to authenticate with {gcp-short} and create storage as in the following example:
 +
 [source,yaml]
 ----
@@ -39,9 +39,7 @@ rules:
  - enforce: true
    parameters:
      allowedMemberSubjects:
-       - <role_name>
-     allowedPrincipalSets:
-       - projects/7991419043
+       - <member_email>
 ----
 where:
 +
