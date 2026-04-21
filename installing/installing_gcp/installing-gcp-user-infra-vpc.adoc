@@ -81,10 +81,6 @@ include::modules/installation-gcp-user-infra-config-host-project-vpc.adoc[levelo
 
 include::modules/installation-gcp-dns.adoc[leveloffset=+2]
 
-include::modules/installation-creating-gcp-vpc.adoc[leveloffset=+2]
-
-include::modules/installation-deployment-manager-vpc.adoc[leveloffset=+3]
-
 include::modules/installation-user-infra-generate.adoc[leveloffset=+1]
 
 include::modules/installation-initializing-manual.adoc[leveloffset=+2]
