@@ -125,9 +125,9 @@ include::modules/installation-network-user-infra.adoc[leveloffset=+1]
 
 include::modules/installation-creating-gcp-lb.adoc[leveloffset=+1]
 
-include::modules/installation-deployment-manager-ext-lb.adoc[leveloffset=+2]
+include::modules/installation-infrastructure-manager-ext-lb.adoc[leveloffset=+2]
 
-include::modules/installation-deployment-manager-int-lb.adoc[leveloffset=+2]
+include::modules/installation-infrastructure-manager-int-lb.adoc[leveloffset=+2]
 
 include::modules/installation-creating-gcp-private-dns.adoc[leveloffset=+1]
 

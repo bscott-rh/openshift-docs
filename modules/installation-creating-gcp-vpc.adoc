@@ -27,11 +27,11 @@ If you do not use the provided Infrastructure Manager template to create your {g
 [source,terminal]
 ----
 $ gcloud infra-manager deployments apply <vpc_name> \
-    --location=${REGION} \
-    --input-values=infra_id=${INFRA_ID},project=${PROJECT_NAME},region=${REGION},master_subnet_cidr=${MASTER_SUBNET_CIDR},worker_subnet_cidr=${WORKER_SUBNET_CIDR} \
-    --project=${PROJECT_NAME} \
-    --local-source=./01_vpc \
-    --service-account=${INSTALL_SERVICE_ACCOUNT}
+  --location=${REGION} \
+  --input-values=infra_id=${INFRA_ID},project=${PROJECT_NAME},region=${REGION},master_subnet_cidr=${MASTER_SUBNET_CIDR},worker_subnet_cidr=${WORKER_SUBNET_CIDR} \
+  --project=${PROJECT_NAME} \
+  --local-source=./01_vpc \
+  --service-account=${INSTALL_SERVICE_ACCOUNT}
 ----
 +
 `<vpc_name>` specifies the name of the VPC you create.
