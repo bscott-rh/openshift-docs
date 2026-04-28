@@ -91,6 +91,22 @@ $ export INFRA_ID=`jq -r .infraID <installation_directory>/metadata.json`
 $ export PROJECT_NAME=`jq -r .gcp.projectID <installation_directory>/metadata.json`
 ----
 
+** If you are installing a cluster into a shared VPC, export the `HOST_PROJECT` variable by running the following command:
++
+[source,terminal]
+----
+$ export HOST_PROJECT=<host_project_name>
+----
+`<host_project_name>` specifies the name of the host project that contains the shared VPC.
+
+** If you are installing a cluster into a shared VPC, export the `HOST_PROJECT_ACCOUNT` variable by running the following command:
++
+[source,terminal]
+----
+$ export HOST_PROJECT_ACCOUNT=<host_project_account>
+----
+`<host_project_account>` specifies the name of an account that can access the host project that contains the shared VPC.
+
 ** Export the `REGION` variable by running the following command:
 +
 [source,terminal]
