@@ -135,7 +135,7 @@ include::modules/installation-infrastructure-manager-private-dns.adoc[leveloffse
 
 include::modules/installation-creating-gcp-firewall-rules-vpc.adoc[leveloffset=+1]
 
-include::modules/installation-deployment-manager-firewall-rules.adoc[leveloffset=+2]
+include::modules/installation-infrastructure-manager-firewall-rules.adoc[leveloffset=+2]
 
 include::modules/installation-creating-gcp-iam-shared-vpc.adoc[leveloffset=+1]
 

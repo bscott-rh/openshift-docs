@@ -11,6 +11,7 @@ endif::[]
 [id="installation-creating-gcp-lb_{context}"]
 = Creating load balancers in {gcp-short}
 
+[role="_abstract"]
 You must configure load balancers in {gcp-first} for your {product-title} cluster to use. One way to create these components is to modify the provided Infrastructure Manager template.
 
 [NOTE]
@@ -32,7 +33,7 @@ If your cluster does not initialize correctly, you might have to contact Red Hat
 +
 [source,terminal]
 ----
-$ gcloud infra-manager deployments apply <internal_lb_name> \
+$ gcloud infra-manager deployments apply <internal_lb_deployment_name> \
   --location=${REGION} \
   --input-values=infra_id=${INFRA_ID},project=${PROJECT_NAME},region=${REGION},cluster_network=${CLUSTER_NETWORK},control_subnet=${CONTROL_SUBNET},zone_0=${ZONE_0},zone_1=${ZONE_1},zone_2=${ZONE_2} \
   --project=${PROJECT_NAME} \
@@ -40,7 +41,7 @@ $ gcloud infra-manager deployments apply <internal_lb_name> \
   --service-account=${INSTALL_SERVICE_ACCOUNT}
 ----
 +
-`<internal_lb_name>` specifies the name of the internal load balancer you create.
+`<internal_lb_deployment_name>` specifies the name of the internal load balancer deployment you create.
 
 .. Export the `CLUSTER_IP` variable by running the following command:
 +
@@ -55,7 +56,7 @@ $ export CLUSTER_IP=$(gcloud compute addresses describe ${INFRA_ID}-cluster-ip -
 +
 [source,terminal]
 ----
-$ gcloud infra-manager deployments apply <external_lb_name> \
+$ gcloud infra-manager deployments apply <external_lb_deployment_name> \
   --location=${REGION} \
   --input-values=infra_id=${INFRA_ID},project=${PROJECT_NAME},region=${REGION} \
   --project=${PROJECT_NAME} \
@@ -63,7 +64,7 @@ $ gcloud infra-manager deployments apply <external_lb_name> \
   --service-account=${INSTALL_SERVICE_ACCOUNT}
 ----
 +
-`<external_lb_name>` specifies the name of the external load balancer you create.
+`<external_lb_deployment_name>` specifies the name of the external load balancer deployment you create.
 
 .. Export the `CLUSTER_PUBLIC_IP` variable by running the following command:
 +

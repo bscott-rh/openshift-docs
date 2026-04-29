@@ -7,6 +7,7 @@
 [id="installation-creating-gcp-vpc_{context}"]
 = Creating a VPC in {gcp-short}
 
+[role="_abstract"]
 You must create a VPC in {gcp-first} for your {product-title} cluster to use. You can customize the VPC to meet your requirements. One way to create the VPC is to modify the provided Infrastructure Manager template.
 
 [NOTE]
@@ -26,7 +27,7 @@ If you do not use the provided Infrastructure Manager template to create your {g
 +
 [source,terminal]
 ----
-$ gcloud infra-manager deployments apply <vpc_name> \
+$ gcloud infra-manager deployments apply <vpc_deployment_name> \
   --location=${REGION} \
   --input-values=infra_id=${INFRA_ID},project=${PROJECT_NAME},region=${REGION},master_subnet_cidr=${MASTER_SUBNET_CIDR},worker_subnet_cidr=${WORKER_SUBNET_CIDR} \
   --project=${PROJECT_NAME} \
@@ -34,7 +35,7 @@ $ gcloud infra-manager deployments apply <vpc_name> \
   --service-account=${INSTALL_SERVICE_ACCOUNT}
 ----
 +
-`<vpc_name>` specifies the name of the VPC you create.
+`<vpc__deployment_name>` specifies the name of the VPC deployment you create.
 
 . Configure environment variables that will be used to create other cluster infrastructure.
 

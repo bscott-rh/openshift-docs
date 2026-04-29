@@ -8,6 +8,7 @@
 [id="installation-infrastructure-manager-ext-lb_{context}"]
 = Infrastructure Manager template for the external load balancer
 
+[role="_abstract"]
 You can use the following Infrastructure Manager template to deploy the external load balancer that you need for your {product-title} cluster:
 
 .`02_lb_ext.tf` Infrastructure Manager template

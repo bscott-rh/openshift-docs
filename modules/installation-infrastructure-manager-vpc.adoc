@@ -7,6 +7,7 @@
 [id="installation-infrastructure-manager-vpc_{context}"]
 = Infrastructure Manager template for the VPC
 
+[role="_abstract"]
 You can use the following Infrastructure Manager template to deploy the VPC that you need for your {product-title} cluster:
 
 .`01_vpc.tf` Infrastructure Manager template

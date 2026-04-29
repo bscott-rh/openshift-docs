@@ -11,6 +11,7 @@ endif::[]
 [id="installation-creating-gcp-private-dns_{context}"]
 = Creating a private DNS zone in {gcp-short}
 
+[role="_abstract"]
 You must configure a private DNS zone in {gcp-first} for your {product-title} cluster to use. One way to create this component is to modify the provided Infrastructure Manager template.
 
 [NOTE]
@@ -31,14 +32,14 @@ If your cluster does not initialize correctly, you might have to contact Red Hat
 +
 [source,terminal]
 ----
-$ gcloud infra-manager deployments apply <dns_zone_name> \
+$ gcloud infra-manager deployments apply <dns_zone_deployment_name> \
   --location=${REGION} \
   --input-values=infra_id=${INFRA_ID},project=${PROJECT_NAME},region=${REGION},cluster_domain=${CLUSTER_DOMAIN},cluster_network=${CLUSTER_NETWORK} \
   --project=${PROJECT_NAME} \
   --local-source=./02_dns \
   --service-account=${INSTALL_SERVICE_ACCOUNT}
 ----
-`<dns_zone_name>` specifies the name of the DNS resource you create.
+`<dns_zone_deployment_name>` specifies the name of the DNS zone deployment you create.
 
 . The templates do not create DNS entries due to limitations of Infrastructure Manager, so you must create them manually:
 +
