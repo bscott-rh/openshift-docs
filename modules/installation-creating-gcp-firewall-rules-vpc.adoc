@@ -9,11 +9,11 @@ endif::[]
 
 :_mod-docs-content-type: PROCEDURE
 [id="installation-creating-gcp-firewall-rules-vpc_{context}"]
-= Creating firewall rules in {gcp-short}
+= Creating firewall rules and IAM roles in {gcp-short}
 
 [role="_abstract"]
-You must create firewall rules in {gcp-first} for your {product-title} cluster to use. One way to create these components is to modify the provided Infrastructure Manager template.
-If you are installing a cluster into a shared VPC and the host project already has the necessary firewall rules, you can skip creating these firewall rules.
+You must create firewall rules and IAM roles in {gcp-first} for your {product-title} cluster to use. One way to create these components is to modify the provided Infrastructure Manager template.
+If you are installing a cluster into a shared VPC and the host project already has the necessary firewall rules and IAM roles, you can skip creating these resources.
 
 [NOTE]
 ====
@@ -26,17 +26,29 @@ If you do not use the provided Infrastructure Manager template to create your {g
 
 .Procedure
 
-. Copy the template from the *Infrastructure Manager template for firewall rules* section of this topic and save it as `03_security.tf` in a folder called `03_security` on your computer. This template describes the security groups that your cluster requires.
+. Copy the template from the *Infrastructure Manager template for firewall rules and IAM roles* section of this topic and save it as `03_security.tf` in a folder called `03_security` on your computer. This template describes the security groups that your cluster requires.
 
-. Create the firewall rules by running the following command:
+. Create the firewall rules and IAM roles by running the following command:
 +
 [source,terminal]
 ----
-$ gcloud infra-manager deployments apply <firewall_deployment_name> \
+$ gcloud infra-manager deployments apply <security_deployment_name> \
   --location=${REGION} \
   --project=${PROJECT_NAME} \
   --local-source=./03_security \
   --input-values=infra_id=${INFRA_ID},project=${PROJECT_NAME},region=${REGION},cluster_network=${CLUSTER_NETWORK},network_cidr=${NETWORK_CIDR} \
   --service-account=${INSTALL_SERVICE_ACCOUNT}
 ----
-`<firewall_deployment_name>` specifies the name of the firewall deployment.
+`<security_deployment_name>` specifies the name of the deployment of firewall rules and IAM roles.
+
+. Configure service account variables based on the roles you created by running the following commands:
++
+[source,terminal]
+----
+$ export MASTER_SERVICE_ACCOUNT=$(gcloud iam service-accounts list --filter "email~^${INFRA_ID}-m@${PROJECT_NAME}." --format json | jq -r '.[0].email')
+----
++
+[source,terminal]
+----
+$ export WORKER_SERVICE_ACCOUNT=$(gcloud iam service-accounts list --filter "email~^${INFRA_ID}-w@${PROJECT_NAME}." --format json | jq -r '.[0].email')
+----

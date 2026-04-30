@@ -139,13 +139,11 @@ include::modules/installation-infrastructure-manager-firewall-rules.adoc[levelof
 
 include::modules/installation-creating-gcp-iam-shared-vpc.adoc[leveloffset=+1]
 
-include::modules/installation-deployment-manager-iam-shared-vpc.adoc[leveloffset=+2]
-
 include::modules/installation-gcp-user-infra-rhcos.adoc[leveloffset=+1]
 
 include::modules/installation-creating-gcp-bootstrap.adoc[leveloffset=+1]
 
-include::modules/installation-deployment-manager-bootstrap.adoc[leveloffset=+2]
+include::modules/installation-infrastructure-manager-bootstrap.adoc[leveloffset=+2]
 
 include::modules/installation-creating-gcp-control-plane.adoc[leveloffset=+1]
 
