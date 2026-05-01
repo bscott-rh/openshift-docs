@@ -116,6 +116,11 @@ Detailed information.
 [id="ocp-release-notes-install-update_{context}"]
 == Installation and update
 
+Installing a cluster using {op-system-base-full} 10::
++
+With this update, you can install a cluster using {op-system-base} version 10 as the base image for all machines in the cluster. This feature is available as a Technology Preview. To enable this feature, enable the `TechPreviewNoUpgrade` feature set and set the `osImageStream` parameter to `rhel-10` in your `install-config.yaml` file.
+
+For more information, see xref:../installing/install_config/installation-config-parameters-generic.adoc#installation-config-parameters-generic[Installation configuration parameters].
 
 [id="ocp-release-notes-machine-config-operator_{context}"]
 == Machine Config Operator
