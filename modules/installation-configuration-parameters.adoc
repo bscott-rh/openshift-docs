@@ -890,6 +890,11 @@ endif::openshift-origin,ibm-power-vs[]
 
 *Value:* Array of strings
 
+|osImageStream:
+|Specifies the image stream that will be used for all machine in the cluster. `osImageStream` is a Technology Preview feature.
+
+*Value:* String. Valid values are "rhel-9" or "rhel-10".
+
 ifndef::openshift-origin[]
 ifdef::aws[]
 |platform:
