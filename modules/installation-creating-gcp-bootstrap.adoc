@@ -25,7 +25,7 @@ If you do not use the provided Deployment Manager template to create your bootst
 
 . Copy the template from the *Infrastructure Manager template for the bootstrap machine* section of this topic and save it as `04_bootstrap.tf` in a folder called `04_bootstrap` on your computer. This template describes the bootstrap machine that your cluster requires.
 
-.. You can edit the `04_bootstrap.tf` file to add additional tags to the bootstrap machine, by modifying the existing `tags` stanza as follows:
+** You can edit the `04_bootstrap.tf` file to add additional tags to the bootstrap machine, by modifying the existing `tags` stanza as follows:
 +
 [source,bash]
 ----
