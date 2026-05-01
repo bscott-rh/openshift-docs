@@ -149,11 +149,11 @@ include::modules/installation-creating-gcp-control-plane.adoc[leveloffset=+1]
 
 include::modules/installation-infrastructure-manager-control-plane.adoc[leveloffset=+2]
 
-include::modules/installation-gcp-user-infra-wait-for-bootstrap.adoc[leveloffset=+1]
-
 include::modules/installation-creating-gcp-worker.adoc[leveloffset=+1]
 
-include::modules/installation-deployment-manager-worker.adoc[leveloffset=+2]
+include::modules/installation-infrastructure-manager-worker.adoc[leveloffset=+2]
+
+include::modules/installation-gcp-user-infra-wait-for-bootstrap.adoc[leveloffset=+1]
 
 //You install the CLI on the mirror host.
 
