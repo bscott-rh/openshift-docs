@@ -433,54 +433,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body class="book toc2 toc-left">
+<body id="_troubleshoot" class="book toc2 toc-left">
 <div id="header">
 <h1>OpenShift Platform Plus navigation</h1>
 <div id="toc" class="toc2">
 <div id="toctitle"></div>
-<ul class="sectlevel1">
-<li><a href="#_whats_new">What&#8217;s new</a>
+<p><span class="toc-root"><a href="navigation.html">OpenShift Platform Plus navigation</a></span></p><ul class="sectlevel1">
+<li><a href="_whats_new.html">What&#8217;s new</a>
+</li>
+<li><a href="_discover.html">Discover</a>
+</li>
+<li><a href="_plan.html">Plan</a>
+</li>
+<li><a href="_install.html">Install</a>
+</li>
+<li><a href="_troubleshoot.html"><span class="toc-current">Troubleshoot</span></a>
 <ul class="sectlevel2">
-<li><a href="#review-release-notes">Review OpenShift Platform Plus updates</a>
+<li><a href="_troubleshoot.html#troubleshoot-get-support">Get support to troubleshoot platform issues</a>
 <ul class="sectlevel3">
-<li><a href="#opp-architecture-relnotes_review-release-notes">OpenShift Platform Plus product release notes</a></li>
-</ul>
+<li><a href="_troubleshoot.html#opp-architecture-support_troubleshoot-get-support">Get support for OpenShift Platform Plus</a>
 </li>
-</ul>
-</li>
-<li><a href="#_discover">Discover</a>
-<ul class="sectlevel2">
-<li><a href="#understand-opp">Understand OpenShift Platform Plus as a self-managed edition of OpenShift</a>
-<ul class="sectlevel3">
-<li><a href="#explore-opp-capabilities">Explore OpenShift Platform Plus capabilities</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_plan">Plan</a>
-<ul class="sectlevel2">
-<li><a href="#prepare-installation-upgrade">Prepare for installation or upgrade</a>
-<ul class="sectlevel3">
-<li><a href="#opp-architecture-compatibility-matrix_prepare-installation-upgrade">OpenShift Platform Plus product release compatibility matrix</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_install">Install</a>
-<ul class="sectlevel2">
-<li><a href="#install-openshift-platform-plus">Install OpenShift Platform Plus</a>
-<ul class="sectlevel3">
-<li><a href="#opp-architecture-installation_install-openshift-platform-plus">Install OpenShift Platform Plus products</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_troubleshoot">Troubleshoot</a>
-<ul class="sectlevel2">
-<li><a href="#troubleshoot-get-support">Get support to troubleshoot platform issues</a>
-<ul class="sectlevel3">
-<li><a href="#opp-architecture-support_troubleshoot-get-support">Get support for OpenShift Platform Plus</a></li>
 </ul>
 </li>
 </ul>
@@ -489,387 +466,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_whats_new">What&#8217;s new</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="review-release-notes">Review OpenShift Platform Plus updates</h3>
-<div class="paragraph _abstract">
-<p>When planning an upgrade or new installation,  I want to review the release notes for all included products, so I can understand new features, known issues, and bug fixes to prevent deployment problems.</p>
-</div>
-<div class="sect3">
-<h4 id="opp-architecture-relnotes_review-release-notes">OpenShift Platform Plus product release notes</h4>
-<div class="paragraph _abstract">
-<p>Learn about new features, known issues, and fixed bugs in the latest OpenShift Platform Plus release. This information helps you plan your upgrade and understand how changes to the platform affect your existing environment.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes">OpenShift Container Platform</a></p>
-</li>
-<li>
-<p><a href="https://https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.15/html/release_notes/acm-release-notes">Release notes for Red Hat Advanced Cluster Management</a></p>
-</li>
-<li>
-<p><a href="https://https://docs.redhat.com/en/documentation/red_hat_quay/3.16/html/red_hat_quay_release_notes/release-notes-316">Red Hat Quay Release Notes</a></p>
-</li>
-<li>
-<p><a href="https://https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.9/html/release_notes/release-notes-49">Red Hat Advanced Cluster Security for Kubernetes 4.9</a></p>
-</li>
-<li>
-<p><a href="https://https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.20/html/4.20_release_notes/index">Red Hat OpenShift Data Foundation</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_discover">Discover</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="understand-opp">Understand OpenShift Platform Plus as a self-managed edition of OpenShift</h3>
-<div class="paragraph _abstract">
-<p>When exploring enterprise Kubernetes solutions, I want to understand OpenShift Platform Plus, so I can determine how it helps me consistently manage applications across multiple infrastructures.</p>
-</div>
-<div class="sect3">
-<h4 id="explore-opp-capabilities">Explore OpenShift Platform Plus capabilities</h4>
-<div class="paragraph _abstract">
-<p>When exploring hybrid-cloud platforms, I want to understand the capabilities, so I know how the integrated tools provide multi-cluster security, complete management, and data services.</p>
-</div>
-<div class="sect4">
-<h5 id="opp-about_explore-opp-capabilities">About OpenShift Platform Plus</h5>
-<div class="paragraph _abstract">
-<p>OpenShift Platform Plus provides a hybrid-cloud platform to build, deploy, and manage applications consistently across multiple infrastructures. By integrating Red Hat Enterprise Linux (RHEL), Kubernetes, and OpenShift Container Platform, the platform enables you to streamline application lifecycles while maintaining security and scalability.</p>
-</div>
-<div class="paragraph">
-<p>The platform includes the following products:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Red Hat Advanced Cluster Management for Kubernetes - Controls clusters and applications from a single console.</p>
-</li>
-<li>
-<p>Red Hat Advanced Cluster Security for Kubernetes - Provides information about cluster security, visibility management, and security compliance.</p>
-</li>
-<li>
-<p>Red Hat Quay - Stores, builds, and deploys container images.</p>
-</li>
-<li>
-<p>Red Hat OpenShift Data Foundation Essentials - Provides a permanent place for data storage when clusters start and stop for multiple environments.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="opp-architecture-architecture_explore-opp-capabilities">OpenShift Platform Plus description and architecture</h5>
-<div class="paragraph _abstract">
-<p>OpenShift Platform Plus provides a consistent management and security framework for applications across hybrid-cloud environments. By using these tools, you can maintain visibility and control over your application lifecycle while ensuring that workloads remain secure and compliant on any infrastructure.</p>
-</div>
-<div class="paragraph">
-<p>OpenShift Platform Plus adds the following features to OpenShift Container Platform:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Multi-cluster security</p>
-</li>
-<li>
-<p>Complete management capabilities</p>
-</li>
-<li>
-<p>Integrated data management</p>
-</li>
-<li>
-<p>A global container registry</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>OpenShift Platform Plus includes the following additional capabilities:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Platform services</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Service mesh, serverless</p>
-</li>
-<li>
-<p>Builds, CI/CD pipelines</p>
-</li>
-<li>
-<p>GitOps, Distributed tracing</p>
-</li>
-<li>
-<p>Log management</p>
-</li>
-<li>
-<p>Cost management</p>
-</li>
-<li>
-<p>Vulnerability management</p>
-</li>
-<li>
-<p>Compliance</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Application services</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Languages and runtimes</p>
-</li>
-<li>
-<p>API management</p>
-</li>
-<li>
-<p>Integration</p>
-</li>
-<li>
-<p>Messaging</p>
-</li>
-<li>
-<p>Process automation</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Data services</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Databases and cache</p>
-</li>
-<li>
-<p>Data ingest and preparation</p>
-</li>
-<li>
-<p>Data analytics</p>
-</li>
-<li>
-<p>AI/ML</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Developer services</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Developer CLI/IDE</p>
-</li>
-<li>
-<p>Plug-ins and extensions</p>
-</li>
-<li>
-<p>Red Hat OpenShift Dev Spaces</p>
-</li>
-<li>
-<p>Red Hat OpenShift Local</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_plan">Plan</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="prepare-installation-upgrade">Prepare for installation or upgrade</h3>
-<div class="paragraph _abstract">
-<p>When preparing for a new deployment or upgrade, I want to determine the right version combinations, so I can ensure my OpenShift Container Platform configuration remains optimal and covered by lifecycle support.</p>
-</div>
-<div class="sect3">
-<h4 id="opp-architecture-compatibility-matrix_prepare-installation-upgrade">OpenShift Platform Plus product release compatibility matrix</h4>
-<div class="paragraph _abstract">
-<p>Verify that your OpenShift Platform Plus and OpenShift Container Platform versions are compatible to ensure optimal performance and environment stability. This release mapping identifies supported configurations and helps you plan a successful installation or upgrade.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This matrix lists the specific OpenShift Container Platform-based combinations that maintain platform performance and lifecycle support. Use these versions to ensure a supported and stable configuration.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Verified product versions</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">OpenShift Container Platform</th>
-<th class="tableblock halign-left valign-top">Red Hat Advanced Cluster Management</th>
-<th class="tableblock halign-left valign-top">Red Hat Advanced Cluster Security</th>
-<th class="tableblock halign-left valign-top">Red Hat Quay</th>
-<th class="tableblock halign-left valign-top">Red Hat OpenShift Data Foundation Essentials</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.20</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.19</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.14</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.19</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.18</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.13</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.14</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.18</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.17</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.13</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.17</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.16</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_install">Install</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="install-openshift-platform-plus">Install OpenShift Platform Plus</h3>
-<div class="paragraph _abstract">
-<p>When setting up a new environment, I want to install the required platform components, so I can centrally manage and secure my workloads.</p>
-</div>
-<div class="sect3">
-<h4 id="opp-architecture-installation_install-openshift-platform-plus">Install OpenShift Platform Plus products</h4>
-<div class="paragraph _abstract">
-<p>To install OpenShift Platform Plus, you must first install OpenShift Container Platform and then Red Hat Advanced Cluster Management. After these products are installed, you must apply the Red Hat Advanced Cluster Management policy sets to install Red Hat Quay, Red Hat OpenShift Data Foundation Essentials, and Red Hat Advanced Cluster Security.</p>
-</div>
-<div class="paragraph">
-<p>See the Red&#160;Hat OpenShift Platform Plus policy set for detailed information about installing the products.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.8/html/governance/governance#opp-policy-set">Red&#160;Hat OpenShift Platform Plus policy set</a></p>
-</li>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html-single/installation_overview/index#supported-installation-methods-for-different-platforms">Supported installation methods for different platforms</a></p>
-</li>
-<li>
-<p><a href="https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.10/html/install/installing">Installing Red Hat Advanced Cluster Management</a></p>
-</li>
-<li>
-<p><a href="https://access.redhat.com/support/policy/updates/openshift_operators">OpenShift Operator Life Cycles</a></p>
-</li>
-</ul>
-</div>
-<div class="sect4">
-<h5 id="opp-architecture-installing-policyset_install-openshift-platform-plus">Installing OpenShift Platform Plus by using policy sets</h5>
-<div class="paragraph _abstract">
-<p>OpenShift Container Platform uses specific policy sets to automate the installation of additional products and services. These policies ensure that your environment remains compliant and secure while you extend the platform&#8217;s capabilities across your infrastructure.</p>
-</div>
-<div class="paragraph">
-<p>To install the policy sets using gitops, follow the steps in "Deploying policies using gitops". Use the actual path to the policy set instead of the path in the example path <code>policygenerator/policy-sets/stable/openshift-plus</code>. Otherwise, use the following procedure to install the policy sets by using CLI.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>Edit the <code>policyGenerator.yaml</code> file to remove any products that you do not want to install. You can delete the product entries or comment out the lines.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Install the <code>PolicyGenerator</code> plugin by following the instructions in <em>Installing and using the PolicyGenerator Kustomize plug-in</em>.</p>
-</li>
-<li>
-<p>Clone the <code>policy-collection</code> repository:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-terminal" data-lang="terminal">$ git clone https://github.com/stolostron/policy-collection</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Navigate to the policy set directory:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-terminal" data-lang="terminal">$ cd policy-collection/policygenerator/policy-sets/stable/openshift-plus</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Generate and apply the policies by using the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-terminal" data-lang="terminal">$ kustomize build --enable-alpha-plugins | oc apply -f -</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The policy sets install the remaining products on the OpenShift Container Platform cluster.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="ulist _additional-resources">
-<div class="title">Additional resources</div>
-<ul>
-<li>
-<p><a href="https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.8/html/governance/governance#deploying-policies-using-gitops">Deploying policies using gitops</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_troubleshoot">Troubleshoot</h2>
 <div class="sectionbody">
@@ -894,10 +490,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="_install.html">Install</a> | ↑ Up: <a href="navigation.html">OpenShift Platform Plus navigation</a></p>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-14 14:36:01 -0400
+Last updated 2026-07-20 15:56:40 -0400
 </div>
 </div>
 <style>
@@ -912,24 +511,73 @@ Last updated 2026-07-14 14:36:01 -0400
     margin-right: 4px;
     font-size: 0.75em;
     user-select: none;
+    display: inline-block;
+    width: 1em;
+    text-align: center;
+  }
+  #toc a.current {
+    font-weight: bold;
   }
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('#toc li').forEach(function(li) {
-      var sublist = li.querySelector(':scope > ul');
-      if (sublist) {
-        li.classList.add('has-children');
-        var toggle = document.createElement('span');
-        toggle.className = 'toc-toggle';
-        toggle.textContent = '▶';
-        li.insertBefore(toggle, li.firstChild);
-        toggle.addEventListener('click', function() {
-          li.classList.toggle('open');
-          toggle.textContent = li.classList.contains('open') ? '▼' : '▶';
-        });
+    var currentPage = location.pathname.split('/').pop() || 'navigation.html';
+    var isRoot = (currentPage === 'navigation.html');
+
+    function wireToggles(container) {
+      container.querySelectorAll('li').forEach(function(li) {
+        if (li.querySelector(':scope > ul') && !li.querySelector(':scope > .toc-toggle')) {
+          li.classList.add('has-children');
+          var toggle = document.createElement('span');
+          toggle.className = 'toc-toggle';
+          toggle.textContent = '▶';
+          li.insertBefore(toggle, li.firstChild);
+          toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            li.classList.toggle('open');
+            toggle.textContent = li.classList.contains('open') ? '▼' : '▶';
+          });
+        }
+      });
+    }
+
+    function highlightCurrent(container) {
+      container.querySelectorAll('a').forEach(function(a) {
+        var href = a.getAttribute('href');
+        if (href && href.split('#')[0] === currentPage) {
+          a.classList.add('current');
+          var parent = a.closest('li');
+          while (parent) {
+            if (parent.classList.contains('has-children')) {
+              parent.classList.add('open');
+              var t = parent.querySelector(':scope > .toc-toggle');
+              if (t) t.textContent = '▼';
+            }
+            parent = parent.parentElement.closest('li');
+          }
+        }
+      });
+    }
+
+    if (isRoot) {
+      var toc = document.getElementById('toc');
+      if (toc) {
+        wireToggles(toc);
+        highlightCurrent(toc);
       }
-    });
+    } else {
+      fetch('_toc.html')
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          var toc = document.getElementById('toc');
+          if (toc) {
+            toc.innerHTML = html;
+            wireToggles(toc);
+            highlightCurrent(toc);
+          }
+        });
+    }
   });
 </script>
 </body>
