@@ -448,8 +448,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="_install.html"><span class="toc-current">Install</span></a>
 <ul class="sectlevel2">
-<li><a href="_install.html#microshift-mirror-container-images_{context}">Mirror container images into an existing registry</a>
+<li><a href="_install.html#microshift-install-prepare-env-mirroring_{context}">Prepare your environment for mirroring</a>
 <ul class="sectlevel3">
+<li><a href="_install.html#microshift-mirror-container-images_{context}">Mirror container images into an existing registry</a>
+</li>
 <li><a href="_install.html#microshift-get-mirror-reg-container-image-list_{context}">Getting the mirror registry container image list</a>
 </li>
 <li><a href="_install.html#microshift-configuring-mirroring-prereqs_{context}">Configuring mirroring prerequisites</a>
@@ -598,7 +600,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_install">Install</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="microshift-mirror-container-images_{context}">Mirror container images into an existing registry</h3>
+<h3 id="microshift-install-prepare-env-mirroring_{context}">Prepare your environment for mirroring</h3>
+<div class="paragraph _abstract">
+<p>If your edge nodes operate in a disconnected or restricted network, you can mirror the {microshift-short} container images into a private registry so that you can install the platform without internet access.</p>
+</div>
+<div class="sect3">
+<h4 id="microshift-mirror-container-images_{context}">Mirror container images into an existing registry</h4>
 <div class="paragraph _abstract">
 <p>Using a custom air-gapped container registry, or mirror, is necessary with certain user environments and workload requirements. Mirroring allows for the transfer of container images and updates to air-gapped environments where they can be installed on a {microshift-short} instance.</p>
 </div>
@@ -626,6 +633,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Configure your {microshift-short} hosts to use the mirror registry.</p>
 </li>
 </ul>
+</div>
 </div>
 <div class="sect3">
 <h4 id="microshift-get-mirror-reg-container-image-list_{context}">Getting the mirror registry container image list</h4>
@@ -4395,7 +4403,7 @@ openshift-storage           topolvm-node-rht2m                                  
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-13 15:29:50 -0400
+Last updated 2026-08-14 13:30:52 -0400
 </div>
 </div>
 <style>
