@@ -468,8 +468,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="_install.html#microshift-bootc-conc_{context}">About image mode for Red&#160;Hat Enterprise Linux (RHEL)</a>
+<li><a href="_install.html#microshift-install-with-image-mode-rhel_{context}">Install with image mode for RHEL</a>
 <ul class="sectlevel3">
+<li><a href="_install.html#microshift-bootc-conc_{context}">About image mode for Red&#160;Hat Enterprise Linux (RHEL)</a>
+</li>
 <li><a href="_install.html#microshift-preparing-for-image-building-bootc_{context}">Preparing for bootc image building</a>
 </li>
 <li><a href="_install.html#microshift-install-rhel-image-mode-conc_{context}">The image mode for RHEL with {microshift-short} workflow</a>
@@ -498,8 +500,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="_install.html#microshift-preparing-for-image-building_{context}">Preparing for image building</a>
+<li><a href="_install.html#microshift-install-embed-rhel-edge-image_{context}">Embed in a RHEL for Edge image</a>
 <ul class="sectlevel3">
+<li><a href="_install.html#microshift-preparing-for-image-building_{context}">Preparing for image building</a>
+</li>
 <li><a href="_install.html#microshift-enable-eus-repos_{context}">Enabling extended support repositories for image building</a>
 </li>
 <li><a href="_install.html#adding-microshift-repos-image-builder_{context}">Adding {microshift-short} repositories to image builder</a>
@@ -536,11 +540,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="_install.html#microshift-install-rpm-before_{context}">Before installing {microshift-short} from an RPM package</a>
+<li><a href="_install.html#microshift-install-from-rpm-fips_{context}">Install from an RPM package</a>
 <ul class="sectlevel3">
+<li><a href="_install.html#microshift-install-rpm-before_{context}">Before installing {microshift-short} from an RPM package</a>
+<ul class="sectlevel4">
 <li><a href="_install.html#microshift-configuring-volume-groups_{context}">Configuring volume groups</a>
 </li>
 <li><a href="_install.html#microshift-prepare-for-fips-mode_{context}">Prepare for FIPS mode</a>
+</li>
+</ul>
 </li>
 <li><a href="_install.html#microshift-install-rpm-preparing_{context}">Preparing to install {microshift-short} from an RPM package</a>
 </li>
@@ -566,8 +574,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="_install.html#accessing-microshift-node_{context}">How to access the {microshift-short} node</a>
+<li><a href="_install.html#microshift-install-verify-your-installation_{context}">Verify your installation</a>
 <ul class="sectlevel3">
+<li><a href="_install.html#accessing-microshift-node_{context}">How to access the {microshift-short} node</a>
+</li>
 <li><a href="_install.html#accessing-microshift-node-locally_{context}">Accessing the {microshift-short} node locally</a>
 </li>
 <li><a href="_install.html#microshift-accessing-node-open-firewall_{context}">Opening the firewall for remote access to the {microshift-short} node</a>
@@ -576,8 +586,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="_install.html#microshift-uninstall-microshift-rpms_{context}">Uninstalling {microshift-short} from an RPM package</a>
+<li><a href="_install.html#microshift-install-uninstall_{context}">Uninstall MicroShift</a>
 <ul class="sectlevel3">
+<li><a href="_install.html#microshift-uninstall-microshift-rpms_{context}">Uninstalling {microshift-short} from an RPM package</a>
+<ul class="sectlevel4">
 <li><a href="_install.html#_api">API</a>
 </li>
 <li><a href="_install.html#_configure">Configure</a>
@@ -587,6 +599,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="_install.html#_upgrade">Upgrade</a>
 </li>
 <li><a href="_install.html#_plan">Plan</a>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -1035,7 +1049,12 @@ popd &gt;/dev/null</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="microshift-bootc-conc_{context}">About image mode for Red&#160;Hat Enterprise Linux (RHEL)</h3>
+<h3 id="microshift-install-with-image-mode-rhel_{context}">Install with image mode for RHEL</h3>
+<div class="paragraph _abstract">
+<p>You can install {microshift-short} with image mode for RHEL to deploy and manage your edge OS and Kubernetes platform as a single container image.</p>
+</div>
+<div class="sect3">
+<h4 id="microshift-bootc-conc_{context}">About image mode for Red&#160;Hat Enterprise Linux (RHEL)</h4>
 <div class="paragraph _abstract">
 <p>By using image mode for RHEL, you can use the same tools and techniques for the operating system that you use with application containers. Image mode for RHEL is a deployment method that uses a container-native approach to build, deploy, and manage the operating system as a <code>rhel-bootc</code> image.</p>
 </div>
@@ -1064,6 +1083,7 @@ popd &gt;/dev/null</code></pre>
 <p>In the running-target-system step, a bootc update downloads, unpacks, and prepares the new operating system to be started alongside the currently running system. Local configuration changes are carried forward to the new operating system. These changes take effect only when the system is restarted and the new operating system image replaces the previously running one.</p>
 </li>
 </ul>
+</div>
 </div>
 <div class="sect3">
 <h4 id="microshift-preparing-for-image-building-bootc_{context}">Preparing for bootc image building</h4>
@@ -1929,7 +1949,12 @@ openshift-storage          topolvm-node-6fzbl                         3/3     Ru
 </div>
 </div>
 <div class="sect2">
-<h3 id="microshift-preparing-for-image-building_{context}">Preparing for image building</h3>
+<h3 id="microshift-install-embed-rhel-edge-image_{context}">Embed in a RHEL for Edge image</h3>
+<div class="paragraph _abstract">
+<p>You can embed {microshift-short} in a RHEL for Edge image to deploy a customized, bootable edge operating system with Kubernetes pre-installed.</p>
+</div>
+<div class="sect3">
+<h4 id="microshift-preparing-for-image-building_{context}">Preparing for image building</h4>
 <div class="paragraph _abstract">
 <p>Use the image builder tool to compose customized {op-system-ostree-first} images optimized for edge deployments.</p>
 </div>
@@ -1986,6 +2011,7 @@ openshift-storage          topolvm-node-6fzbl                         3/3     Ru
 </div>
 </li>
 </ul>
+</div>
 </div>
 <div class="sect3">
 <h4 id="microshift-enable-eus-repos_{context}">Enabling extended support repositories for image building</h4>
@@ -3296,12 +3322,17 @@ auth_file_path = "/etc/osbuild-worker/pull-secret.json"</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="microshift-install-rpm-before_{context}">Before installing {microshift-short} from an RPM package</h3>
+<h3 id="microshift-install-from-rpm-fips_{context}">Install from an RPM package</h3>
+<div class="paragraph _abstract">
+<p>You can install {microshift-short} from an RPM package on an existing RHEL {op-system-version-major} system. You can also prepare for FIPS mode and add optional extensions such as GitOps or Observability.</p>
+</div>
+<div class="sect3">
+<h4 id="microshift-install-rpm-before_{context}">Before installing {microshift-short} from an RPM package</h4>
 <div class="paragraph _abstract">
 <p>Before installing {microshift-short} for memory configuration and FIPS mode, you must prepare the host.</p>
 </div>
-<div class="sect3">
-<h4 id="microshift-configuring-volume-groups_{context}">Configuring volume groups</h4>
+<div class="sect4">
+<h5 id="microshift-configuring-volume-groups_{context}">Configuring volume groups</h5>
 <div class="paragraph">
 <p>{microshift-short} uses the logical volume manager storage (LVMS) Container Storage Interface (CSI) plugin for providing storage to persistent volumes (PVs). LVMS relies on the Linux logical volume manager (LVM) to dynamically manage the backing logical volumes (LVs) for PVs. For this reason, your machine must have an LVM volume group (VG) with unused space in which LVMS can create the LVs for your workload&#8217;s PVs.</p>
 </div>
@@ -3309,8 +3340,8 @@ auth_file_path = "/etc/osbuild-worker/pull-secret.json"</code></pre>
 <p>To configure a volume group (VG) that allows LVMS to create the LVs for your workload&#8217;s PVs, lower the <strong>Desired Size</strong> of your root volume during the installation of RHEL. Lowering the size of your root volume allows unallocated space on the disk for additional LVs created by LVMS at runtime.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="microshift-prepare-for-fips-mode_{context}">Prepare for FIPS mode</h4>
+<div class="sect4">
+<h5 id="microshift-prepare-for-fips-mode_{context}">Prepare for FIPS mode</h5>
 <div class="paragraph">
 <p>If your use case requires running {microshift-short} containers in FIPS mode, you must install RHEL with FIPS enabled. After the worker machine is configured to run in FIPS mode, your {microshift-short} containers are automatically configured to also run in FIPS mode.</p>
 </div>
@@ -3327,6 +3358,7 @@ auth_file_path = "/etc/osbuild-worker/pull-secret.json"</code></pre>
 </td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -4005,7 +4037,12 @@ kserve-controller-manager-7fc9fc688-kttmm   1/1     Running   0          1h</cod
 </div>
 </div>
 <div class="sect2">
-<h3 id="accessing-microshift-node_{context}">How to access the {microshift-short} node</h3>
+<h3 id="microshift-install-verify-your-installation_{context}">Verify your installation</h3>
+<div class="paragraph _abstract">
+<p>After installation completes, you can retrieve your kubeconfig files and access the {microshift-short} node with the <code>oc</code> CLI to verify the cluster is running correctly and begin deploying workloads.</p>
+</div>
+<div class="sect3">
+<h4 id="accessing-microshift-node_{context}">How to access the {microshift-short} node</h4>
 <div class="paragraph _abstract">
 <p>Access the {microshift-short} service by using the OpenShift CLI (<code>oc</code>).</p>
 </div>
@@ -4021,6 +4058,7 @@ kserve-controller-manager-7fc9fc688-kttmm   1/1     Running   0          1h</cod
 <p>When using the following steps, choose the <code>kubeconfig</code> file that has the hostname or IP address you want to connect to and place it in the relevant directory.</p>
 </li>
 </ul>
+</div>
 </div>
 <div class="sect3">
 <h4 id="accessing-microshift-node-locally_{context}">Accessing the {microshift-short} node locally</h4>
@@ -4307,7 +4345,12 @@ openshift-storage           topolvm-node-rht2m                                  
 </div>
 </div>
 <div class="sect2">
-<h3 id="microshift-uninstall-microshift-rpms_{context}">Uninstalling {microshift-short} from an RPM package</h3>
+<h3 id="microshift-install-uninstall_{context}">Uninstall MicroShift</h3>
+<div class="paragraph _abstract">
+<p>If you no longer need the cluster or need to reset the environment, you can uninstall {microshift-short} to cleanly remove the software and free up system resources.</p>
+</div>
+<div class="sect3">
+<h4 id="microshift-uninstall-microshift-rpms_{context}">Uninstalling {microshift-short} from an RPM package</h4>
 <div class="paragraph _abstract">
 <p>When you want to uninstall {microshift-short}, you must first clean up all data, pods, and configurations before removing the RPM packages.</p>
 </div>
@@ -4374,25 +4417,26 @@ openshift-storage           topolvm-node-rht2m                                  
 </li>
 </ol>
 </div>
-<div class="sect3">
-<h4 id="_api">API</h4>
+<div class="sect4">
+<h5 id="_api">API</h5>
 
 </div>
-<div class="sect3">
-<h4 id="_configure">Configure</h4>
+<div class="sect4">
+<h5 id="_configure">Configure</h5>
 
 </div>
-<div class="sect3">
-<h4 id="_develop">Develop</h4>
+<div class="sect4">
+<h5 id="_develop">Develop</h5>
 
 </div>
-<div class="sect3">
-<h4 id="_upgrade">Upgrade</h4>
+<div class="sect4">
+<h5 id="_upgrade">Upgrade</h5>
 
 </div>
-<div class="sect3">
-<h4 id="_plan">Plan</h4>
+<div class="sect4">
+<h5 id="_plan">Plan</h5>
 
+</div>
 </div>
 </div>
 </div>
