@@ -560,13 +560,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="_install.html#microshift-installing-rpms-for-gitops_{context}">Install the GitOps Argo CD manifests from an RPM package</a>
-</li>
 <li><a href="_install.html#microshift-installing-multus_{context}">Install the multiple networks plugin</a>
 </li>
 <li><a href="_install.html#microshift-installing-with-olm-from-rpm-package_{context}">Install the Operator Lifecycle Manager (OLM) from an RPM package</a>
-</li>
-<li><a href="_install.html#microshift-otel-install_{context}">Install and enable MicroShift Observability</a>
 </li>
 <li><a href="_install.html#microshift-rhoai-install_{context}">Install the Red&#160;Hat OpenShift AI RPM</a>
 </li>
@@ -3585,91 +3581,6 @@ rhel   1   2   0 wz--n- 127.00g 54.94g</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="microshift-installing-rpms-for-gitops_{context}">Install the GitOps Argo CD manifests from an RPM package</h4>
-<div class="paragraph _abstract">
-<p>You can use a lightweight version of Red&#160;Hat OpenShift GitOps with MicroShift to help manage your applications by installing the <code>microshift-gitops</code> RPM package.</p>
-</div>
-<div class="paragraph">
-<p>The <code>microshift-gitops</code> RPM package includes the necessary manifests to run core Argo CD.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Important">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The Argo CD web console is not available on MicroShift. This process installs basic GitOps functions.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You installed MicroShift version 4.16 or later.</p>
-</li>
-<li>
-<p>You configured 250MB RAM of additional storage.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Enable the GitOps repository with the subscription manager by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ sudo subscription-manager repos --enable=gitops-1.16-for-rhel-9-$(uname -m)-rpms</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Install the MicroShift GitOps package by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ sudo dnf install -y microshift-gitops</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>To deploy Argo CD pods, restart MicroShift by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ sudo systemctl restart microshift</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="ulist">
-<div class="title">Verification</div>
-<ul>
-<li>
-<p>You can verify that your pods are running properly by entering the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get pods -n openshift-gitops</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                                  READY   STATUS    RESTARTS   AGE
-argocd-application-controller-0       1/1     Running   0          4m11s
-argocd-redis-56844446bc-dzmhf         1/1     Running   0          4m12s
-argocd-repo-server-57b4f896cf-7qk8l   1/1     Running   0          4m12s</code></pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
 <h4 id="microshift-installing-multus_{context}">Install the multiple networks plugin</h4>
 <div class="paragraph _abstract">
 <p>You can install the MicroShift Multus Container Network Interface (CNI) plugin alongside a new MicroShift installation. If you want to attach additional networks to a pod for high-performance network configurations, install the <code>microshift-multus</code> RPM package.</p>
@@ -3755,52 +3666,6 @@ argocd-repo-server-57b4f896cf-7qk8l   1/1     Running   0          4m12s</code><
 <div class="content">
 <pre class="highlight"><code class="language-terminal" data-lang="terminal">$ sudo systemctl restart microshift</code></pre>
 </div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="microshift-otel-install_{context}">Install and enable MicroShift Observability</h4>
-<div class="paragraph _abstract">
-<p>You can install MicroShift Observability at any time, including during the initial MicroShift installation. Observability collects and transmits system data for monitoring and analysis, such as performance and usage metrics and error reporting.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Install the <code>microshift-observability</code> RPM by entering the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ sudo dnf install microshift-observability</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Enable the <code>microshift-observability</code> system service by entering the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ sudo systemctl enable microshift-observability</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Start the <code>microshift-observability</code> system service by entering the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ sudo systemctl start microshift-observability</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Restart MicroShift after the initial installation.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ sudo systemctl restart microshift-observability</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The installation is successful if there is no output after you start the <code>microshift-observability</code> RPM.</p>
 </div>
 </li>
 </ol>
