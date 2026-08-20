@@ -460,8 +460,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="_administer.html#microshift-auto-recovery-manual-backups_understand-auto-recovery">Modify backup and restore commands to automate data recovery</a>
-</li>
 <li><a href="_administer.html#microshift-auto-recovery-manual-backups_automate-data-recovery">Modify backup and restore commands to automate data recovery</a>
 <ul class="sectlevel3">
 <li><a href="_administer.html#microshift-creating-backups-auto-recovery_automate-data-recovery">Create backups using the auto-recovery feature</a>
@@ -906,42 +904,6 @@ openshift-storage           topolvm-node-rht2m                                  
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="microshift-auto-recovery-manual-backups_understand-auto-recovery">Modify backup and restore commands to automate data recovery</h3>
-<div class="paragraph _abstract">
-<p>The <code>--auto-recovery</code> option stores {product-title} backups in one directory and selects the latest backup when you restore. You add the option to your <code>backup</code> and <code>restore</code> commands for automatic recovery.</p>
-</div>
-<div class="paragraph">
-<p>The <code>--auto-recovery</code> option treats the <code>PATH</code> argument as a path to a directory that holds all the backups for automated recovery, and not just as a path to a particular backup file. You can use the <code>--auto-recovery</code> option with both <code>backup</code> and <code>restore</code> commands.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>For example, if you use the automatic recovery option with <code>restore</code>, such as in <code>microshift restore --auto-recovery PATH</code>, running the modified command automatically selects and restores the most recent backup.</p>
-</li>
-<li>
-<p>If you use the same option in the <code>microshift backup</code> command, such as in <code>microshift backup --auto-recovery PATH</code>, a new backup is created in the PATH.</p>
-</li>
-<li>
-<p>By default, <code>microshift restore --auto-recovery PATH</code> creates a backup of the failed MicroShift data in <code>PATH/failed</code>. You can add the <code>--dont-save-failed</code> option to disable the creation of failed backup data.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Important">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You can only use the <code>--dont-save-failed</code> option with the <code>restore</code> command.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 </div>
 <div class="sect2">
