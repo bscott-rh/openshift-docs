@@ -512,21 +512,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="_upgrade.html#microshift-migrate-rhel9-to-rhel10_identify-potential-update-issues">Migrate from RHEL 9 to RHEL 10</a>
+<li><a href="_upgrade.html#microshift-migrate-rhel9-to-rhel10_migrate-rhel9-to-rhel10">Migrate from RHEL 9 to RHEL 10</a>
 <ul class="sectlevel3">
-<li><a href="_upgrade.html#microshift-update-options-edge-to-image-mode_identify-potential-update-issues">Migrate MicroShift to image mode for RHEL</a>
+<li><a href="_upgrade.html#microshift-update-options-edge-to-image-mode_migrate-rhel9-to-rhel10">Migrate MicroShift to image mode for RHEL</a>
 <ul class="sectlevel4">
-<li><a href="_upgrade.html#microshift-updates-edge-to-image-uid-drift_identify-potential-update-issues">Work around UID and GID drift when migrating to image mode for RHEL</a>
+<li><a href="_upgrade.html#microshift-updates-edge-to-image-uid-drift_migrate-rhel9-to-rhel10">Work around UID and GID drift when migrating to image mode for RHEL</a>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="_upgrade.html#microshift-update-kubernetes-storage_identify-potential-update-issues">Update existing Kubernetes storage objects</a>
+<li><a href="_upgrade.html#microshift-update-kubernetes-storage_update-kubernetes-storage">Update existing Kubernetes storage objects</a>
 <ul class="sectlevel3">
-<li><a href="_upgrade.html#microshift-updating-stored-data-to-latest-storage-version_identify-potential-update-issues">Updating stored data to the latest storage version</a>
+<li><a href="_upgrade.html#microshift-updating-stored-data-to-latest-storage-version_update-kubernetes-storage">Updating stored data to the latest storage version</a>
 </li>
-<li><a href="_upgrade.html#microshift-storage-migration-failed_identify-potential-update-issues">Storage migration failure</a>
+<li><a href="_upgrade.html#microshift-storage-migration-failed_update-kubernetes-storage">Storage migration failure</a>
 </li>
 </ul>
 </li>
@@ -1496,12 +1496,12 @@ EOF</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="microshift-migrate-rhel9-to-rhel10_identify-potential-update-issues">Migrate from RHEL 9 to RHEL 10</h3>
+<h3 id="microshift-migrate-rhel9-to-rhel10_migrate-rhel9-to-rhel10">Migrate from RHEL 9 to RHEL 10</h3>
 <div class="paragraph _abstract">
 <p>To migrate MicroShift from an existing Red&#160;Hat Enterprise Linux for Edge (RHEL for Edge) system running 9.8 to one running 10.2, you must embed MicroShift into a new operating system image. This process transitions your deployment from an <code>rpm-ostree</code>-based system to an image mode for RHEL (bootc) system, and requires planning for any UID or GID drift that may occur.</p>
 </div>
 <div class="sect3">
-<h4 id="microshift-update-options-edge-to-image-mode_identify-potential-update-issues">Migrate MicroShift to image mode for RHEL</h4>
+<h4 id="microshift-update-options-edge-to-image-mode_migrate-rhel9-to-rhel10">Migrate MicroShift to image mode for RHEL</h4>
 <div class="paragraph _abstract">
 <p>Migrating MicroShift from a Red&#160;Hat Enterprise Linux for Edge (RHEL for Edge) system to a image mode for RHEL system requires building a new image mode for RHEL image containing the required version of MicroShift and any associated optional RPMs.</p>
 </div>
@@ -1525,7 +1525,7 @@ EOF</code></pre>
 </ul>
 </div>
 <div class="sect4">
-<h5 id="microshift-updates-edge-to-image-uid-drift_identify-potential-update-issues">Work around UID and GID drift when migrating to image mode for RHEL</h5>
+<h5 id="microshift-updates-edge-to-image-uid-drift_migrate-rhel9-to-rhel10">Work around UID and GID drift when migrating to image mode for RHEL</h5>
 <div class="paragraph _abstract">
 <p>If you do not re-install operating systems that are running MicroShift, you must use a workaround for a possible UID and GID drift during the migration process. One way to solve this problem is to add <code>systemd</code> units that apply the necessary fixes before the affected system services are started.</p>
 </div>
@@ -1583,12 +1583,12 @@ EOF</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="microshift-update-kubernetes-storage_identify-potential-update-issues">Update existing Kubernetes storage objects</h3>
+<h3 id="microshift-update-kubernetes-storage_update-kubernetes-storage">Update existing Kubernetes storage objects</h3>
 <div class="paragraph _abstract">
 <p>When you update MicroShift to a new version, existing stored Kubernetes objects may need to be migrated to their latest API storage version. The storage version migration process updates the stored representation of resources to match the API version expected by the new release, ensuring that your cluster remains fully operational after the update.</p>
 </div>
 <div class="sect3">
-<h4 id="microshift-updating-stored-data-to-latest-storage-version_identify-potential-update-issues">Updating stored data to the latest storage version</h4>
+<h4 id="microshift-updating-stored-data-to-latest-storage-version_update-kubernetes-storage">Updating stored data to the latest storage version</h4>
 <div class="paragraph _abstract">
 <p>To update stored data to the latest Kubernetes storage version, perform a storage migration.</p>
 </div>
@@ -1657,7 +1657,7 @@ spec:
 </div>
 </div>
 <div class="sect3">
-<h4 id="microshift-storage-migration-failed_identify-potential-update-issues">Storage migration failure</h4>
+<h4 id="microshift-storage-migration-failed_update-kubernetes-storage">Storage migration failure</h4>
 <div class="paragraph _abstract">
 <p>Storage migration failures typically result from incompatible changes to custom resources (CRs) between MicroShift versions. If a storage migration fails, the CR versions are likely incompatible and require manual review.</p>
 </div>
