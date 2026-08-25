@@ -8,13 +8,15 @@ include::_attributes/attributes-microshift.adoc[]
 
 = Red Hat build of MicroShift
 
-include::whats-new.adoc[leveloffset=+1]
+//Map is currently empty
+//include::whats-new.adoc[leveloffset=+1]
 
 include::install.adoc[leveloffset=+1]
 
 include::administer.adoc[leveloffset=+1]
 
-include::api.adoc[leveloffset=+1]
+//Map is currently empty
+//include::api.adoc[leveloffset=+1]
 
 include::configure.adoc[leveloffset=+1]
 
