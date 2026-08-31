@@ -496,8 +496,136 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
+<div class="sect5">
+<h6 id="about-developer_web-console_use-administrator-workflows-in-the-console">Developer role in the web console</h6>
+<div class="paragraph _abstract">
+<p>The developer role in the web console offers several built-in ways to deploy applications, services, and databases. With the developer role, you can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>View real-time visualization of rolling and recreating rollouts on the component.</p>
+</li>
+<li>
+<p>View the application status, resource utilization, project event streaming, and quota consumption.</p>
+</li>
+<li>
+<p>Share your project with others.</p>
+</li>
+<li>
+<p>Troubleshoot problems with your applications by running Prometheus Query Language (PromQL) queries on your project and examining the metrics visualized on a plot. The metrics provide information about the state of a cluster and any user-defined workloads that you are monitoring.</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>Unresolved directive in jobs/use-administrator-workflows-in-the-console.adoc - include::../../web_console/web-console-overview.adoc[leveloffset=+1,toc="no"]</p>
+<p>Cluster administrators can also open an embedded command-line terminal instance in the web console in {product-title} 4.7 and later.</p>
+</div>
+<div class="paragraph">
+<p>Developers have access to workflows specific to their use cases, such as the ability to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create and deploy applications on {product-title} by importing existing codebases, images, and container files.</p>
+</li>
+<li>
+<p>Visually interact with applications, components, and services associated with them within a project and monitor their deployment and build status.</p>
+</li>
+<li>
+<p>Group components within an application and connect the components within and across applications.</p>
+</li>
+<li>
+<p>Integrate serverless capabilities (Technology Preview).</p>
+</li>
+<li>
+<p>Create workspaces to edit their application code using Eclipse Che.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can use the <strong>Topology</strong> view to display applications, components, and workloads of your project. If you have no workloads in the project, the <strong>Topology</strong> view will show some links to create or import them. You can also use the <strong>Quick Search</strong> to import components directly.</p>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://docs.openshift.com/container-platform/latest/applications/odc-viewing-application-composition-using-topology-view.html">Viewing application composition using the Topology</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="enabling-developer-perspective_web-console_use-administrator-workflows-in-the-console">Enabling the <strong>Developer</strong> perspective in the web console</h6>
+<div class="paragraph _abstract">
+<p>Enable the <strong>Developer</strong> perspective in the web console to give your developers tools to manage applications, visualize topology, and monitor projects as they develop and build them.</p>
+</div>
+<div class="paragraph">
+<p>Starting with {product-title} 4.19, the perspectives in the web console have unified. There is no longer a <strong>Developer</strong> perspective by default; however, cluster administrators can enable the <strong>Developer</strong> perspective for developers to use.</p>
+</div>
+<div class="paragraph">
+<p>You can enable the <strong>Developer</strong> perspective with the following steps:</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have access to the web console as a user with <code>cluster-admin</code> privileges.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the <strong>Cluster Settings</strong> page by clicking <span class="menuseq"><b class="menu">Administration</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Cluster Settings</b></span>.</p>
+</li>
+<li>
+<p>Select the <strong>Configuration</strong> tab.</p>
+</li>
+<li>
+<p>Type <code>console</code> in the search field to locate the Console Operator resource and select <code>operator.openshift.io</code>.</p>
+</li>
+<li>
+<p>On the <strong>Cluster Details</strong> page, click the <strong>Actions</strong> menu and select <strong>Customize</strong>.</p>
+</li>
+<li>
+<p>In the <strong>General</strong> tab, locate the <strong>Perspectives</strong> section. You can enable or disable the <strong>Developer</strong> perspective as needed. Changes are automatically applied.</p>
+</li>
+<li>
+<p>Optional: You can enable the <strong>Developer</strong> perspective by using the CLI with the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc patch console.operator.openshift.io/cluster --type='merge' -p '{"spec":{"customization":{"perspectives":[{"id":"dev","visibility":{"state":"Enabled"}}]}}}'</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The change reflects in the web console after the console pod restarts successfully.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Verification</div>
+<ol class="arabic">
+<li>
+<p>Locate the perspective switcher in the web console.</p>
+</li>
+<li>
+<p>Verify that <strong>Developer</strong> is displayed as an available perspective option.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="paragraph nav-footer">
