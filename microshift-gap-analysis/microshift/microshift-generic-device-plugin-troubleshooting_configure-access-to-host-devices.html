@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="_api" class="book toc2 toc-left">
+<body id="microshift-generic-device-plugin-troubleshooting_configure-access-to-host-devices" class="book toc2 toc-left">
 <div id="header">
 <h1>Red Hat build of MicroShift</h1>
 <div id="toc" class="toc2">
@@ -446,43 +446,95 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><span class="toc-root"><a href="navigation.html">Red Hat build of MicroShift</a></span></p><ul class="sectlevel1">
 <li><a href="_whats_new.html">What&#8217;s New</a>
 </li>
+<li><a href="_discover.html">Discover</a>
+</li>
+<li><a href="_plan.html">Plan</a>
+</li>
 <li><a href="_install.html">Install</a>
+</li>
+<li><a href="_upgrade.html">Upgrade</a>
 </li>
 <li><a href="_administer.html">Administer</a>
 </li>
-<li><a href="_api.html"><span class="toc-current">API</span></a>
+<li><a href="_develop.html">Develop</a>
 </li>
 <li><a href="_configure.html">Configure</a>
+<ul class="sectlevel2">
+<li><a href="microshift-understand-default-networking_understand-default-networking.html">Understand default networking capabilities</a>
+</li>
+<li><a href="microshift-customize-networking_customize-networking-configuration.html">Customize networking configuration</a>
+</li>
+<li><a href="microshift-low-latency-concept_optimize-low-latency-performance.html">Lower latency in MicroShift applications</a>
+</li>
+<li><a href="microshift-optimize-network-performance_optimize-network-performance.html">Optimize network performance</a>
+</li>
+<li><a href="microshift-multus-intro_extend-with-multiple-networks.html">Secondary networks in MicroShift</a>
+</li>
+<li><a href="microshift-provide-external-access_provide-external-access.html">Provide external access to edge applications</a>
+</li>
+<li><a href="microshift-secure-api-control-plane_secure-api-and-control-plane.html">Secure the MicroShift API and control plane</a>
+</li>
+<li><a href="microshift-configure-audit-logging_configure-audit-logging.html">Configure audit logging for compliance, monitoring, and incident investigation</a>
+</li>
+<li><a href="microshift-verify-container-signatures-sigstore-con_verify-trusted-container-images.html">Understand how to use sigstore to verify container signatures</a>
+</li>
+<li><a href="microshift-secure-control-traffic_secure-and-control-traffic.html">Secure and control traffic</a>
+</li>
+<li><a href="microshift-understanding-generic-device-plugin-con_configure-access-to-host-devices.html">Understand the Generic Device Plugin</a>
+</li>
+<li><a href="microshift-ensure-host-resilience_ensure-host-control-plane-resilience.html">Ensure host and control plane resilience against application resource exhaustion</a>
+</li>
+<li><a href="microshift-maintain-system-health_maintain-system-health-greenboot.html">Maintain system health with the greenboot health check framework</a>
+</li>
+<li><a href="microshift-test-new-k8s-features_test-new-kubernetes-features.html">Test new Kubernetes features in MicroShift</a>
+</li>
+<li><a href="microshift-configure-with-config-file_configure-with-config-file.html">Configure MicroShift with the configuration file</a>
+</li>
+<li><a href="microshift-configure-disconnected-networking_configure-disconnected-networking.html">Configure networking for a fully disconnected host</a>
+</li>
+</ul>
+</li>
+<li><a href="_reference.html">Reference</a>
 </li>
 <li><a href="_storage.html">Storage</a>
 </li>
 <li><a href="_ai.html">AI</a>
 </li>
-<li><a href="_develop.html">Develop</a>
-</li>
-<li><a href="_upgrade.html">Upgrade</a>
-</li>
 <li><a href="_cli_tools.html">CLI tools</a>
-</li>
-<li><a href="_plan.html">Plan</a>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_api">API</h2>
-<div class="sectionbody">
-
+<div class="sect3">
+<h4 id="microshift-generic-device-plugin-troubleshooting_configure-access-to-host-devices">Troubleshoot configuration issues</h4>
+<div class="paragraph _abstract">
+<p>The following entries explain common Generic Device Plugin configuration issues and how to resolve them.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>Invalid configuration: failed to parse device</code></dt>
+<dd>
+<p>Occurs when you have incorrectly mixed <code>paths</code> and <code>usbs</code> fields within the same <code>groups</code> entry for a device. Each <code>group</code> must exclusively use either <code>paths</code> or <code>usbs</code> to define its devices.</p>
+</dd>
+<dt class="hdlist1"><code>Cannot define both path and usbs at the same time</code></dt>
+<dd>
+<p>Occurs when you have incorrectly mixed <code>paths</code> and <code>usbs</code> fields within the same <code>groups</code> entry for a device. Each <code>group</code> must exclusively use either <code>paths</code> or <code>usbs</code> to define its devices.</p>
+</dd>
+</dl>
+</div>
+<div class="ulist">
+<ul>
+</ul>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="_administer.html">Administer</a> | ↑ Up: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="_configure.html">Configure</a> →</p>
+<p>← Previous: <a href="microshift-generic-device-plugin-configuration-parameters_configure-access-to-host-devices.html">Generic Device Plugin configuration reference</a> | ↑ Up: <a href="microshift-understanding-generic-device-plugin-con_configure-access-to-host-devices.html">Understand the Generic Device Plugin</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="microshift-ensure-host-resilience_ensure-host-control-plane-resilience.html">Ensure host and control plane resilience against application resource exhaustion</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 13:22:54 -0400
+Last updated 2026-09-02 10:32:13 -0400
 </div>
 </div>
 <style>

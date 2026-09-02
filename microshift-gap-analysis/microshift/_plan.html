@@ -446,57 +446,37 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><span class="toc-root"><a href="navigation.html">Red Hat build of MicroShift</a></span></p><ul class="sectlevel1">
 <li><a href="_whats_new.html">What&#8217;s New</a>
 </li>
+<li><a href="_discover.html">Discover</a>
+</li>
+<li><a href="_plan.html"><span class="toc-current">Plan</span></a>
+<ul class="sectlevel2">
+<li><a href="microshift-verify-environment-requirements_verify-environment-requirements.html">Verify your environment meets MicroShift requirements</a>
+</li>
+<li><a href="microshift-install-rhel-types_choose-rhel-installation-type.html">RHEL installation types</a>
+</li>
+<li><a href="microshift-install-rhde-steps_prepare-installation-prerequisites.html">Red&#160;Hat Device Edge installation steps</a>
+</li>
+<li><a href="microshift-encrypt-etcd-data_plan-etcd-security.html">Encrypt etcd data</a>
+</li>
+</ul>
+</li>
 <li><a href="_install.html">Install</a>
+</li>
+<li><a href="_upgrade.html">Upgrade</a>
 </li>
 <li><a href="_administer.html">Administer</a>
 </li>
-<li><a href="_api.html">API</a>
+<li><a href="_develop.html">Develop</a>
 </li>
 <li><a href="_configure.html">Configure</a>
+</li>
+<li><a href="_reference.html">Reference</a>
 </li>
 <li><a href="_storage.html">Storage</a>
 </li>
 <li><a href="_ai.html">AI</a>
 </li>
-<li><a href="_develop.html">Develop</a>
-</li>
-<li><a href="_upgrade.html">Upgrade</a>
-</li>
 <li><a href="_cli_tools.html">CLI tools</a>
-</li>
-<li><a href="_plan.html"><span class="toc-current">Plan</span></a>
-<ul class="sectlevel2">
-<li><a href="_plan.html#microshift-verify-environment-requirements_verify-environment-requirements">Verify your environment meets MicroShift requirements</a>
-<ul class="sectlevel3">
-<li><a href="_plan.html#microshift-install-system-requirements_verify-environment-requirements">System requirements for installing MicroShift</a>
-</li>
-<li><a href="_plan.html#microshift-install-rhde-compat-table_verify-environment-requirements">Version compatibility</a>
-<ul class="sectlevel4">
-<li><a href="_plan.html#microshift-rhde-compatibility-table_verify-environment-requirements">Red&#160;Hat Device Edge release compatibility matrix</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="_plan.html#microshift-install-rhel-types_choose-rhel-installation-type">RHEL installation types</a>
-<ul class="sectlevel3">
-<li><a href="_plan.html#microshift-get-ready-install-rpm_choose-rhel-installation-type">Using RPMs, or package-based installation</a>
-</li>
-<li><a href="_plan.html#microshift-get-ready-install-rhel-image-based_choose-rhel-installation-type">RHEL image-based installations</a>
-</li>
-<li><a href="_plan.html#microshift-install-tools-intro_understand-image-based-rhel-tools">MicroShift installation tools</a>
-<ul class="sectlevel4">
-<li><a href="_plan.html#microshift-install-rhel-tools-concepts_understand-image-based-rhel-tools">RHEL installation tools and concepts</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="_plan.html#microshift-install-rhde-steps_prepare-installation-prerequisites">Red&#160;Hat Device Edge installation steps</a>
-</li>
-<li><a href="_plan.html#microshift-encrypt-etcd-data_plan-etcd-security">Encrypt etcd data</a>
-</li>
-</ul>
 </li>
 </ul>
 </div>
@@ -505,392 +485,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_plan">Plan</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="microshift-verify-environment-requirements_verify-environment-requirements">Verify your environment meets MicroShift requirements</h3>
-<div class="paragraph _abstract">
-<p>Confirm that your hardware or hypervisor meets the minimum resource requirements and that your Red&#160;Hat Enterprise Linux (RHEL) version is compatible with your target MicroShift version before beginning installation.</p>
-</div>
-<div class="sect3">
-<h4 id="microshift-install-system-requirements_verify-environment-requirements">System requirements for installing MicroShift</h4>
-<div class="paragraph _abstract">
-<p>You must add the resource requirements of your specific workloads to the baseline minimums for MicroShift and Red&#160;Hat Enterprise Linux (RHEL).</p>
-</div>
-<div class="paragraph">
-<p>For example, if an IoT gateway solution requires 4 GB of RAM, your system needs to have at least 2 GB for RHEL and MicroShift, plus 4 GB for the workloads. Thus, this example deployment requires 6 GB of RAM in total.</p>
-</div>
-<div class="paragraph">
-<p>Allow for extra capacity for future needs if you are deploying physical devices in remote locations. If you are uncertain of the RAM required, use the maximum RAM capacity that the device can support.</p>
-</div>
-<div class="paragraph">
-<p>The following conditions must be met before installing MicroShift:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>A compatible version of RHEL. For more information, see "Version compatibility".</p>
+<p><a href="microshift-verify-environment-requirements_verify-environment-requirements.html">Verify your environment meets MicroShift requirements</a></p>
 </li>
 <li>
-<p>Hardware or hypervisors that are certified for your RHEL version are strongly recommended. For more information, see the following links:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://catalog.redhat.com/en/hardware">Red Hat certified hardware</a></p>
+<p><a href="microshift-install-rhel-types_choose-rhel-installation-type.html">RHEL installation types</a></p>
 </li>
 <li>
-<p><a href="https://access.redhat.com/articles/certified-hypervisors">Certified hypervisors</a></p>
+<p><a href="microshift-install-rhde-steps_prepare-installation-prerequisites.html">Red&#160;Hat Device Edge installation steps</a></p>
 </li>
 <li>
-<p>For information about the support policy for non-certified hardware or hypervisors, see the following link:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://access.redhat.com/articles/third-party-software-support">How does Red Hat support me when I use non-Red Hat components?</a></p>
+<p><a href="microshift-encrypt-etcd-data_plan-etcd-security.html">Encrypt etcd data</a></p>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>AArch64 or x86_64 system architecture.</p>
-</li>
-<li>
-<p>2 CPU cores.</p>
-</li>
-<li>
-<p>2 GB RAM. Installing from the network (UEFI HTTPs or PXE boot) requires 3 GB RAM for RHEL.</p>
-</li>
-<li>
-<p>10 GB of storage.</p>
-</li>
-<li>
-<p>You have an active MicroShift subscription on your Red Hat account. If you do not have a subscription, contact your sales representative for more information.</p>
-</li>
-<li>
-<p>If your workload requires Persistent Volumes (PVs), you have a Logical Volume Manager (LVM) Volume Group (VG) with enough free capacity for the workloads.</p>
-</li>
-<li>
-<p>You configure secure access to the system to be able to manage it. For more information, see the following link:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/securing_networks/assembly_using-secure-communications-between-two-systems-with-openssh_securing-networks">Using secure communications between two systems with OpenSSH</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="microshift-install-rhde-compat-table_verify-environment-requirements">Version compatibility</h4>
-<div class="paragraph _abstract">
-<p>You must pair a supported version of Red&#160;Hat Enterprise Linux (RHEL) with the MicroShift version. For more information, see the "Red&#160;Hat Device Edge release compatibility matrix".</p>
-</div>
-<div class="sect4">
-<h5 id="microshift-rhde-compatibility-table_verify-environment-requirements">Red&#160;Hat Device Edge release compatibility matrix</h5>
-<div class="paragraph _abstract">
-<p>Red&#160;Hat Enterprise Linux (RHEL) and MicroShift work together as a single solution for device-edge computing. You can update each component separately, but the product versions must be compatible.</p>
-</div>
-<div class="paragraph">
-<p>Supported configurations of Red&#160;Hat Device Edge use verified releases for each together as listed in the following table:</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Be sure to check the support status of a release on the product lifecycle page.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top"><strong>RHEL Version(s)</strong></th>
-<th class="tableblock halign-center valign-top"><strong>MicroShift Version</strong></th>
-<th class="tableblock halign-center valign-top"><strong>Supported MicroShift Version&#160;&#8594;&#160;Version Updates</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">10.2</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.22</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.22.0&#160;&#8594;&#160;4.22.z (Technology Preview)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9.8</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.22</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.22.0&#160;&#8594;&#160;4.22.z, 4.22 on RHEL 9.8&#160;&#8594;&#160;4.22 on RHEL 10.2 (Technology Preview)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9.6</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.21</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.21.0&#160;&#8594;&#160;4.21.z, 4.21&#160;&#8594;&#160;4.22, 4.21&#160;&#8594;&#160;4.22 on RHEL 9.8, 4.21&#160;&#8594;&#160;4.22 on RHEL 10.2 (Technology Preview)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9.6</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.20</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.20.0&#160;&#8594;&#160;4.20.z, 4.20&#160;&#8594;&#160;4.21, 4.20&#160;&#8594;&#160;4.22 on RHEL 10.2 (Technology Preview)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9.6</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.19</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.19.0&#160;&#8594;&#160;4.19.z, 4.19&#160;&#8594;&#160;4.20</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9.4</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.18</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.18.0&#160;&#8594;&#160;4.18.z, 4.18&#160;&#8594;&#160;4.20 on RHEL 9.6</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9.4</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.17</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.17.1&#160;&#8594;&#160;4.17.z, 4.17&#160;&#8594;&#160;4.18</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9.4</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.16</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4.16.0&#160;&#8594;&#160;4.16.z, 4.16&#160;&#8594;&#160;4.17, 4.16&#160;&#8594;&#160;4.18</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="microshift-install-rhel-types_choose-rhel-installation-type">RHEL installation types</h3>
-<div class="paragraph _abstract">
-<p>MicroShift supports multiple installation methods depending on your target edge environment and workload requirements. You can deploy MicroShift by using the standard RPM packages on an existing machine or build an immutable, image-based operating system tailored for disconnected or networked edge deployments.</p>
-</div>
-<div class="paragraph">
-<p>Choose the best Red&#160;Hat Enterprise Linux (RHEL) installation type based on where you want to run your node and what your applications need to do. For the best results, apply the following principles:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>For every installation target, you must configure both the operating system and MicroShift.</p>
-</li>
-<li>
-<p>Consider your application storage needs, networking for node or application access, and your authentication and security requirements.</p>
-</li>
-<li>
-<p>Understand the differences between the RHEL installation types, including the support scope of each, and the tools used.</p>
-</li>
-</ul>
-</div>
-<div class="sect3">
-<h4 id="microshift-get-ready-install-rpm_choose-rhel-installation-type">Using RPMs, or package-based installation</h4>
-<div class="paragraph">
-<p>This simple installation type uses a basic command to install MicroShift on an existing RHEL machine. Basic CLI tools are required for this installation type.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="microshift-get-ready-install-rhel-image-based_choose-rhel-installation-type">RHEL image-based installations</h4>
-<div class="paragraph">
-<p>Image-based installation types involve creating an <code>rpm-ostree</code>-based, immutable version of RHEL that is optimized for edge deployment.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>RHEL for Edge can be deployed to the edge in production environments. You can use this installation type where network connections are present, restricted, or completely offline, depending on the local environment.</p>
-</li>
-<li>
-<p>Image mode for RHEL is based on OCI container images and bootable containers. See the following link for an introduction to bootc technology:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://developers.redhat.com/articles/2024/09/24/bootc-getting-started-bootable-containers">bootc: Getting started with bootable containers</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>When choosing an image-based installation, consider whether the installation target is intended to be in an offline or networked state, where you plan to build system images, and how you plan to load your Red&#160;Hat Device Edge. Use the following scenarios as general guidance:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>If you build either a fully self-contained RHEL for Edge or an image mode for RHEL ISO outside a disconnected environment, and then install the ISO locally on your edge devices, you likely do not need an RPM repository or a mirror registry.</p>
-</li>
-<li>
-<p>If you build an ISO outside a disconnected environment that does not include the container images, but consists of only the RPMs, you need a mirror registry inside your disconnected environment. You use your mirror registry to pull container images.</p>
-</li>
-<li>
-<p>If you build images inside a disconnected environment, or use package-based installations, you need both a mirror registry and a local RPM mirror repository. You can use either the RHEL reposync utility or Red&#160;Hat Satellite for advanced use cases. See the following links for more information:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://access.redhat.com/solutions/7019225">Creating a local mirror of the latest update for RHEL without using Satellite Server</a></p>
-</li>
-<li>
-<p><a href="https://www.redhat.com/en/technologies/management/satellite">Red&#160;Hat Satellite</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="microshift-install-tools-intro_understand-image-based-rhel-tools">MicroShift installation tools</h4>
-<div class="paragraph _abstract">
-<p>To use MicroShift, you must already have or plan to install a Red&#160;Hat Enterprise Linux (RHEL) type, such as on bare metal, or as a virtual machine (VM) that you provision. Although each use case has different details, each installation of Red&#160;Hat Device Edge uses RHEL tools and the OpenShift CLI (<code>oc</code>).</p>
-</div>
-<div class="paragraph">
-<p>You can use RPMs to install MicroShift on an existing RHEL machine. You do not need other tools unless you are also installing an image-based RHEL system or VM at the same time.</p>
-</div>
-<div class="sect4">
-<h5 id="microshift-install-rhel-tools-concepts_understand-image-based-rhel-tools">RHEL installation tools and concepts</h5>
-<div class="paragraph _abstract">
-<p>To successfully construct and deploy a custom MicroShift image, you must understand the core RHEL components involved in the deployment process.</p>
-</div>
-<div class="paragraph">
-<p>Review the following resources to familiarize yourself with the required image building components:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A Kickstart file, which contains the configuration and instructions used during the installation of your specific operating system. For more information, see the following link:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/red_hat_build_of_microshift/latest/html/using_rhel_kickstarts/microshift-rhel-kickstarts">Using Kickstart files for installing MicroShift in RHEL</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>RHEL image builder is a tool for creating deployment-ready customized system images. RHEL image builder uses a blueprint that you create to make the ISO. RHEL image builder is best installed on a RHEL VM and is built with the <code>composer-cli</code> tool. To set up these tools and review the workflow, see the following RHEL documentation links:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/composing_a_customized_rhel_system_image/creating-system-images-with-composer-command-line-interface_composing-a-customized-rhel-system-image#composer-command-line-interface_creating-system-images-with-composer-command-line-interface">Introducing the RHEL image builder command-line interface</a></p>
-</li>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/composing_a_customized_rhel_system_image/installing-composer_composing-a-customized-rhel-system-image">Installing image builder</a></p>
-</li>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/composing_a_customized_rhel_system_image/creating-system-images-with-composer-command-line-interface_composing-a-customized-rhel-system-image#creating-a-system-image-with-composer-in-the-command-line-interface_creating-system-images-with-composer-command-line-interface">Creating a system image with RHEL image builder in the command-line interface</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>A blueprint file directs RHEL image builder to the items to include in the ISO. An image blueprint provides a persistent definition of image customizations. You can create multiple builds from a single blueprint. You can also edit an existing blueprint to build a new ISO as requirements change. See the following link for more information:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/composing_a_customized_rhel_system_image/creating-system-images-with-composer-command-line-interface_composing-a-customized-rhel-system-image#creating-a-composer-blueprint-with-command-line-interface_creating-system-images-with-composer-command-line-interface">Creating a blueprint by using the command-line interface</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>An ISO, which is the bootable operating system on which MicroShift runs. See the following links for more information:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/composing_a_customized_rhel_system_image/creating-a-boot-iso-installer-image-with-image-builder_composing-a-customized-rhel-system-image#creating-a-boot-iso-installer-image-with-image-builder-in-the-command-line-interface_creating-a-boot-iso-installer-image-with-image-builder">Creating a boot ISO installer image using the RHEL image builder CLI</a></p>
-</li>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/composing_a_customized_rhel_system_image/creating-a-boot-iso-installer-image-with-image-builder_composing-a-customized-rhel-system-image#installing-the-iso-to-a-bare-metal-system_creating-a-boot-iso-installer-image-with-image-builder">Installing a bootable ISO to a media and booting it</a></p>
-</li>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/red_hat_build_of_microshift/latest/html/embedding_in_a_rhel_for_edge_image/microshift-embed-in-rpm-ostree">Embedding in a RHEL for Edge image using image builder</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="microshift-install-rhde-steps_prepare-installation-prerequisites">Red&#160;Hat Device Edge installation steps</h3>
-<div class="paragraph _abstract">
-<p>Before proceeding with your specific installation method, you must prepare your environment for installation. To ensure a successful deployment, you must follow the general prerequisites such as obtaining your pull secret, planning your storage strategy, and defining your network topology, before you begin.</p>
-</div>
-<div class="paragraph">
-<p>For most installation types, you must also take the following steps:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Download the pull secret from the Red&#160;Hat Hybrid Cloud Console using the following link:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://console.redhat.com/openshift/install/pull-secret">Pull secret</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Be ready to configure MicroShift by adding parameters and values to the MicroShift YAML configuration file. For more information, see "Customizing MicroShift by using the configuration file".</p>
-</li>
-<li>
-<p>Decide whether you need to configure storage for the application and tasks you are using in your MicroShift node, or disable the MicroShift storage plugin completely.</p>
-</li>
-<li>
-<p>For more information about creating volume groups and persistent volumes on RHEL, see the following link:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/configuring_and_managing_logical_volumes/overview-of-logical-volume-management_configuring-and-managing-logical-volumes">Overview of logical volume management</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Configure networking settings according to the access needs you plan for your MicroShift node and applications. Consider whether you want to use single or dual-stack networks, configure a firewall, or configure routes.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You can use the Red&#160;Hat Enterprise Linux for Real Time (real-time kernel) where predictable latency is critical. Workload partitioning is also required for low-latency applications. For more information about low latency and the real-time kernel, see "Configuring low latency".</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="microshift-encrypt-etcd-data_plan-etcd-security">Encrypt etcd data</h3>
-<div class="paragraph _abstract">
-<p>Kubernetes objects are stored in an etcd database and might contain sensitive data. The etcd data is not encrypted by default. You can encrypt the disk that contains the etcd database by using the Linux Unified Key Setup-on-disk-format (LUKS) management tool for block device encryption.</p>
-</div>
 </div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="_cli_tools.html">CLI tools</a> | ↑ Up: <a href="navigation.html">Red Hat build of MicroShift</a></p>
+<p>← Previous: <a href="microshift-k8s-apis_understand-microshift.html">MicroShift Kubernetes APIs</a> | ↑ Up: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="microshift-verify-environment-requirements_verify-environment-requirements.html">Verify your environment meets MicroShift requirements</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 13:22:54 -0400
+Last updated 2026-09-02 10:32:13 -0400
 </div>
 </div>
 <style>
