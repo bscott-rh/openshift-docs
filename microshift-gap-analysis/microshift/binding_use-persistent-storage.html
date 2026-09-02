@@ -492,7 +492,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>When you create a PVC, you request a specific amount of storage, specify the required access mode, and create a storage class to describe and classify the storage. The control loop in the master watches for new PVCs and binds the new PVC to an appropriate PV. If an appropriate PV does not exist, a provisioner for the storage class creates one.</p>
 </div>
 <div class="paragraph">
-<p>The size of all PVs might exceed your PVC size. This is especially true with manually provisioned PVs. To minimize the excess,{product-title} binds to the smallest PV that matches all other criteria.</p>
+<p>The size of all PVs might exceed your PVC size. This is especially true with manually provisioned PVs. To minimize the excess,Red&#160;Hat build of MicroShift binds to the smallest PV that matches all other criteria.</p>
 </div>
 <div class="paragraph">
 <p>Claims remain unbound indefinitely if a matching volume does not exist or cannot be created with any available provisioner servicing a storage class. Claims are bound as matching volumes become available. For example, a cluster with many manually provisioned 50Gi volumes would not match a PVC requesting 100Gi. The PVC can be bound when a 100Gi PV is added to the cluster.</p>
@@ -504,7 +504,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 10:32:13 -0400
+Last updated 2026-09-02 10:36:43 -0400
 </div>
 </div>
 <style>

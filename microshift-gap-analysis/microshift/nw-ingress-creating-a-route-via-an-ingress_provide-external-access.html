@@ -509,7 +509,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect3">
 <h4 id="nw-ingress-creating-a-route-via-an-ingress_provide-external-access">Create a route through an Ingress object</h4>
 <div class="paragraph _abstract">
-<p>To integrate ecosystem components that require Ingress resources, configure an Ingress object. {product-title} automatically manages the lifecycle of the corresponding route objects, creating and deleting them to ensure seamless connectivity.</p>
+<p>To integrate ecosystem components that require Ingress resources, configure an Ingress object. Red&#160;Hat build of MicroShift automatically manages the lifecycle of the corresponding route objects, creating and deleting them to ensure seamless connectivity.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -527,7 +527,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The certificate Subject Alternative Name (SAN), or the subject CN if no SAN is present, covers every hostname set in <code>spec.rules[].host</code> and <code>spec.tls[].hosts</code>. These values must match for the same host.</p>
 </li>
 <li>
-<p>The private key is not password-encrypted. You must decrypt the key before you create the TLS secret so that {product-title} can read the key material.</p>
+<p>The private key is not password-encrypted. You must decrypt the key before you create the TLS secret so that Red&#160;Hat build of MicroShift can read the key material.</p>
 </li>
 <li>
 <p>You created a <code>Secret</code> of type <code>kubernetes.io/tls</code> in the same namespace as the <code>Ingress</code>. The <code>secretName</code> must match the <code>spec.tls[].secretName</code> field. If you have not created the secret, you must do so before you apply the <code>Ingress</code> object.</p>
@@ -538,7 +538,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Define an Ingress object in the {product-title} console or by entering the <code>oc create</code> command:</p>
+<p>Define an Ingress object in the Red&#160;Hat build of MicroShift console or by entering the <code>oc create</code> command:</p>
 <div class="listingblock">
 <div class="title">YAML Definition of an Ingress</div>
 <div class="content">
@@ -691,7 +691,7 @@ spec:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 10:32:13 -0400
+Last updated 2026-09-02 10:36:43 -0400
 </div>
 </div>
 <style>
