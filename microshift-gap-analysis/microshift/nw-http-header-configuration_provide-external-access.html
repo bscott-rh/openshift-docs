@@ -517,10 +517,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect3">
 <h4 id="nw-http-header-configuration_provide-external-access">HTTP header configuration</h4>
 <div class="paragraph _abstract">
-<p>To customize request and response headers for your applications, configure the Ingress Controller or apply specific route annotations. Understanding the interaction between these configuration methods ensures you effectively manage global and route-specific header policies.</p>
+<p>To customize request and response headers, modify individual route configurations or apply route annotations. Understanding the interaction between these methods ensures you effectively manage header policies and resolve potential configuration conflicts.</p>
 </div>
 <div class="paragraph">
-<p>You can also set certain headers by using route annotations. The various ways of configuring headers can present challenges when working together.</p>
+<p>The various ways of configuring headers can present challenges when working together.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -530,52 +530,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You can only set or delete headers within an <code>IngressController</code> or <code>Route</code> CR, you cannot append them. If an HTTP header is set with a value, that value must be complete and not require appending in the future. In situations where it makes sense to append a header, such as the X-Forwarded-For header, use the <code>spec.httpHeaders.forwardedHeaderPolicy</code> field, instead of <code>spec.httpHeaders.actions</code>.</p>
+<p>You can only set or delete headers within a <code>Route</code> CR. You cannot append headers. If an HTTP header is set with a value, that value must be complete and not require appending in the future. In situations where it makes sense to append a header, such as the X-Forwarded-For header, use the <code>spec.httpHeaders.forwardedHeaderPolicy</code> field, instead of <code>spec.httpHeaders.actions</code>.</p>
 </div>
 </td>
 </tr>
 </table>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Order of precedence</dt>
-<dd>
-<p>When the same HTTP header is modified both in the Ingress Controller and in a route, HAProxy prioritizes the actions in certain ways depending on whether it is a request or response header.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>For HTTP response headers, actions specified in the Ingress Controller are executed after the actions specified in a route. This means that the actions specified in the Ingress Controller take precedence.</p>
-</li>
-<li>
-<p>For HTTP request headers, actions specified in a route are executed after the actions specified in the Ingress Controller. This means that the actions specified in the route take precedence.</p>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>For example, a cluster administrator sets the X-Frame-Options response header with the value <code>DENY</code> in the Ingress Controller using the following configuration:</p>
-</div>
-<div class="listingblock">
-<div class="title">Example <code>IngressController</code> spec</div>
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: operator.openshift.io/v1
-kind: IngressController
-# ...
-spec:
-  httpHeaders:
-    actions:
-      response:
-      - name: X-Frame-Options
-        action:
-          type: Set
-          set:
-            value: DENY</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>A route owner sets the same response header that the cluster administrator set in the Ingress Controller, but with the value <code>SAMEORIGIN</code> using the following configuration:</p>
 </div>
 <div class="listingblock">
 <div class="title">Example <code>Route</code> spec</div>
@@ -595,28 +554,7 @@ spec:
 </div>
 </div>
 <div class="paragraph">
-<p>When both the <code>IngressController</code> spec and <code>Route</code> spec are configuring the X-Frame-Options response header, then the value set for this header at the global level in the Ingress Controller takes precedence, even if a specific route allows frames. For a request header, the <code>Route</code> spec value overrides the <code>IngressController</code> spec value.</p>
-</div>
-<div class="paragraph">
-<p>This prioritization occurs because the <code>haproxy.config</code> file uses the following logic, where the Ingress Controller is considered the front end and individual routes are considered the back end. The header value <code>DENY</code> applied to the front end configurations overrides the same header with the value <code>SAMEORIGIN</code> that is set in the back end:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-text" data-lang="text">frontend public
-  http-response set-header X-Frame-Options 'DENY'
-
-frontend fe_sni
-  http-response set-header X-Frame-Options 'DENY'
-
-frontend fe_no_sni
-  http-response set-header X-Frame-Options 'DENY'
-
-backend be_secure:openshift-monitoring:alertmanager-main
-  http-response set-header X-Frame-Options 'SAMEORIGIN'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Additionally, any actions defined in either the Ingress Controller or a route override values set using route annotations.</p>
+<p>Any actions defined in a route override values set using route annotations.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -627,18 +565,15 @@ backend be_secure:openshift-monitoring:alertmanager-main
 </dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. Special case header configuration options</caption>
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Header name</th>
-<th class="tableblock halign-left valign-top">Configurable using <code>IngressController</code> spec</th>
 <th class="tableblock halign-left valign-top">Configurable using <code>Route</code> spec</th>
 <th class="tableblock halign-left valign-top">Reason for disallowment</th>
 <th class="tableblock halign-left valign-top">Configurable using another method</th>
@@ -646,222 +581,30 @@ backend be_secure:openshift-monitoring:alertmanager-main
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>proxy</code></p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The <code>proxy</code> HTTP request header can be used to exploit vulnerable CGI applications by injecting the header value into the <code>HTTP_PROXY</code> environment variable. The <code>proxy</code> HTTP request header is also non-standard and prone to error during configuration.</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>proxy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>proxy</code> HTTP request header can be used to exploit vulnerable CGI applications by injecting the header value into the <code>HTTP_PROXY</code> environment variable. The <code>proxy</code> HTTP request header is also non-standard and prone to error during configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>host</code></p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Yes</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>When the <code>host</code> HTTP request header is set using the <code>IngressController</code> CR, HAProxy can fail when looking up the correct route.</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>host</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When the <code>host</code> HTTP request header is set using the <code>IngressController</code> CR, HAProxy can fail when looking up the correct route.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>strict-transport-security</code></p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The <code>strict-transport-security</code> HTTP response header is already handled using route annotations and does not need a separate implementation.</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Yes: the <code>haproxy.router.openshift.io/hsts_header</code> route annotation</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>strict-transport-security</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>strict-transport-security</code> HTTP response header is already handled using route annotations and does not need a separate implementation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes: the <code>haproxy.router.openshift.io/hsts_header</code> route annotation</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>cookie</code> and <code>set-cookie</code></p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The cookies that HAProxy sets are used for session tracking to map client connections to particular back-end servers. Allowing these headers to be set could interfere with HAProxy&#8217;s session affinity and restrict HAProxy&#8217;s ownership of a cookie.</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Yes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the <code>haproxy.router.openshift.io/disable_cookie</code> route annotation</p>
-</li>
-<li>
-<p>the <code>haproxy.router.openshift.io/cookie_name</code> route annotation</p>
-</li>
-</ul>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cookie</code> and <code>set-cookie</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The cookies that HAProxy sets are used for session tracking to map client connections to particular back-end servers. Allowing these headers to be set could interfere with HAProxy&#8217;s session affinity and restrict HAProxy&#8217;s ownership of a cookie.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes:</p>
+<p class="tableblock">* the <code>haproxy.router.openshift.io/disable_cookie</code> route annotation
+* the <code>haproxy.router.openshift.io/cookie_name</code> route annotation</p></td>
 </tr>
 </tbody>
 </table>
@@ -876,7 +619,7 @@ backend be_secure:openshift-monitoring:alertmanager-main
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

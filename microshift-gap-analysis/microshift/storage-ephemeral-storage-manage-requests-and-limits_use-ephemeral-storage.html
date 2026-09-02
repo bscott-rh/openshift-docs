@@ -580,14 +580,34 @@ spec:
 </li>
 </ul>
 </div>
+<div class="sect5">
+<h6 id="storage-ephemeral-storage-eviction_use-ephemeral-storage">Ephemeral storage configuration effects pod eviction</h6>
+<div class="paragraph">
+<p>At the container level, because the first container sets a resource limit, kubelet eviction manager measures the disk usage of this container and evicts the pod if the storage usage of the container exceeds its limit (4GiB). The kubelet eviction manager also marks the pod for eviction if the total usage exceeds the overall pod storage limit (8GiB).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This policy is strictly for <code>emptyDir</code> volumes and is not applied to persistent storage. You can specify the <code>priorityClass</code> of pods to exempt the pod from eviction.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <div class="paragraph nav-footer">
-<p>↑ Up: <a href="storage-ephemeral-storage-manage-overview_use-ephemeral-storage.html">Ephemeral storage management overview</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="storage-ephemeral-storage-manage-config-and-eviction_use-ephemeral-storage.html">Ephemeral storage management configuration affects pod scheduling and eviction</a> →</p>
+<p>↑ Up: <a href="storage-ephemeral-storage-manage-overview_use-ephemeral-storage.html">Ephemeral storage management overview</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="generic-ephemeral-vols-overview_use-ephemeral-storage.html">Overview of generic ephemeral volumes</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

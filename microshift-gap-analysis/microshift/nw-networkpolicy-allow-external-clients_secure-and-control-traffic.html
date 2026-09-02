@@ -527,7 +527,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you log in with a user with the <code>cluster-admin</code> role, then you can create a network policy in any namespace in the cluster.</p>
+<p>Firewalled rules run before any <code>NetworkPolicy</code> is enforced.</p>
 </div>
 </td>
 </tr>
@@ -540,13 +540,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>Your cluster uses a network plugin that supports <code>NetworkPolicy</code> objects, such as the OVN-Kubernetes network plugin, with <code>mode: NetworkPolicy</code> set.</p>
-</li>
-<li>
 <p>You installed the OpenShift CLI (<code>oc</code>).</p>
-</li>
-<li>
-<p>You logged in to the cluster with a user with <code>admin</code> privileges.</p>
 </li>
 <li>
 <p>You are working in the namespace that the network policy applies to.</p>
@@ -580,14 +574,6 @@ spec:
 <pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc apply -f web-allow-external.yaml</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>This policy allows traffic from all resources, including external traffic as illustrated in the following diagram:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="data:image/png;base64," alt="Allow traffic from external clients">
-</div>
-</div>
 </li>
 </ol>
 </div>
@@ -602,7 +588,7 @@ spec:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

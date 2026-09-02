@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="pv-access-modes_use-persistent-storage" class="book toc2 toc-left">
+<body id="pvc-storage-class_use-persistent-storage" class="book toc2 toc-left">
 <div id="header">
 <h1>Red Hat build of MicroShift</h1>
 <div id="toc" class="toc2">
@@ -489,185 +489,35 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect4">
-<h5 id="pv-access-modes_use-persistent-storage">Access modes</h5>
-<div class="paragraph">
-<p>A persistent volume can be mounted on a host in any way supported by the resource provider. Providers have different capabilities and each PV&#8217;s access modes are set to the specific modes supported by that particular volume. For example, NFS can support multiple read/write clients, but a specific NFS PV might be exported on the server as read-only. Each PV gets its own set of access modes describing that specific PV&#8217;s capabilities.</p>
+<h5 id="pvc-storage-class_use-persistent-storage">Storage classes</h5>
+<div class="paragraph _abstract">
+<p>To request specific storage capabilities, define the <code>StorageClass</code> name in the <code>storageClassName</code> attribute of your <code>PersistentVolumeClaim</code> (PVC). This setting ensures the claim binds only to matching <code>PersistentVolumes</code> (PVs) or triggers dynamic provisioning if the cluster administrator has configured on-demand creation.</p>
 </div>
 <div class="paragraph">
-<p>Claims are matched to volumes with similar access modes. The only two matching criteria are access modes and size. A claim&#8217;s access modes represent a request. Therefore, you might be granted more, but never less. For example, if a claim requests RWO, but the only volume available is an NFS PV (RWO+ROX+RWX), the claim would then match NFS because it supports RWO.</p>
+<p>The cluster administrator can also set a default storage class for all PVCs. When you configure a default storage class, the PVC must explicitly ask for <code>StorageClass</code> or <code>storageClassName</code> annotations set to <code>""</code> to be bound to a PV without a storage class.</p>
 </div>
-<div class="paragraph">
-<p>Direct matches are always attempted first. The volume&#8217;s modes must match or contain more modes than you requested. The size must be greater than or equal to what is expected. If two types of volumes, such as NFS and iSCSI, have the same set of access modes, either of them can match a claim with those modes. There is no ordering between types of volumes and no way to choose one type over another.</p>
-</div>
-<div class="paragraph">
-<p>All volumes with the same modes are grouped, and then sorted by size, smallest to largest. The binder gets the group with matching modes and iterates over each, in size order, until one size matches.</p>
-</div>
-<div class="admonitionblock important">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<img src="data:image/png;base64," alt="Important">
+<img src="data:image/png;base64," alt="Note">
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Volume access modes describe volume capabilities. They are not enforced constraints. The storage provider is responsible for runtime errors resulting from invalid use of the resource. Errors in the provider show up at runtime as mount errors.</p>
-</div>
-<div class="paragraph">
-<p>For example, NFS offers <code>ReadWriteOnce</code> access mode. If you want to use the volume&#8217;s ROX capability, mark the claims as <code>ReadOnlyMany</code>.</p>
-</div>
-<div class="paragraph">
-<p>iSCSI and Fibre Channel volumes do not currently have any fencing mechanisms. You must ensure the volumes are only used by one node at a time. In certain situations, such as draining a node, the volumes can be used simultaneously by two nodes. Before draining the node, delete the pods that use the volumes.</p>
+<p>If more than one storage class is marked as default, a PVC can only be created if the <code>storageClassName</code> is explicitly specified. Therefore, only set one storage class as the default.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>The following table lists the access modes:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 24. Access modes</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Access Mode</th>
-<th class="tableblock halign-left valign-top">CLI abbreviation</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ReadWriteOnce</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RWO</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The volume can be mounted as read/write by a single node.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ReadWriteOncePod</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RWOP</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The volume can be mounted as read/write by a single pod on a single node.</p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 25. Supported access modes for persistent volumes</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Volume plugin</th>
-<th class="tableblock halign-center valign-top">ReadWriteOnce <sup>[1]</sup></th>
-<th class="tableblock halign-center valign-top">ReadWriteOncePod</th>
-<th class="tableblock halign-center valign-top">ReadOnlyMany</th>
-<th class="tableblock halign-center valign-top">ReadWriteMany</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AWS EBS <sup>[2]</sup></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-center valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AWS EFS</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GCP Persistent Disk</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅ <sup>[4]</sup></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅ <sup>[4]</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GCP Filestore</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LVM Storage</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-center valign-top"></td>
-</tr>
-</tbody>
-</table>
-<div class="openblock small">
-<div class="content">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>ReadWriteOnce (RWO) volumes cannot be mounted on multiple nodes. If a node fails, the system does not allow the attached RWO volume to be mounted on a new node because it is already assigned to the failed node. If you encounter a multi-attach error message as a result, force delete the pod on a shutdown or crashed node to avoid data loss in critical workloads, such as when dynamic persistent volumes are attached.</p>
-</li>
-<li>
-<p>Use a recreate deployment strategy for pods that rely on AWS EBS.</p>
-</li>
-<li>
-<p>Only raw block volumes support the <code>ReadWriteMany</code> (RWX) access mode for Fibre Channel and iSCSI. For more information, see "Block volume support".</p>
-</li>
-<li>
-<p>For GCP hyperdisk-balanced disks:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The supported access modes are:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>ReadWriteOnce</code></p>
-</li>
-<li>
-<p><code>ReadWriteMany</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Cloning and snapshotting is disabled for disks with <code>ReadWriteMany</code> access mode enabled.</p>
-</li>
-<li>
-<p>You can attach a single hyperdisk-balanced disk volume in <code>ReadWriteMany</code> to a maximum of 8 instances.</p>
-</li>
-<li>
-<p>You can only resize a disk in <code>ReadWriteMany</code> if you detach the disk from all instances.</p>
-</li>
-<li>
-<p>For additional limitations, see  Google Cloud documentation "GCP hyperdisk-balanced disk additional limitations".</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>If the underlying vSphere environment supports the vSAN file service, the vSphere Container Storage Interface (CSI) Driver Operator installed by Red&#160;Hat build of MicroShift supports provisioning of ReadWriteMany (RWX) volumes. If you do not have vSAN file service configured, and you request RWX, the volume fails to get created and an error is logged. For more information, see "VMware vSphere CSI Driver Operator".</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="pv-capacity_use-persistent-storage.html">Capacity</a> | ↑ Up: <a href="persistent-volumes_use-persistent-storage.html">Persistent volumes</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="pv-phase_use-persistent-storage.html">Phase</a> →</p>
+<p>↑ Up: <a href="storage-persistent-storage-pvc_use-persistent-storage.html">Persistent volume claims</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="pvc-claims-as-volumes_use-persistent-storage.html">Claims as volumes</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

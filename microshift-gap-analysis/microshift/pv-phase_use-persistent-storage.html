@@ -555,69 +555,23 @@ cluster.</p></td>
 <div class="listingblock">
 <div class="title">Mount options example</div>
 <div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
-kind: PersistentVolume
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: storage.k8s.io/v1
+kind: StorageClass
 metadata:
-  name: pv0001
-spec:
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteOnce
-  mountOptions:
-    - nfsvers=4.1
-  nfs:
-    path: /tmp
-    server: 172.17.0.2
-  persistentVolumeReclaimPolicy: Retain
-  claimRef:
-    name: claim1
-    namespace: default</code></pre>
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+  name: topolvm-provisioner
+mountOptions:
+  - uid=1500
+  - gid=1500
+parameters:
+  csi.storage.k8s.io/fstype: xfs
+provisioner: topolvm.io
+reclaimPolicy: Delete
+volumeBindingMode: WaitForFirstConsumer
+allowVolumeExpansion: true</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><code>spec.mountOptions</code>: Specified mount options are used while mounting the PV to the disk.</p>
-</div>
-<div class="paragraph">
-<p>The following PV types support mount options:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>AWS Elastic Block Store (EBS)</p>
-</li>
-<li>
-<p>AWS Elastic File Storage (EFS)</p>
-</li>
-<li>
-<p>Azure Disk</p>
-</li>
-<li>
-<p>Azure File</p>
-</li>
-<li>
-<p>Cinder</p>
-</li>
-<li>
-<p>GCE Persistent Disk</p>
-</li>
-<li>
-<p>iSCSI</p>
-</li>
-<li>
-<p>Local volume</p>
-</li>
-<li>
-<p>NFS</p>
-</li>
-<li>
-<p>Red Hat OpenShift Data Foundation (Ceph RBD only)</p>
-</li>
-<li>
-<p>CIFS/SMB</p>
-</li>
-<li>
-<p>VMware vSphere</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -626,26 +580,23 @@ spec:
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Fibre Channel and HostPath PVs do not support mount options.</p>
+<p>The <code>mountOptions</code> parameter values are not validated. Incorrect values cause the mount to fail and an event to be logged to the PVC.</p>
 </div>
 </td>
 </tr>
 </table>
-</div>
-</li>
-</ul>
 </div>
 </dd>
 </dl>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="pv-access-modes_use-persistent-storage.html">Access modes</a> | ↑ Up: <a href="persistent-volumes_use-persistent-storage.html">Persistent volumes</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="microshift-pv-rwo-access-mode-permission_use-persistent-storage.html">Persistent volumes with RWO access mode permissions</a> →</p>
+<p>← Previous: <a href="supported-access-modes_use-persistent-storage.html">Supported access modes</a> | ↑ Up: <a href="persistent-volumes_use-persistent-storage.html">Persistent volumes</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="microshift-pv-rwo-access-mode-permission_use-persistent-storage.html">Persistent volumes with RWO access mode permissions</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

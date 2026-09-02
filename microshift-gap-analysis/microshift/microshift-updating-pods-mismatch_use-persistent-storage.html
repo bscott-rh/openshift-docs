@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="storage-ephemeral-storage-manage-config-and-eviction_use-ephemeral-storage" class="book toc2 toc-left">
+<body id="microshift-updating-pods-mismatch_use-persistent-storage" class="book toc2 toc-left">
 <div id="header">
 <h1>Red Hat build of MicroShift</h1>
 <div id="toc" class="toc2">
@@ -489,28 +489,39 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect4">
-<h5 id="storage-ephemeral-storage-manage-config-and-eviction_use-ephemeral-storage">Ephemeral storage management configuration affects pod scheduling and eviction</h5>
+<h5 id="microshift-updating-pods-mismatch_use-persistent-storage">Updating the pods which have mismatch</h5>
 <div class="paragraph _abstract">
-<p>Configure ephemeral storage requests and limits in the pod spec to control how the scheduler places pods on nodes and when kubelet evicts pods that exceed their allocated storage.</p>
+<p>To resolve configuration discrepancies, update the SELinux context of the pods that display a mismatch status. This process ensures that your running workloads align with the expected configuration, maintaining consistency across your cluster.</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
 <li>
-<p>First, the scheduler ensures that the sum of the resource requests of the scheduled containers is less than the capacity of the node. In this case, the pod can be assigned to a node only if the node&#8217;s available ephemeral storage (allocatable resource) is more than 4GiB.</p>
+<p>When there is a mismatch of the SELinux content, create a new security context constraint (SCC) and assign it to both pods. To create a SCC, see "Creating security context constraints".</p>
 </li>
 <li>
-<p>Second, at the container level, because the first container sets a resource limit, kubelet eviction manager measures the disk usage of this container and evicts the pod if the storage usage of the container exceeds its limit (4GiB). The kubelet eviction manager also marks the pod for eviction if the total usage exceeds the overall pod storage limit (8GiB).</p>
+<p>Update the SELinux context as shown in the following example:</p>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal"> [...]
+ securityContext:privileged
+      seLinuxOptions:MustRunAs
+        level: "s0:cXX,cYY"
+  [...]</code></pre>
+</div>
+</div>
 </li>
-</ul>
+</ol>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="storage-ephemeral-storage-manage-requests-and-limits_use-ephemeral-storage.html">Ephemeral storage management limits and requests</a> | ↑ Up: <a href="storage-ephemeral-storage-manage-overview_use-ephemeral-storage.html">Ephemeral storage management overview</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="generic-ephemeral-vols-overview_use-ephemeral-storage.html">Overview of generic ephemeral volumes</a> →</p>
+<p>↑ Up: <a href="microshift-checking-pods-mismatch_use-persistent-storage.html">Checking the pods for mismatch</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="microshift-verifying-pods-mismatch_use-persistent-storage.html">Verifying pods after resolving a mismatch</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

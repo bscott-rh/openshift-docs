@@ -519,31 +519,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph _abstract">
 <p>You can configure a policy that allows traffic from all pods in all namespaces to a particular application.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If you log in with a user with the <code>cluster-admin</code> role, then you can create a network policy in any namespace in the cluster.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>Your cluster uses a network plugin that supports <code>NetworkPolicy</code> objects, such as the OVN-Kubernetes network plugin, with <code>mode: NetworkPolicy</code> set.</p>
-</li>
-<li>
 <p>You installed the OpenShift CLI (<code>oc</code>).</p>
-</li>
-<li>
-<p>You logged in to the cluster with a user with <code>admin</code> privileges.</p>
 </li>
 <li>
 <p>You are working in the namespace that the network policy applies to.</p>
@@ -671,6 +651,21 @@ Commercial support is available at
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p><a href="nw-networkpolicy-allow-traffic-from-a-namespace_secure-and-control-traffic.html">Create a network policy allowing traffic to an application from a namespace</a></p>
+</li>
+<li>
+<p><a href="nw-networkpolicy-edit_secure-and-control-traffic.html">Edit a network policy</a></p>
+</li>
+<li>
+<p><a href="nw-networkpolicy-delete-cli_secure-and-control-traffic.html">Delete a network policy using the CLI</a></p>
+</li>
+<li>
+<p><a href="nw-networkpolicy-view-cli_secure-and-control-traffic.html">View network policies using the CLI</a></p>
+</li>
+<li>
+<p><a href="nw-networkpolicy-optimize-ovn_secure-and-control-traffic.html">Optimizations for network policy with OVN-Kubernetes network plugin</a></p>
+</li>
 </ul>
 </div>
 </div>
@@ -680,7 +675,7 @@ Commercial support is available at
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

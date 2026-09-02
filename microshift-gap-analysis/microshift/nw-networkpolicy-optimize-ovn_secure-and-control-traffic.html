@@ -514,8 +514,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div class="sect3">
-<h4 id="nw-networkpolicy-optimize-ovn_secure-and-control-traffic">Optimizations for network policy with OVN-Kubernetes network plugin</h4>
+<div class="sect4">
+<h5 id="nw-networkpolicy-optimize-ovn_secure-and-control-traffic">Optimizations for network policy with OVN-Kubernetes network plugin</h5>
 <div class="paragraph _abstract">
 <p>Learn how to optimize OVN-Kubernetes network policies to reduce flow count and ensure external IP traffic is allowed when needed.</p>
 </div>
@@ -629,21 +629,67 @@ spec:
 </li>
 </ul>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="nw-networkpolicy-external-ip-ovn_secure-and-control-traffic.html">NetworkPolicy CR and external IPs in OVN-Kubernetes</a></p>
-</li>
-</ul>
+<div class="sect5">
+<h6 id="nw-networkpolicy-external-ip-ovn_secure-and-control-traffic">NetworkPolicy CR and external IPs in OVN-Kubernetes</h6>
+<div class="paragraph">
+<p>In OVN-Kubernetes, the <code>NetworkPolicy</code> custom resource (CR) enforces strict isolation rules. If a service is exposed using an external IP, a network policy can block access from other namespaces unless explicitly configured to allow traffic.</p>
+</div>
+<div class="paragraph">
+<p>To allow access to external IPs across namespaces, create a <code>NetworkPolicy</code> CR that explicitly permits ingress from the required namespaces and ensures traffic is allowed to the designated service ports. Without allowing traffic to the required ports, access might still be restricted.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">  apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+    name: &lt;policy_name&gt;
+    namespace: openshift-ingress
+  spec:
+    ingress:
+    - ports:
+      - port: 80
+        protocol: TCP
+    - ports:
+      - port: 443
+        protocol: TCP
+    - from:
+      - namespaceSelector:
+          matchLabels:
+          kubernetes.io/metadata.name: &lt;my_namespace&gt;
+    podSelector: {}
+    policyTypes:
+    - Ingress</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;policy_name&gt;</code></dt>
+<dd>
+<p>Specifies your name for the policy.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;my_namespace&gt;</code></dt>
+<dd>
+<p>Specifies the name of the namespace where the policy is deployed.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>For more details, see "About network policy".</p>
+</div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="nw-networkpolicy-view-cli_secure-and-control-traffic.html">View network policies using the CLI</a> | ↑ Up: <a href="microshift-secure-control-traffic_secure-and-control-traffic.html">Secure and control traffic</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="nw-networkpolicy-external-ip-ovn_secure-and-control-traffic.html">NetworkPolicy CR and external IPs in OVN-Kubernetes</a> →</p>
+<p>← Previous: <a href="nw-networkpolicy-view-cli_secure-and-control-traffic.html">View network policies using the CLI</a> | ↑ Up: <a href="nw-networkpolicy-allow-traffic-from-all-applications_secure-and-control-traffic.html">Create a network policy allowing traffic to an application from all namespaces</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="microshift-understanding-generic-device-plugin-con_configure-access-to-host-devices.html">Understand the Generic Device Plugin</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

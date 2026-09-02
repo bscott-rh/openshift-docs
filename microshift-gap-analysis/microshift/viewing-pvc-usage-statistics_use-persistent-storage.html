@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="nw-networkpolicy-external-ip-ovn_secure-and-control-traffic" class="book toc2 toc-left">
+<body id="viewing-pvc-usage-statistics_use-persistent-storage" class="book toc2 toc-left">
 <div id="header">
 <h1>Red Hat build of MicroShift</h1>
 <div id="toc" class="toc2">
@@ -459,52 +459,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="_develop.html">Develop</a>
 </li>
 <li><a href="_configure.html">Configure</a>
-<ul class="sectlevel2">
-<li><a href="microshift-understand-default-networking_understand-default-networking.html">Understand default networking capabilities</a>
-</li>
-<li><a href="microshift-customize-networking_customize-networking-configuration.html">Customize networking configuration</a>
-</li>
-<li><a href="microshift-low-latency-concept_optimize-low-latency-performance.html">Lower latency in MicroShift applications</a>
-</li>
-<li><a href="microshift-optimize-network-performance_optimize-network-performance.html">Optimize network performance</a>
-</li>
-<li><a href="microshift-multus-intro_extend-with-multiple-networks.html">Secondary networks in MicroShift</a>
-</li>
-<li><a href="microshift-provide-external-access_provide-external-access.html">Provide external access to edge applications</a>
-</li>
-<li><a href="microshift-secure-api-control-plane_secure-api-and-control-plane.html">Secure the MicroShift API and control plane</a>
-</li>
-<li><a href="microshift-configure-audit-logging_configure-audit-logging.html">Configure audit logging for compliance, monitoring, and incident investigation</a>
-</li>
-<li><a href="microshift-verify-container-signatures-sigstore-con_verify-trusted-container-images.html">Understand how to use sigstore to verify container signatures</a>
-</li>
-<li><a href="microshift-secure-control-traffic_secure-and-control-traffic.html">Secure and control traffic</a>
-</li>
-<li><a href="microshift-understanding-generic-device-plugin-con_configure-access-to-host-devices.html">Understand the Generic Device Plugin</a>
-</li>
-<li><a href="microshift-ensure-host-resilience_ensure-host-control-plane-resilience.html">Ensure host and control plane resilience against application resource exhaustion</a>
-</li>
-<li><a href="microshift-maintain-system-health_maintain-system-health-greenboot.html">Maintain system health with the greenboot health check framework</a>
-</li>
-<li><a href="microshift-test-new-k8s-features_test-new-kubernetes-features.html">Test new Kubernetes features in MicroShift</a>
-</li>
-<li><a href="microshift-configure-with-config-file_configure-with-config-file.html">Configure MicroShift with the configuration file</a>
-</li>
-<li><a href="microshift-configure-disconnected-networking_configure-disconnected-networking.html">Configure networking for a fully disconnected host</a>
-</li>
-<li><a href="microshift-about-load-balancer-service_expose-app-with-loadbalancer.html">The MicroShift LoadBalancer service for workloads</a>
-</li>
-<li><a href="microshift-restrict-nodeport-access_restrict-nodeport-access.html">Restrict external access to NodePort services on MicroShift</a>
-</li>
-<li><a href="microshift-configure-crio-proxy_configure-crio-proxy.html">Configure HTTP or HTTPS proxy settings for CRI-O</a>
-</li>
-</ul>
 </li>
 <li><a href="_observe.html">Observe</a>
 </li>
 <li><a href="_reference.html">Reference</a>
 </li>
 <li><a href="_storage.html">Storage</a>
+<ul class="sectlevel2">
+<li><a href="microshift-understand-lvms-storage_understand-lvms-storage.html">Understand LVMS storage</a>
+</li>
+<li><a href="microshift-use-persistent-storage_use-persistent-storage.html">Use persistent storage</a>
+</li>
+<li><a href="microshift-expand-persistent-volumes_expand-persistent-volumes.html">Expand persistent volumes</a>
+</li>
+<li><a href="microshift-use-ephemeral-storage_use-ephemeral-storage.html">Use ephemeral storage</a>
+</li>
+<li><a href="microshift-work-with-volume-snapshots_work-with-volume-snapshots.html">Work with volume snapshots</a>
+</li>
+<li><a href="microshift-disable-lvms-csi_disable-lvms-csi.html">Disable the LVMS CSI provider and CSI snapshot</a>
+</li>
+</ul>
 </li>
 <li><a href="_ai.html">AI</a>
 </li>
@@ -515,65 +489,114 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect4">
-<h5 id="nw-networkpolicy-external-ip-ovn_secure-and-control-traffic">NetworkPolicy CR and external IPs in OVN-Kubernetes</h5>
+<h5 id="viewing-pvc-usage-statistics_use-persistent-storage">Viewing PVC usage statistics</h5>
+<div class="paragraph _abstract">
+<p>To monitor storage consumption, view the usage statistics for Persistent Volume Claims (PVCs). By accessing these metrics, you can track resource use and ensure that your workloads have sufficient capacity.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Important">
+</td>
+<td class="content">
 <div class="paragraph">
-<p>In OVN-Kubernetes, the <code>NetworkPolicy</code> custom resource (CR) enforces strict isolation rules. If a service is exposed using an external IP, a network policy can block access from other namespaces unless explicitly configured to allow traffic.</p>
+<p>PVC usage statistics command is a Technology Preview feature only. Technology Preview features are not supported with Red&#160;Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
 </div>
 <div class="paragraph">
-<p>To allow access to external IPs across namespaces, create a <code>NetworkPolicy</code> CR that explicitly permits ingress from the required namespaces and ensures traffic is allowed to the designated service ports. Without allowing traffic to the required ports, access might still be restricted.</p>
+<p>For more information about the support scope of Red Hat Technology Preview features, see <a href="https://access.redhat.com/support/offerings/techpreview/">Technology Preview Features Support Scope</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>To view statistics across a cluster, run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc adm top pvc -A</code></pre>
+</div>
 </div>
 <div class="listingblock">
-<div class="title">Example output</div>
+<div class="title">Example command output</div>
 <div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">  apiVersion: networking.k8s.io/v1
-  kind: NetworkPolicy
-  metadata:
-    annotations:
-    name: &lt;policy_name&gt;
-    namespace: openshift-ingress
-  spec:
-    ingress:
-    - ports:
-      - port: 80
-        protocol: TCP
-    - ports:
-      - port: 443
-        protocol: TCP
-    - from:
-      - namespaceSelector:
-          matchLabels:
-          kubernetes.io/metadata.name: &lt;my_namespace&gt;
-    podSelector: {}
-    policyTypes:
-    - Ingress</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAMESPACE     NAME         USAGE(%)
+namespace-1   data-etcd-1  3.82%
+namespace-1   data-etcd-0  3.81%
+namespace-1   data-etcd-2  3.81%
+namespace-2   mypvc-fs-gp3 0.00%
+default       mypvc-fs     98.36%</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>To view PVC usage statistics for a specified namespace, run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc adm top pvc -n <em>&lt;namespace_name&gt;</em></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Where <code><em>&lt;namespace_name&gt;</em></code> is the name of the specified namespace.</p>
+<div class="listingblock">
+<div class="title">Example command output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAMESPACE     NAME        USAGE(%)
+namespace-1   data-etcd-2 3.81%
+namespace-1   data-etcd-0 3.81%
+namespace-1   data-etcd-1 3.82%</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>where:</p>
+<p>In this example, the specified namespace is <code>namespace-1</code>.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>&lt;policy_name&gt;</code></dt>
-<dd>
-<p>Specifies your name for the policy.</p>
-</dd>
-<dt class="hdlist1"><code>&lt;my_namespace&gt;</code></dt>
-<dd>
-<p>Specifies the name of the namespace where the policy is deployed.</p>
-</dd>
-</dl>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>To view usage statistics for a specified PVC and for a specified namespace, run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc adm top pvc <em>&lt;pvc_name&gt;</em> -n <em>&lt;namespace_name&gt;</em></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Where <code><em>&lt;pvc_name&gt;</em></code> is the name of specified PVC.</p>
+</li>
+<li>
+<p>Where <code><em>&lt;namespace_name&gt;</em></code> is the name of the specified namespace.</p>
+<div class="listingblock">
+<div class="title">Example command output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAMESPACE   NAME        USAGE(%)
+namespace-1 data-etcd-0 3.81%</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>For more details, see "About network policy".</p>
+<p>In this example, the specified namespace is <code>namespace-1</code> and the specified PVC is <code>data-etcd-0</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>↑ Up: <a href="nw-networkpolicy-optimize-ovn_secure-and-control-traffic.html">Optimizations for network policy with OVN-Kubernetes network plugin</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="microshift-understanding-generic-device-plugin-con_configure-access-to-host-devices.html">Understand the Generic Device Plugin</a> →</p>
+<p>← Previous: <a href="pvc-cli-command-usage_use-persistent-storage.html">Setting PVC viewing permissions</a> | ↑ Up: <a href="storage-persistent-storage-pvc_use-persistent-storage.html">Persistent volume claims</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="storage-persistent-storage-fsGroup_use-persistent-storage.html">Reduce pod timeouts by using fsGroup</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

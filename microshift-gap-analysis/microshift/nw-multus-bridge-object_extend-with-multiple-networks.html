@@ -539,12 +539,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>cniVersion</code></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The CNI specification version. A minimum version of <code>0.3.1</code> is required.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>name</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The mandatory, unique identifier assigned to this CNI network attachment definition. It is used by the container runtime to select the correct network configuration and serves as the key for persistent resource state management, such as IP address allocations.</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The CNI specification version. The <code>0.4.0</code> value is required.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>type</code></p></td>
@@ -597,26 +592,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-middle"><p class="tableblock">Optional: Set to <code>true</code> to enable promiscuous mode on the bridge. The default value is <code>false</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>vlan</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>integer</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Optional: Specify a virtual LAN (VLAN) tag as an integer value. By default, no VLAN tag is assigned.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>preserveDefaultVlan</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>boolean</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Optional: Indicates whether the default VLAN must be preserved on the <code>veth</code> end connected to the bridge. Defaults to <code>false</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>portIsolation</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>boolean</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Optional: If <code>true</code>, prevents containers on the same bridge from communicating with each other. A container can still reach non-isolated ports. For example, a bridge interface that allows access to the host or an optional uplink that allows access outside the host. The default value is <code>false</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>vlanTrunk</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>list</code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Optional: Assign a VLAN trunk tag. The default value is <code>none</code>.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>mtu</code></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>integer</code></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">Optional: Set the maximum transmission unit (MTU) to the specified value. The default value is automatically set by the kernel.</p></td>
@@ -633,54 +608,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The VLAN parameter configures the VLAN tag on the host end of the <code>veth</code> and also enables the <code>vlan_filtering</code> feature on the bridge interface.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>To configure an uplink for an L2 network, you must allow the VLAN on the uplink interface by using the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$  bridge vlan add vid VLAN_ID dev DEV</code></pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="nw-multus-bridge-config-example_extend-with-multiple-networks.html">Bridge CNI plugin configuration example</a></p>
+<p><a href="microshift-nw-multus-bridge-config-example_extend-with-multiple-networks.html">Bridge CNI plugin configuration example</a></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="microshift-multus-installing-on-running-node_extend-with-multiple-networks.html">Install the Multus CNI plugin on a running node</a> | ↑ Up: <a href="microshift-multus-intro_extend-with-multiple-networks.html">Secondary networks in MicroShift</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="nw-multus-bridge-config-example_extend-with-multiple-networks.html">Bridge CNI plugin configuration example</a> →</p>
+<p>← Previous: <a href="microshift-multus-installing-on-running-node_extend-with-multiple-networks.html">Install the Multus CNI plugin on a running node</a> | ↑ Up: <a href="microshift-multus-intro_extend-with-multiple-networks.html">Secondary networks in MicroShift</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="microshift-nw-multus-bridge-config-example_extend-with-multiple-networks.html">Bridge CNI plugin configuration example</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

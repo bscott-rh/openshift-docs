@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="types-of-persistent-volumes_use-persistent-storage" class="book toc2 toc-left">
+<body id="pvc-claims-as-volumes_use-persistent-storage" class="book toc2 toc-left">
 <div id="header">
 <h1>Red Hat build of MicroShift</h1>
 <div id="toc" class="toc2">
@@ -489,32 +489,64 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect4">
-<h5 id="types-of-persistent-volumes_use-persistent-storage">Types of PVs</h5>
-<div class="paragraph">
-<p>+
-Red&#160;Hat build of MicroShift supports the following persistent volume plugins:</p>
+<h5 id="pvc-claims-as-volumes_use-persistent-storage">Claims as volumes</h5>
+<div class="paragraph _abstract">
+<p>To enable pods to access storage resources, configure Persistent Volume Claims (PVCs) as volumes. By mounting the claim to the host and into the pod, the cluster locates the backing <code>PersistentVolume</code> (PV) in the same namespace, ensuring the workload can read and write data effectively.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>AWS Elastic Block Store (EBS), which is installed by default.</p>
-</li>
-<li>
-<p>GCP Persistent Disk</p>
-</li>
-<li>
-<p>GCP Filestore</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Claims use the same conventions as volumes when requesting storage with specific access modes.</p>
+</div>
+<div class="paragraph">
+<p>Claims, such as pods, can request specific quantities of a resource. In this case, the request is for storage. The same resource model applies to volumes and claims.</p>
+</div>
+<div class="listingblock">
+<div class="title">Mount volume to the host and into the pod example</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">kind: Pod
+apiVersion: v1
+metadata:
+  name: mypod
+spec:
+  containers:
+    - name: myfrontend
+      image: dockerfile/nginx
+      volumeMounts:
+      - mountPath: "/var/www/html"
+        name: mypd
+  volumes:
+    - name: mypd
+      persistentVolumeClaim:
+        claimName: myclaim
+# ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>volumeMounts.mountPath</code></dt>
+<dd>
+<p>Specifies the path to mount the volume inside the pod.</p>
+</dd>
+<dt class="hdlist1"><code>volumeMounts.name</code></dt>
+<dd>
+<p>Specifies the name of the volume to mount. Do not mount to the container root, <code>/</code>, or any path that is the same in the host and the container. This can corrupt your host system if the container is sufficiently privileged, such as the host <code>/dev/pts</code> files. Using <code>/host</code> is a safe option for mounting the host.</p>
+</dd>
+<dt class="hdlist1"><code>persistentVolumeClaim.claimName</code></dt>
+<dd>
+<p>Specifies the name of the PVC, that exists in the same namespace, to use.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>↑ Up: <a href="persistent-volumes_use-persistent-storage.html">Persistent volumes</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="pv-capacity_use-persistent-storage.html">Capacity</a> →</p>
+<p>← Previous: <a href="pvc-storage-class_use-persistent-storage.html">Storage classes</a> | ↑ Up: <a href="storage-persistent-storage-pvc_use-persistent-storage.html">Persistent volume claims</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="pvc-cli-command-usage_use-persistent-storage.html">Setting PVC viewing permissions</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

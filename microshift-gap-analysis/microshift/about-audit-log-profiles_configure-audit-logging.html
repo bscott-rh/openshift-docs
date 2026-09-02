@@ -520,10 +520,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>To monitor activity and maintain compliance, you can apply audit log profiles that define the level of detail recorded for API server requests. While more comprehensive profiles provide request bodies for troubleshooting, they also increase resource overhead on the host system.</p>
 </div>
 <div class="paragraph">
-<p>Audit log profiles define how to log requests that come to the OpenShift API server, Kubernetes API server, OpenShift OAuth API server, and OpenShift OAuth server.</p>
+<p>Audit log profiles define how to log requests that come to the OpenShift API server and the Kubernetes API server.</p>
 </div>
 <div class="paragraph">
-<p>Red&#160;Hat build of MicroShift provides the following predefined audit policy profiles:</p>
+<p>MicroShift supports the following predefined audit policy profiles:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -579,7 +579,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>None</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No requests are logged, including OAuth access token requests and OAuth authorize token requests. Custom rules are ignored when this profile is set.</p>
+<p>No requests are logged, including OAuth access token requests and OAuth authorize token requests.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -610,15 +610,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Sensitive resources, such as <code>Secret</code>, <code>Route</code>, and <code>OAuthClient</code> objects, are only logged at the metadata level.
-OpenShift OAuth server events are only logged at the metadata level.</p>
+<p>Sensitive resources, such as <code>Secret</code>, <code>Route</code>, and <code>OAuthClient</code> objects, are only logged at the metadata level.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>By default, Red&#160;Hat build of MicroShift uses the <code>Default</code> audit log profile. You can use another audit policy profile that also logs request bodies, but be aware of the increased resource usage such as CPU, memory, and I/O.</p>
+<p>By default, MicroShift uses the <code>Default</code> audit log profile. You can use another audit policy profile that also logs request bodies, but be aware of the increased resource usage such as CPU, memory, and I/O.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -631,7 +630,7 @@ OpenShift OAuth server events are only logged at the metadata level.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

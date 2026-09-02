@@ -557,12 +557,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>Use a bandwidth measuring tool, such as <a href="https://access.redhat.com/solutions/6129701"><code>iperf</code></a>, to measure streaming throughput and UDP throughput. Locate any bottlenecks by running the tool from the pods first, and then running it from the nodes.</p>
 </li>
-<li>
-<p>In some cases, the cluster might mark the node with the router pod as unhealthy due to latency issues. Use worker latency profiles to adjust the frequency that the cluster waits for a status update from the node before taking action.</p>
-</li>
-<li>
-<p>If your cluster has designated lower-latency and higher-latency nodes, configure the <code>spec.nodePlacement</code> field in the Ingress Controller to control the placement of the router pod.</p>
-</li>
 </ul>
 </div>
 <div class="ulist">
@@ -576,7 +570,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

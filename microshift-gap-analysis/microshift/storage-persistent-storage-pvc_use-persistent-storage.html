@@ -488,8 +488,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div class="sect4">
-<h5 id="storage-persistent-storage-pvc_use-persistent-storage">Persistent volume claims</h5>
+<div class="sect3">
+<h4 id="storage-persistent-storage-pvc_use-persistent-storage">Persistent volume claims</h4>
 <div class="paragraph _abstract">
 <p>Persistent volume claims (PVCs) are namespace-scoped storage requests that specify capacity, access modes, and storage class requirements. Each claim contains a spec field defining the storage request parameters and a status field tracking the binding state and current conditions of the claim.</p>
 </div>
@@ -527,259 +527,30 @@ status:
 </li>
 </ul>
 </div>
-<div class="sect5">
-<h6 id="pvc-storage-class_use-persistent-storage">Storage classes</h6>
-<div class="paragraph _abstract">
-<p>To request specific storage capabilities, define the <code>StorageClass</code> name in the <code>storageClassName</code> attribute of your <code>PersistentVolumeClaim</code> (PVC). This setting ensures the claim binds only to matching <code>PersistentVolumes</code> (PVs) or triggers dynamic provisioning if the cluster administrator has configured on-demand creation.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Important">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The Cluster Storage Operator might install a default storage class depending on the platform in use. This storage class is owned and controlled by the Operator. The storage class cannot be deleted or modified beyond defining annotations and labels. If different behavior is desired, you must define a custom storage class.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The cluster administrator can also set a default storage class for all PVCs. When you configure a default storage class, the PVC must explicitly ask for <code>StorageClass</code> or <code>storageClassName</code> annotations set to <code>""</code> to be bound to a PV without a storage class.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If more than one storage class is marked as default, a PVC can only be created if the <code>storageClassName</code> is explicitly specified. Therefore, only set one storage class as the default.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect5">
-<h6 id="pvc-claims-as-volumes_use-persistent-storage">Claims as volumes</h6>
-<div class="paragraph _abstract">
-<p>To enable pods to access storage resources, configure Persistent Volume Claims (PVCs) as volumes. By mounting the claim to the host and into the pod, the cluster locates the backing <code>PersistentVolume</code> (PV) in the same namespace, ensuring the workload can read and write data effectively.</p>
-</div>
-<div class="paragraph">
-<p>Claims use the same conventions as volumes when requesting storage with specific access modes.</p>
-</div>
-<div class="paragraph">
-<p>Claims, such as pods, can request specific quantities of a resource. In this case, the request is for storage. The same resource model applies to volumes and claims.</p>
-</div>
-<div class="listingblock">
-<div class="title">Mount volume to the host and into the pod example</div>
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">kind: Pod
-apiVersion: v1
-metadata:
-  name: mypod
-spec:
-  containers:
-    - name: myfrontend
-      image: dockerfile/nginx
-      volumeMounts:
-      - mountPath: "/var/www/html"
-        name: mypd
-  volumes:
-    - name: mypd
-      persistentVolumeClaim:
-        claimName: myclaim
-# ...</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>volumeMounts.mountPath</code></dt>
-<dd>
-<p>Specifies the path to mount the volume inside the pod.</p>
-</dd>
-<dt class="hdlist1"><code>volumeMounts.name</code></dt>
-<dd>
-<p>Specifies the name of the volume to mount. Do not mount to the container root, <code>/</code>, or any path that is the same in the host and the container. This can corrupt your host system if the container is sufficiently privileged, such as the host <code>/dev/pts</code> files. Using <code>/host</code> is a safe option for mounting the host.</p>
-</dd>
-<dt class="hdlist1"><code>persistentVolumeClaim.claimName</code></dt>
-<dd>
-<p>Specifies the name of the PVC, that exists in the same namespace, to use.</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="sect5">
-<h6 id="pvc-cli-command-usage_use-persistent-storage">Setting PVC viewing permissions</h6>
-<div class="paragraph _abstract">
-<p>To monitor storage resources, verify that you have the necessary privileges to view Persistent Volume Claim (PVC) usage statistics. Ensuring you have the correct permissions means that you can access usage data and track resource consumption effectively.</p>
-</div>
-<div class="paragraph">
-<p>To view PVC usage statistics, you must have the necessary privileges.</p>
-</div>
-<div class="ulist">
-<div class="title">Procedure</div>
-<ul>
-<li>
-<p>If you have admin privileges, log on to MicroShift as an <code>admin</code>.</p>
-</li>
-<li>
-<p>If you do not have admin privileges, complete the following steps:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Create cluster roles for the user by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create clusterrole routes-view --verb=get,list --resource=routes</code></pre>
-</div>
-</div>
+<p><a href="pvc-storage-class_use-persistent-storage.html">Storage classes</a></p>
 </li>
 <li>
-<p>Add the <code>routes-view</code> cluster role for the user by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc admin policy add-cluster-role-to-user routes-view _&lt;user_name&gt;_</code></pre>
-</div>
-</div>
+<p><a href="pvc-claims-as-volumes_use-persistent-storage.html">Claims as volumes</a></p>
 </li>
 <li>
-<p>Replace <code><em>&lt;user_name&gt;</em></code> with the user name.</p>
+<p><a href="pvc-cli-command-usage_use-persistent-storage.html">Setting PVC viewing permissions</a></p>
 </li>
 <li>
-<p>Add the <code>cluster-monitoring-view</code> cluster role for the user by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc admin policy add-cluster-role-to-user cluster-monitoring-view _&lt;user_name&gt;_</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Replace <code><em>&lt;user_name&gt;</em></code> with the user name.</p>
+<p><a href="viewing-pvc-usage-statistics_use-persistent-storage.html">Viewing PVC usage statistics</a></p>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect5">
-<h6 id="viewing-pvc-usage-statistics_use-persistent-storage">Viewing PVC usage statistics</h6>
-<div class="paragraph _abstract">
-<p>To monitor storage consumption, view the usage statistics for Persistent Volume Claims (PVCs). By accessing these metrics, you can track resource use and ensure that your workloads have sufficient capacity.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Important">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>PVC usage statistics command is a Technology Preview feature only. Technology Preview features are not supported with Red&#160;Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
-</div>
-<div class="paragraph">
-<p>For more information about the support scope of Red Hat Technology Preview features, see <a href="https://access.redhat.com/support/offerings/techpreview/">Technology Preview Features Support Scope</a>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<div class="title">Procedure</div>
-<ul>
-<li>
-<p>To view statistics across a cluster, run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc adm top pvc -A</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example command output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAMESPACE     NAME         USAGE(%)
-namespace-1   data-etcd-1  3.82%
-namespace-1   data-etcd-0  3.81%
-namespace-1   data-etcd-2  3.81%
-namespace-2   mypvc-fs-gp3 0.00%
-default       mypvc-fs     98.36%</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>To view PVC usage statistics for a specified namespace, run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc adm top pvc -n <em>&lt;namespace_name&gt;</em></code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Where <code><em>&lt;namespace_name&gt;</em></code> is the name of the specified namespace.</p>
-<div class="listingblock">
-<div class="title">Example command output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAMESPACE     NAME        USAGE(%)
-namespace-1   data-etcd-2 3.81%
-namespace-1   data-etcd-0 3.81%
-namespace-1   data-etcd-1 3.82%</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In this example, the specified namespace is <code>namespace-1</code>.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>To view usage statistics for a specified PVC and for a specified namespace, run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc adm top pvc <em>&lt;pvc_name&gt;</em> -n <em>&lt;namespace_name&gt;</em></code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Where <code><em>&lt;pvc_name&gt;</em></code> is the name of specified PVC.</p>
-</li>
-<li>
-<p>Where <code><em>&lt;namespace_name&gt;</em></code> is the name of the specified namespace.</p>
-<div class="listingblock">
-<div class="title">Example command output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAMESPACE   NAME        USAGE(%)
-namespace-1 data-etcd-0 3.81%</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In this example, the specified namespace is <code>namespace-1</code> and the specified PVC is <code>data-etcd-0</code>.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="microshift-lvm-thin-volumes_use-persistent-storage.html">About LVM thin volumes</a> | ↑ Up: <a href="microshift-pv-rwo-access-mode-permission_use-persistent-storage.html">Persistent volumes with RWO access mode permissions</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="storage-persistent-storage-fsGroup_use-persistent-storage.html">Reduce pod timeouts by using fsGroup</a> →</p>
+<p>← Previous: <a href="microshift-lvm-thin-volumes_use-persistent-storage.html">About LVM thin volumes</a> | ↑ Up: <a href="microshift-use-persistent-storage_use-persistent-storage.html">Use persistent storage</a> | ⌂ Home: <a href="navigation.html">Red Hat build of MicroShift</a> | Next: <a href="pvc-storage-class_use-persistent-storage.html">Storage classes</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>

@@ -514,91 +514,30 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>If the size of the PE is increased, the maximum size of the LVM is determined by the kernel limits and your disk space.</p>
 </li>
+<li>
+<p>The size limit for Red&#160;Hat Enterprise Linux (RHEL) 9 by using the default PE and LE size is 8 EB.</p>
+</li>
+<li>
+<p>The following are the minimum storage sizes that you can request for each file system type:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>block</code>: 8 MiB</p>
+</li>
+<li>
+<p><code>xfs</code>: 300 MiB</p>
+</li>
+<li>
+<p><code>ext4</code>: 32 MiB</p>
+</li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>The following tables describe the chunk size and volume size limits for static and host configurations:</p>
+</li>
+</ul>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 21. Tested configuration</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Chunk size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">128 KiB</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum volume size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">32 TiB</p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 22. Theoretical size limits for static configuration</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Minimum value</th>
-<th class="tableblock halign-left valign-top">Maximum value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Chunk size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">64 KiB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1 GiB</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volume size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum size of the underlying Red&#160;Hat Enterprise Linux CoreOS (RHCOS) system.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum size of the underlying RHCOS system.</p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 23. Theoretical size limits for a host configuration</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Chunk size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This value is based on the configuration in the <code>lvm.conf</code> file. By default, the configuration sets the value to <code>128</code> KiB.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum volume size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Equal to the maximum volume size of the underlying RHCOS system.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum volume size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Equal to the minimum volume size of the underlying RHCOS system.</p></td>
-</tr>
-</tbody>
-</table>
 <div class="ulist">
 <ul>
 </ul>
@@ -610,7 +549,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-02 14:16:31 -0400
+Last updated 2026-09-02 15:51:28 -0400
 </div>
 </div>
 <style>
