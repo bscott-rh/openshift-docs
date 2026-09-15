@@ -520,6 +520,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph _abstract">
 <p>Source-to-image (S2I) can perform incremental builds, which means it reuses artifacts from previously-built images.</p>
 </div>
+<div class="paragraph">
+<p>See S2I Requirements for information on how to create a builder image supporting incremental builds.</p>
+</div>
 <div class="ulist">
 <div class="title">Procedure</div>
 <ul>
@@ -531,30 +534,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   sourceStrategy:
     from:
       kind: "ImageStreamTag"
-      name: "incremental-image:latest" <img src="data:image/png;base64," alt="1">
-    incremental: true <img src="data:image/png;base64," alt="2"></code></pre>
+      name: "incremental-image:latest"
+    incremental: true</code></pre>
 </div>
 </div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><img src="data:image/png;base64," alt="1"></td>
-<td>Specify an image that supports incremental builds. Consult the documentation of the builder image to determine if it supports this behavior.</td>
-</tr>
-<tr>
-<td><img src="data:image/png;base64," alt="2"></td>
-<td>This flag controls whether an incremental build is attempted. If the builder image does not support incremental builds, the build will still succeed, but you will get a log message stating the incremental build was not successful because of a missing <code>save-artifacts</code> script.</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>where:</p>
 </div>
-</li>
-</ul>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>strategy.sourceStrategy.from.name</code></dt>
+<dd>
+<p>Specifies an image that supports incremental builds. Consult the documentation of the builder image to determine if it supports this behavior.</p>
+</dd>
+<dt class="hdlist1"><code>strategy.sourceStrategy.incremental</code></dt>
+<dd>
+<p>Specifies whether an incremental build is attempted. If the builder image does not support incremental builds, the build will still succeed, but you will get a log message stating the incremental build was not successful because of a missing <code>save-artifacts</code> script.</p>
+</dd>
+</dl>
 </div>
-<div class="ulist _additional-resources">
-<div class="title">Additional resources</div>
-<ul>
-<li>
-<p>See S2I Requirements for information on how to create a builder image supporting incremental builds.</p>
 </li>
 </ul>
 </div>
@@ -566,7 +564,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-15 09:26:49 -0400
+Last updated 2026-09-15 14:33:59 -0400
 </div>
 </div>
 <style>
