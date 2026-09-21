@@ -535,8 +535,8 @@ Alternative names help you overcome the 15-character kernel interface name limit
 <div class="paragraph">
 <p>You can use alternative names anywhere that accepts a standard interface name, including bond ports, VLAN base interfaces, bridge ports, and route next-hop interfaces.</p>
 </div>
-<div class="sect6">
-<h7 id="k8s-nmstate-creating-alternative-interface-names-by-name_simplify-automation-by-assigning-alternative-interface-names">Create alternative interface names by interface name</h7>
+<div class="sect5">
+<h6 id="k8s-nmstate-creating-alternative-interface-names-by-name_simplify-automation-by-assigning-alternative-interface-names">Create alternative interface names by interface name</h6>
 <div class="paragraph _abstract">
 <p>You can create alternative names for network interfaces to enable consistent, descriptive interface references across cluster nodes.
 Alternative names persist across reboots and can be used anywhere standard interface names are accepted.</p>
@@ -707,8 +707,8 @@ spec:
 </ol>
 </div>
 </div>
-<div class="sect6">
-<h7 id="k8s-nmstate-creating-alternative-interface-names-by-identifier_simplify-automation-by-assigning-alternative-interface-names">Create alternative interface names by MAC address or PCI address</h7>
+<div class="sect5">
+<h6 id="k8s-nmstate-creating-alternative-interface-names-by-identifier_simplify-automation-by-assigning-alternative-interface-names">Create alternative interface names by MAC address or PCI address</h6>
 <div class="paragraph _abstract">
 <p>You can match network interfaces by MAC address or peripheral component interconnect (PCI) address to create configurations that target interfaces based on hardware identifiers rather than interface name.</p>
 </div>
@@ -906,8 +906,8 @@ spec:
 </ol>
 </div>
 </div>
-<div class="sect6">
-<h7 id="k8s-nmstate-deleting-alternative-interface-names_simplify-automation-by-assigning-alternative-interface-names">Delete alternative interface names</h7>
+<div class="sect5">
+<h6 id="k8s-nmstate-deleting-alternative-interface-names_simplify-automation-by-assigning-alternative-interface-names">Delete alternative interface names</h6>
 <div class="paragraph _abstract">
 <p>You can remove alternative names from network interfaces when they are no longer needed.
 Removing alternative names requires explicitly marking them for deletion in a <code>NodeNetworkConfigurationPolicy</code> resource.</p>
@@ -1179,7 +1179,7 @@ You must explicitly mark names for deletion with <code>state: absent</code>.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-18 20:30:23 -0400
+Last updated 2026-09-21 15:30:12 -0400
 </div>
 </div>
 <style>
