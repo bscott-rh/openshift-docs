@@ -1,5 +1,5 @@
 :_mod-docs-content-type: MAP
-:context: understanding-how-i-can-use-software-and-drivers-that-are-not-available-as-rhcos-extensions-with-my-nodes
+:context: use-software-and-drivers-not-available-as-rhcos-extensions
 
 // TODO: This job is partially mapped. RHCOS layering covered; needs comparison with extensions
 
