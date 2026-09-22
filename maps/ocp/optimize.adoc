@@ -42,7 +42,7 @@ include::ocp-jobs/plan-for-ibm-z-and-linuxone-platforms.adoc[leveloffset=+1]
 
 include::ocp-jobs/optimize-cluster-performance-across-subsystems.adoc[leveloffset=+1]
 
-include::ocp-jobs/learn-how-i-can-reduce-image-pull-time-for-operations-that-require-a-pull-such-as-cluster-updates-or-application-deployments.adoc[leveloffset=+1]
+include::ocp-jobs/reduce-image-pull-time.adoc[leveloffset=+1]
 
 include::ocp-jobs/adjust-pod-resource-levels-without-pod-disruption.adoc[leveloffset=+1]
 
