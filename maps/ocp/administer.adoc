@@ -42,7 +42,7 @@ include::ocp-jobs/perform-lightweight-tasks-with-init-containers.adoc[leveloffse
 
 include::ocp-jobs/prevent-my-cluster-from-automatically-updating-the-boot-image-on-my-nodes.adoc[leveloffset=+1]
 
-include::ocp-jobs/reduce-image-pull-time-for-operations-that-require-a-pull-such-as-cluster-updates-or-application-deployments.adoc[leveloffset=+1]
+include::ocp-jobs/reduce-image-pull-time-for-cluster-operations.adoc[leveloffset=+1]
 
 include::ocp-jobs/remove-no-longer-used-machine-config-objects.adoc[leveloffset=+1]
 
