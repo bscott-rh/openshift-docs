@@ -1,0 +1,3662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.22">
+<title>Red Hat OpenShift Container Platform</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="bmo-config-using-bare-metal-operator_complete-bare-metal-post-installation-configuration" class="book toc2 toc-left">
+<div id="header">
+<h1>Red Hat OpenShift Container Platform</h1>
+<div id="toc" class="toc2">
+<div id="toctitle"></div>
+<p><span class="toc-root"><a href="navigation.html">Red Hat OpenShift Container Platform</a></span></p><ul class="sectlevel1">
+<li><a href="_whats_new.html">What&#8217;s new</a>
+</li>
+<li><a href="_discover.html">Discover</a>
+</li>
+<li><a href="_get_started.html">Get Started</a>
+</li>
+<li><a href="_plan.html">Plan</a>
+</li>
+<li><a href="_deploy.html">Deploy</a>
+</li>
+<li><a href="_install.html">Install</a>
+<ul class="sectlevel2">
+<li><a href="prepare-to-install-openshift-con_prepare-to-install-openshift.html">Prepare to install OpenShift</a>
+</li>
+<li><a href="install-a-cluster-on-a-cloud-platform-con_install-a-cluster-on-a-cloud-platform.html">Install a cluster on a cloud platform</a>
+</li>
+<li><a href="install-a-cluster-on-on-premise-infrastructure-con_install-a-cluster-on-on-premise-infrastructure.html">Install a cluster on on-premise infrastructure</a>
+</li>
+<li><a href="install-a-cluster-on-user-provisioned-infrastructure-con_install-a-cluster-on-user-provisioned-infrastructure.html">Install a cluster on user-provisioned infrastructure</a>
+</li>
+<li><a href="install-a-cluster-with-the-agent-based-installer-con_install-a-cluster-with-the-agent-based-installer.html">Install a cluster with the Agent-based Installer</a>
+</li>
+<li><a href="install-a-cluster-with-the-assisted-installer-con_install-a-cluster-with-the-assisted-installer.html">Install a cluster with the Assisted Installer</a>
+</li>
+<li><a href="install-a-cluster-with-a-reduced-footprint-con_install-a-cluster-with-a-reduced-footprint.html">Install a cluster with a reduced footprint</a>
+</li>
+<li><a href="install-a-cluster-at-the-edge-con_install-a-cluster-at-the-edge.html">Install a cluster at the edge</a>
+</li>
+<li><a href="install-a-hosted-control-plane-cluster-con_install-a-hosted-control-plane-cluster.html">Install a hosted control plane cluster</a>
+</li>
+<li><a href="verify-and-troubleshoot-an-installation-con_verify-and-troubleshoot-an-installation.html">Verify and troubleshoot an installation</a>
+</li>
+<li><a href="complete-post-installation-configuration-con_complete-post-installation-configuration.html">Complete post-installation configuration</a>
+</li>
+<li><a href="expand-a-cluster-after-installation-con_expand-a-cluster-after-installation.html">Expand a cluster after installation</a>
+</li>
+<li><a href="uninstall-a-cluster-con_uninstall-a-cluster.html">Uninstall a cluster</a>
+</li>
+</ul>
+</li>
+<li><a href="_disconnected_environments.html">Disconnected environments</a>
+</li>
+<li><a href="_upgrade.html">Upgrade</a>
+</li>
+<li><a href="_migrate.html">Migrate</a>
+</li>
+<li><a href="_administer.html">Administer</a>
+</li>
+<li><a href="_develop.html">Develop</a>
+</li>
+<li><a href="_configure.html">Configure</a>
+</li>
+<li><a href="_network.html">Network</a>
+</li>
+<li><a href="_storage.html">Storage</a>
+</li>
+<li><a href="_secure.html">Secure</a>
+</li>
+<li><a href="_observe.html">Observe</a>
+</li>
+<li><a href="_integrate.html">Integrate</a>
+</li>
+<li><a href="_optimize.html">Optimize</a>
+</li>
+<li><a href="_extend.html">Extend</a>
+</li>
+<li><a href="_validate.html">Validate</a>
+</li>
+<li><a href="_troubleshoot.html">Troubleshoot</a>
+</li>
+<li><a href="_reference.html">Reference</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="bmo-config-using-bare-metal-operator_complete-bare-metal-post-installation-configuration">Configuration using the Bare Metal Operator</h5>
+<div class="paragraph _abstract">
+<p>When deploying Red&#160;Hat OpenShift Container Platform on bare-metal hosts, there are times when you need to make changes to the host either before or after provisioning. This can include inspecting the host&#8217;s hardware, firmware, and firmware details. It can also include formatting disks or changing modifiable firmware settings.</p>
+</div>
+<div class="paragraph">
+<p>You can use the Bare Metal Operator (BMO) to provision, manage, and inspect bare-metal hosts in your cluster. The BMO can complete the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Provision bare-metal hosts to the cluster with a specific image.</p>
+</li>
+<li>
+<p>Turn a host on or off.</p>
+</li>
+<li>
+<p>Inspect hardware details of the host and report them to the bare-metal host.</p>
+</li>
+<li>
+<p>Upgrade or downgrade a host&#8217;s firmware to a specific version.</p>
+</li>
+<li>
+<p>Inspect firmware and configure BIOS settings.</p>
+</li>
+<li>
+<p>Clean disk contents for the host before or after provisioning the host.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The BMO uses the following resources to complete these tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>BareMetalHost</code></p>
+</li>
+<li>
+<p><code>HostFirmwareSettings</code></p>
+</li>
+<li>
+<p><code>FirmwareSchema</code></p>
+</li>
+<li>
+<p><code>HostFirmwareComponents</code></p>
+</li>
+<li>
+<p><code>HostUpdatePolicy</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The BMO maintains an inventory of the physical hosts in the cluster by mapping each bare-metal host to an instance of the <code>BareMetalHost</code> custom resource definition. Each <code>BareMetalHost</code> resource features hardware, software, and firmware details. The BMO continually inspects the bare-metal hosts in the cluster to ensure each <code>BareMetalHost</code> resource accurately details the components of the corresponding host.</p>
+</div>
+<div class="paragraph">
+<p>The BMO also uses the <code>HostFirmwareSettings</code> resource, the <code>FirmwareSchema</code> resource, and the <code>HostFirmwareComponents</code> resource to detail firmware specifications and upgrade or downgrade firmware for the bare-metal host.</p>
+</div>
+<div class="paragraph">
+<p>The BMO interfaces with bare-metal hosts in the cluster by using the Ironic API service. The Ironic service uses the Baseboard Management Controller (BMC) on the host to interface with the machine.</p>
+</div>
+<div class="paragraph">
+<p>The BMO <code>HostUpdatePolicy</code> can enable or disable live updates to the firmware settings, BMC settings, or BIOS settings of a bare-metal host after provisioning the host. By default, the BMO disables live updates.</p>
+</div>
+<div class="sect5">
+<h6 id="bmo-bare-metal-operator-architecture_complete-bare-metal-post-installation-configuration">Bare Metal Operator architecture</h6>
+<div class="paragraph _abstract">
+<p>The Bare Metal Operator uses multiple resources to provision, manage, and inspect bare-metal hosts, including the <code>BareMetalHost</code>, <code>HostFirmwareSettings</code>, <code>FirmwareSchema</code>, <code>HostFirmwareComponents</code>, and <code>HostUpdatePolicy</code> resources.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="data:image/png;base64," alt="BMO architecture overview">
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">BareMetalHost</dt>
+<dd>
+<p>The <code>BareMetalHost</code> resource defines a physical host and its properties. When you provision a bare-metal host to the cluster, you must define a <code>BareMetalHost</code> resource for that host. For ongoing management of the host, you can inspect the information in the <code>BareMetalHost</code> resource or update this information.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The <code>BareMetalHost</code> resource features provisioning information such as the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deployment specifications such as the operating system boot image or the custom RAM disk</p>
+</li>
+<li>
+<p>Provisioning state</p>
+</li>
+<li>
+<p>Baseboard Management Controller (BMC) address</p>
+</li>
+<li>
+<p>Desired power state</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>BareMetalHost</code> resource features hardware information such as the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Number of CPUs</p>
+</li>
+<li>
+<p>MAC address of a NIC</p>
+</li>
+<li>
+<p>Size of the host&#8217;s storage device</p>
+</li>
+<li>
+<p>Current power state</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">HostFirmwareSettings</dt>
+<dd>
+<p>You can use the <code>HostFirmwareSettings</code> resource to retrieve and manage the firmware settings for a host. When a host moves to the <code>Available</code> state, the Ironic service reads the host&#8217;s firmware settings and creates the <code>HostFirmwareSettings</code> resource. There is a one-to-one mapping between the <code>BareMetalHost</code> resource and the <code>HostFirmwareSettings</code> resource.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can use the <code>HostFirmwareSettings</code> resource to inspect the firmware specifications for a host or to update a host&#8217;s firmware specifications.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must adhere to the schema specific to the vendor firmware when you edit the <code>spec</code> field of the <code>HostFirmwareSettings</code> resource. This schema is defined in the read-only <code>FirmwareSchema</code> resource.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">FirmwareSchema</dt>
+<dd>
+<p>Firmware settings vary among hardware vendors and host models. A <code>FirmwareSchema</code> resource is a read-only resource that contains the types and limits for each firmware setting on each host model. The data comes directly from the BMC by using the Ironic service. You can use the <code>FirmwareSchema</code> resource to identify valid values that you can specify in the <code>spec</code> field of the <code>HostFirmwareSettings</code> resource.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>A <code>FirmwareSchema</code> resource can apply to many <code>BareMetalHost</code> resources if the schema is the same.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">HostFirmwareComponents</dt>
+<dd>
+<p>Metal<sup>3</sup> provides the <code>HostFirmwareComponents</code> resource, which describes BIOS and baseboard management controller (BMC) firmware versions. You can upgrade or downgrade the host&#8217;s firmware to a specific version by editing the <code>spec</code> field of the <code>HostFirmwareComponents</code> resource. This is useful when deploying with validated patterns that have been tested against specific firmware versions.</p>
+</dd>
+<dt class="hdlist1">HostUpdatePolicy</dt>
+<dd>
+<p>The <code>HostUpdatePolicy</code> resource can enable or disable live updates to the firmware settings, BMC settings, or BIOS settings of bare-metal hosts. By default, the <code>HostUpdatePolicy</code> resource for each bare-metal host restricts updates to hosts during provisioning. You must modify the <code>HostUpdatePolicy</code> resource for a host when you want to update the firmware settings, BMC settings, or BIOS settings after provisioning the host.</p>
+</dd>
+</dl>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://metal3.io/">Metal<sup>3</sup> API service for provisioning bare-metal hosts</a></p>
+</li>
+<li>
+<p><a href="https://ironicbaremetal.org/">Ironic API service for managing bare-metal infrastructure</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-about-the-baremetalhost-resource_complete-bare-metal-post-installation-configuration">About the <code>BareMetalHost</code> resource</h6>
+<div class="paragraph _abstract">
+<p>You can use the <code>BareMetalHost</code> resource to define physical hosts and their properties, including deployment specifications, hardware information, and provisioning state.</p>
+</div>
+<div class="paragraph">
+<p>The <code>BareMetalHost</code> resource contains two sections:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>BareMetalHost</code> spec</p>
+</li>
+<li>
+<p>The <code>BareMetalHost</code> status</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Hardware data is available in the <code>status.hardware</code> section of the <code>BareMetalHost</code> object and in the <code>HardwareData</code> object. You can access the <code>HardwareData</code> object by running the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get hardwaredata &lt;machine_name&gt; -n openshift-machine-api</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;machine_name&gt;</code></dt>
+<dd>
+<p>Specifies the name of a bare-metal host.</p>
+</dd>
+</dl>
+</div>
+<div class="sect6">
+<h7 id="_the_baremetalhost_spec">The <code>BareMetalHost</code> spec</h7>
+<div class="paragraph">
+<p>The <code>spec</code> section of the <code>BareMetalHost</code> resource defines the desired state of the host.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 288. BareMetalHost spec</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameters</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>architecture</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the CPU architecture of the underlying machine. Supported values are <code>aarch64</code> and <code>x86_64</code>. If this value is not specified, it will default to the architecture of the control plane. You can add <code>aarch64</code> machines to a cluster with <code>x86_64</code> control plane machines, but you cannot add <code>x86_64</code> machines to a cluster with <code>aarch64</code> control plane machines.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>automatedCleaningMode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An interface to enable or disable automated cleaning during provisioning and de-provisioning. When set to <code>disabled</code>, it skips automated cleaning. When set to <code>metadata</code>, automated cleaning is enabled. The default setting is <code>metadata</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">bmc:
+  address:
+  credentialsName:
+  disableCertificateVerification:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>bmc</code> configuration setting contains the connection information for the baseboard management controller (BMC) on the host. The fields are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>address</code>: The URL for communicating with the host&#8217;s BMC controller.</p>
+</li>
+<li>
+<p><code>credentialsName</code>: A reference to a secret containing the username and password for the BMC.</p>
+</li>
+<li>
+<p><code>disableCertificateVerification</code>: A boolean to skip certificate validation when set to <code>true</code>.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bootMACAddress</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The MAC address of the network interface controller (NIC) used for provisioning the host.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bootMode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The boot mode of the host. It defaults to <code>UEFI</code>, but it can also be set to <code>legacy</code> for BIOS boot, or <code>UEFISecureBoot</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>consumerRef</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A reference to another resource that is using the host. It could be empty if another resource is not currently using the host. For example, a <code>Machine</code> resource might use the host when the <code>machine-api</code> is using the host.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>description</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A human-provided string to help identify the host.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>externallyProvisioned</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A boolean indicating whether the host provisioning and deprovisioning are managed externally. When set:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Power status can still be managed using the online field.</p>
+</li>
+<li>
+<p>Hardware inventory will be monitored, but no provisioning or deprovisioning operations are performed on the host.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>firmware</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contains information about the BIOS configuration of bare-metal hosts. Currently, <code>firmware</code> is only supported by iRMC, iDRAC, iLO4 and iLO5 BMCs. The sub fields are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>simultaneousMultithreadingEnabled</code>: Allows a single physical processor core to appear as several logical processors. Valid settings are <code>true</code> or <code>false</code>.</p>
+</li>
+<li>
+<p><code>sriovEnabled</code>: SR-IOV support enables a hypervisor to create virtual instances of a PCI-express device, potentially increasing performance. Valid settings are <code>true</code> or <code>false</code>.</p>
+</li>
+<li>
+<p><code>virtualizationEnabled</code>: Supports the virtualization of platform hardware. Valid settings are <code>true</code> or <code>false</code>.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">image:
+  url:
+  checksum:
+  checksumType:
+  format:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>image</code> configuration setting holds the details for the image to be deployed on the host. Ironic requires the image fields. However, when the <code>externallyProvisioned</code> configuration setting is set to <code>true</code> and the external management does not require power control, the fields can be empty. The setting supports the following fields:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>url</code>: The URL of an image to deploy to the host.</p>
+</li>
+<li>
+<p><code>checksum</code>: The actual checksum or a URL to a file containing the checksum for the image at <code>image.url</code>.</p>
+</li>
+<li>
+<p><code>checksumType</code>: You can specify checksum algorithms. Currently <code>image.checksumType</code> only supports <code>md5</code>, <code>sha256</code>, and <code>sha512</code>. The default checksum type is <code>md5</code>.</p>
+</li>
+<li>
+<p><code>format</code>: This is the disk format of the image. It can be one of <code>raw</code>, <code>qcow2</code>, <code>vdi</code>, <code>vmdk</code>, <code>live-iso</code> or be left unset. Setting it to <code>raw</code> enables raw image streaming in the Ironic agent for that image. Setting it to <code>live-iso</code> enables ISO images to live boot without deploying to disk, and it ignores the <code>checksum</code> fields.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>networkData</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A reference to the secret containing the network configuration data and its namespace, so that it can be attached to the host before the host boots to set up the network.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>online</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A boolean indicating whether the host should be powered on (<code>true</code>) or off (<code>false</code>). Changing this value will trigger a change in the power state of the physical host.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">raid:
+  hardwareRAIDVolumes:
+  softwareRAIDVolumes:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>(Optional) Contains the information about the RAID configuration for bare-metal hosts. If not specified, it retains the current configuration.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Red&#160;Hat OpenShift Container Platform {product-version} supports hardware RAID on the installation drive for BMCs, including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fujitsu iRMC with support for RAID levels 0, 1, 5, 6, and 10</p>
+</li>
+<li>
+<p>Dell iDRAC using the Redfish API with firmware version 6.10.30.20 or later and RAID levels 0, 1, and 5</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Red&#160;Hat OpenShift Container Platform {product-version} does not support software RAID on the installation drive.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>See the following configuration settings:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>hardwareRAIDVolumes</code>: Contains the list of logical drives for hardware RAID, and defines the desired volume configuration in the hardware RAID. If you do not specify <code>rootDeviceHints</code>, the first volume is the root volume. The sub-fields are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>level</code>: The RAID level for the logical drive. The following levels are supported: <code>0</code>,<code>1</code>,<code>2</code>,<code>5</code>,<code>6</code>,<code>1+0</code>,<code>5+0</code>,<code>6+0</code>.</p>
+</li>
+<li>
+<p><code>name</code>: The name of the volume as a string. It should be unique within the server. If not specified, the volume name will be autogenerated.</p>
+</li>
+<li>
+<p><code>numberOfPhysicalDisks</code>: The number of physical drives as an integer to use for the logical drove. Defaults to the minimum number of disk drives required for the particular RAID level.</p>
+</li>
+<li>
+<p><code>physicalDisks</code>: The list of names of physical disk drives as a string. This is an optional field. If specified, the controller field must be specified too.</p>
+</li>
+<li>
+<p><code>controller</code>: (Optional) The name of the RAID controller as a string to use in the hardware RAID volume.</p>
+</li>
+<li>
+<p><code>rotational</code>: If set to <code>true</code>, it will only select rotational disk drives. If set to <code>false</code>, it will only select solid-state and NVMe drives. If not set, it selects any drive types, which is the default behavior.</p>
+</li>
+<li>
+<p><code>sizeGibibytes</code>: The size of the logical drive as an integer to create in GiB. If unspecified or set to <code>0</code>, it will use the maximum capacity of physical drive for the logical drive.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>softwareRAIDVolumes</code>: Red&#160;Hat OpenShift Container Platform {product-version} does not support software RAID on the installation drive. This configuration contains the list of logical disks for software RAID. If you do not specify <code>rootDeviceHints</code>, the first volume is the root volume. If you set <code>HardwareRAIDVolumes</code>, this item will be invalid. Software RAIDs will always be deleted. The number of created software RAID devices must be <code>1</code> or <code>2</code>. If there is only one software RAID device, it must be <code>RAID-1</code>. If there are two RAID devices, the first device must be <code>RAID-1</code>, while the RAID level for the second device can be <code>0</code>, <code>1</code>, or <code>1+0</code>. The first RAID device will be the deployment device, which cannot be a software RAID volume. Enforcing <code>RAID-1</code> reduces the risk of a non-booting node in case of a device failure. The <code>softwareRAIDVolume</code> field defines the desired configuration of the volume in the software RAID. The sub-fields are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>level</code>: The RAID level for the logical drive. The following levels are supported: <code>0</code>,<code>1</code>,<code>1+0</code>.</p>
+</li>
+<li>
+<p><code>physicalDisks</code>: A list of device hints. The number of items should be greater than or equal to <code>2</code>.</p>
+</li>
+<li>
+<p><code>sizeGibibytes</code>: The size of the logical disk drive as an integer to be created in GiB. If unspecified or set to <code>0</code>, it will use the maximum capacity of physical drive for logical drive.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can set the <code>hardwareRAIDVolume</code> as an empty slice to clear the hardware RAID configuration. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">spec:
+   raid:
+     hardwareRAIDVolume: []</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you receive an error message indicating that the driver does not support RAID, set the <code>raid</code>, <code>hardwareRAIDVolumes</code> or <code>softwareRAIDVolumes</code> to nil. You might need to ensure the host has a RAID controller.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">rootDeviceHints:
+  deviceName:
+  hctl:
+  model:
+  vendor:
+  serialNumber:
+  minSizeGigabytes:
+  wwn:
+  wwnWithExtension:
+  wwnVendorExtension:
+  rotational:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>rootDeviceHints</code> parameter enables provisioning of the RHCOS image to a particular device. It examines the devices in the order it discovers them, and compares the discovered values with the hint values. It uses the first discovered device that matches the hint value. The configuration can combine multiple hints, but a device must match all hints to get selected. The fields are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deviceName</code>: A string containing a Linux device name like <code>/dev/vda</code>. The hint must match the actual value exactly.</p>
+</li>
+<li>
+<p><code>hctl</code>: A string containing a SCSI bus address like <code>0:0:0:0</code>. The hint must match the actual value exactly.</p>
+</li>
+<li>
+<p><code>model</code>: A string containing a vendor-specific device identifier. The hint can be a substring of the actual value.</p>
+</li>
+<li>
+<p><code>vendor</code>: A string containing the name of the vendor or manufacturer of the device. The hint can be a sub-string of the actual value.</p>
+</li>
+<li>
+<p><code>serialNumber</code>: A string containing the device serial number. The hint must match the actual value exactly.</p>
+</li>
+<li>
+<p><code>minSizeGigabytes</code>: An integer representing the minimum size of the device in gigabytes.</p>
+</li>
+<li>
+<p><code>wwn</code>: A string containing the unique storage identifier. The hint must match the actual value exactly.</p>
+</li>
+<li>
+<p><code>wwnWithExtension</code>: A string containing the unique storage identifier with the vendor extension appended. The hint must match the actual value exactly.</p>
+</li>
+<li>
+<p><code>wwnVendorExtension</code>: A string containing the unique vendor storage identifier. The hint must match the actual value exactly.</p>
+</li>
+<li>
+<p><code>rotational</code>: A boolean indicating whether the device should be a rotating disk (true) or not (false).</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect6">
+<h7 id="_the_baremetalhost_status">The <code>BareMetalHost</code> status</h7>
+<div class="paragraph">
+<p>The <code>BareMetalHost</code> status represents the host&#8217;s current state, and includes tested credentials, current hardware details, and other information.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 289. BareMetalHost status</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameters</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>goodCredentials</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A reference to the secret and its namespace holding the last set of baseboard management controller (BMC) credentials the system was able to validate as working.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>errorMessage</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Details of the last error reported by the provisioning backend, if any.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>errorType</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Indicates the class of problem that has caused the host to enter an error state. The error types are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>provisioned registration error</code>: Occurs when the controller is unable to reregister an already provisioned host.</p>
+</li>
+<li>
+<p><code>registration error</code>: Occurs when the controller is unable to connect to the host&#8217;s baseboard management controller.</p>
+</li>
+<li>
+<p><code>inspection error</code>: Occurs when an attempt to obtain hardware details from the host fails.</p>
+</li>
+<li>
+<p><code>preparation error</code>: Occurs when cleaning fails.</p>
+</li>
+<li>
+<p><code>provisioning error</code>: Occurs when the controller fails to provision or deprovision the host.</p>
+</li>
+<li>
+<p><code>power management error</code>: Occurs when the controller is unable to modify the power state of the host.</p>
+</li>
+<li>
+<p><code>detach error</code>: Occurs when the controller is unable to detach the host from the provisioner.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">hardware:
+  cpu
+    arch:
+    model:
+    clockMegahertz:
+    flags:
+    count:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>hardware.cpu</code> field details of the CPU(s) in the system. The fields include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>arch</code>: The architecture of the CPU.</p>
+</li>
+<li>
+<p><code>model</code>: The CPU model as a string.</p>
+</li>
+<li>
+<p><code>clockMegahertz</code>: The speed in MHz of the CPU.</p>
+</li>
+<li>
+<p><code>flags</code>: The list of CPU flags. For example, <code>'mmx','sse','sse2','vmx'</code> etc.</p>
+</li>
+<li>
+<p><code>count</code>: The number of CPUs available in the system.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">hardware:
+  firmware:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains BIOS firmware information. For example, the hardware vendor and version.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">hardware:
+  nics:
+  - ip:
+    name:
+    mac:
+    speedGbps:
+    vlans:
+    vlanId:
+    pciAddress:
+    pxe:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>hardware.nics</code> field contains a list of network interfaces for the host. The fields include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ip</code>: The IP address of the network interface controller (NIC), if one was assigned when the discovery agent ran.</p>
+</li>
+<li>
+<p><code>name</code>: A string identifying the network device. For example, <code>nic-1</code>.</p>
+</li>
+<li>
+<p><code>mac</code>: The MAC address of the NIC.</p>
+</li>
+<li>
+<p><code>speedGbps</code>: The speed of the device in Gbps.</p>
+</li>
+<li>
+<p><code>vlans</code>: A list holding all the VLANs available for this NIC.</p>
+</li>
+<li>
+<p><code>vlanId</code>: The untagged VLAN ID.</p>
+</li>
+<li>
+<p><code>pciAddress</code>: The PCI address of the NIC. For example, <code>0000:00:03.0</code>.</p>
+</li>
+<li>
+<p><code>pxe</code>: Whether the NIC is able to boot using PXE.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">hardware:
+  ramMebibytes:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The host&#8217;s amount of memory in Mebibytes (MiB).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">hardware:
+  storage:
+  - name:
+    rotational:
+    sizeBytes:
+    serialNumber:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>hardware.storage</code> field contains a list of storage devices available to the host. The fields include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code>: A string identifying the storage device. For example, <code>disk 1 (boot)</code>.</p>
+</li>
+<li>
+<p><code>rotational</code>: Indicates whether the disk is rotational, and returns either <code>true</code> or <code>false</code>.</p>
+</li>
+<li>
+<p><code>sizeBytes</code>: The size of the storage device.</p>
+</li>
+<li>
+<p><code>serialNumber</code>: The device&#8217;s serial number.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">hardware:
+  systemVendor:
+    manufacturer:
+    productName:
+    serialNumber:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains information about the host&#8217;s <code>manufacturer</code>, the <code>productName</code>, and the <code>serialNumber</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lastUpdated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The timestamp of the last time the status of the host was updated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>operationalStatus</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The status of the server. The status is one of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>OK</code>: Indicates all the details for the host are known, correctly configured, working, and manageable.</p>
+</li>
+<li>
+<p><code>discovered</code>: Implies some of the host&#8217;s details are either not working correctly or missing. For example, the BMC address is known but the login credentials are not.</p>
+</li>
+<li>
+<p><code>error</code>: Indicates the system found some sort of unrecoverable error. Refer to the <code>errorMessage</code> field in the status section for more details.</p>
+</li>
+<li>
+<p><code>delayed</code>: Indicates that provisioning is delayed to limit simultaneous provisioning of multiple hosts.</p>
+</li>
+<li>
+<p><code>detached</code>: Indicates the host is marked <code>unmanaged</code>.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>poweredOn</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean indicating whether the host is powered on.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">provisioning:
+  state:
+  id:
+  image:
+  raid:
+  firmware:
+  rootDeviceHints:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>provisioning</code> field contains values related to deploying an image to the host. The sub-fields include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>state</code>: The current state of any ongoing provisioning operation. The states include:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;empty string&gt;</code>: There is no provisioning happening at the moment.</p>
+</li>
+<li>
+<p><code>unmanaged</code>: There is insufficient information available to register the host.</p>
+</li>
+<li>
+<p><code>registering</code>: The agent is checking the host&#8217;s BMC details.</p>
+</li>
+<li>
+<p><code>match profile</code>: The agent is comparing the discovered hardware details on the host against known profiles.</p>
+</li>
+<li>
+<p><code>available</code>: The host is available for provisioning. This state was previously known as <code>ready</code>.</p>
+</li>
+<li>
+<p><code>preparing</code>: The existing configuration will be removed, and the new configuration will be set on the host.</p>
+</li>
+<li>
+<p><code>provisioning</code>: The provisioner is writing an image to the host&#8217;s storage.</p>
+</li>
+<li>
+<p><code>provisioned</code>: The provisioner wrote an image to the host&#8217;s storage.</p>
+</li>
+<li>
+<p><code>externally provisioned</code>: Metal<sup>3</sup> does not manage the image on the host.</p>
+</li>
+<li>
+<p><code>deprovisioning</code>: The provisioner is wiping the image from the host&#8217;s storage.</p>
+</li>
+<li>
+<p><code>inspecting</code>: The agent is collecting hardware details for the host.</p>
+</li>
+<li>
+<p><code>deleting</code>: The agent is deleting the from the cluster.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>id</code>: The unique identifier for the service in the underlying provisioning tool.</p>
+</li>
+<li>
+<p><code>image</code>: The image most recently provisioned to the host.</p>
+</li>
+<li>
+<p><code>raid</code>: The list of hardware or software RAID volumes recently set.</p>
+</li>
+<li>
+<p><code>firmware</code>: The BIOS configuration for the bare-metal server.</p>
+</li>
+<li>
+<p><code>rootDeviceHints</code>: The root device selection instructions used for the most recent provisioning operation.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>triedCredentials</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A reference to the secret and its namespace holding the last set of BMC credentials that were sent to the provisioning backend.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-getting-the-baremetalhost-resource_complete-bare-metal-post-installation-configuration">Getting the BareMetalHost resource</h6>
+<div class="paragraph _abstract">
+<p>You can retrieve the <code>BareMetalHost</code> resource to review hardware details, provisioning state, BMC configuration, and power status for a physical host.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Get the list of <code>BareMetalHost</code> resources:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get bmh -n openshift-machine-api -o yaml</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can use <code>baremetalhost</code> as the long form of <code>bmh</code> with <code>oc get</code> command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Get the list of hosts:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get bmh -n openshift-machine-api</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the <code>BareMetalHost</code> resource for a specific host:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get bmh &lt;host_name&gt; -n openshift-machine-api -o yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;host_name&gt;</code> is the name of the host.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  creationTimestamp: "2022-06-16T10:48:33Z"
+  finalizers:
+  - baremetalhost.metal3.io
+  generation: 2
+  name: openshift-worker-0
+  namespace: openshift-machine-api
+  resourceVersion: "30099"
+  uid: 1513ae9b-e092-409d-be1b-ad08edeb1271
+spec:
+  automatedCleaningMode: metadata
+  bmc:
+    address: redfish://10.46.61.19:443/redfish/v1/Systems/1
+    credentialsName: openshift-worker-0-bmc-secret
+    disableCertificateVerification: true
+  bootMACAddress: 48:df:37:c7:f7:b0
+  bootMode: UEFI
+  consumerRef:
+    apiVersion: machine.openshift.io/v1beta1
+    kind: Machine
+    name: ocp-edge-958fk-worker-0-nrfcg
+    namespace: openshift-machine-api
+  customDeploy:
+    method: install_coreos
+  online: true
+  rootDeviceHints:
+    deviceName: /dev/disk/by-id/scsi-&lt;serial_number&gt;
+  userData:
+    name: worker-user-data-managed
+    namespace: openshift-machine-api
+status:
+  errorCount: 0
+  errorMessage: ""
+  goodCredentials:
+    credentials:
+      name: openshift-worker-0-bmc-secret
+      namespace: openshift-machine-api
+    credentialsVersion: "16120"
+  hardware:
+    cpu:
+      arch: x86_64
+      clockMegahertz: 2300
+      count: 64
+      flags:
+      - 3dnowprefetch
+      - abm
+      - acpi
+      - adx
+      - aes
+      model: Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz
+    firmware:
+      bios:
+        date: 10/26/2020
+        vendor: HPE
+        version: U30
+    hostname: openshift-worker-0
+    nics:
+    - mac: 48:df:37:c7:f7:b3
+      model: 0x8086 0x1572
+      name: ens1f3
+    ramMebibytes: 262144
+    storage:
+    - hctl: "0:0:0:0"
+      model: VK000960GWTTB
+      name: /dev/disk/by-id/scsi-&lt;serial_number&gt;
+      sizeBytes: 960197124096
+      type: SSD
+      vendor: ATA
+    systemVendor:
+      manufacturer: HPE
+      productName: ProLiant DL380 Gen10 (868703-B21)
+      serialNumber: CZ200606M3
+  lastUpdated: "2022-06-16T11:41:42Z"
+  operationalStatus: OK
+  poweredOn: true
+  provisioning:
+    ID: 217baa14-cfcf-4196-b764-744e184a3413
+    bootMode: UEFI
+    customDeploy:
+      method: install_coreos
+    image:
+      url: ""
+    raid:
+      hardwareRAIDVolumes: null
+      softwareRAIDVolumes: []
+    rootDeviceHints:
+      deviceName: /dev/disk/by-id/scsi-&lt;serial_number&gt;
+    state: provisioned
+  triedCredentials:
+    credentials:
+      name: openshift-worker-0-bmc-secret
+      namespace: openshift-machine-api
+    credentialsVersion: "16120"</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-editing-a-baremetalhost-resource_complete-bare-metal-post-installation-configuration">Editing a BareMetalHost resource</h6>
+<div class="paragraph _abstract">
+<p>You can edit a node&#8217;s <code>BareMetalHost</code> resource to update BMC information, move nodes between clusters, or modify provisioning configuration.</p>
+</div>
+<div class="paragraph">
+<p>Consider the following examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You deploy a cluster with the Assisted Installer and need to add or edit the baseboard management controller (BMC) host name or IP address.</p>
+</li>
+<li>
+<p>You want to move a node from one cluster to another without deprovisioning it.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Ensure the node is in the <code>Provisioned</code>, <code>ExternallyProvisioned</code>, or <code>Available</code> state.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Get the list of nodes:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get bmh -n openshift-machine-api</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Before editing the node&#8217;s <code>BareMetalHost</code> resource, detach the node from Ironic by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc annotate baremetalhost &lt;node_name&gt; -n openshift-machine-api 'baremetalhost.metal3.io/detached=true'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <code>&lt;node_name&gt;</code> with the name of the node.</p>
+</div>
+</li>
+<li>
+<p>Edit the  <code>BareMetalHost</code> resource by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit bmh &lt;node_name&gt; -n openshift-machine-api</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Reattach the node to Ironic by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc annotate baremetalhost &lt;node_name&gt; -n openshift-machine-api 'baremetalhost.metal3.io/detached'-</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="ipi-install-troubleshooothing-latency-when-deleting-a-baremetalhost-resource_complete-bare-metal-post-installation-configuration">Troubleshooting latency when deleting a BareMetalHost resource</h6>
+<div class="paragraph _abstract">
+<p>You can disable the cleaning process to resolve latency when deleting a <code>BareMetalHost</code> resource if Ironic&#8217;s cleanup retries cause the provisioning status to remain in the deleting state.</p>
+</div>
+<div class="paragraph">
+<p>When the Bare Metal Operator (BMO) deletes a <code>BareMetalHost</code> resource, Ironic deprovisions the bare-metal host with a process called cleaning. When cleaning fails, Ironic retries the cleaning process three times, which is the source of the latency. The cleaning process might not succeed, causing the provisioning status of the bare-metal host to remain in the <strong>deleting</strong> state indefinitely. When this occurs, use the following procedure to disable the cleaning process.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Warning">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do not remove finalizers from the <code>BareMetalHost</code> resource.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>If the cleaning process fails and restarts, wait for it to finish. This might take about 5 minutes.</p>
+</li>
+<li>
+<p>If the provisioning status remains in the <strong>deleting</strong> state, disable the cleaning process by modifying the <code>BareMetalHost</code> resource and setting the <code>automatedCleaningMode</code> field to <code>disabled</code>. See "Editing a <code>BareMetalHost</code> resource" for additional details.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-attaching-a-non-bootable-iso-to-a-bare-metal-node_complete-bare-metal-post-installation-configuration">Attaching a non-bootable ISO to a bare-metal node</h6>
+<div class="paragraph _abstract">
+<p>You can attach a generic, non-bootable ISO virtual media image to a provisioned node by using the <code>DataImage</code> resource. After you apply the resource, the ISO image becomes accessible to the operating system after it has booted. This is useful for configuring a node after provisioning the operating system and before the node boots for the first time.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>The node must use Redfish or drivers derived from it to support this feature.</p>
+</li>
+<li>
+<p>The node must be in the <code>Provisioned</code> or <code>ExternallyProvisioned</code> state.</p>
+</li>
+<li>
+<p>The <code>name</code> must be the same as the name of the node defined in its <code>BareMetalHost</code> resource.</p>
+</li>
+<li>
+<p>You have a valid <code>url</code> to the ISO image.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create a <code>DataImage</code> resource:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: metal3.io/v1alpha1
+kind: DataImage
+metadata:
+  name: &lt;node_name&gt;
+spec:
+  url: "http://dataimage.example.com/non-bootable.iso"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;node_name&gt;</code></dt>
+<dd>
+<p>Specifies the name of the node as defined in its <code>BareMetalHost</code> resource.</p>
+</dd>
+<dt class="hdlist1"><code>spec.url</code></dt>
+<dd>
+<p>Specifies the URL and path to the ISO image.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Save the <code>DataImage</code> resource to a file by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ vim &lt;node_name&gt;-dataimage.yaml</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the <code>DataImage</code> resource by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc apply -f &lt;node_name&gt;-dataimage.yaml -n &lt;node_namespace&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <code>&lt;node_namespace&gt;</code> so that the namespace matches the namespace for the <code>BareMetalHost</code> resource. For example, <code>openshift-machine-api</code>.</p>
+</div>
+</li>
+<li>
+<p>Reboot the node.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To reboot the node, attach the <code>reboot.metal3.io</code> annotation, or reset set the <code>online</code> status in the <code>BareMetalHost</code> resource. A forced reboot of the bare-metal node will change the state of the node to <code>NotReady</code> for awhile. For example, 5 minutes or more.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>View the <code>DataImage</code> resource by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get dataimage &lt;node_name&gt; -n openshift-machine-api -o yaml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+items:
+- apiVersion: metal3.io/v1alpha1
+  kind: DataImage
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"metal3.io/v1alpha1","kind":"DataImage","metadata":{"annotations":{},"name":"bmh-node-1","namespace":"openshift-machine-api"},"spec":{"url":"http://dataimage.example.com/non-bootable.iso"}}
+    creationTimestamp: "2024-06-10T12:00:00Z"
+    finalizers:
+    - dataimage.metal3.io
+    generation: 1
+    name: bmh-node-1
+    namespace: openshift-machine-api
+    ownerReferences:
+    - apiVersion: metal3.io/v1alpha1
+      blockOwnerDeletion: true
+      controller: true
+      kind: BareMetalHost
+      name: bmh-node-1
+      uid: 046cdf8e-0e97-485a-8866-e62d20e0f0b3
+    resourceVersion: "21695581"
+    uid: c5718f50-44b6-4a22-a6b7-71197e4b7b69
+  spec:
+    url: http://dataimage.example.com/non-bootable.iso
+  status:
+    attachedImage:
+      url: http://dataimage.example.com/non-bootable.iso
+    error:
+      count: 0
+      message: ""
+    lastReconciled: "2024-06-10T12:05:00Z"</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-configuring-ncsi-disable-poweroff_complete-bare-metal-post-installation-configuration">Configuring NC-SI and DisablePowerOff for shared NICs</h6>
+<div class="paragraph _abstract">
+<p>The Network Controller Sideband Interface (NC-SI) enables the Baseboard Management Controller (BMC) to share a system network interface card (NIC) with the host for management traffic, using protocols like Redfish, IPMI, or vendor-specific interfaces. The <code>DisablePowerOff</code> feature prevents hard power-offs, ensuring soft reboots to maintain BMC connectivity.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>NC-SI-capable hardware and NICs.</p>
+</li>
+<li>
+<p>BMC configured with an IP address and network connection.</p>
+</li>
+<li>
+<p>Administrative access to the BMC.</p>
+</li>
+<li>
+<p>Access to the OpenShift cluster with <code>cluster-admin</code> privileges.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Configure the BMC to enable NC-SI for a shared NIC.</p>
+</li>
+<li>
+<p>Verify BMC connectivity using Redfish or IPMI by running one of the following commands:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ curl -k https://&lt;bmc_ip&gt;/redfish/v1/Systems/1</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ ipmitool -I lanplus -H &lt;bmc_ip&gt; -U &lt;user&gt; -P &lt;pass&gt; power status</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Enable the <code>DisablePowerOff</code> feature by editing the <code>BareMetalHost</code> resource in the <code>openshift-machine-api</code> namespace:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: example-host
+  namespace: openshift-machine-api
+spec:
+  online: true
+  bmc:
+    address: &lt;protocol&gt;://&lt;bmc_ip&gt;/&lt;bmc_address_format&gt;
+    credentialsName: bmc-secret
+  disablePowerOff: true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See the "BMC addressing" sections for details on supported protocols and BMC address formats.</p>
+</div>
+</li>
+<li>
+<p>Apply the changes by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc apply -f &lt;filename&gt;.yaml</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Check the <code>BareMetalHost</code> status by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get baremetalhost example-host -n openshift-machine-api -o yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Confirm that <code>disablePowerOff: true</code> is in the <code>spec</code> section.</p>
+</div>
+</li>
+<li>
+<p>Test a reboot by restarting a node pod and verify that BMC connectivity remains active.</p>
+</li>
+<li>
+<p>Attempt to set <code>BareMetalHost.spec.online=false</code>. It should fail with an error indicating power-off is disabled.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-about-the-hostfirmwaresettings-resource_complete-bare-metal-post-installation-configuration">About the <code>HostFirmwareSettings</code> resource</h6>
+<div class="paragraph _abstract">
+<p>You can use the <code>HostFirmwareSettings</code> resource to retrieve and manage BIOS settings for a host, providing vendor-specific configuration beyond the basic firmware fields in the <code>BareMetalHost</code> resource.</p>
+</div>
+<div class="paragraph">
+<p>When a host moves to the <code>Available</code> state, Ironic reads the host&#8217;s BIOS settings and creates the <code>HostFirmwareSettings</code> resource. The resource contains the complete BIOS configuration returned from the baseboard management controller (BMC). Whereas, the <code>firmware</code> field in the <code>BareMetalHost</code> resource returns three vendor-independent fields, the <code>HostFirmwareSettings</code> resource typically comprises many BIOS settings of vendor-specific fields per host.</p>
+</div>
+<div class="paragraph">
+<p>The <code>HostFirmwareSettings</code> resource contains two sections:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>HostFirmwareSettings</code> spec.</p>
+</li>
+<li>
+<p>The <code>HostFirmwareSettings</code> status.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Reading and modifying firmware settings is only supported for drivers based on the vendor-independent Redfish protocol, Fujitsu iRMC or HP iLO.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect6">
+<h7 id="_the_hostfirmwaresettings_spec">The <code>HostFirmwareSettings</code> spec</h7>
+<div class="paragraph">
+<p>The <code>spec</code> section of the <code>HostFirmwareSettings</code> resource defines the desired state of the host&#8217;s BIOS, and it is empty by default. Ironic uses the settings in the <code>spec.settings</code> section to update the baseboard management controller (BMC) when the host is in the <code>Preparing</code> state. Use the <code>FirmwareSchema</code> resource to ensure that you do not send invalid name/value pairs to hosts. See "About the <code>FirmwareSchema</code> resource" for additional details.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">spec:
+  settings:
+    ProcTurboMode: Disabled</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>spec.settings.ProcTurboMode: Disabled</code></dt>
+<dd>
+<p>Specifies a name/value pair that sets the <code>ProcTurboMode</code> BIOS setting to <code>Disabled</code>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Integer parameters listed in the <code>status</code> section appear as strings. For example, <code>"1"</code>. When setting integers in the <code>spec.settings</code> section, the values should be set as integers without quotes. For example, <code>1</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect6">
+<h7 id="_the_hostfirmwaresettings_status">The <code>HostFirmwareSettings</code> status</h7>
+<div class="paragraph">
+<p>The <code>status</code> represents the current state of the host&#8217;s BIOS.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 290. HostFirmwareSettings</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameters</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">status:
+  conditions:
+  - lastTransitionTime:
+    message:
+    observedGeneration:
+    reason:
+    status:
+    type:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>conditions</code> field contains a list of state changes. The sub-fields include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>lastTransitionTime</code>: The last time the state changed.</p>
+</li>
+<li>
+<p><code>message</code>: A description of the state change.</p>
+</li>
+<li>
+<p><code>observedGeneration</code>: The current generation of the <code>status</code>. If <code>metadata.generation</code> and this field are not the same, the <code>status.conditions</code> might be out of date.</p>
+</li>
+<li>
+<p><code>reason</code>: The reason for the state change.</p>
+</li>
+<li>
+<p><code>status</code>: The status of the state change. The status can be <code>True</code>, <code>False</code> or <code>Unknown</code>.</p>
+</li>
+<li>
+<p><code>type</code>: The type of state change. The types are <code>Valid</code> and <code>ChangeDetected</code>.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">status:
+  schema:
+    name:
+    namespace:
+    lastUpdated:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>FirmwareSchema</code> for the firmware settings. The fields include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code>: The name or unique identifier referencing the schema.</p>
+</li>
+<li>
+<p><code>namespace</code>: The namespace where the schema is stored.</p>
+</li>
+<li>
+<p><code>lastUpdated</code>: The last time the resource was updated.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">status:
+  settings:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>settings</code> field contains a list of name/value pairs of a host&#8217;s current BIOS settings.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-getting-the-hostfirmwaresettings-resource_complete-bare-metal-post-installation-configuration">Getting the HostFirmwareSettings resource</h6>
+<div class="paragraph _abstract">
+<p>The <code>HostFirmwareSettings</code> resource contains the vendor-specific BIOS properties of a physical host. You must get the <code>HostFirmwareSettings</code> resource for a physical host to review its BIOS properties.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Get the detailed list of <code>HostFirmwareSettings</code> resources by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get hfs -n openshift-machine-api -o yaml</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can use <code>hostfirmwaresettings</code> as the long form of <code>hfs</code> with the <code>oc get</code> command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Get the list of <code>HostFirmwareSettings</code> resources by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get hfs -n openshift-machine-api</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the <code>HostFirmwareSettings</code> resource for a particular host by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get hfs &lt;host_name&gt; -n openshift-machine-api -o yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;host_name&gt;</code> is the name of the host.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-editing-the-hostfirmwaresettings-resource-of-a-provisioned-host_complete-bare-metal-post-installation-configuration">Editing the HostFirmwareSettings resource of a provisioned host</h6>
+<div class="paragraph _abstract">
+<p>You can modify BIOS settings on a provisioned host by editing the <code>HostFirmwareSettings</code> resource, then scaling the machine set down and up to apply the changes.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Important">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can only edit hosts when they are in the <code>provisioned</code> state, excluding read-only values. You cannot edit hosts in the <code>externally provisioned</code> state.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Get the list of <code>HostFirmwareSettings</code> resources by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get hfs -n openshift-machine-api</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Edit the host <code>HostFirmwareSettings</code> resource by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit hfs &lt;hostname&gt; -n openshift-machine-api</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;hostname&gt;</code> is the name of a provisioned host. The <code>HostFirmwareSettings</code> resource will open in the default editor for your terminal.</p>
+</div>
+</li>
+<li>
+<p>Add name and value pairs to the <code>spec.settings</code> section by running the following command:</p>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">spec:
+  settings:
+    name: value</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>spec.settings.name</code></dt>
+<dd>
+<p>Specifies the firmware setting name and value. Use the <code>FirmwareSchema</code> resource to identify the available settings for the host. You cannot set values that are read-only.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Save the changes and exit the editor.</p>
+</li>
+<li>
+<p>Get the host machine name by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal"> $ oc get bmh &lt;hostname&gt; -n openshift-machine name</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;hostname&gt;</code> is the name of the host. The terminal displays the machine name under the <code>CONSUMER</code> field.</p>
+</div>
+</li>
+<li>
+<p>Annotate the machine to delete it from the machine set by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc annotate machine &lt;machine_name&gt; machine.openshift.io/delete-machine=true -n openshift-machine-api</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;machine_name&gt;</code> is the name of the machine to delete.</p>
+</div>
+</li>
+<li>
+<p>Get a list of nodes and count the number of worker nodes by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get nodes</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the machine set by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get machinesets -n openshift-machine-api</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Scale the machine set by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc scale machineset &lt;machineset_name&gt; -n openshift-machine-api --replicas=&lt;n-1&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;machineset_name&gt;</code> is the name of the machine set and <code>&lt;n-1&gt;</code> is the decremented number of worker nodes.</p>
+</div>
+</li>
+<li>
+<p>When the host enters the <code>Available</code> state, scale up the machine set to make the <code>HostFirmwareSettings</code> resource changes take effect by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc scale machineset &lt;machineset_name&gt; -n openshift-machine-api --replicas=&lt;n&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;machineset_name&gt;</code> is the name of the machine set and <code>&lt;n&gt;</code> is the number of worker nodes.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-performing-a-live-update-to-the-hostfirmwaresettings-resource_complete-bare-metal-post-installation-configuration">Performing a live update to the HostFirmwareSettings resource</h6>
+<div class="paragraph _abstract">
+<p>You can perform a live update to the <code>HostFirmwareSettings</code> resource after it has begun running workloads. Live updates do not trigger deprovisioning and reprovisioning the host.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Warning">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Performing a live update to the <code>HostFirmwareSettings</code> resource can be a destructive and destabilizing action. Perform these updates only after careful consideration.</p>
+</div>
+<div class="paragraph">
+<p>Before you apply a live update in a production cluster, validate the update in a development or test cluster. Ensure that these updates comply with your organization&#8217;s test policies before you apply them to a production cluster.</p>
+</div>
+<div class="paragraph">
+<p>If a cluster has fewer than three compute nodes, use caution. Firmware updates in such clusters can result in the cluster entering a degraded state.</p>
+</div>
+<div class="paragraph">
+<p>Do not interrupt firmware updates. If the update stops responding, engage the support of your hardware vendor.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>The <code>HostUpdatePolicy</code> resource must have the <code>firmwareSettings</code> parameter set to <code>onReboot</code>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Update the <code>HostFirmwareSettings</code> resource by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc patch hostfirmwaresettings &lt;hostname&gt; --type merge -p \
+    '{"spec": {"settings": {"&lt;name&gt;": "&lt;value&gt;"}}}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;hostname&gt;</code></dt>
+<dd>
+<p>Specifies the name of the host.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;name&gt;</code></dt>
+<dd>
+<p>Specifies the name of the setting.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;value&gt;</code></dt>
+<dd>
+<p>Specifies the value of the setting. You can set multiple name-value pairs.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Get the <code>FirmwareSchema</code> resource to determine which settings the hardware supports and what settings and values you can update. You cannot update read-only values and you cannot update the <code>FirmwareSchema</code> resource. You can also use the <code>oc edit &lt;hostname&gt; hostfirmwaresettings -n openshift-machine-api</code> command to update the <code>HostFirmwareSettings</code> resource.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Cordon and drain the node by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc drain &lt;node_name&gt; --force</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For <code>&lt;node_name&gt;</code>, specify the name of the node.</p>
+</div>
+</li>
+<li>
+<p>Power off the host for a period of 5 minutes by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc patch bmh &lt;hostname&gt; --type merge -p '{"spec": {"online": false}}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This step ensures that daemonsets or controllers can mark any infrastructure pods that might be running on the host as offline, while the remaining hosts handle incoming requests.</p>
+</div>
+</li>
+<li>
+<p>After 5 minutes, power on the host by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc patch bmh &lt;hostname&gt; --type merge -p '{"spec": {"online": true}}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The servicing operation commences and the Bare Metal Operator (BMO) sets the <code>operationalStatus</code> parameter of the <code>BareMetalHost</code> to <code>servicing</code>. The BMO updates the <code>operationalStatus</code> parameter to <code>OK</code> after updating the resource. If an error occurs, the BMO updates the <code>operationalStatus</code> parameter to <code>error</code> and retries the operation.</p>
+</div>
+</li>
+<li>
+<p>Once Ironic completes the update and the host powers up, uncordon the node by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc uncordon &lt;node_name&gt;</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-verifying-the-hostfirmware-settings-resource-is-valid_complete-bare-metal-post-installation-configuration">Verifying the HostFirmware Settings resource is valid</h6>
+<div class="paragraph _abstract">
+<p>You can verify that changes to the <code>HostFirmwareSettings</code> resource are valid by checking the status conditions, ensuring that BIOS setting values comply with the <code>FirmwareSchema</code> constraints.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Get a list of <code>HostFirmwareSetting</code> resources:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get hfs -n openshift-machine-api</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Verify that the <code>HostFirmwareSettings</code> resource for a particular host is valid:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc describe hfs &lt;host_name&gt; -n openshift-machine-api</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;host_name&gt;</code> is the name of the host.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example output:</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Events:
+  Type    Reason            Age    From                                    Message
+  ----    ------            ----   ----                                    -------
+  Normal  ValidationFailed  2m49s  metal3-hostfirmwaresettings-controller  Invalid BIOS setting: Setting ProcTurboMode is invalid, unknown enumeration value - Foo</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Important">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the response returns <code>ValidationFailed</code>, there is an error in the resource configuration and you must update the values to conform to the <code>FirmwareSchema</code> resource.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-about-the-firmwareschema-resource_complete-bare-metal-post-installation-configuration">About the <code>FirmwareSchema</code> resource</h6>
+<div class="paragraph _abstract">
+<p>The <code>FirmwareSchema</code> resource contains valid types and limits for BIOS settings on each host model, enabling you to identify valid values when configuring the <code>HostFirmwareSettings</code> resource.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 291. FirmwareSchema specification</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameters</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">&lt;BIOS_setting_name&gt;
+  attribute_type:
+  allowable_values:
+  lower_bound:
+  upper_bound:
+  min_length:
+  max_length:
+  read_only:
+  unique:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>spec</code> is a simple map consisting of the BIOS setting name and the limits of the setting. The fields include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>attribute_type</code>: The type of setting. The supported types are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Enumeration</code></p>
+</li>
+<li>
+<p><code>Integer</code></p>
+</li>
+<li>
+<p><code>String</code></p>
+</li>
+<li>
+<p><code>Boolean</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>allowable_values</code>: A list of allowable values when the <code>attribute_type</code> is <code>Enumeration</code>.</p>
+</li>
+<li>
+<p><code>lower_bound</code>: The lowest allowed value when <code>attribute_type</code> is <code>Integer</code>.</p>
+</li>
+<li>
+<p><code>upper_bound</code>: The highest allowed value when <code>attribute_type</code> is <code>Integer</code>.</p>
+</li>
+<li>
+<p><code>min_length</code>: The shortest string length that the value can have when <code>attribute_type</code> is <code>String</code>.</p>
+</li>
+<li>
+<p><code>max_length</code>: The longest string length that the value can have when <code>attribute_type</code> is <code>String</code>.</p>
+</li>
+<li>
+<p><code>read_only</code>: The setting is read only and cannot be modified.</p>
+</li>
+<li>
+<p><code>unique</code>: The setting is specific to this host.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="bmo-getting-the-firmwareschema-resource_complete-bare-metal-post-installation-configuration">Getting the FirmwareSchema resource</h6>
+<div class="paragraph _abstract">
+<p>Each host model from each vendor has different BIOS settings. When editing the <code>HostFirmwareSettings</code> resource&#8217;s <code>spec</code> section, the name/value pairs you set must conform to that host&#8217;s firmware schema. To ensure you are setting valid name/value pairs, get the <code>FirmwareSchema</code> for the host and review it.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Get the list of <code>FirmwareSchema</code> resource instances by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get firmwareschema -n openshift-machine-api</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get a particular <code>FirmwareSchema</code> instance by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get firmwareschema &lt;instance_name&gt; -n openshift-machine-api -o yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;instance_name&gt;</code> is the name of the schema instance stated in the <code>HostFirmwareSettings</code> resource (see Table 3).</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-about-the-hostfirmwarecomponents-resource_complete-bare-metal-post-installation-configuration">About the <code>HostFirmwareComponents</code> resource</h6>
+<div class="paragraph _abstract">
+<p>You can use the <code>HostFirmwareComponents</code> resource to view and update Basic Input/Output System (BIOS), baseboard management controller (BMC), and network interface controller (NIC) firmware versions for bare-metal hosts.</p>
+</div>
+<div class="paragraph">
+<p>To update NIC host firmware components, the server must support Redfish and must permit you to use Redfish to update NIC firmware. You can use Metal<sup>3</sup> to update NIC host firmware components for the Intel Ethernet 800 Series (<code>ice</code> driver) and the NVIDIA Mellanox ConnectX-6 (CX6) and ConnectX-7 (CX7) (<code>mlx_5</code> driver). The updates are validated on Dell hardware. The following list outlines important considerations before you update the NICs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you have more than one network adapter with the same type of NIC, for example, Intel Ethernet 800 Series, when you update one NIC the update might be applied to multiple NICs. Redfish identifies all components that can benefit from the update and then applies the image to all these components.</p>
+</li>
+<li>
+<p>You cannot necessarily update a listed network adapter. A machine might use Redfish to display their NIC and firmware information, but prevent you from updating the adapter through Redfish. For more information about checking if you can update a network adapter, see "Identifying the NICs <code>HostFirmwareComponents</code> resources you can update".</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>HostFirmwareComponents</code> resource contains two sections:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>HostFirmwareComponents</code> spec</p>
+</li>
+<li>
+<p>The <code>HostFirmwareComponents</code> status</p>
+</li>
+</ol>
+</div>
+<div class="sect6">
+<h7 id="_hostfirmwarecomponents_spec"><code>HostFirmwareComponents</code> spec</h7>
+<div class="paragraph">
+<p>The <code>spec</code> section of the <code>HostFirmwareComponents</code> resource defines the desired state of the BIOS and BMC versions of the host, and the NIC firmware components of the host if the information is available by using Redfish.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 292. HostFirmwareComponents spec</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameters</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">updates:
+  component:
+  url:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>updates</code> configuration setting contains the components to update. The fields are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>component</code>: The name of the component. The valid settings are <code>bios</code>, <code>bmc</code>, or <code>nic:&lt;ID&gt;</code>.</p>
+</li>
+<li>
+<p><code>url</code>: The URL to the component&#8217;s firmware specification and version.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect6">
+<h7 id="_hostfirmwarecomponents_status"><code>HostFirmwareComponents</code> status</h7>
+<div class="paragraph">
+<p>The <code>status</code> section of the <code>HostFirmwareComponents</code> resource returns the current status of the BIOS and BMC versions of the host, and the NIC firmware components of the host if the information is available by using Redfish.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 293. HostFirmwareComponents status</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameters</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">components:
+  component:
+  initialVersion:
+  currentVersion:
+  lastVersionFlashed:
+  updatedAt:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>components</code> section contains the status of the components. The fields are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>component</code>: The name of the firmware component. It returns <code>bios</code>, <code>bmc</code>, <code>nic:&lt;ID1&gt;</code>, or <code>nic:&lt;ID2&gt;</code>.</p>
+</li>
+<li>
+<p><code>initialVersion</code>: The initial firmware version of the component. Ironic retrieves this information when creating the <code>BareMetalHost</code> resource. You cannot change it.</p>
+</li>
+<li>
+<p><code>currentVersion</code>: The current firmware version of the component. Initially, the value matches the <code>initialVersion</code> value until Ironic updates the firmware on the bare-metal host.</p>
+</li>
+<li>
+<p><code>lastVersionFlashed</code>: The last firmware version of the component flashed on the bare-metal host. This field returns <code>null</code> until Ironic updates the firmware.</p>
+</li>
+<li>
+<p><code>updatedAt</code>: The timestamp when Ironic updated the bare-metal host&#8217;s firmware.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="nowrap">updates:
+  component:
+  url:</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The <code>updates</code> configuration setting contains the updated components. The fields are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>component</code>: The name of the component.</p>
+</li>
+<li>
+<p><code>url</code>: The URL to the component&#8217;s firmware specification and version.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-getting-the-hostfirmwarecomponents-resource_complete-bare-metal-post-installation-configuration">Getting the HostFirmwareComponents resource</h6>
+<div class="paragraph _abstract">
+<p>The <code>HostFirmwareComponents</code> resource contains the specific firmware version of the BIOS and baseboard management controller (BMC) of a physical host. You must get the <code>HostFirmwareComponents</code> resource for a physical host to review the firmware version and status.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Get the detailed list of <code>HostFirmwareComponents</code> resources by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get hostfirmwarecomponents -n openshift-machine-api -o yaml</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the list of <code>HostFirmwareComponents</code> resources by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get hostfirmwarecomponents -n openshift-machine-api</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the <code>HostFirmwareComponents</code> resource for a particular host by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get hostfirmwarecomponents &lt;host_name&gt; -n openshift-machine-api -o yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;host_name&gt;</code> is the name of the host.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">---
+apiVersion: metal3.io/v1alpha1
+kind: HostFirmwareComponents
+metadata:
+  creationTimestamp: 2024-04-25T20:32:06Z"
+  generation: 1
+  name: ostest-master-2
+  namespace: openshift-machine-api
+  ownerReferences:
+  - apiVersion: metal3.io/v1alpha1
+    blockOwnerDeletion: true
+    controller: true
+    kind: BareMetalHost
+    name: ostest-master-2
+    uid: 16022566-7850-4dc8-9e7d-f216211d4195
+  resourceVersion: "2437"
+  uid: 2038d63f-afc0-4413-8ffe-2f8e098d1f6c
+spec:
+  updates: []
+status:
+  components:
+  - component: bios
+    currentVersion: 1.0.0
+    initialVersion: 1.0.0
+  - component: bmc
+    currentVersion: "1.00"
+    initialVersion: "1.00"
+  - component: nic:&lt;ID1&gt;
+    currentVersion: 0.10.0
+    initialVersion: 0.10.0
+  - component: nic:&lt;ID2&gt;
+    currentVersion: 1.8.1
+    initialVersion: 1.8.1
+  conditions:
+  - lastTransitionTime: "2024-04-25T20:32:06Z"
+    message: ""
+    observedGeneration: 1
+    reason: OK
+    status: "True"
+    type: Valid
+  - lastTransitionTime: "2024-04-25T20:32:06Z"
+    message: ""
+    observedGeneration: 1
+    reason: OK
+    status: "False"
+    type: ChangeDetected
+  lastUpdated: "2024-04-25T20:32:06Z"
+  updates: []</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-editing-the-hostfirmwarecomponents-resource-of-a-provisioned-host_complete-bare-metal-post-installation-configuration">Editing the HostFirmwareComponents resource of a provisioned host</h6>
+<div class="paragraph _abstract">
+<p>You can edit the <code>HostFirmwareComponents</code> resource to upgrade or downgrade BIOS and BMC firmware versions on a provisioned host without deprovisioning it.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Get the detailed list of <code>HostFirmwareComponents</code> resources by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get hostfirmwarecomponents -n openshift-machine-api -o yaml</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Edit the <code>HostFirmwareComponents</code> resource by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit &lt;hostname&gt; hostfirmwarecomponents -n openshift-machine-api</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;hostname&gt;</code> is the name of the host. The <code>HostFirmwareComponents</code> resource will open in the default editor for your terminal.</p>
+</div>
+</li>
+<li>
+<p>Make the appropriate edits.</p>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">---
+apiVersion: metal3.io/v1alpha1
+kind: HostFirmwareComponents
+metadata:
+  creationTimestamp: 2024-04-25T20:32:06Z"
+  generation: 1
+  name: ostest-master-2
+  namespace: openshift-machine-api
+  ownerReferences:
+  - apiVersion: metal3.io/v1alpha1
+    blockOwnerDeletion: true
+    controller: true
+    kind: BareMetalHost
+    name: ostest-master-2
+    uid: 16022566-7850-4dc8-9e7d-f216211d4195
+  resourceVersion: "2437"
+  uid: 2038d63f-afc0-4413-8ffe-2f8e098d1f6c
+spec:
+  updates:
+    - name: bios
+      url: https://myurl.with.firmware.for.bios
+    - name: bmc
+      url: https://myurl.with.firmware.for.bmc
+status:
+  components:
+  - component: bios
+    currentVersion: 1.0.0
+    initialVersion: 1.0.0
+  - component: bmc
+    currentVersion: "1.00"
+    initialVersion: "1.00"
+  conditions:
+  - lastTransitionTime: "2024-04-25T20:32:06Z"
+    message: ""
+    observedGeneration: 1
+    reason: OK
+    status: "True"
+    type: Valid
+  - lastTransitionTime: "2024-04-25T20:32:06Z"
+    message: ""
+    observedGeneration: 1
+    reason: OK
+    status: "False"
+    type: ChangeDetected
+  lastUpdated: "2024-04-25T20:32:06Z"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>spec.updates.- name</code></dt>
+<dd>
+<p>Specifies the firmware component to update. Set to <code>bios</code> to update the BIOS version or <code>bmc</code> to update the BMC version.</p>
+</dd>
+<dt class="hdlist1"><code>spec.updates.- name.url</code></dt>
+<dd>
+<p>Specifies the URL for the firmware version.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Save the changes and exit the editor.</p>
+</li>
+<li>
+<p>Get the host machine name by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get bmh &lt;host_name&gt; -n openshift-machine name</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;host_name&gt;</code> is the name of the host. The terminal displays the machine name under the <code>CONSUMER</code> field.</p>
+</div>
+</li>
+<li>
+<p>Annotate the machine to delete it from the machine set by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc annotate machine &lt;machine_name&gt; machine.openshift.io/delete-machine=true -n openshift-machine-api</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;machine_name&gt;</code> is the name of the machine to delete.</p>
+</div>
+</li>
+<li>
+<p>Get a list of nodes and count the number of worker nodes by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get nodes</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the machine set by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get machinesets -n openshift-machine-api</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Scale down the machine set by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc scale machineset &lt;machineset_name&gt; -n openshift-machine-api --replicas=&lt;n-1&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;machineset_name&gt;</code> is the name of the machine set and <code>&lt;n-1&gt;</code> is the decremented number of worker nodes.</p>
+</div>
+</li>
+<li>
+<p>When the host enters the <code>Available</code> state, scale up the machine set to make the <code>HostFirmwareComponents</code> resource changes take effect by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc scale machineset &lt;machineset_name&gt; -n openshift-machine-api --replicas=&lt;n&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>&lt;machineset_name&gt;</code> is the name of the machine set and <code>&lt;n&gt;</code> is the number of worker nodes.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-performing-a-live-update-to-the-hostfirmwarecomponents-resource_complete-bare-metal-post-installation-configuration">Performing a live update to the HostFirmwareComponents resource</h6>
+<div class="paragraph _abstract">
+<p>You can perform a live update to the <code>HostFirmwareComponents</code> resource on an already provisioned host. Live updates do not trigger deprovisioning and reprovisioning the host.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Warning">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Performing a live update to the <code>HostFirmwareComponents</code> resource can be a destructive and destabilizing action. Perform these updates only after careful consideration.</p>
+</div>
+<div class="paragraph">
+<p>Before you apply a live update in a production cluster, validate the update in a development or test cluster. Ensure that these updates comply with your organization&#8217;s test policies before you apply them to a production cluster.</p>
+</div>
+<div class="paragraph">
+<p>If a cluster has fewer than three compute nodes, use caution. Firmware updates in such clusters can result in the cluster entering a degraded state.</p>
+</div>
+<div class="paragraph">
+<p>Do not interrupt firmware updates. If the update stops responding, engage the support of your hardware vendor.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>The <code>HostUpdatePolicy</code> resource must have the <code>firmwareUpdates</code> parameter set to <code>onReboot</code>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Update the <code>HostFirmwareComponents</code> resource by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc patch hostfirmwarecomponents &lt;hostname&gt; --type merge -p \
+    '{"spec": {"updates": [{"component": "&lt;type&gt;", \
+                        "url": "&lt;url&gt;"}]}}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;hostname&gt;</code></dt>
+<dd>
+<p>Specifies the name of the host.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;type&gt;</code></dt>
+<dd>
+<p>Specifies the type of component, either <code>bios</code> or <code>bmc</code>.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;url&gt;</code></dt>
+<dd>
+<p>Specifies the URL for the component.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can also use the <code>oc edit &lt;hostname&gt; hostfirmwarecomponents -n openshift-machine-api</code> command to update the resource.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Cordon and drain the node by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc drain &lt;node_name&gt; --force</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For <code>&lt;node_name&gt;</code>, specify the name of the node.</p>
+</div>
+</li>
+<li>
+<p>Power off the host for a period of 5 minutes by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc patch bmh &lt;hostname&gt; --type merge -p '{"spec": {"online": false}}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This step ensures that daemonsets or controllers mark any infrastructure pods that might be running on the node as offline, while the remaining nodes handle incoming requests.</p>
+</div>
+</li>
+<li>
+<p>After 5 minutes, power on the host by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc patch bmh &lt;hostname&gt; --type merge -p '{"spec": {"online": true}}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The servicing operation commences and the Bare Metal Operator (BMO) sets the <code>operationalStatus</code> parameter of the <code>BareMetalHost</code> to <code>servicing</code>. The BMO updates the <code>operationalStatus</code> parameter to <code>OK</code> after updating the resource. If an error occurs, the BMO updates the <code>operationalStatus</code> parameter to <code>error</code> and retries the operation.</p>
+</div>
+</li>
+<li>
+<p>Uncordon the node by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc uncordon &lt;node_name&gt;</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-getting-the-hostfirmwarecomponents-resource_nic_complete-bare-metal-post-installation-configuration">Identifying the NICs HostFirmwareComponents resources you can update</h6>
+<div class="paragraph _abstract">
+<p>You can use the Redfish <code>NetworkAdapters</code> resource to identify network interface controllers (NICs) that were added to the <code>HostFirmwareComponents</code> custom resource (CR). The NIC is displayed in the CR with the prefix <code>nic:</code> followed by the network adapter ID of the resource. For example, <code>nic:AD007</code>.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Get the detailed list of <code>HostFirmwareComponents</code> NIC resources by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ curl -ksu “$USER:$PASS” https://&lt;BMC&gt;/redfish/v1/Chassis/&lt;SystemID&gt;/NetworkAdapters | jq .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>&lt;SystemID&gt;</code> is based on the value that you set for <code>bmh</code> in the <code>spec.bmc.address</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">{
+  "@odata.context": "/redfish/v1/$metadata#NetworkAdapterCollection.NetworkAdapterCollection",
+  "@odata.id": "/redfish/v1/Chassis/System.Embedded.1/NetworkAdapters",
+  "@odata.type": "#NetworkAdapterCollection.NetworkAdapterCollection",
+  "Description": "Collection Of Network Adapter",
+  "Members": [
+    {
+      "@odata.id": "/redfish/v1/Chassis/System.Embedded.1/NetworkAdapters/NIC.Integrated.1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/System.Embedded.1/NetworkAdapters/NIC.Slot.3"
+    }
+  ],
+  "Members@odata.count":2,
+  "Name": "Network Adapter Collection"
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Identify the corresponding network adapter in the firmware inventory resource, as the network adapter does not indicate if you can update firmware with Redfish, by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ curl -ksu “$USER:$PASS” https://&lt;BMC&gt;/redfish/v1/UpdateService/FirmwareInventory | jq .</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">{
+  "@odata.context": "/redfish/v1/$metadata#SoftwareInventoryCollection.SoftwareInventoryCollection",
+  "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory",
+  "@odata.type": "#SoftwareInventoryCollection.SoftwareInventoryCollection",
+  "Description": "Collection of Firmware Inventory",
+  "Members": [
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Current-102303-22.0.9__NIC.Integrated.1-2-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Current-102303-22.0.9__NIC.Integrated.1-3-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Current-102303-22.0.9__NIC.Integrated.1-4-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Current-102378-22.0.9__NIC.Integrated.1-1-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Current-104480-14.31.22.50__NIC.Slot.3-1-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Current-104480-14.31.22.50__NIC.Slot.3-2-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Installed-102303-22.0.9__NIC.Integrated.1-2-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Installed-102303-22.0.9__NIC.Integrated.1-3-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Installed-102303-22.0.9__NIC.Integrated.1-4-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Installed-102378-22.0.9__NIC.Integrated.1-1-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Installed-104480-14.31.22.50__NIC.Slot.3-1-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Installed-104480-14.31.22.50__NIC.Slot.3-2-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Previous-102303-20.0.17__NIC.Integrated.1-2-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Previous-102303-20.0.17__NIC.Integrated.1-3-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Previous-102303-20.0.17__NIC.Integrated.1-4-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Previous-102378-20.0.17__NIC.Integrated.1-1-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Previous-104480-14.24.80.00__NIC.Slot.3-1-1"
+    },
+    {
+      "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Previous-104480-14.24.80.00__NIC.Slot.3-2-1"
+    }
+  ],
+  "Members@odata.count": 18,
+  "Name": "Firmware Inventory Collection"
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check if the parameter is set to <code>true</code> by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ curl -ksu "$USER:$PASS" https://&lt;BMC&gt;/redfish/v1/UpdateService/FirmwareInventory/Current-102303-22.0.9__NIC.Integrated.1-2-1 | jq .</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">{
+  "@odata.context": "/redfish/v1/$metadata#SoftwareInventory.SoftwareInventory",
+  "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Current-102303-22.0.9__NIC.Integrated.1-2-1",
+  "@odata.type": "#SoftwareInventory.v1_9_0.SoftwareInventory",
+  "Description": "Represents Firmware Inventory",
+  "Id": "Current-102303-22.0.9__NIC.Integrated.1-2-1",
+  "Name": "Intel(R) Ethernet 10G X710 rNDC - E4:43:4B:4B:60:B1",
+  "Oem": {
+    "Dell": {
+      "@odata.type": "#DellOem.v1_3_0.DellOemResources",
+      "DellSoftwareInventory": {
+        "@odata.context": "/redfish/v1/$metadata#DellSoftwareInventory.DellSoftwareInventory",
+        "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/Current-102303-22.0.9__NIC.Integrated.1-2-1/Oem/Dell/DellSoftwareInventory/DCIM:CURRENT_0x23_701__NIC.Integrated.1-2-1",
+        "@odata.type": "#DellSoftwareInventory.v1_2_0.DellSoftwareInventory",
+        "BuildNumber": 0,
+        "Classifications": [
+          "Firmware"
+        ],
+        "Classifications@odata.count": 1,
+        "ComponentID": "102303",
+        "ComponentType": "FRMW",
+        "Description": "The DellSoftwareInventory resource is a representation of an available device firmware in the managed system.",
+        "DeviceID": "1572",
+        "ElementName": "Intel(R) Ethernet 10G X710 rNDC - E4:43:4B:4B:60:B1",
+        "HashValue": "1158cfbfdf6cb387bc0806999b28b83892cfaf1307b466abd6546ff8e5ea1459",
+        "Id": "DCIM:CURRENT_0x23_701__NIC.Integrated.1-2-1",
+        "IdentityInfoType": [
+          "OrgID:ComponentType:VendorID:DeviceID:SubVendorID:SubDeviceID"
+        ],
+        "IdentityInfoType@odata.count": 1,
+        "IdentityInfoValue": [
+          "DCIM:firmware:8086:1572:1028:0000"
+        ],
+        "IdentityInfoValue@odata.count": 1,
+        "InstallationDate": "NA",
+        "IsEntity": true,
+        "MajorVersion": 22,
+        "MinorVersion": 0,
+        "Name": "DellSoftwareInventory",
+        "PLDMCapabilitiesDuringUpdate": "0x00000000",
+        "PLDMFDPCapabilitiesDuringUpdate": "0x00000000",
+        "RevisionNumber": 9,
+        "RevisionString": null,
+        "SidebandUpdateCapable": false,
+        "Status": "AvailableForInstallation",
+        "SubDeviceID": "0000",
+        "SubVendorID": "1028",
+        "VendorID": "8086",
+        "impactsTPMmeasurements": true
+      }
+    }
+  },
+  "ReleaseDate": "2023-03-03T00:00:00Z",
+  "SoftwareId": "102303",
+  "Status": {
+    "Health": "OK",
+    "State": "Enabled"
+  },
+  "Updateable": true,
+  "Version": "22.0.9"
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Updateable</code>: Indicates the value the parameter is set to.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Where the <code>Updateable</code> parameter is set to <code>true</code>, you can use Redfish to update the network adapter.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-about-the-hostupdatepolicy-resource_complete-bare-metal-post-installation-configuration">About the <code>HostUpdatePolicy</code> resource</h6>
+<div class="paragraph _abstract">
+<p>You can use the <code>HostUpdatePolicy</code> resource to enable or disable applying live updates to the firmware settings, BMC settings, or firmware settings of each bare-metal host. By default, the Operator disables live updates to already provisioned bare-metal hosts by default.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">The <code>HostUpdatePolicy</code> spec</dt>
+<dd>
+<p>The <code>spec</code> section of the <code>HostUpdatePolicy</code> resource provides two settings:</p>
+</dd>
+<dt class="hdlist1"><code>firmwareSettings</code></dt>
+<dd>
+<p>This setting corresponds to the <code>HostFirmwareSettings</code> resource.</p>
+</dd>
+<dt class="hdlist1"><code>firmwareUpdates</code></dt>
+<dd>
+<p>This setting corresponds to the <code>HostFirmwareComponents</code> resource.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>When you set the value to <code>onPreparing</code>, you can only update the host during provisioning, which is the default setting. When you set the value to <code>onReboot</code>, you can update a provisioned host by applying the resource and rebooting the bare-metal host. Then, follow the procedure for editing the <code>HostFirmwareSettings</code> or <code>HostFirmwareComponents</code> resource.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example <code>HostUpdatePolicy</code> resource</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: metal3.io/v1alpha1
+kind: HostUpdatePolicy
+metadata:
+  name: &lt;hostname&gt;
+  namespace: openshift-machine-api
+spec:
+  firmwareSettings: &lt;setting&gt;
+  firmwareUpdates: &lt;setting&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;hostname&gt;</code></dt>
+<dd>
+<p>Specifies the name of the bare-metal host.</p>
+</dd>
+<dt class="hdlist1"><code>spec.firmwareSettings</code></dt>
+<dd>
+<p>Specifies the update policy setting. Specify <code>onPreparing</code> to disable live updates. Specify <code>onReboot</code> to enable live updates.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="bmo-setting-the-hostupdatepolicy-resource_complete-bare-metal-post-installation-configuration">Setting the HostUpdatePolicy resource</h6>
+<div class="paragraph _abstract">
+<p>By default, the <code>HostUpdatePolicy</code> disables live updates. To enable live updates, create the <code>HostUpdatePolicy</code> resource.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Warning">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Performing a live update to the <code>HostUpdatePolicy</code> resource can be a destructive and destabilizing action. Perform these updates only after careful consideration.</p>
+</div>
+<div class="paragraph">
+<p>Before you apply a live update in a production cluster, validate the update in a development or test cluster. Ensure that these updates comply with your organization&#8217;s test policies before you apply them to a production cluster.</p>
+</div>
+<div class="paragraph">
+<p>If a cluster has fewer than three compute nodes, use caution. Firmware updates in such clusters can result in the cluster entering a degraded state.</p>
+</div>
+<div class="paragraph">
+<p>Do not interrupt firmware updates. If the update stops responding, engage the support of your hardware vendor.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create the <code>HostUpdatePolicy</code> resource by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ vim hup.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use any text editor you prefer.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example <code>HostUpdatePolicy</code> resource:</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: metal3.io/v1alpha1
+kind: HostUpdatePolicy
+metadata:
+  name: &lt;hostname&gt;
+  namespace: openshift-machine-api
+spec:
+  firmwareSettings: onReboot
+  firmwareUpdates: onReboot</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <code>&lt;hostname&gt;</code> with the name of the host.</p>
+</div>
+</li>
+<li>
+<p>Save the changes to the <code>hup.yaml</code> file.</p>
+</li>
+<li>
+<p>Apply the policy by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc apply -f hup.yaml</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="bm-about-ipe_complete-bare-metal-post-installation-configuration.html">Hardware metrics in the Monitoring stack</a> | ↑ Up: <a href="complete-bare-metal-post-installation-configuration-con_complete-bare-metal-post-installation-configuration.html">Complete bare metal post-installation configuration</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="complete-ibm-z-post-installation-configuration-con_complete-ibm-z-post-installation-configuration.html">Complete IBM Z post-installation configuration</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-09-21 21:43:00 -0400
+</div>
+</div>
+<style>
+  #toc ul li.has-children > ul {
+    display: none;
+  }
+  #toc ul li.has-children.open > ul {
+    display: block;
+  }
+  .toc-toggle {
+    cursor: pointer;
+    margin-right: 4px;
+    font-size: 0.75em;
+    user-select: none;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('#toc li').forEach(function(li) {
+      var sublist = li.querySelector(':scope > ul');
+      if (sublist) {
+        li.classList.add('has-children');
+        var toggle = document.createElement('span');
+        toggle.className = 'toc-toggle';
+        toggle.textContent = '▶';
+        li.insertBefore(toggle, li.firstChild);
+        toggle.addEventListener('click', function() {
+          li.classList.toggle('open');
+          toggle.textContent = li.classList.contains('open') ? '▼' : '▶';
+        });
+      }
+    });
+  });
+</script>
+</body>
+</html>
