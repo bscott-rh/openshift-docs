@@ -1,0 +1,7 @@
+:_mod-docs-content-type: MAP
+:context: how-etcd-peer-round-trip-time-affects-performance
+
+// Decomposed from etcd/etcd-performance.adoc
+include::modules/etcd-peer-round-trip.adoc[leveloffset=+0,chunk="to-content"]
+
+include::modules/etcd-network-latency-jitter.adoc[leveloffset=+1,toc="no"]

@@ -1,0 +1,18 @@
+:_mod-docs-content-type: MAP
+:context: understand-etcd-performance-factors
+
+// Decomposed from etcd/etcd-overview.adoc
+include::modules/how-etcd-works.adoc[leveloffset=+0,chunk="to-content"]
+
+include::modules/understand-etcd-performance.adoc[leveloffset=+1,toc="no"]
+
+// Decomposed from etcd/etcd-performance.adoc
+include::modules/etcd-disk-latency.adoc[leveloffset=+1,toc="no"]
+
+include::modules/etcd-leader-election-log-replication.adoc[leveloffset=+1,toc="no"]
+
+include::modules/etcd-node-scaling.adoc[leveloffset=+1,toc="no"]
+
+include::modules/etcd-timer-tunables.adoc[leveloffset=+1,toc="no"]
+
+include::modules/etcd-peer-round-trip.adoc[leveloffset=+1,toc="no"]

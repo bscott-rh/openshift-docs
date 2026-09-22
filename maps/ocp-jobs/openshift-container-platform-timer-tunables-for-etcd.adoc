@@ -1,0 +1,7 @@
+:_mod-docs-content-type: MAP
+:context: openshift-container-platform-timer-tunables-for-etcd
+
+// Decomposed from etcd/etcd-performance.adoc
+include::modules/etcd-timer-tunables.adoc[leveloffset=+0,chunk="to-content"]
+
+include::modules/etcd-tuning-parameters.adoc[leveloffset=+1,toc="no"]
