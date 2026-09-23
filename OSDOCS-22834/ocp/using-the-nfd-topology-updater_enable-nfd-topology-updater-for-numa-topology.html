@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="hcp-update-ocp-hc_upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster" class="book toc2 toc-left">
+<body id="using-the-nfd-topology-updater_enable-nfd-topology-updater-for-numa-topology" class="book toc2 toc-left">
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -459,36 +459,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="_disconnected_environments.html">Disconnected environments</a>
 </li>
 <li><a href="_upgrade.html">Upgrade</a>
-<ul class="sectlevel2">
-<li><a href="about-updates_update-clusters-overview.html">Cluster update overview</a>
-</li>
-<li><a href="update-cluster-version-object_understand-openshift-updates.html">The ClusterVersion object</a>
-</li>
-<li><a href="understand-update-channels-and-releases-intro_understand-update-channels-and-releases.html">Understand update channels and releases</a>
-</li>
-<li><a href="understand-update-duration-intro_understand-update-duration.html">Understand update duration</a>
-</li>
-<li><a href="about-self-service-tsr_prepare-to-update-a-cluster.html">Self-service Technical Supportability Review</a>
-</li>
-<li><a href="about-manually-maintained-credentials-upgrade_prepare-to-update-with-manually-maintained-credentials.html">Update requirements for clusters with manually maintained credentials</a>
-</li>
-<li><a href="before-updating-ocp_update-a-cluster-using-the-web-console.html">Before updating the Red&#160;Hat OpenShift Container Platform cluster</a>
-</li>
-<li><a href="update-single-node-openshift_update-a-cluster-using-the-cli.html">About updating single node Red&#160;Hat OpenShift Container Platform</a>
-</li>
-<li><a href="perform-a-control-plane-only-update-intro_perform-a-control-plane-only-update.html">Perform a Control Plane Only update</a>
-</li>
-<li><a href="example_perform-a-canary-rollout-update.html">Example Canary update strategy</a>
-</li>
-<li><a href="update-a-cluster-in-a-disconnected-environment-intro_update-a-cluster-in-a-disconnected-environment.html">Update a cluster in a disconnected environment</a>
-</li>
-<li><a href="migrate-to-a-multi-architecture-cluster-intro_migrate-to-a-multi-architecture-cluster.html">Migrate to a multi-architecture cluster</a>
-</li>
-<li><a href="update-from-4-x-to-5-x-intro_update-from-4-x-to-5-x.html">Update from 4.x to 5.x</a>
-</li>
-<li><a href="upgrade-hosted-control-planes-intro_upgrade-hosted-control-planes.html">Upgrade Hosted Control Planes</a>
-</li>
-</ul>
 </li>
 <li><a href="_migrate.html">Migrate</a>
 </li>
@@ -509,6 +479,98 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="_integrate.html">Integrate</a>
 </li>
 <li><a href="_optimize.html">Optimize</a>
+<ul class="sectlevel2">
+<li><a href="about-node-tuning-operator_node-tuning-operator.html">Node Tuning Operator</a>
+</li>
+<li><a href="setting_up_cpu_manager_configure-cpu-isolation-for-latency-sensitive-workloads.html">Set up CPU Manager</a>
+</li>
+<li><a href="cnf-about-numa-aware-scheduling_schedule-numa-aware-workloads.html">About NUMA-aware scheduling</a>
+</li>
+<li><a href="using-the-nfd-topology-updater_enable-nfd-topology-updater-for-numa-topology.html"><span class="toc-current">Use the NFD Topology Updater</span></a>
+</li>
+<li><a href="what-huge-pages-do_huge-pages.html">What huge pages do</a>
+</li>
+<li><a href="cnf-understanding-low-latency_apply-low-latency-tuning-and-workload-partitioning.html">About low latency</a>
+</li>
+<li><a href="nodes-cluster-worker-latency-profiles-about_configure-worker-latency-profiles-for-high-latency-networks.html">Understanding worker latency profiles</a>
+</li>
+<li><a href="etcd-database-size_scale-etcd-database-size.html">Determine the size of the etcd database and understand its effects</a>
+</li>
+<li><a href="how-etcd-works_understand-etcd-performance-factors.html">How etcd works</a>
+</li>
+<li><a href="infrastructure-components_create-infrastructure-nodes.html">Red&#160;Hat OpenShift Container Platform infrastructure components</a>
+</li>
+<li><a href="create-a-kubeletconfig-crd-to-edit-kubelet-parameters_make-changes-to-the-kubelet-settings-on-my-nodes.html">Create a KubeletConfig CR to edit kubelet parameters</a>
+</li>
+<li><a href="nodes-nodes-working-evacuating_evacuate-pods-on-a-node.html">Evacuate pods on nodes</a>
+</li>
+<li><a href="about-machine-config-operator_configure-node-changes-on-a-cluster.html">About the Machine Config Operator</a>
+</li>
+<li><a href="nodes-cluster-limit-ranges-about_restrict-resource-consumption-with-limit-ranges.html">About limit ranges</a>
+</li>
+<li><a href="optimizing-storage-azure_optimize-infrastructure-for-specific-platforms.html">Optimizing storage performance for Microsoft Azure</a>
+</li>
+<li><a href="optimizing-mtu_tune-network-performance.html">Optimizing the MTU for your network</a>
+</li>
+<li><a href="nodes-nodes-managing-max-pods-proc_adjust-maximum-number-of-pods-on-a-node.html">Configure the maximum number of pods per node</a>
+</li>
+<li><a href="machineset-manually-scaling_scale-compute-resources.html">Scale a compute machine set manually</a>
+</li>
+<li><a href="nodes-cluster-resource-configure-about_configure-cluster-memory-to-meet-container-memory-and-risk-requirements.html">Understanding how to manage application memory</a>
+</li>
+<li><a href="follow-ibm-z-platform-specific-recommendations-con_plan-for-ibm-z-and-linuxone-platforms.html">Follow IBM Z platform-specific recommendations</a>
+</li>
+<li><a href="scalability-and-performance-recommended-practices_optimize-cluster-performance-across-subsystems.html">Recommended performance and scalability practices</a>
+</li>
+<li><a href="machine-config-pin-preload-images_reduce-image-pull-time.html">Pin images</a>
+</li>
+<li><a href="nodes-pods-adjust-resources-in-place-about_adjust-pod-resource-levels-without-pod-disruption.html">About in-place pod resizing</a>
+</li>
+<li><a href="nodes-overview-about-autoscaling-pods_automatically-scale-clusters-based-on-custom-metrics.html">About autoscaling pods on a node</a>
+</li>
+<li><a href="nodes-scheduler-default-about_optimize-workload-placement.html">Understanding default scheduling</a>
+</li>
+<li><a href="etcd-tuning-parameters_optimize-etcd-performance.html">Set tuning parameters for etcd</a>
+</li>
+<li><a href="nodes-containers-projected-volumes-about_map-configuration-sources-with-projected-volumes.html">Understanding projected volumes</a>
+</li>
+<li><a href="nodes-cluster-overcommit-about_control-the-level-of-overcommitted-pods.html">Understanding overcommitment</a>
+</li>
+<li><a href="nodes-nodes-parallel-container-pulls-about_configure-parallel-configuration-image-pulls.html">About configuring parallel container image pulls</a>
+</li>
+<li><a href="nodes-nodes-kernel-arguments_customize-kernel-behavior.html">Add kernel arguments to nodes</a>
+</li>
+<li><a href="nodes-cluster-worker-latency-profiles-about_improve-cluster-stability-in-high-latency-environments.html">Understanding worker latency profiles</a>
+</li>
+<li><a href="nodes-containers-dev-fuse-configuring_enable-faster-container-builds.html">Configure /dev/fuse for unprivileged builds in pods</a>
+</li>
+<li><a href="rodoo-about_run-once-duration-override-operator.html">About the Run Once Duration Override Operator</a>
+</li>
+<li><a href="configuring-node-pools-for-hcp_machine-configuration-for-hosted-control-planes.html">Configure node pools for hosted control planes</a>
+</li>
+<li><a href="images-imagestream-use_manage-image-streams-and-imports.html">Use image streams</a>
+</li>
+<li><a href="nodes-nodes-kernel-arguments_enable-symmetric-multithreading-on-my-nodes-to-improve-efficiency.html">Add kernel arguments to nodes</a>
+</li>
+<li><a href="infrastructure-components_separate-infrastructure-machines-from-machines-that-run-workloads.html">Red&#160;Hat OpenShift Container Platform infrastructure components</a>
+</li>
+<li><a href="machine-mgmt-intro-managing-compute_scale-the-number-of-compute-machines-that-use-a-specific-configuration.html">Compute machine management</a>
+</li>
+<li><a href="machine-mgmt-intro-add-for-upi_add-compute-machines-manually.html">Compute machine creation on user-provisioned infrastructure</a>
+</li>
+<li><a href="machine-mgmt-intro-autoscaling_configure-automated-machine-scaling-in-an-ocp-cluster.html">Cluster autoscaling</a>
+</li>
+<li><a href="machineset-label-gpu-autoscaler_label-gpu-machine-sets-for-autoscaler.html">Label GPU machine sets for the cluster autoscaler</a>
+</li>
+<li><a href="machineset-non-guaranteed-instance_creating-machineset-aws.html">Machine sets that deploy machines as Spot Instances</a>
+</li>
+<li><a href="_machine_sets_that_deploy_machines_as_spot_vms.html">Machine sets that deploy machines as Spot VMs</a>
+</li>
+<li><a href="machineset-capacity-reservation_creating-machineset-aws.html">Configure Capacity Reservations by using machine sets</a>
+</li>
+<li><a href="nvidia-gpu-aws-adding-a-gpu-node_add-gpu-nodes-to-machine-sets.html">Add a GPU node to an existing Red&#160;Hat OpenShift Container Platform cluster</a>
+</li>
+</ul>
 </li>
 <li><a href="_extend.html">Extend</a>
 </li>
@@ -522,120 +584,99 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div class="sect4">
-<h5 id="hcp-update-ocp-hc_upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster">Updating a control plane in a hosted cluster</h5>
+<div class="sect2">
+<h3 id="using-the-nfd-topology-updater_enable-nfd-topology-updater-for-numa-topology">Use the NFD Topology Updater</h3>
 <div class="paragraph _abstract">
-<p>In hosted control planes, you can upgrade your version of Red&#160;Hat OpenShift Container Platform by updating the hosted cluster.</p>
+<p>Enable the NFD Topology Updater to detect allocated resources on worker nodes and report per-zone resource availability. This information helps the scheduler make topology-aware placement decisions for workloads that require specific NUMA node configurations.</p>
 </div>
 <div class="paragraph">
-<p>The <code>.spec.release</code> in the <code>HostedCluster</code> custom resource (CR) shows the version of the control plane. The <code>HostedCluster</code> updates the <code>.spec.release</code> field to the <code>HostedControlPlane.spec.release</code> and runs the appropriate Control Plane Operator version.</p>
-</div>
-<div class="paragraph">
-<p>The <code>HostedControlPlane</code> resource orchestrates the rollout of the new version of the control plane components along with the Red&#160;Hat OpenShift Container Platform component in the data plane through the new version of the Cluster Version Operator (CVO). The <code>HostedControlPlane</code> includes the following artifacts:</p>
+<p>The NFD Topology Updater runs as a daemon on each worker node, examining the allocated resources and creating per-zone resource availability information. It communicates with nfd-master to create or update <code>NodeResourceTopology</code> custom resources with the resource topology of each zone, such as NUMA nodes.</p>
 </div>
 <div class="ulist">
-<ul>
-<li>
-<p>CVO</p>
-</li>
-<li>
-<p>Cluster Network Operator (CNO)</p>
-</li>
-<li>
-<p>Cluster Ingress Operator</p>
-</li>
-<li>
-<p>Manifests for the Kube API server, scheduler, and manager</p>
-</li>
-<li>
-<p>Machine approver</p>
-</li>
-<li>
-<p>Autoscaler</p>
-</li>
-<li>
-<p>Infrastructure resources to enable ingress for control plane endpoints such as the Kube API server, ignition, and konnectivity</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>You can set the <code>.spec.release</code> field in the <code>HostedCluster</code> CR to update the control plane by using the information from the <code>status.version.availableUpdates</code> and <code>status.version.conditionalUpdates</code> fields.</p>
-</div>
-<div class="olist arabic">
 <div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Add the <code>hypershift.openshift.io/force-upgrade-to=&lt;openshift_release_image&gt;</code> annotation to the hosted cluster by entering the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc annotate hostedcluster \
-  -n &lt;hosted_cluster_namespace&gt; &lt;hosted_cluster_name&gt; \
-  "hypershift.openshift.io/force-upgrade-to=&lt;openshift_release_image&gt;" \
-  --overwrite</code></pre>
-</div>
-</div>
-<div class="ulist">
 <ul>
 <li>
-<p>Replace <code>&lt;hosted_cluster_name&gt;</code> with your hosted cluster name and <code>&lt;hosted_cluster_namespace&gt;</code> with your hosted cluster namespace.</p>
-</li>
-<li>
-<p>The <code>&lt;openshift_release_image&gt;</code> variable specifies the new Red&#160;Hat OpenShift Container Platform release image that you want to upgrade to, for example, <code>quay.io/openshift-release-dev/ocp-release:&lt;4.y.z&gt;-x86_64</code>. Replace <code>&lt;4.y.z&gt;</code> with the supported Red&#160;Hat OpenShift Container Platform version.</p>
+<p>To enable the Topology Updater workers in NFD, set the <code>topologyupdater</code> variable to <code>true</code> in the <code>NodeFeatureDiscovery</code> CR, as described in the section <strong>Using the Node Feature Discovery Operator</strong>.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Change the <code>spec.release.image</code> value in the hosted cluster by entering the following command:</p>
+<div class="paragraph">
+<div class="title">Verification</div>
+<p>When run with NFD Topology Updater, NFD creates <code>NodeResourceTopology</code> custom resource instances corresponding to the node resource hardware topology, such as:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc patch hostedcluster &lt;hosted_cluster_name&gt; -n &lt;hosted_cluster_namespace&gt; \
-  --type=merge \
-  -p '{"spec":{"release":{"image":"&lt;openshift_release_image&gt;"}}}'</code></pre>
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: topology.node.k8s.io/v1alpha1
+kind: NodeResourceTopology
+metadata:
+  name: node1
+topologyPolicies: ["SingleNUMANodeContainerLevel"]
+zones:
+  - name: node-0
+    type: Node
+    resources:
+      - name: cpu
+        capacity: 20
+        allocatable: 16
+        available: 10
+      - name: vendor/nic1
+        capacity: 3
+        allocatable: 3
+        available: 3
+  - name: node-1
+    type: Node
+    resources:
+      - name: cpu
+        capacity: 30
+        allocatable: 30
+        available: 15
+      - name: vendor/nic2
+        capacity: 6
+        allocatable: 6
+        available: 6
+  - name: node-2
+    type: Node
+    resources:
+      - name: cpu
+        capacity: 30
+        allocatable: 30
+        available: 15
+      - name: vendor/nic1
+        capacity: 3
+        allocatable: 3
+        available: 3</code></pre>
 </div>
-</div>
-</li>
-</ol>
 </div>
 <div class="ulist">
-<div class="title">Verification</div>
 <ul>
 <li>
-<p>To verify that the new version was rolled out, check the <code>.status.conditions</code> and <code>.status.version</code> values in the hosted cluster by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get -n &lt;hosted_cluster_namespace&gt; hostedcluster &lt;hosted_cluster_name&gt; \
-  -o yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">status:
- conditions:
- - lastTransitionTime: "2024-05-20T15:01:01Z"
-        message: Payload loaded version="4.20.0" image="quay.io/openshift-release-dev/ocp-release:4.20.0-x86_64"
-        status: "True"
-        type: ClusterVersionReleaseAccepted
-#...
-version:
-      availableUpdates: null
-      desired:
-      image: quay.io/openshift-release-dev/ocp-release:4.20.0-x86_64
-      version: 4.20.0</code></pre>
-</div>
-</div>
+<p><a href="nfd-topology-updater-command-line-flags_enable-nfd-topology-updater-for-numa-topology.html">NFD Topology Updater command-line flags</a></p>
+</li>
+<li>
+<p><a href="about-node-feature-discovery-operator_psap-node-feature-discovery-operator.html">About the Node Feature Discovery Operator</a></p>
+</li>
+<li>
+<p><a href="installing-the-node-feature-discovery-operator_enable-nfd-topology-updater-for-numa-topology.html">Install the Node Feature Discovery Operator</a></p>
+</li>
+<li>
+<p><a href="nfd-using-operator-overview_enable-nfd-topology-updater-for-numa-topology.html">NFD Operator overview</a></p>
+</li>
+<li>
+<p><a href="nfd-configuring-core_enable-nfd-topology-updater-for-numa-topology.html">NFD core configuration parameters</a></p>
+</li>
+<li>
+<p><a href="cnf-about-numa-aware-scheduling_enable-nfd-topology-updater-for-numa-topology.html">About NUMA-aware scheduling</a></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>↑ Up: <a href="upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster-intro_upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster.html">Updating the OpenShift Container Platform version in a hosted cluster</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="hcp-update-using-mce-console_upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster.html">Updating a hosted cluster by using the multicluster engine Operator console</a> →</p>
+<p>← Previous: <a href="using-the-nfd-topology-updater_schedule-numa-aware-workloads.html">Use the NFD Topology Updater</a> | ↑ Up: <a href="_optimize.html">Optimize</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="nfd-topology-updater-command-line-flags_enable-nfd-topology-updater-for-numa-topology.html">NFD Topology Updater command-line flags</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-22 10:04:19 -0400
+Last updated 2026-09-22 13:48:33 -0400
 </div>
 </div>
 <style>

@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster-intro_upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster" class="book toc2 toc-left">
+<body id="machine-config-pin-preload-images_reduce-image-pull-time" class="book toc2 toc-left">
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -459,36 +459,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="_disconnected_environments.html">Disconnected environments</a>
 </li>
 <li><a href="_upgrade.html">Upgrade</a>
-<ul class="sectlevel2">
-<li><a href="about-updates_update-clusters-overview.html">Cluster update overview</a>
-</li>
-<li><a href="update-cluster-version-object_understand-openshift-updates.html">The ClusterVersion object</a>
-</li>
-<li><a href="understand-update-channels-and-releases-intro_understand-update-channels-and-releases.html">Understand update channels and releases</a>
-</li>
-<li><a href="understand-update-duration-intro_understand-update-duration.html">Understand update duration</a>
-</li>
-<li><a href="about-self-service-tsr_prepare-to-update-a-cluster.html">Self-service Technical Supportability Review</a>
-</li>
-<li><a href="about-manually-maintained-credentials-upgrade_prepare-to-update-with-manually-maintained-credentials.html">Update requirements for clusters with manually maintained credentials</a>
-</li>
-<li><a href="before-updating-ocp_update-a-cluster-using-the-web-console.html">Before updating the Red&#160;Hat OpenShift Container Platform cluster</a>
-</li>
-<li><a href="update-single-node-openshift_update-a-cluster-using-the-cli.html">About updating single node Red&#160;Hat OpenShift Container Platform</a>
-</li>
-<li><a href="perform-a-control-plane-only-update-intro_perform-a-control-plane-only-update.html">Perform a Control Plane Only update</a>
-</li>
-<li><a href="example_perform-a-canary-rollout-update.html">Example Canary update strategy</a>
-</li>
-<li><a href="update-a-cluster-in-a-disconnected-environment-intro_update-a-cluster-in-a-disconnected-environment.html">Update a cluster in a disconnected environment</a>
-</li>
-<li><a href="migrate-to-a-multi-architecture-cluster-intro_migrate-to-a-multi-architecture-cluster.html">Migrate to a multi-architecture cluster</a>
-</li>
-<li><a href="update-from-4-x-to-5-x-intro_update-from-4-x-to-5-x.html">Update from 4.x to 5.x</a>
-</li>
-<li><a href="upgrade-hosted-control-planes-intro_upgrade-hosted-control-planes.html">Upgrade Hosted Control Planes</a>
-</li>
-</ul>
 </li>
 <li><a href="_migrate.html">Migrate</a>
 </li>
@@ -509,6 +479,98 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="_integrate.html">Integrate</a>
 </li>
 <li><a href="_optimize.html">Optimize</a>
+<ul class="sectlevel2">
+<li><a href="about-node-tuning-operator_node-tuning-operator.html">Node Tuning Operator</a>
+</li>
+<li><a href="setting_up_cpu_manager_configure-cpu-isolation-for-latency-sensitive-workloads.html">Set up CPU Manager</a>
+</li>
+<li><a href="cnf-about-numa-aware-scheduling_schedule-numa-aware-workloads.html">About NUMA-aware scheduling</a>
+</li>
+<li><a href="using-the-nfd-topology-updater_enable-nfd-topology-updater-for-numa-topology.html">Use the NFD Topology Updater</a>
+</li>
+<li><a href="what-huge-pages-do_huge-pages.html">What huge pages do</a>
+</li>
+<li><a href="cnf-understanding-low-latency_apply-low-latency-tuning-and-workload-partitioning.html">About low latency</a>
+</li>
+<li><a href="nodes-cluster-worker-latency-profiles-about_configure-worker-latency-profiles-for-high-latency-networks.html">Understanding worker latency profiles</a>
+</li>
+<li><a href="etcd-database-size_scale-etcd-database-size.html">Determine the size of the etcd database and understand its effects</a>
+</li>
+<li><a href="how-etcd-works_understand-etcd-performance-factors.html">How etcd works</a>
+</li>
+<li><a href="infrastructure-components_create-infrastructure-nodes.html">Red&#160;Hat OpenShift Container Platform infrastructure components</a>
+</li>
+<li><a href="create-a-kubeletconfig-crd-to-edit-kubelet-parameters_make-changes-to-the-kubelet-settings-on-my-nodes.html">Create a KubeletConfig CR to edit kubelet parameters</a>
+</li>
+<li><a href="nodes-nodes-working-evacuating_evacuate-pods-on-a-node.html">Evacuate pods on nodes</a>
+</li>
+<li><a href="about-machine-config-operator_configure-node-changes-on-a-cluster.html">About the Machine Config Operator</a>
+</li>
+<li><a href="nodes-cluster-limit-ranges-about_restrict-resource-consumption-with-limit-ranges.html">About limit ranges</a>
+</li>
+<li><a href="optimizing-storage-azure_optimize-infrastructure-for-specific-platforms.html">Optimizing storage performance for Microsoft Azure</a>
+</li>
+<li><a href="optimizing-mtu_tune-network-performance.html">Optimizing the MTU for your network</a>
+</li>
+<li><a href="nodes-nodes-managing-max-pods-proc_adjust-maximum-number-of-pods-on-a-node.html">Configure the maximum number of pods per node</a>
+</li>
+<li><a href="machineset-manually-scaling_scale-compute-resources.html">Scale a compute machine set manually</a>
+</li>
+<li><a href="nodes-cluster-resource-configure-about_configure-cluster-memory-to-meet-container-memory-and-risk-requirements.html">Understanding how to manage application memory</a>
+</li>
+<li><a href="follow-ibm-z-platform-specific-recommendations-con_plan-for-ibm-z-and-linuxone-platforms.html">Follow IBM Z platform-specific recommendations</a>
+</li>
+<li><a href="scalability-and-performance-recommended-practices_optimize-cluster-performance-across-subsystems.html">Recommended performance and scalability practices</a>
+</li>
+<li><a href="machine-config-pin-preload-images_reduce-image-pull-time.html"><span class="toc-current">Pin images</span></a>
+</li>
+<li><a href="nodes-pods-adjust-resources-in-place-about_adjust-pod-resource-levels-without-pod-disruption.html">About in-place pod resizing</a>
+</li>
+<li><a href="nodes-overview-about-autoscaling-pods_automatically-scale-clusters-based-on-custom-metrics.html">About autoscaling pods on a node</a>
+</li>
+<li><a href="nodes-scheduler-default-about_optimize-workload-placement.html">Understanding default scheduling</a>
+</li>
+<li><a href="etcd-tuning-parameters_optimize-etcd-performance.html">Set tuning parameters for etcd</a>
+</li>
+<li><a href="nodes-containers-projected-volumes-about_map-configuration-sources-with-projected-volumes.html">Understanding projected volumes</a>
+</li>
+<li><a href="nodes-cluster-overcommit-about_control-the-level-of-overcommitted-pods.html">Understanding overcommitment</a>
+</li>
+<li><a href="nodes-nodes-parallel-container-pulls-about_configure-parallel-configuration-image-pulls.html">About configuring parallel container image pulls</a>
+</li>
+<li><a href="nodes-nodes-kernel-arguments_customize-kernel-behavior.html">Add kernel arguments to nodes</a>
+</li>
+<li><a href="nodes-cluster-worker-latency-profiles-about_improve-cluster-stability-in-high-latency-environments.html">Understanding worker latency profiles</a>
+</li>
+<li><a href="nodes-containers-dev-fuse-configuring_enable-faster-container-builds.html">Configure /dev/fuse for unprivileged builds in pods</a>
+</li>
+<li><a href="rodoo-about_run-once-duration-override-operator.html">About the Run Once Duration Override Operator</a>
+</li>
+<li><a href="configuring-node-pools-for-hcp_machine-configuration-for-hosted-control-planes.html">Configure node pools for hosted control planes</a>
+</li>
+<li><a href="images-imagestream-use_manage-image-streams-and-imports.html">Use image streams</a>
+</li>
+<li><a href="nodes-nodes-kernel-arguments_enable-symmetric-multithreading-on-my-nodes-to-improve-efficiency.html">Add kernel arguments to nodes</a>
+</li>
+<li><a href="infrastructure-components_separate-infrastructure-machines-from-machines-that-run-workloads.html">Red&#160;Hat OpenShift Container Platform infrastructure components</a>
+</li>
+<li><a href="machine-mgmt-intro-managing-compute_scale-the-number-of-compute-machines-that-use-a-specific-configuration.html">Compute machine management</a>
+</li>
+<li><a href="machine-mgmt-intro-add-for-upi_add-compute-machines-manually.html">Compute machine creation on user-provisioned infrastructure</a>
+</li>
+<li><a href="machine-mgmt-intro-autoscaling_configure-automated-machine-scaling-in-an-ocp-cluster.html">Cluster autoscaling</a>
+</li>
+<li><a href="machineset-label-gpu-autoscaler_label-gpu-machine-sets-for-autoscaler.html">Label GPU machine sets for the cluster autoscaler</a>
+</li>
+<li><a href="machineset-non-guaranteed-instance_creating-machineset-aws.html">Machine sets that deploy machines as Spot Instances</a>
+</li>
+<li><a href="_machine_sets_that_deploy_machines_as_spot_vms.html">Machine sets that deploy machines as Spot VMs</a>
+</li>
+<li><a href="machineset-capacity-reservation_creating-machineset-aws.html">Configure Capacity Reservations by using machine sets</a>
+</li>
+<li><a href="nvidia-gpu-aws-adding-a-gpu-node_add-gpu-nodes-to-machine-sets.html">Add a GPU node to an existing Red&#160;Hat OpenShift Container Platform cluster</a>
+</li>
+</ul>
 </li>
 <li><a href="_extend.html">Extend</a>
 </li>
@@ -522,29 +584,224 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div class="sect3">
-<h4 id="upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster-intro_upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster">Updating the OpenShift Container Platform version in a hosted cluster</h4>
+<div class="sect2">
+<h3 id="machine-config-pin-preload-images_reduce-image-pull-time">Pin images</h3>
 <div class="paragraph _abstract">
-<p>Learn about updating the Red&#160;Hat OpenShift Container Platform in a hosted cluster.</p>
+<p>You can pin images to your nodes by using a <code>PinnedImageSet</code> custom resource (CR) making the images available to your nodes when needed for operations such as updating a cluster or deploying an application.</p>
+</div>
+<div class="paragraph">
+<p>The pinned image set defines the list of images to pre-load and the machine config pool to which the images should be pinned.</p>
+</div>
+<div class="paragraph">
+<p>The images are stored in the <code>/etc/crio/crio.conf.d/50-pinned-images</code> file on the nodes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Only images that you can successfully inspect with the <code>podman manifest inspect &lt;IMAGE_URL&gt;</code> command can be used with a pinned image set. Image inspections could fail due to unsupported manifest formats, registry authorization issues, invalid schemas, network connectivity issues, or other issues.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create a YAML file that defines the <code>PinnedImageSet</code> object, similar to the following example:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: machineconfiguration.openshift.io/v1
+kind: PinnedImageSet
+metadata:
+  labels:
+    machineconfiguration.openshift.io/role: worker
+  name: worker-pinned-images
+spec:
+  pinnedImages:
+   - name: quay.io/openshift-release-dev/ocp-release@sha256:513cf1028aa1a021fa73d0601427a0fbcf6d212b88aaf9d76d4e4841a061e44e
+   - name: quay.io/openshift-release-dev/ocp-release@sha256:61eae2d261e54d1b8a0e05f6b5326228b00468364563745eed88460af04f909b</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>metadata.labels</code></dt>
+<dd>
+<p>Specifies an optional node selector to specify the machine config pool to pin the images to. If not specified, the images are pinned to all nodes in the cluster.</p>
+</dd>
+<dt class="hdlist1"><code>spec.pinnedImages</code></dt>
+<dd>
+<p>Specifies a list of one or more images to pre-load.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Create the <code>PinnedImageSet</code> object by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f &lt;file_name&gt;.yaml</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Check that the pinned image set is reported in the machine config node object for the affected machine config pool by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc describe machineconfignode &lt;machine_config_node_name&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example command</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc describe machineconfignode ci-ln-25hlkvt-72292-jrs48-worker-a-2bdj</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output for a successful image pull and pin</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfigNode
+metadata:
+  creationTimestamp: "2025-04-28T18:40:29Z"
+  generation: 3
+  name: &lt;machine_config_node_name&gt;
+# ...
+status
+  pinnedImageSets:
+  - currentGeneration: 1
+    desiredGeneration: 1
+    name: worker-pinned-images</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>status.pinnedImageSets</code></dt>
+<dd>
+<p>Specifies that the <code>PinnedImageSet</code> object you created is associated with the machine config node.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Any failures or error messages would appear in the <code>MachineConfigNode</code> object status fields, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example output for a failed image pull and pin</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfigNode
+metadata:
+  creationTimestamp: "2025-04-28T18:40:29Z"
+  generation: 3
+  name: &lt;machine_config_node_name&gt;
+# ...
+  - lastTransitionTime: "2025-04-29T19:37:23Z"
+    message: One or more PinnedImageSet is experiencing an error. See PinnedImageSet
+      list for more details.
+    reason: PrefetchFailed
+    status: "True"
+    type: PinnedImageSetsDegraded
+  configVersion:
+    current: rendered-worker-cef1b52c532e19a20add12e369261fba
+    desired: rendered-worker-cef1b52c532e19a20add12e369261fba
+  observedGeneration: 3
+  pinnedImageSets:
+  - desiredGeneration: 1
+    lastFailedGeneration: 1
+    lastFailedGenerationError: 'failed to execute podman manifest inspect for "quay.io/rh-ee/machine-config-operator@sha256:65d3a308767b1773b6e3499dde6ef085753d7e20e685f78841079":
+      exit status 125'
+    name: worker-pinned-images</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check that the pinned image file is created and contains the correct images.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Start a debug session for a node by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc debug node/&lt;node_name&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set <code>/host</code> as the root directory within the debug shell by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">sh-5.1# chroot /host</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Verify the contents of the pinned image file by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ cat /etc/crio/crio.conf.d/50-pinned-images</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">[crio]
+  [crio.image]
+    pinned_images = ["quay.io/openshift-release-dev/ocp-release@sha256:4198606580b69c8335ad7ae531c3a74e51aee25db5faaf368234e8c8dae5cbea", "quay.io/openshift-release-dev/ocp-release@sha256:513cf1028aa1a021fa73d0601427a0fbcf6d212b88aaf9d76d4e4841a061e44e", "quay.io/openshift-release-dev/ocp-release@sha256:61eae2d261e54d1b8a0e05f6b5326228b00468364563745eed88460af04f909b"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>pinnedImages</code></dt>
+<dd>
+<p>Specifies the images that have been pulled and pinned for the affected machine config pool.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p><a href="hcp-update-ocp-hc_upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster.html">Updating a control plane in a hosted cluster</a></p>
-</li>
-<li>
-<p><a href="hcp-update-using-mce-console_upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster.html">Updating a hosted cluster by using the multicluster engine Operator console</a></p>
-</li>
 </ul>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="hcp-np-version-skew_upgrade-hosted-control-planes-hosted-cluster-and-node-pool-version-skew-policy.html">Hosted cluster and node pool version skew policy</a> | ↑ Up: <a href="upgrade-hosted-control-planes-intro_upgrade-hosted-control-planes.html">Upgrade Hosted Control Planes</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="hcp-update-ocp-hc_upgrade-hosted-control-planes-updating-the-openshift-container-platform-version-in-a-hosted-cluster.html">Updating a control plane in a hosted cluster</a> →</p>
+<p>← Previous: <a href="configuring-haproxy-interval_apply-multi-subsystem-optimizations.html">Configure HAProxy reload interval</a> | ↑ Up: <a href="_optimize.html">Optimize</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="nodes-pods-adjust-resources-in-place-about_adjust-pod-resource-levels-without-pod-disruption.html">About in-place pod resizing</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-22 10:04:19 -0400
+Last updated 2026-09-22 13:48:33 -0400
 </div>
 </div>
 <style>
